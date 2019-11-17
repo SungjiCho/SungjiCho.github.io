@@ -192,25 +192,17 @@ Story 02. 수정 가능">
 <p>그러나 사실은 문자열 객체에 s라는 이름이 붙은 상황이다.<br>즉 파이썬의 변수는 빈 상자가 아닌 뗴었다 붙였다 할 수 있는 ‘포스트잇’의 개념이다.<br>(포스트잇은 메모를 적어서 붙이고 또 쉽게 뗄 수 있는 스티커이다.)</p>
 <p><img src="/image/stickynote.png" alt="stickynote"></p>
 <p>보통은 ‘변수에 문자열을 저장했다’ 또는 ‘변수에 객체를 저장했다’라는 식의 표현이 사용되고 또 그것이 더 자연스럽다. 하지만 지금 설명하는 파이썬의 <strong>가비지 컬렉션</strong> 메커니즘을 이해하려면 변수를 ‘포스트잇’으로 이해해야 한다. 따라서 위의 코드에 대한 표현이 다음과 같음을 알고 있어야 한다.<br>(‘참조’의 영어 표현이 ‘레퍼런스’이다.)</p>
-<br>
-</br>
-
+<p><br></br></p>
 <p><strong><em>변수 s가 문자열 ‘Garbage Collection’ ‘참조’한다.</em></strong><br><strong><em>변수 s가 문자열 ‘Garbage Collection’을 ‘레퍼런스’한다.</em></strong></p>
-<br>
-</br>
-
+<p><br></br></p>
 <p>즉 여기서 말하는 ‘참조’는 이름이 쓰인 포스트잇을 가져다 붙인 것을 뜻한다.<br>그럼 다음 코드를 보자. 이는 리스트 객체를 생성하고 이를 r이라는 이름으로 참조하고 있는 상황이다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]  <span class="comment"># r이라는이름으로 리스트를 참조</span></span><br></pre></td></tr></table></figure>
 
 
 <p>그럼 이렇게 생성된 리스트 [1, 2, 3]은 언제 소멸될까?<br>소멸되지 않고 계속 메모리 공간을 차지한다면 이는 문제가 되기 때문에 분명 소멸되는 시기가 온다.<br>그리고 그 시기는 다음과 같다.</p>
-<br>
-</br>
-
+<p><br></br></p>
 <p><strong><em>객체를 아무도 참조하지 않는 상황</em></strong></p>
-<br>
-</br>
-
+<p><br></br></p>
 <p>즉 다음 상황에서 리스트는 소멸된다. 정확히는 소멸 대상이 된다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">r = <span class="string">'simple'</span>  <span class="comment"># 변수 r이 참조 대상을 문자열로 바꿨다.</span></span><br></pre></td></tr></table></figure>
 
