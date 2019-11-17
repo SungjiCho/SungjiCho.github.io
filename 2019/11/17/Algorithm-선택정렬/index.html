@@ -10,7 +10,10 @@
 
     <!--Description-->
     
-        <meta name="description" content="12345678def solution(array, commands):    answer = []    for n in range(len(commands)):        i, j, k = commands[n][0], commands[n][1], commands[n][2">
+        <meta name="description" content="선택정렬본 포스팅은 &amp;lt;그림으로 정리한 알고리즘과 자료구조&amp;gt;를 바탕으로 진행합니다.
+선택정렬 알고리즘 알아보기선택정렬(Selection Sort) 알고리즘은 가장 작은 데이터를 찾아 가장 앞 데이터와 교환하는 알고리즘으로, 사용방법은 다음과 같습니다.
+
+데이터">
     
 
     <!--Author-->
@@ -20,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="[Programmers] K번째수"/>
+        <meta property="og:title" content="[Algorithm] 선택정렬"/>
     
 
     <!--Open Graph Description-->
@@ -42,7 +45,7 @@
 
     <!-- Title -->
     
-    <title>[Programmers] K번째수 - QuantPsy</title>
+    <title>[Algorithm] 선택정렬 - QuantPsy</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -146,8 +149,8 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2019/11/17/Programmers-K%EB%B2%88%EC%A7%B8%EC%88%98/">
-                [Programmers] K번째수
+            <a href="/2019/11/17/Algorithm-%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/">
+                [Algorithm] 선택정렬
             </a>
         </h1>
         <div class="post-info">
@@ -165,25 +168,14 @@
         
 
         <!-- Post Content -->
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(array, commands)</span>:</span></span><br><span class="line">    answer = []</span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> range(len(commands)):</span><br><span class="line">        i, j, k = commands[n][<span class="number">0</span>], commands[n][<span class="number">1</span>], commands[n][<span class="number">2</span>]</span><br><span class="line">        array_slice = array[i<span class="number">-1</span>: j]</span><br><span class="line">        array_slice.sort()</span><br><span class="line">        answer.append(array_slice[k<span class="number">-1</span>])</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
-
-<h3 id="시퀀스-타입"><a href="#시퀀스-타입" class="headerlink" title="시퀀스 타입"></a>시퀀스 타입</h3><p>위의 코드에서 배열 array는 파이썬에 내장된 시퀀스 타입인 리스트로 구현되었다.<br>시퀀스 타입의 객체는 인덱스 연산을 통해 내부 항목에 접근할 수 있다.</p>
-<h4 id="리스트"><a href="#리스트" class="headerlink" title="리스트"></a>리스트</h4><p>리스트는 중복이 가능하고 순차적인 데이터를 나타낼 수 있으며, 내부 항목을 변경가능하다.</p>
+        <h1 id="선택정렬"><a href="#선택정렬" class="headerlink" title="선택정렬"></a>선택정렬</h1><h6 id="본-포스팅은-lt-그림으로-정리한-알고리즘과-자료구조-gt-를-바탕으로-진행합니다"><a href="#본-포스팅은-lt-그림으로-정리한-알고리즘과-자료구조-gt-를-바탕으로-진행합니다" class="headerlink" title="본 포스팅은 &lt;그림으로 정리한 알고리즘과 자료구조&gt;를 바탕으로 진행합니다."></a>본 포스팅은 &lt;그림으로 정리한 알고리즘과 자료구조&gt;를 바탕으로 진행합니다.</h6><p><br></br></p>
+<h3 id="선택정렬-알고리즘-알아보기"><a href="#선택정렬-알고리즘-알아보기" class="headerlink" title="선택정렬 알고리즘 알아보기"></a>선택정렬 알고리즘 알아보기</h3><p>선택정렬(Selection Sort) 알고리즘은 가장 작은 데이터를 찾아 가장 앞 데이터와 교환하는 알고리즘으로, 사용방법은 다음과 같습니다.</p>
 <ul>
-<li><p>정렬하기(sort, sorted)<br>sort는 리스트 자체를 정렬, sorted는 리스트의 정렬 복사본을 반환한다.</p>
-</li>
-<li><p>리스트 복사(copy)<br>copy 함수, list 함수, 슬라이스 연산[:]</p>
-</li>
+<li>데이터 중에서 가장 작은 것을 찾아서 처음에 있는 것과 위치를 교환합니다.</li>
+<li>두 번째부터 마지막까지의 데이터 중에서 가장 작은 것을 찾아서 두 번째와 위치를 교환합니다.</li>
+<li>위의 과정을 계속 반복합니다.</li>
 </ul>
-<p><br></br></p>
-<h3 id="예시문제"><a href="#예시문제" class="headerlink" title="예시문제"></a>예시문제</h3><p><strong>1. 문자열 ‘algorithm’을 리스트, 튜플 타입으로 형변환하여 새 변수에 할당한다.</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'algorithm'</span></span><br><span class="line">list_s = list(s)</span><br><span class="line">tuple_s = tuple(s)</span><br><span class="line"></span><br><span class="line">print(type(s), s)</span><br><span class="line">print(type(list_s), list_s)</span><br><span class="line">print(type(tuple_s), tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line">&lt;class 'list'&gt; ['a', 'l', 'g', 'o', 'r', 'i', 't', 'h', 'm']</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">tuple</span>'&gt; <span class="params">(<span class="string">'a'</span>, <span class="string">'l'</span>, <span class="string">'g'</span>, <span class="string">'o'</span>, <span class="string">'r'</span>, <span class="string">'i'</span>, <span class="string">'t'</span>, <span class="string">'h'</span>, <span class="string">'m'</span>)</span></span></span><br></pre></td></tr></table></figure>
-
-<p><strong>2. 1번에서 할당한 리스트, 튜플 변수를 이용해 다시 문자열을 만든다.</strong></p>
-<h6 id="Ver-1"><a href="#Ver-1" class="headerlink" title="Ver.1"></a>Ver.1</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'algorithm'</span></span><br><span class="line">list_s = list(s)</span><br><span class="line">tuple_s = tuple(s)</span><br><span class="line"></span><br><span class="line">line_list_s = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(list_s)):</span><br><span class="line">    line_list_s += list_s[i]</span><br><span class="line">print(type(line_list_s), line_list_s)</span><br><span class="line"></span><br><span class="line">line_tuple_s = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(tuple_s)):</span><br><span class="line">    line_tuple_s += tuple_s[i]</span><br><span class="line">print(type(line_tuple_s), line_tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br></pre></td></tr></table></figure>
-
-
-<h6 id="Ver-2"><a href="#Ver-2" class="headerlink" title="Ver.2"></a>Ver.2</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">line_list_s = <span class="string">''</span>.join(list_s)</span><br><span class="line">print(type(line_list_s), line_list_s)</span><br><span class="line"></span><br><span class="line">line_tuple_s = <span class="string">''</span>.join(tuple_s)</span><br><span class="line">print(type(line_tuple_s), line_tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">SelectionSort</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(array)<span class="number">-1</span>):</span><br><span class="line">        min_idx = i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(array)):</span><br><span class="line">            <span class="keyword">if</span> array[min_idx] &gt; array[j]:</span><br><span class="line">                array[min_idx], array[j] = array[j], array[min_idx]</span><br><span class="line">    <span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -192,7 +184,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/python-algorithm/">#python, algorithm</a>
+            <a href="/tags/algorithm-selection-sort/">#algorithm, selection sort</a>
         </div>
     
 
