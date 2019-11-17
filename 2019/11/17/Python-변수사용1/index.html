@@ -201,7 +201,10 @@ Stor">
 </ul>
 <p><br></br></p>
 <h3 id="Story-03-깊은-복사와-얕은-복사"><a href="#Story-03-깊은-복사와-얕은-복사" class="headerlink" title="Story 03. 깊은 복사와 얕은 복사"></a>Story 03. 깊은 복사와 얕은 복사</h3><h4 id="두-객체의-비교와-복사"><a href="#두-객체의-비교와-복사" class="headerlink" title="[두 객체의 비교와 복사]"></a>[두 객체의 비교와 복사]</h4><p>객체를 비교할 때 사용할 수 있는 두 가지 연산자를 정리하면 다음과 같다.</p>
-<h4 id="v1-v2-변수-v1과-v2가-참조하는-객체의-내용이-같은가"><a href="#v1-v2-변수-v1과-v2가-참조하는-객체의-내용이-같은가" class="headerlink" title="[v1 == v2] 변수 v1과 v2가 참조하는 객체의 내용이 같은가?"></a><strong>[v1 == v2] 변수 v1과 v2가 참조하는 객체의 내용이 같은가?</strong></h4><h4 id="v1-is-v2-변수-v1과-v2가-참조하는-객체는-동일-객체인가"><a href="#v1-is-v2-변수-v1과-v2가-참조하는-객체는-동일-객체인가" class="headerlink" title="[v1 is v2] 변수 v1과 v2가 참조하는 객체는 동일 객체인가?"></a><strong>[v1 is v2] 변수 v1과 v2가 참조하는 객체는 동일 객체인가?</strong></h4><p>따라서 동일한 값을 담고 있는 두 객체를 대상으로 하는 두 연산의 결과는 다음과 같다.</p>
+<p><br></br></p>
+<p><strong><strong>“v1 == v2: 변수 v1과 v2가 참조하는 객체의 내용이 같은가?”</strong></strong><br><strong><strong>“v1 is v2: 변수 v1과 v2가 참조하는 객체는 동일 객체인가?”</strong></strong></p>
+<p><br></br></p>
+<p>따라서 동일한 값을 담고 있는 두 객체를 대상으로 하는 두 연산의 결과는 다음과 같다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">r2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">print(r1 <span class="keyword">is</span> r2)    <span class="comment"># r1과 r2가 참조하는 객체는 같은 객체인가?: False</span></span><br><span class="line">print(id(r1), id(r2))</span><br><span class="line"></span><br><span class="line">print(r1 == r2)    <span class="comment"># r1과 r2가 참조하는 객체에 담긴 값은 같은가?: True</span></span><br><span class="line">print(r1, r2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="number">140568777174528</span> <span class="number">140568777678016</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
 
 <p>참고로 is 연산이 True를 반환하는 상황은 다음과 같다.</p>
@@ -220,8 +223,14 @@ Stor">
 <p><img src="/image/list_copy.jpeg" alt="list_copy"></p>
 <p><br></br></p>
 <p>이러한 형태의 복사를 ‘얕은 복사’라 한다.<br>그리고 ‘얕은 복사’가 파이썬이 복사를 진행하는 기본 방식이다.<br>사실 위의 경우 다음 두 가지를 대상으로는 얕은 복사를 진행하는 것이 더 합리적이다.<br>이 둘은 그 값의 변경이 불가능한 ‘immutable 객체’이므로 얕은 복사를 해도 문제가 되지 않기 때문이다.</p>
-<h4 id="문자열-객체-‘John’"><a href="#문자열-객체-‘John’" class="headerlink" title="문자열 객체: ‘John’"></a>문자열 객체: ‘John’</h4><h4 id="튜플-객체-‘man’-‘USA’"><a href="#튜플-객체-‘man’-‘USA’" class="headerlink" title="튜플 객체: (‘man’, ‘USA’)"></a>튜플 객체: (‘man’, ‘USA’)</h4><p>그러나 다음 객체를 대상으로 얕은 복사를 하는 것은 문제가 될 수 있다.<br>리스트는 그 안에 담긴 값을 수정할 수 있는 객체이기 때문이다.</p>
-<h4 id="리스트-객체-175-23"><a href="#리스트-객체-175-23" class="headerlink" title="리스트 객체: [175, 23]"></a>리스트 객체: [175, 23]</h4>
+<p><br></br></p>
+<p><strong><strong>문자열 객체: ‘John’</strong></strong><br><strong><strong>튜플 객체: (‘man’, ‘USA’)</strong></strong></p>
+<p><br></br></p>
+<p>그러나 다음 객체를 대상으로 얕은 복사를 하는 것은 문제가 될 수 있다.<br>리스트는 그 안에 담긴 값을 수정할 수 있는 객체이기 때문이다.</p>
+<p><br></br></p>
+<p><strong><strong>리스트 객체: [175, 23]</strong></strong></p>
+<p><br></br></p>
+
     </div>
 
     

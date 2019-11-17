@@ -343,7 +343,10 @@
 </ul>
 <p><br></br></p>
 <h3 id="Story-03-깊은-복사와-얕은-복사"><a href="#Story-03-깊은-복사와-얕은-복사" class="headerlink" title="Story 03. 깊은 복사와 얕은 복사"></a>Story 03. 깊은 복사와 얕은 복사</h3><h4 id="두-객체의-비교와-복사"><a href="#두-객체의-비교와-복사" class="headerlink" title="[두 객체의 비교와 복사]"></a>[두 객체의 비교와 복사]</h4><p>객체를 비교할 때 사용할 수 있는 두 가지 연산자를 정리하면 다음과 같다.</p>
-<h4 id="v1-v2-변수-v1과-v2가-참조하는-객체의-내용이-같은가"><a href="#v1-v2-변수-v1과-v2가-참조하는-객체의-내용이-같은가" class="headerlink" title="[v1 == v2] 변수 v1과 v2가 참조하는 객체의 내용이 같은가?"></a><strong>[v1 == v2] 변수 v1과 v2가 참조하는 객체의 내용이 같은가?</strong></h4><h4 id="v1-is-v2-변수-v1과-v2가-참조하는-객체는-동일-객체인가"><a href="#v1-is-v2-변수-v1과-v2가-참조하는-객체는-동일-객체인가" class="headerlink" title="[v1 is v2] 변수 v1과 v2가 참조하는 객체는 동일 객체인가?"></a><strong>[v1 is v2] 변수 v1과 v2가 참조하는 객체는 동일 객체인가?</strong></h4><p>따라서 동일한 값을 담고 있는 두 객체를 대상으로 하는 두 연산의 결과는 다음과 같다.</p>
+<p><br></br></p>
+<p><strong><strong>“v1 == v2: 변수 v1과 v2가 참조하는 객체의 내용이 같은가?”</strong></strong><br><strong><strong>“v1 is v2: 변수 v1과 v2가 참조하는 객체는 동일 객체인가?”</strong></strong></p>
+<p><br></br></p>
+<p>따라서 동일한 값을 담고 있는 두 객체를 대상으로 하는 두 연산의 결과는 다음과 같다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">r2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">print(r1 <span class="keyword">is</span> r2)    <span class="comment"># r1과 r2가 참조하는 객체는 같은 객체인가?: False</span></span><br><span class="line">print(id(r1), id(r2))</span><br><span class="line"></span><br><span class="line">print(r1 == r2)    <span class="comment"># r1과 r2가 참조하는 객체에 담긴 값은 같은가?: True</span></span><br><span class="line">print(r1, r2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="number">140568777174528</span> <span class="number">140568777678016</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
 
 <p>참고로 is 연산이 True를 반환하는 상황은 다음과 같다.</p>
@@ -362,8 +365,14 @@
 <p><img src="/image/list_copy.jpeg" alt="list_copy"></p>
 <p><br></br></p>
 <p>이러한 형태의 복사를 ‘얕은 복사’라 한다.<br>그리고 ‘얕은 복사’가 파이썬이 복사를 진행하는 기본 방식이다.<br>사실 위의 경우 다음 두 가지를 대상으로는 얕은 복사를 진행하는 것이 더 합리적이다.<br>이 둘은 그 값의 변경이 불가능한 ‘immutable 객체’이므로 얕은 복사를 해도 문제가 되지 않기 때문이다.</p>
-<h4 id="문자열-객체-‘John’"><a href="#문자열-객체-‘John’" class="headerlink" title="문자열 객체: ‘John’"></a>문자열 객체: ‘John’</h4><h4 id="튜플-객체-‘man’-‘USA’"><a href="#튜플-객체-‘man’-‘USA’" class="headerlink" title="튜플 객체: (‘man’, ‘USA’)"></a>튜플 객체: (‘man’, ‘USA’)</h4><p>그러나 다음 객체를 대상으로 얕은 복사를 하는 것은 문제가 될 수 있다.<br>리스트는 그 안에 담긴 값을 수정할 수 있는 객체이기 때문이다.</p>
-<h4 id="리스트-객체-175-23"><a href="#리스트-객체-175-23" class="headerlink" title="리스트 객체: [175, 23]"></a>리스트 객체: [175, 23]</h4>
+<p><br></br></p>
+<p><strong><strong>문자열 객체: ‘John’</strong></strong><br><strong><strong>튜플 객체: (‘man’, ‘USA’)</strong></strong></p>
+<p><br></br></p>
+<p>그러나 다음 객체를 대상으로 얕은 복사를 하는 것은 문제가 될 수 있다.<br>리스트는 그 안에 담긴 값을 수정할 수 있는 객체이기 때문이다.</p>
+<p><br></br></p>
+<p><strong><strong>리스트 객체: [175, 23]</strong></strong></p>
+<p><br></br></p>
+
         </div>
     
 
@@ -392,77 +401,6 @@
             <h4 id="Welcome-to-my-git-blog"><a href="#Welcome-to-my-git-blog" class="headerlink" title="Welcome to my git blog!"></a><strong>Welcome to <a href="https://github.com/SungiCho" target="_blank" rel="noopener">my git blog</a>!</strong></h4><p><br></br></p>
 <h6 id="I’m-a-person-who-is-really-interested-in-quantifying-the-qualitative-world"><a href="#I’m-a-person-who-is-really-interested-in-quantifying-the-qualitative-world" class="headerlink" title="I’m a person who is really interested in quantifying the qualitative world."></a><strong>I’m a person who is really interested in quantifying the qualitative world.</strong></h6><h6 id="If-you-want-to-contact-me-please-email-me-whtjdwl34-naver-com"><a href="#If-you-want-to-contact-me-please-email-me-whtjdwl34-naver-com" class="headerlink" title="If you want to contact me, please email me: whtjdwl34@naver.com"></a><strong>If you want to contact me, please email me: <a href="mailto:whtjdwl34@naver.com" target="_blank" rel="noopener">whtjdwl34@naver.com</a></strong></h6><p><br></br></p>
 <h6 id="tag-Psychology-Statistics-Computer-Science"><a href="#tag-Psychology-Statistics-Computer-Science" class="headerlink" title="tag: Psychology, Statistics, Computer Science"></a><strong>tag: <u>Psychology</u>, <u>Statistics</u>, <u>Computer Science</u></strong></h6>
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/16/Python-%EB%B3%80%EC%88%981/">
-                [Python] 변수 (1)
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-16</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="파이썬에서-변수의-정체는-1"><a href="#파이썬에서-변수의-정체는-1" class="headerlink" title="파이썬에서 변수의 정체는? (1)"></a>파이썬에서 <strong>변수</strong>의 정체는? (1)</h1><h6 id="본-포스팅은-lt-윤성우의-열혈-파이썬-중급편-gt-과-lt-처음-시작하는-파이썬-gt-을-바탕으로-진행합니다"><a href="#본-포스팅은-lt-윤성우의-열혈-파이썬-중급편-gt-과-lt-처음-시작하는-파이썬-gt-을-바탕으로-진행합니다" class="headerlink" title="본 포스팅은 &lt;윤성우의 열혈 파이썬 중급편&gt;과 &lt;처음 시작하는 파이썬&gt;을 바탕으로 진행합니다."></a>본 포스팅은 &lt;윤성우의 열혈 파이썬 중급편&gt;과 &lt;처음 시작하는 파이썬&gt;을 바탕으로 진행합니다.</h6><h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ul>
-<li>Story 01. 레퍼런스 카운트와 가비지 컬렉션<ul>
-<li>[가비지 컬렉션]</li>
-<li>[파이썬 인터프리터]</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>Story 02. 수정 가능한 객체와 수정 불가능한 객체<ul>
-<li>[immutable &amp; mutable]</li>
-</ul>
-</li>
-</ul>
-<p><br></br></p>
-<h3 id="Story-01-레퍼런스-카운트와-가비지-컬렉션"><a href="#Story-01-레퍼런스-카운트와-가비지-컬렉션" class="headerlink" title="Story 01. 레퍼런스 카운트와 가비지 컬렉션"></a>Story 01. 레퍼런스 카운트와 가비지 컬렉션</h3><h4 id="가비지-컬렉션"><a href="#가비지-컬렉션" class="headerlink" title="[가비지 컬렉션]"></a>[가비지 컬렉션]</h4><p>우리는 다음과 같은 상황에서 변수 s에 문자열이 저장되었다고 표현한다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'Garbage Collection'</span></span><br></pre></td></tr></table></figure>
-
-<p>그러나 사실은 문자열 객체에 s라는 이름이 붙은 상황이다.<br>즉 파이썬의 변수는 빈 상자가 아닌 뗴었다 붙였다 할 수 있는 ‘포스트잇’의 개념이다.<br>(포스트잇은 메모를 적어서 붙이고 또 쉽게 뗄 수 있는 스티커이다.)</p>
-<p><img src="/image/stickynote.png" alt="stickynote"></p>
-<p>보통은 ‘변수에 문자열을 저장했다’ 또는 ‘변수에 객체를 저장했다’라는 식의 표현이 사용되고 또 그것이 더 자연스럽다. 하지만 지금 설명하는 파이썬의 <strong>가비지 컬렉션</strong> 메커니즘을 이해하려면 변수를 ‘포스트잇’으로 이해해야 한다. 따라서 위의 코드에 대한 표현이 다음과 같음을 알고 있어야 한다.<br>(‘참조’의 영어 표현이 ‘레퍼런스’이다.)<br><br></br></p>
-<p><strong><em>“변수 s가 문자열 ‘Garbage Collection’ ‘참조’한다.”</em></strong><br><strong><em>“변수 s가 문자열 ‘Garbage Collection’을 ‘레퍼런스’한다.”</em></strong></p>
-<p><br></br><br>즉 여기서 말하는 ‘참조’는 이름이 쓰인 포스트잇을 가져다 붙인 것을 뜻한다.<br>그럼 다음 코드를 보자. 이는 리스트 객체를 생성하고 이를 r이라는 이름으로 참조하고 있는 상황이다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]  <span class="comment"># r이라는이름으로 리스트를 참조</span></span><br></pre></td></tr></table></figure>
-
-
-<p>그럼 이렇게 생성된 리스트 [1, 2, 3]은 언제 소멸될까?<br>소멸되지 않고 계속 메모리 공간을 차지한다면 이는 문제가 되기 때문에 분명 소멸되는 시기가 온다.<br>그리고 그 시기는 다음과 같다.<br><br></br></p>
-<p><strong><em>“객체를 아무도 참조하지 않는 상황”</em></strong></p>
-<p><br></br></p>
-<p>즉 다음 상황에서 리스트는 소멸된다. 정확히는 소멸 대상이 된다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">r = <span class="string">'simple'</span>  <span class="comment"># 변수 r이 참조 대상을 문자열로 바꿨다.</span></span><br></pre></td></tr></table></figure>
-
-
-<p>위와 같은 상황이 벌어지면 리스트 [1, 2, 3]은 아무도 참조하지 않기 때문에 더 이상 접근할 수 없게 된다.<br>따라서 메모리에 남겨 둬봐야 공간만 차지할 뿐이다. 그래서 소멸 대상이 된다.<br>단, 소멸 대상이 되었다고 해서 바로 소멸이 되는 것은 아니다.<br>일단 소멸 대상으로 등록만 해 두고 시스템에 시간적인 여유가 생길 때 소멸시키게 된다.<br>그리고 이러한 일련의 소멸 규칙 및 과정을 가리켜 ‘가비지 컬렉션(Garbage Collection)’이라 한다.<br>그럼 다음 코드를 리스트 [1, 2, 3]을 중심으로 관찰해보자.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]  <span class="comment"># 리스트 [1, 2, 3]의 레퍼런스 카운트는 1</span></span><br><span class="line">r2 = r1         <span class="comment"># 리스트의 레퍼런스 카운트는 2로 증가</span></span><br><span class="line">r1 = <span class="string">'simple'</span>   <span class="comment"># 리스트의 레퍼런스 카운트는 다시 1로 감소</span></span><br><span class="line">r2 = <span class="string">'happy'</span>    <span class="comment"># 리스트의 레퍼런스 카운트가 0이 됨, 따라서 가비지 컬렉션 대상</span></span><br></pre></td></tr></table></figure>
-
-
-<p>객체를 참조하는 변수의 수를 가리켜 ‘레퍼런스 카운트’라 한다.<br>즉 위 예제에서는 리스트 [1, 2, 3]의 레퍼런스 카운트가 1로 시작해서 2로 증가하고, 이어서 r1과 r2가 문자열을 참조하는 상황에 이르러 결국에는 0이 된다. 그리고 레퍼런스 카운트가 0이 되었다는 것은 소멸 대상으로 등록이 되어 조만간 소멸된다는 뜻이다.</p>
-<p>그렇다면 이러한 가비지 컬렉션은 누가 진행하는 것일까?<br>뭐 그냥 파이썬이 해준다고 말해버려도 될 일이지만 조금 더 자세히 알 필요가 있어서 이에 대한 설명을 이어서 하겠다.</p>
-<p><br></br><br><br></br></p>
-<h4 id="파이썬-인터프리터"><a href="#파이썬-인터프리터" class="headerlink" title="[파이썬 인터프리터]"></a>[파이썬 인터프리터]</h4><p>우리가 파이썬 코드를(스크립트를) 작성하고 실행하면 이 코드는 먼저 ‘바이트 코드’라는 것으로 변환되어 어딘가에 저장된다. 그리고는 이 바이트 코드는 ‘파이썬 가상 머신(Python Virtual Machine)’ 위에서 실행이 된다.<br>비록 이러한 일련의 과정이 감춰져 있어서 우리 눈에 보이지는 않지만 말이다. 따라서 파이썬의 실행 구조는 다음과 같이 정리할 수 있다.</p>
-<p><br></br></p>
-<p><img src="/image/PVM.jpeg" alt="PVM"></p>
-<p><br></br></p>
-<p>즉 실제 파이썬 프로그램의 실행 주체는 파이썬 가상 머신, 줄여서 PVM이라고 할 수 있으며 PVM에 의해 가비지 컬렉션도 진행이 된다. 그리고 지금 설명한 파이썬 코드 변환기와 가상 머신, 그리고 기본적으로 포함되는 각종 라이브러리들을 묶어서 ‘파이썬 인터프리터’라 한다.</p>
-<p>파이썬 인터프리터는 그 종류가 다양한데 기본적으로 PVM의 구현 방식에 따라 나뉜다.<br>PVM이 C언어로 구현되어 있는 가장 일반적이고 널리 사용되는 인터프리터를 가리켜 CPython이라 부른다.<br>그리고 PVM이 자바로 구현되어 있어서 자바에 대한 접근성이 좋은 인터프리터를 가리켜 JPython이라 하며, 마이크로소프트사의 닷넷 기반으로 만들어지고 또 그 위에서 동작하는 인터프리터를 가리켜 IronPython이라 한다.<br>물론 중심이 되는 것은 CPython이다. 다만 다양한 종류의 인터프리터가 존재한다는 사실도 알아 두면 좋겠다.</p>
-
         </div>
     
 
@@ -536,6 +474,77 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t = (<span class="number">2</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">0</span>)</span><br><span class="line">min_max(t)                             <span class="comment"># 0, 9</span></span><br><span class="line">t                                      <span class="comment"># (2, 7, 5, 9, 0)</span></span><br></pre></td></tr></table></figure>
 
 <p>비록 함수 내에서 튜플에 담긴 내용을 갖는 리스트를 하나 생성하기는 했지만 그것이 문제가 되는 상황은 아니다. 결론을 내려보면, 함수를 잘 정의하려면 파이썬 내에서 참조하거나 조작하는 객체의 성격을 구분하고 그에 맞게 함수를 정의해야 한다. 따라서 기본적으로 문자열과 튜플은 변경이 불가능한 객체이고, 리스트와 딕셔너리는 변경이 가능한 객체라는 사실은 기억하고 있어야 한다.</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/11/16/Python-%EB%B3%80%EC%88%981/">
+                [Python] 변수 (1)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-16</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="파이썬에서-변수의-정체는-1"><a href="#파이썬에서-변수의-정체는-1" class="headerlink" title="파이썬에서 변수의 정체는? (1)"></a>파이썬에서 <strong>변수</strong>의 정체는? (1)</h1><h6 id="본-포스팅은-lt-윤성우의-열혈-파이썬-중급편-gt-과-lt-처음-시작하는-파이썬-gt-을-바탕으로-진행합니다"><a href="#본-포스팅은-lt-윤성우의-열혈-파이썬-중급편-gt-과-lt-처음-시작하는-파이썬-gt-을-바탕으로-진행합니다" class="headerlink" title="본 포스팅은 &lt;윤성우의 열혈 파이썬 중급편&gt;과 &lt;처음 시작하는 파이썬&gt;을 바탕으로 진행합니다."></a>본 포스팅은 &lt;윤성우의 열혈 파이썬 중급편&gt;과 &lt;처음 시작하는 파이썬&gt;을 바탕으로 진행합니다.</h6><h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ul>
+<li>Story 01. 레퍼런스 카운트와 가비지 컬렉션<ul>
+<li>[가비지 컬렉션]</li>
+<li>[파이썬 인터프리터]</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Story 02. 수정 가능한 객체와 수정 불가능한 객체<ul>
+<li>[immutable &amp; mutable]</li>
+</ul>
+</li>
+</ul>
+<p><br></br></p>
+<h3 id="Story-01-레퍼런스-카운트와-가비지-컬렉션"><a href="#Story-01-레퍼런스-카운트와-가비지-컬렉션" class="headerlink" title="Story 01. 레퍼런스 카운트와 가비지 컬렉션"></a>Story 01. 레퍼런스 카운트와 가비지 컬렉션</h3><h4 id="가비지-컬렉션"><a href="#가비지-컬렉션" class="headerlink" title="[가비지 컬렉션]"></a>[가비지 컬렉션]</h4><p>우리는 다음과 같은 상황에서 변수 s에 문자열이 저장되었다고 표현한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'Garbage Collection'</span></span><br></pre></td></tr></table></figure>
+
+<p>그러나 사실은 문자열 객체에 s라는 이름이 붙은 상황이다.<br>즉 파이썬의 변수는 빈 상자가 아닌 뗴었다 붙였다 할 수 있는 ‘포스트잇’의 개념이다.<br>(포스트잇은 메모를 적어서 붙이고 또 쉽게 뗄 수 있는 스티커이다.)</p>
+<p><img src="/image/stickynote.png" alt="stickynote"></p>
+<p>보통은 ‘변수에 문자열을 저장했다’ 또는 ‘변수에 객체를 저장했다’라는 식의 표현이 사용되고 또 그것이 더 자연스럽다. 하지만 지금 설명하는 파이썬의 <strong>가비지 컬렉션</strong> 메커니즘을 이해하려면 변수를 ‘포스트잇’으로 이해해야 한다. 따라서 위의 코드에 대한 표현이 다음과 같음을 알고 있어야 한다.<br>(‘참조’의 영어 표현이 ‘레퍼런스’이다.)<br><br></br></p>
+<p><strong><em>“변수 s가 문자열 ‘Garbage Collection’ ‘참조’한다.”</em></strong><br><strong><em>“변수 s가 문자열 ‘Garbage Collection’을 ‘레퍼런스’한다.”</em></strong></p>
+<p><br></br><br>즉 여기서 말하는 ‘참조’는 이름이 쓰인 포스트잇을 가져다 붙인 것을 뜻한다.<br>그럼 다음 코드를 보자. 이는 리스트 객체를 생성하고 이를 r이라는 이름으로 참조하고 있는 상황이다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]  <span class="comment"># r이라는이름으로 리스트를 참조</span></span><br></pre></td></tr></table></figure>
+
+
+<p>그럼 이렇게 생성된 리스트 [1, 2, 3]은 언제 소멸될까?<br>소멸되지 않고 계속 메모리 공간을 차지한다면 이는 문제가 되기 때문에 분명 소멸되는 시기가 온다.<br>그리고 그 시기는 다음과 같다.<br><br></br></p>
+<p><strong><em>“객체를 아무도 참조하지 않는 상황”</em></strong></p>
+<p><br></br></p>
+<p>즉 다음 상황에서 리스트는 소멸된다. 정확히는 소멸 대상이 된다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">r = <span class="string">'simple'</span>  <span class="comment"># 변수 r이 참조 대상을 문자열로 바꿨다.</span></span><br></pre></td></tr></table></figure>
+
+
+<p>위와 같은 상황이 벌어지면 리스트 [1, 2, 3]은 아무도 참조하지 않기 때문에 더 이상 접근할 수 없게 된다.<br>따라서 메모리에 남겨 둬봐야 공간만 차지할 뿐이다. 그래서 소멸 대상이 된다.<br>단, 소멸 대상이 되었다고 해서 바로 소멸이 되는 것은 아니다.<br>일단 소멸 대상으로 등록만 해 두고 시스템에 시간적인 여유가 생길 때 소멸시키게 된다.<br>그리고 이러한 일련의 소멸 규칙 및 과정을 가리켜 ‘가비지 컬렉션(Garbage Collection)’이라 한다.<br>그럼 다음 코드를 리스트 [1, 2, 3]을 중심으로 관찰해보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]  <span class="comment"># 리스트 [1, 2, 3]의 레퍼런스 카운트는 1</span></span><br><span class="line">r2 = r1         <span class="comment"># 리스트의 레퍼런스 카운트는 2로 증가</span></span><br><span class="line">r1 = <span class="string">'simple'</span>   <span class="comment"># 리스트의 레퍼런스 카운트는 다시 1로 감소</span></span><br><span class="line">r2 = <span class="string">'happy'</span>    <span class="comment"># 리스트의 레퍼런스 카운트가 0이 됨, 따라서 가비지 컬렉션 대상</span></span><br></pre></td></tr></table></figure>
+
+
+<p>객체를 참조하는 변수의 수를 가리켜 ‘레퍼런스 카운트’라 한다.<br>즉 위 예제에서는 리스트 [1, 2, 3]의 레퍼런스 카운트가 1로 시작해서 2로 증가하고, 이어서 r1과 r2가 문자열을 참조하는 상황에 이르러 결국에는 0이 된다. 그리고 레퍼런스 카운트가 0이 되었다는 것은 소멸 대상으로 등록이 되어 조만간 소멸된다는 뜻이다.</p>
+<p>그렇다면 이러한 가비지 컬렉션은 누가 진행하는 것일까?<br>뭐 그냥 파이썬이 해준다고 말해버려도 될 일이지만 조금 더 자세히 알 필요가 있어서 이에 대한 설명을 이어서 하겠다.</p>
+<p><br></br><br><br></br></p>
+<h4 id="파이썬-인터프리터"><a href="#파이썬-인터프리터" class="headerlink" title="[파이썬 인터프리터]"></a>[파이썬 인터프리터]</h4><p>우리가 파이썬 코드를(스크립트를) 작성하고 실행하면 이 코드는 먼저 ‘바이트 코드’라는 것으로 변환되어 어딘가에 저장된다. 그리고는 이 바이트 코드는 ‘파이썬 가상 머신(Python Virtual Machine)’ 위에서 실행이 된다.<br>비록 이러한 일련의 과정이 감춰져 있어서 우리 눈에 보이지는 않지만 말이다. 따라서 파이썬의 실행 구조는 다음과 같이 정리할 수 있다.</p>
+<p><br></br></p>
+<p><img src="/image/PVM.jpeg" alt="PVM"></p>
+<p><br></br></p>
+<p>즉 실제 파이썬 프로그램의 실행 주체는 파이썬 가상 머신, 줄여서 PVM이라고 할 수 있으며 PVM에 의해 가비지 컬렉션도 진행이 된다. 그리고 지금 설명한 파이썬 코드 변환기와 가상 머신, 그리고 기본적으로 포함되는 각종 라이브러리들을 묶어서 ‘파이썬 인터프리터’라 한다.</p>
+<p>파이썬 인터프리터는 그 종류가 다양한데 기본적으로 PVM의 구현 방식에 따라 나뉜다.<br>PVM이 C언어로 구현되어 있는 가장 일반적이고 널리 사용되는 인터프리터를 가리켜 CPython이라 부른다.<br>그리고 PVM이 자바로 구현되어 있어서 자바에 대한 접근성이 좋은 인터프리터를 가리켜 JPython이라 하며, 마이크로소프트사의 닷넷 기반으로 만들어지고 또 그 위에서 동작하는 인터프리터를 가리켜 IronPython이라 한다.<br>물론 중심이 되는 것은 CPython이다. 다만 다양한 종류의 인터프리터가 존재한다는 사실도 알아 두면 좋겠다.</p>
 
         </div>
     
