@@ -189,7 +189,8 @@
 
 <p>그럼 이렇게 생성된 리스트 [1, 2, 3]은 언제 소멸될까?<br>소멸되지 않고 계속 메모리 공간을 차지한다면 이는 문제가 되기 때문에 분명 소멸되는 시기가 온다.<br>그리고 그 시기는 다음과 같다.<br><br></br></p>
 <p><strong><em>“객체를 아무도 참조하지 않는 상황”</em></strong></p>
-<p><br></br><br>즉 다음 상황에서 리스트는 소멸된다. 정확히는 소멸 대상이 된다.</p>
+<p><br></br></p>
+<p>즉 다음 상황에서 리스트는 소멸된다. 정확히는 소멸 대상이 된다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">r = <span class="string">'simple'</span>  <span class="comment"># 변수 r이 참조 대상을 문자열로 바꿨다.</span></span><br></pre></td></tr></table></figure>
 
 
