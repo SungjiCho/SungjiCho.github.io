@@ -223,67 +223,8 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">r4 = list(<span class="string">'Hello'</span>)      <span class="comment"># 문자열을 전달해서 리스트를 생성 </span></span><br><span class="line">r5 = list((<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>))    <span class="comment"># 튜플을 전달해서 리스트를 생성</span></span><br><span class="line">r6 = list(range(<span class="number">0</span>, <span class="number">5</span>))  <span class="comment"># 레인지를 전달해서 리스트를 생성</span></span><br></pre></td></tr></table></figure>
 
 <p>단순한 리스트는 위와 같은 방법으로 충분히 만들 수 있다.<br>그러나 조건이 복잡한 리스트들, 예를 들어서 아래 요구 조건의 리스트를 만들 때는,</p>
-<h6 id="1-2-3-4-5-의-모든-값을-두-배씩-증가시킨-값을-지니는-리스트를-만들어라"><a href="#1-2-3-4-5-의-모든-값을-두-배씩-증가시킨-값을-지니는-리스트를-만들어라" class="headerlink" title="[1, 2, 3, 4, 5]의 모든 값을 두 배씩 증가시킨 값을 지니는 리스트를 만들어라."></a>[1, 2, 3, 4, 5]의 모든 값을 두 배씩 증가시킨 값을 지니는 리스트를 만들어라.</h6>
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/17/Algorithm-%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/">
-                [Algorithm] 선택정렬
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-17</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="선택정렬-selection-sort"><a href="#선택정렬-selection-sort" class="headerlink" title="선택정렬(selection sort)"></a>선택정렬(selection sort)</h1><h6 id="본-포스팅은-lt-그림으로-정리한-알고리즘과-자료구조-gt-를-바탕으로-진행합니다"><a href="#본-포스팅은-lt-그림으로-정리한-알고리즘과-자료구조-gt-를-바탕으로-진행합니다" class="headerlink" title="본 포스팅은 &lt;그림으로 정리한 알고리즘과 자료구조&gt;를 바탕으로 진행합니다."></a>본 포스팅은 &lt;그림으로 정리한 알고리즘과 자료구조&gt;를 바탕으로 진행합니다.</h6><p><br></br></p>
-<h3 id="선택정렬-알고리즘-알아보기"><a href="#선택정렬-알고리즘-알아보기" class="headerlink" title="선택정렬 알고리즘 알아보기"></a>선택정렬 알고리즘 알아보기</h3><p>선택정렬(Selection Sort) 알고리즘은 가장 작은 데이터를 찾아 가장 앞 데이터와 교환하는 알고리즘으로, 사용방법은 다음과 같습니다.</p>
-<ul>
-<li>데이터 중에서 가장 작은 것을 찾아서 처음에 있는 것과 위치를 교환합니다.</li>
-<li>두 번째부터 마지막까지의 데이터 중에서 가장 작은 것을 찾아서 두 번째와 위치를 교환합니다.</li>
-<li>위의 과정을 계속 반복합니다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">SelectionSort</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(array)<span class="number">-1</span>):</span><br><span class="line">        min_idx = i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(array)):</span><br><span class="line">            <span class="keyword">if</span> array[min_idx] &gt; array[j]:</span><br><span class="line">                array[min_idx], array[j] = array[j], array[min_idx]</span><br><span class="line">    <span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/17/Programmers-%EA%B0%80%EC%9A%B4%EB%8D%B0-%EA%B8%80%EC%9E%90-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/">
-                [Programmers] 가운데 글자 가져오기
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-17</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(s)</span>:</span></span><br><span class="line">    line = list(s)</span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> len(s)%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span><span class="number">-1</span>] + line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+<h6 id="1-2-3-4-5-의-모든-값을-두-배씩-증가시킨-값을-지니는-리스트를-만들어라"><a href="#1-2-3-4-5-의-모든-값을-두-배씩-증가시킨-값을-지니는-리스트를-만들어라" class="headerlink" title="[1, 2, 3, 4, 5]의 모든 값을 두 배씩 증가시킨 값을 지니는 리스트를 만들어라."></a>[1, 2, 3, 4, 5]의 모든 값을 두 배씩 증가시킨 값을 지니는 리스트를 만들어라.</h6><p>다음과 같이 for 루프를 사용해야 한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">r2 = []                <span class="comment"># 일단 빈 리스트를 생성하고</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> r1::</span><br><span class="line">	r2.append(i * <span class="number">2</span>)  <span class="comment"># 두 배씩 증가시켜서 리스트 r2에 저장</span></span><br><span class="line"></span><br><span class="line">r2      <span class="comment"># [2, 4, 6, 8, 10]</span></span><br></pre></td></tr></table></figure>
 
         </div>
     
@@ -367,8 +308,8 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2019/11/17/Programmers-%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C-%EA%B9%80%EC%84%9C%EB%B0%A9-%EC%B0%BE%EA%B8%B0/">
-                [Programmers] 서울에서 김서방 찾기
+            <a href="/2019/11/17/Programmers-%EA%B0%80%EC%9A%B4%EB%8D%B0-%EA%B8%80%EC%9E%90-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/">
+                [Programmers] 가운데 글자 가져오기
             </a>
         </h1>
         <div class="post-info">
@@ -382,7 +323,41 @@
 
     
         <div class="content">
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(seoul)</span>:</span></span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(seoul)):</span><br><span class="line">        <span class="keyword">if</span> seoul[i] == <span class="string">"Kim"</span>:</span><br><span class="line">            answer = <span class="string">"김서방은 "</span> + str(i) + <span class="string">"에 있다"</span></span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(s)</span>:</span></span><br><span class="line">    line = list(s)</span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> len(s)%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span><span class="number">-1</span>] + line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/11/17/Algorithm-%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/">
+                [Algorithm] 선택정렬
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-17</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="선택정렬-selection-sort"><a href="#선택정렬-selection-sort" class="headerlink" title="선택정렬(selection sort)"></a>선택정렬(selection sort)</h1><h6 id="본-포스팅은-lt-그림으로-정리한-알고리즘과-자료구조-gt-를-바탕으로-진행합니다"><a href="#본-포스팅은-lt-그림으로-정리한-알고리즘과-자료구조-gt-를-바탕으로-진행합니다" class="headerlink" title="본 포스팅은 &lt;그림으로 정리한 알고리즘과 자료구조&gt;를 바탕으로 진행합니다."></a>본 포스팅은 &lt;그림으로 정리한 알고리즘과 자료구조&gt;를 바탕으로 진행합니다.</h6><p><br></br></p>
+<h3 id="선택정렬-알고리즘-알아보기"><a href="#선택정렬-알고리즘-알아보기" class="headerlink" title="선택정렬 알고리즘 알아보기"></a>선택정렬 알고리즘 알아보기</h3><p>선택정렬(Selection Sort) 알고리즘은 가장 작은 데이터를 찾아 가장 앞 데이터와 교환하는 알고리즘으로, 사용방법은 다음과 같습니다.</p>
+<ul>
+<li>데이터 중에서 가장 작은 것을 찾아서 처음에 있는 것과 위치를 교환합니다.</li>
+<li>두 번째부터 마지막까지의 데이터 중에서 가장 작은 것을 찾아서 두 번째와 위치를 교환합니다.</li>
+<li>위의 과정을 계속 반복합니다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">SelectionSort</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(array)<span class="number">-1</span>):</span><br><span class="line">        min_idx = i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(array)):</span><br><span class="line">            <span class="keyword">if</span> array[min_idx] &gt; array[j]:</span><br><span class="line">                array[min_idx], array[j] = array[j], array[min_idx]</span><br><span class="line">    <span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
 
         </div>
     
@@ -410,6 +385,33 @@
     
         <div class="content">
             <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(n)</span>:</span></span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> n%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        answer = <span class="string">'수박'</span>*(n//<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = <span class="string">'수박'</span>*(n//<span class="number">2</span>) + <span class="string">'수'</span></span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/11/17/Programmers-%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C-%EA%B9%80%EC%84%9C%EB%B0%A9-%EC%B0%BE%EA%B8%B0/">
+                [Programmers] 서울에서 김서방 찾기
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-17</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(seoul)</span>:</span></span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(seoul)):</span><br><span class="line">        <span class="keyword">if</span> seoul[i] == <span class="string">"Kim"</span>:</span><br><span class="line">            answer = <span class="string">"김서방은 "</span> + str(i) + <span class="string">"에 있다"</span></span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
 
         </div>
     
@@ -591,11 +593,11 @@
             </li>
             
             <li>
-                <a class="footer-post" href="/2019/11/17/Algorithm-%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/">[Algorithm] 선택정렬</a>
+                <a class="footer-post" href="/2019/11/17/Programmers-2016%EB%85%84/">[Programmers] 2016년</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2019/11/17/Programmers-%EA%B0%80%EC%9A%B4%EB%8D%B0-%EA%B8%80%EC%9E%90-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/">[Programmers] 가운데 글자 가져오기</a>
+                <a class="footer-post" href="/2019/11/17/Programmers-K%EB%B2%88%EC%A7%B8%EC%88%98/">[Programmers] K번째수</a>
             </li>
             
         </ul>
