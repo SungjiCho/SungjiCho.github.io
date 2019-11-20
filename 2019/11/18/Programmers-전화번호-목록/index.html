@@ -167,6 +167,12 @@
         <!-- Post Content -->
         <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(phone_book)</span>:</span></span><br><span class="line">    answer = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(phone_book)<span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(phone_book)):</span><br><span class="line">            <span class="keyword">if</span> len(phone_book[i]) &lt; len(phone_book[j]):</span><br><span class="line">                n = len(phone_book[i])</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                n = len(phone_book[j])</span><br><span class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> range(n):</span><br><span class="line">                <span class="keyword">if</span> phone_book[i][k] <span class="keyword">is</span> phone_book[j][k]:</span><br><span class="line">                    answer = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
 
+
+<h4 id="바닥부터-코드-리뷰를-해-볼까"><a href="#바닥부터-코드-리뷰를-해-볼까" class="headerlink" title="바닥부터 코드 리뷰를 해 볼까?"></a>바닥부터 코드 리뷰를 해 볼까?</h4><p>입출력 예제에서 입력값 예시는 다음과 같다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phone_book = [<span class="string">"119"</span>, <span class="string">"97674223"</span>, <span class="string">"1195524421"</span>]</span><br></pre></td></tr></table></figure>
+
+<p>파이썬에서 리스트는 저장된 값의 수정이 가능한 <strong>mutable 객체</strong>인 한편 문자열은 저장된 값의 수정이 불가능한 <strong>immutable 객체</strong>이다. 따라서 입력값의 경우 파이썬에서는 각 변경 불가능한 문자열들을 변경 가능한 리스트 내에서 참조하는 형태가 된다.  </p>
+
     </div>
 
     
@@ -208,6 +214,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2019/11/20/HTML5-CSS3/">HTML5-CSS3</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2019/11/18/Programmers-%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8-%EB%AA%A9%EB%A1%9D/">[Programmers] 전화번호 목록</a>
             </li>
             
@@ -216,11 +226,7 @@
             </li>
             
             <li>
-                <a class="footer-post" href="/2019/11/17/Programmers-2016%EB%85%84/">[Programmers] 2016년</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2019/11/17/Programmers-K%EB%B2%88%EC%A7%B8%EC%88%98/">[Programmers] K번째수</a>
+                <a class="footer-post" href="/2019/11/17/hello-world/">Welcome to QuantPsy World</a>
             </li>
             
         </ul>
