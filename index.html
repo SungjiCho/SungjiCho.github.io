@@ -222,6 +222,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ds = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">ir = iter(ds)              <span class="comment"># iterator 객체 얻음</span></span><br><span class="line">next(ir)                   <span class="comment"># 1</span></span><br><span class="line">next(ir)                   <span class="comment"># 2</span></span><br><span class="line">next(ir)                   <span class="comment"># 마지막 값을 이미 반환했기 때문에 StopIteration 예외 발생</span></span><br><span class="line">ir = iter(ds)              <span class="comment"># 다시 iterator 객체 얻음</span></span><br><span class="line">next(ir)                   <span class="comment"># 1</span></span><br><span class="line">next(ir)                   <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
 
 <p>이런 방식으로 값을 꺼내게 되면 원하는 시기에 하나씩 값을 꺼낼 수 있다. 이는 마치 아이가 먹고 싶을 때마다 사탕을 하나씩 꺼내 먹는 것과 같다. 사탕 전체를 계속 꺼내 먹을 수도 있지만 마지막 사탕은 남겨 뒀다가 내일 먹을 수도 있는 것이다. 즉 꺼내는 방법과 꺼낸 값을 처리하는 방법에 있어서도 유연성이 생긴다.</p>
+<p><br></br></p>
 <h4 id="Iterable-객체와-Iterator-객체의-구분"><a href="#Iterable-객체와-Iterator-객체의-구분" class="headerlink" title="[Iterable 객체와 Iterator 객체의 구분]"></a>[Iterable 객체와 Iterator 객체의 구분]</h4><p>iter 함수가 반환하는 객체를 가리켜 ‘iterator 객체’라 하고 iterator 객체를 얻을 수 있는 리스트와 같은 객체를 가리켜 ‘iterable 객체’라 한다. </p>
 <p><br></br></p>
 <h6 id="Iterable-객체-iter-함수에-인자로-전달-가능한-객체"><a href="#Iterable-객체-iter-함수에-인자로-전달-가능한-객체" class="headerlink" title="Iterable 객체 : iter 함수에 인자로 전달 가능한 객체"></a>Iterable 객체 : iter 함수에 인자로 전달 가능한 객체</h6><h6 id="Iterator-객체-iter-함수가-생성해서-반환하는-객체"><a href="#Iterator-객체-iter-함수가-생성해서-반환하는-객체" class="headerlink" title="Iterator 객체 : iter 함수가 생성해서 반환하는 객체"></a>Iterator 객체 : iter 함수가 생성해서 반환하는 객체</h6><p><br></br></p>
@@ -318,6 +319,39 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2019/11/18/Programmers-%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8-%EB%AA%A9%EB%A1%9D/">
+                [Programmers] 전화번호 목록
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-18</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(phone_book)</span>:</span></span><br><span class="line">    answer = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(phone_book)<span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(phone_book)):</span><br><span class="line">            <span class="keyword">if</span> len(phone_book[i]) &lt; len(phone_book[j]):</span><br><span class="line">                n = len(phone_book[i])</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                n = len(phone_book[j])</span><br><span class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> range(n):</span><br><span class="line">                <span class="keyword">if</span> phone_book[i][k] <span class="keyword">is</span> phone_book[j][k]:</span><br><span class="line">                    answer = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="바닥부터-코드-리뷰를-해-볼까"><a href="#바닥부터-코드-리뷰를-해-볼까" class="headerlink" title="바닥부터 코드 리뷰를 해 볼까?"></a>바닥부터 코드 리뷰를 해 볼까?</h4><p>입출력 예제에서 입력값 예시는 다음과 같다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phone_book = [<span class="string">"119"</span>, <span class="string">"97674223"</span>, <span class="string">"1195524421"</span>]</span><br></pre></td></tr></table></figure>
+
+<p>파이썬에서 리스트는 저장된 값의 수정이 가능한 <strong>mutable 객체</strong>인 한편 문자열은 저장된 값의 수정이 불가능한 <strong>immutable 객체</strong>이다. 따라서 입력값의 경우 파이썬에서는 각 변경 불가능한 문자열들을 변경 가능한 리스트 내에서 참조하는 형태가 된다.  </p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2019/11/18/Python-%EB%B3%80%EC%88%98%EC%82%AC%EC%9A%A92/">
                 [Python] 변수사용2
             </a>
@@ -369,39 +403,6 @@
 <p>단순한 리스트는 위와 같은 방법으로 충분히 만들 수 있다.<br>그러나 조건이 복잡한 리스트들, 예를 들어서 아래 요구 조건의 리스트를 만들 때는,</p>
 <h6 id="1-2-3-4-5-의-모든-값을-두-배씩-증가시킨-값을-지니는-리스트를-만들어라"><a href="#1-2-3-4-5-의-모든-값을-두-배씩-증가시킨-값을-지니는-리스트를-만들어라" class="headerlink" title="[1, 2, 3, 4, 5]의 모든 값을 두 배씩 증가시킨 값을 지니는 리스트를 만들어라."></a>[1, 2, 3, 4, 5]의 모든 값을 두 배씩 증가시킨 값을 지니는 리스트를 만들어라.</h6><p>다음과 같이 for 루프를 사용해야 한다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">r2 = []                <span class="comment"># 일단 빈 리스트를 생성하고</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> r1::</span><br><span class="line">	r2.append(i * <span class="number">2</span>)  <span class="comment"># 두 배씩 증가시켜서 리스트 r2에 저장</span></span><br><span class="line"></span><br><span class="line">r2      <span class="comment"># [2, 4, 6, 8, 10]</span></span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/18/Programmers-%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8-%EB%AA%A9%EB%A1%9D/">
-                [Programmers] 전화번호 목록
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-18</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(phone_book)</span>:</span></span><br><span class="line">    answer = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(phone_book)<span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(phone_book)):</span><br><span class="line">            <span class="keyword">if</span> len(phone_book[i]) &lt; len(phone_book[j]):</span><br><span class="line">                n = len(phone_book[i])</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                n = len(phone_book[j])</span><br><span class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> range(n):</span><br><span class="line">                <span class="keyword">if</span> phone_book[i][k] <span class="keyword">is</span> phone_book[j][k]:</span><br><span class="line">                    answer = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
-
-
-<h4 id="바닥부터-코드-리뷰를-해-볼까"><a href="#바닥부터-코드-리뷰를-해-볼까" class="headerlink" title="바닥부터 코드 리뷰를 해 볼까?"></a>바닥부터 코드 리뷰를 해 볼까?</h4><p>입출력 예제에서 입력값 예시는 다음과 같다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phone_book = [<span class="string">"119"</span>, <span class="string">"97674223"</span>, <span class="string">"1195524421"</span>]</span><br></pre></td></tr></table></figure>
-
-<p>파이썬에서 리스트는 저장된 값의 수정이 가능한 <strong>mutable 객체</strong>인 한편 문자열은 저장된 값의 수정이 불가능한 <strong>immutable 객체</strong>이다. 따라서 입력값의 경우 파이썬에서는 각 변경 불가능한 문자열들을 변경 가능한 리스트 내에서 참조하는 형태가 된다.  </p>
 
         </div>
     
@@ -646,11 +647,11 @@
             </li>
             
             <li>
-                <a class="footer-post" href="/2019/11/18/Python-%EB%B3%80%EC%88%98%EC%82%AC%EC%9A%A92/">[Python] 변수사용2</a>
+                <a class="footer-post" href="/2019/11/18/Programmers-%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8-%EB%AA%A9%EB%A1%9D/">[Programmers] 전화번호 목록</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2019/11/18/Programmers-%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8-%EB%AA%A9%EB%A1%9D/">[Programmers] 전화번호 목록</a>
+                <a class="footer-post" href="/2019/11/18/Python-%EB%B3%80%EC%88%98%EC%82%AC%EC%9A%A92/">[Python] 변수사용2</a>
             </li>
             
         </ul>
