@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-        <meta name="description" content="123456789101112def solution(a, b):    day = [&#39;THU&#39;, &#39;FRI&#39;, &#39;SAT&#39;, &#39;SUN&#39;, &#39;MON&#39;, &#39;TUE&#39;, &#39;WED&#39;]    month = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, ">
+        <meta name="description" content="Story 특별편. 클래스와 객체의 본질[객체 안에 변수가 만들어지는 시점]소프트웨어 공학 관점에서의 클래스와 객체에 대한 설명을 먼저 살펴보자.
+클래스: 객체를 만들기 위한 일종의 설계도객체: 클래스를 기반으로 만들어진 실제 사물즉 위의 정의는 언어에 따라 달라지는 ">
     
 
     <!--Author-->
@@ -20,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="[Programmers] 2016년"/>
+        <meta property="og:title" content="[Python] 클래스와 객체의 본질"/>
     
 
     <!--Open Graph Description-->
@@ -42,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>[Programmers] 2016년 - QuantPsy</title>
+    <title>[Python] 클래스와 객체의 본질 - QuantPsy</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -146,13 +147,13 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2019/11/17/Programmers-2016%EB%85%84/">
-                [Programmers] 2016년
+            <a href="/2019/11/21/Python-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%B3%B8%EC%A7%88/">
+                [Python] 클래스와 객체의 본질
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">2019-11-17</span>
+                <span class="date">2019-11-21</span>
             
             
             
@@ -165,7 +166,18 @@
         
 
         <!-- Post Content -->
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    day = [<span class="string">'THU'</span>, <span class="string">'FRI'</span>, <span class="string">'SAT'</span>, <span class="string">'SUN'</span>, <span class="string">'MON'</span>, <span class="string">'TUE'</span>, <span class="string">'WED'</span>]</span><br><span class="line">    month = [<span class="number">31</span>, <span class="number">29</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>]</span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">1</span>:</span><br><span class="line">        answer = day[b%<span class="number">7</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        total = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(a<span class="number">-1</span>):</span><br><span class="line">            total += month[i]</span><br><span class="line">        answer = day[(total+b)%<span class="number">7</span>]</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+        <h1 id="Story-특별편-클래스와-객체의-본질"><a href="#Story-특별편-클래스와-객체의-본질" class="headerlink" title="Story 특별편. 클래스와 객체의 본질"></a>Story 특별편. 클래스와 객체의 본질</h1><h4 id="객체-안에-변수가-만들어지는-시점"><a href="#객체-안에-변수가-만들어지는-시점" class="headerlink" title="[객체 안에 변수가 만들어지는 시점]"></a>[객체 안에 변수가 만들어지는 시점]</h4><p>소프트웨어 공학 관점에서의 클래스와 객체에 대한 설명을 먼저 살펴보자.</p>
+<h6 id="클래스-객체를-만들기-위한-일종의-설계도"><a href="#클래스-객체를-만들기-위한-일종의-설계도" class="headerlink" title="클래스: 객체를 만들기 위한 일종의 설계도"></a>클래스: 객체를 만들기 위한 일종의 설계도</h6><h6 id="객체-클래스를-기반으로-만들어진-실제-사물"><a href="#객체-클래스를-기반으로-만들어진-실제-사물" class="headerlink" title="객체: 클래스를 기반으로 만들어진 실제 사물"></a>객체: 클래스를 기반으로 만들어진 실제 사물</h6><p>즉 위의 정의는 언어에 따라 달라지는 내용이 아니다. 그런데 파이썬의 클래스와 객체에는 조금 독특한 부분이 있다.<br>그래서 지금부터 이에 대해서 설명하고자 한다. 일단 다음 클래스 정의를 보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Simple</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">seti</span><span class="params">(self, i)</span>:</span>    <span class="comment"># seti 메소드의 정의</span></span><br><span class="line">		self.i = i</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">geti</span><span class="params">(self)</span>:</span>       <span class="comment"># geti 메소드의 정의</span></span><br><span class="line">		<span class="keyword">return</span> self.i</span><br></pre></td></tr></table></figure>
+
+<p>클래스의 기본 정의는 다음과 같다.</p>
+<p><br></br></p>
+<h6 id="“클래스-내에-들어갈-변수와-데이터와-메소드를-기능을-결정하는-것”"><a href="#“클래스-내에-들어갈-변수와-데이터와-메소드를-기능을-결정하는-것”" class="headerlink" title="“클래스 내에 들어갈 변수와(데이터와) 메소드를(기능을) 결정하는 것”"></a>“클래스 내에 들어갈 변수와(데이터와) 메소드를(기능을) 결정하는 것”</h6><p><br></br></p>
+<p>그런데 위의 클래스에는 메소드의 정의만 존재한다. 즉 변수의 선언은 존재하지 않는다.<br>그러나 파이썬은 객체에 필요한 변수를 알아서 생성해준다. 그리고 객체 내에 변수가 생성되는 정확한 시점은 다음과 같다.</p>
+<p><br></br></p>
+<h6 id="“객체-내에서-해당-변수를-대상으로-대입-연산을-처음-진행하는-순간”"><a href="#“객체-내에서-해당-변수를-대상으로-대입-연산을-처음-진행하는-순간”" class="headerlink" title="“객체 내에서 해당 변수를 대상으로 대입 연산을 처음 진행하는 순간”"></a>“객체 내에서 해당 변수를 대상으로 대입 연산을 처음 진행하는 순간”</h6><p><br></br></p>
+<p>따라서 위의 클래스를 대상으로 다음과 같이 객체를 생성하고 메소드를 호출하면 문제가 없다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s1 = Simple()</span><br><span class="line">s1.seti(<span class="number">200</span>)          <span class="comment"># 이 메소드의 실행 과정에서 객체 내에 변수 i가 만들어진다.</span></span><br><span class="line">s1.geti()             <span class="comment"># 200</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -174,7 +186,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/python-algorithm/">#python, algorithm</a>
+            <a href="/tags/python-class-object/">#python, class, object</a>
         </div>
     
 
