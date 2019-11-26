@@ -179,6 +179,20 @@
 <p>따라서 위의 클래스를 대상으로 다음과 같이 객체를 생성하고 메소드를 호출하면 문제가 없다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s1 = Simple()</span><br><span class="line">s1.seti(<span class="number">200</span>)          <span class="comment"># 이 메소드의 실행 과정에서 객체 내에 변수 i가 만들어진다.</span></span><br><span class="line">s1.geti()             <span class="comment"># 200</span></span><br></pre></td></tr></table></figure>
 
+<p>seti 메소드를 호출하면 그 안에서 다음 문장이 실행되면서 객체 내에 변수 i가 만들어지기 때문이다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">self.i = i   <span class="comment"># 처음 이 문장이 실행되면 객체 내에 변수 i가 만들어짐</span></span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+
+<p>그러나 다음과 같이 geti 메소드를 먼저 호출해 버리면 이때는 오류가 발생한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">s2 = Simple()</span><br><span class="line">s2.geti()  <span class="comment"># 아직 객체 내에 변수 i가 없는 상태이므로 오류 발생!</span></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"/Users/sunnycho/Documents/python_basic/natureofclass.py"</span>, line <span class="number">8</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    s2.geti()</span><br><span class="line">  File <span class="string">"/Users/sunnycho/Documents/python_basic/natureofclass.py"</span>, line <span class="number">5</span>, <span class="keyword">in</span> geti</span><br><span class="line">    <span class="keyword">return</span> self.i</span><br><span class="line">AttributeError: <span class="string">'Simple'</span> object has no attribute <span class="string">'i'</span></span><br><span class="line">The terminal process terminated <span class="keyword">with</span> exit code: <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>그러나 클래스를 정의할 때, 객체 생성 시 자동으로 호출되는 <strong>init</strong>메소드를 다음과 같이 정의하고 또 그 안에서 객체 내에 필요한 모든 변수를 초기화 해주기만 한다면 위에서 보인 오류 상황은 걱정하지 않아도 된다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Simpe2</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.i = <span class="number">0</span>   <span class="comment"># 변수 초기화, 이 순간에 변수 i가 만들어짐</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">seti</span><span class="params">(self, i)</span>:</span></span><br><span class="line">        self.i = i</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">geti</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.i</span><br><span class="line"></span><br><span class="line">s = Simpe2()</span><br><span class="line">print(s.geti())   <span class="comment"># 0</span></span><br><span class="line">s.seti(<span class="number">25</span>)</span><br><span class="line">print(s.geti())   <span class="comment"># 25</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>init</strong>의 호출이 왼료되는 시점을 객체 생성이 완료되는 시점을 판단한다.<br>따라서 <strong>init</strong> 메소드를 잘 정의했다는 가정하에서 다음 규칙은 파이썬에서도 여전히 유효하다.</p>
+<p><br></br></p>
+<h6 id="“설계도에-해당하는-클래스를-바탕으로-만들어진-객체에는-변수와-메소드가-담겨-있다-”"><a href="#“설계도에-해당하는-클래스를-바탕으로-만들어진-객체에는-변수와-메소드가-담겨-있다-”" class="headerlink" title="“설계도에 해당하는 클래스를 바탕으로 만들어진 객체에는 변수와 메소드가 담겨 있다.”"></a>“설계도에 해당하는 클래스를 바탕으로 만들어진 객체에는 변수와 메소드가 담겨 있다.”</h6><p><br></br></p>
+<p>그리고 위의 규칙이 깨지지 않도록 <strong>init</strong> 메소드를 잘 정의하는 것이(모든 변수를 적절히 초기화하는 것이) 중요하다.</p>
+
     </div>
 
     
@@ -220,11 +234,11 @@
         <ul>
             
             <li>
-                <a class="footer-post" href="/2019/11/21/Python-%EB%B3%80%EC%88%98%EC%82%AC%EC%9A%A93/">[Python] 변수사용3</a>
+                <a class="footer-post" href="/2019/11/21/Python-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%B3%B8%EC%A7%88/">[Python] 클래스와 객체의 본질</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2019/11/21/Python-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%B3%B8%EC%A7%88/">[Python] 클래스와 객체의 본질</a>
+                <a class="footer-post" href="/2019/11/21/Python-%EB%B3%80%EC%88%98%EC%82%AC%EC%9A%A93/">[Python] 변수사용3</a>
             </li>
             
             <li>
@@ -232,7 +246,7 @@
             </li>
             
             <li>
-                <a class="footer-post" href="/2019/11/18/Programmers-%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8-%EB%AA%A9%EB%A1%9D/">[Programmers] 전화번호 목록</a>
+                <a class="footer-post" href="/2019/11/18/Python-%EB%B3%80%EC%88%98%EC%82%AC%EC%9A%A92/">[Python] 변수사용2</a>
             </li>
             
         </ul>
