@@ -419,6 +419,11 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SoSimple</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">geti</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.i</span><br><span class="line"></span><br><span class="line">ss = SoSimple()</span><br><span class="line">ss.i = <span class="number">27</span>         <span class="comment"># 이 순간 변수 ss에 담긴 객체에 i라는 변수가 생긴다. </span></span><br><span class="line">print(ss.geti())  <span class="comment"># ss에 담긴 객체에 i가 생겼으므로 geti 메소드 호출 가능</span></span><br></pre></td></tr></table></figure>
 
 <p>위의 예에서는 객체 생성 이후에 다음과 같은 형태로 변수 i를 객체에 추가하였다. 이렇듯 변수 i를 추가했기 때문에 이어서 geti 메소드를 호출할 수 있었다.</p>
+<p>그리고 위의 코드에 이어서 다음 코드도 실행해보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ss.hello = <span class="keyword">lambda</span>: print(<span class="string">'hi~'</span>)  <span class="comment"># hello라는 메소드 추가</span></span><br><span class="line">ss.hello()</span><br></pre></td></tr></table></figure>
+
+<p>위의 예에서는 람다식을 기반으로 만든 함수를 hello라는 이름으로 객체에 추가하였다. 이렇듯 객체에는 함수도 추가할 수 있다. 그럼 위의 코드에 이어서 다음 코드도 실행해보자. 이는 앞서 추가했던 i와 hello를 객체에서 삭제하는 코드이다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> ss.i     <span class="comment"># ss에 담긴 객체에서 변수 i 삭제</span></span><br><span class="line"><span class="keyword">del</span> ss.hello <span class="comment"># ss에 담긴 객체에서 메소드 hello 삭제</span></span><br></pre></td></tr></table></figure>
 
         </div>
     
