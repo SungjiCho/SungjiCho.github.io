@@ -227,11 +227,25 @@
 <p>위의 예제에서는 정확히는 변수 n의 값을 얻기 위해 접근하였다.<br>이 경우 s1과 s2의 객체에서 n을 찾는다. 그러나 이 두 객체에는 n이 없다.<br>이때 파이썬은 해당 객체의 설계도에 해당하는 클래스를 찾아가서 n을 찾는다. 즉 두 경우 모두 Simple 클래스에서 n을 찾는다. 그래서 s1을 통해 n을 출력한 결과와 s2를 통해서 n을 출력한 결과가 동일하다.</p>
 <p><br></br></p>
 <h5 id="“클래스에-속하는-변수를-만들-수-있다-”"><a href="#“클래스에-속하는-변수를-만들-수-있다-”" class="headerlink" title="“클래스에 속하는 변수를 만들 수 있다.”"></a>“클래스에 속하는 변수를 만들 수 있다.”</h5><h5 id="“객체에-‘찾는-변수’가-없으면-해당-객체의-클래스로-찾아가서-그-변수를-찾는다-”"><a href="#“객체에-‘찾는-변수’가-없으면-해당-객체의-클래스로-찾아가서-그-변수를-찾는다-”" class="headerlink" title="“객체에 ‘찾는 변수’가 없으면 해당 객체의 클래스로 찾아가서 그 변수를 찾는다.”"></a>“객체에 ‘찾는 변수’가 없으면 해당 객체의 클래스로 찾아가서 그 변수를 찾는다.”</h5><p><br></br></p>
-<h4 id="파이썬에서는-클래스도-객체"><a href="#파이썬에서는-클래스도-객체" class="headerlink" title="[파이썬에서는 클래스도 객체]"></a>[파이썬에서는 클래스도 객체]</h4><p>type은 우리가 지금까지 자료형을 확인할 때 호출해 왔던 함수의 이름이다. 그런데 이는 사실 클래스의 이름이다. (그러나 함수처럼 사용할 수 있으며, 이렇게 사용할 때 자료형의 종류를 알려주게 된다. 이러한 사실은 다음과 같이 간단히 알 수 있다.</p>
-<pre><code class="python">print(type)
+<h4 id="파이썬에서는-클래스도-객체"><a href="#파이썬에서는-클래스도-객체" class="headerlink" title="[파이썬에서는 클래스도 객체]"></a>[파이썬에서는 클래스도 객체]</h4><p>파이썬은 클래스도 객체로 간주한다. 다음과 같이 우리에게 익숙한 방식으로 파이썬에서 클래스를 만들어보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">myClass</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 
-<span class="comment"># 실행결과</span>
-&lt;<span class="class"><span class="keyword">class</span> '<span class="title">type</span>'&gt;</span></code></pre>
+<p>위의 코드는 단순히 myClass라는 이름의 객체가 메모리에 만들어진 것을 의미한다. 이 객체는 새 객체를 만들 수 있으므로 클래스로 간주된다. 이는 클래스 자체가 객체이기 때문에 파이썬에서는 클래스에 객체 연산을 적용할 수 있다는 것을 알 수 있다.따라서 다음과 같이 클래스를 변수에 할당하는 것과 같은 작업을 수행할 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">myClass_obj = myClass()</span><br><span class="line">print(myClass_obj)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;__main__.myClass object at <span class="number">0x7fa440193f40</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>다음과 같이 myClass 클래스를 매개변수로 메소드에 전달할 수도 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myClass_mth</span><span class="params">(object)</span>:</span></span><br><span class="line">    print(object)</span><br><span class="line"></span><br><span class="line">myClass_mth(myClass)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">myClass</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+<p>다른 연산도 일반적으로 객체에 적용할 수 있다.</p>
+<p><br></br></p>
+<h4 id="lt-메타클래스-gt"><a href="#lt-메타클래스-gt" class="headerlink" title="&lt;메타클래스&gt;"></a>&lt;메타클래스&gt;</h4><p>type은 우리가 지금까지 어떤 객체의 자료형을 확인할 때 호출해 왔던 함수의 이름이다. 그런데 이는 사실 클래스의 이름이다. (그러나 함수처럼 사용할 수 있으며, 이렇게 사용할 때 자료형의 종류를 알려주게 된다. 이러한 사실은 다음과 같이 간단히 알 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(type(myClass))</span><br><span class="line">print(type)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">type</span>'&gt;</span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">type</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>type이 그저 함수일 뿐이라면 &lt;function type at ~&gt;의 형태로 출력이 이뤄진다. 그런데 클래스이기 때문에 위와 같이 출력이 이뤄졌다. 또한 파이썬에서 클래스의 타입은 type이라고 결론내릴 수 있다.</p>
+<p>type과 metaclass 간의 관계는 무엇일까? 기본 metaclass가 type인 경우 type은 metaclass이다. 기본 metaclass가 type인 경우 type은 metaclass이다. 즉, type이 type이라는 뜻이다. metaclass라는 용어는 단순히 클래스를 만드는데 사용되는 것을 의미한다. 즉, 메타클래스는 클래스의 클래스이며, 이 경우 클래스의 인스턴스가 클래스라는 것을 의미한다. 따라서 type의 인스턴스가 클래스이기 때문에 type은 metaclass로 간주된다. 예를 들어, 위의 코드에서 metaclass가 type으로 간주되는 myClass 클래스를 만드는데 사용되었다. 따라서 객체가 클래스의 인스턴스인 것처럼 클래스는 metaclass의 인스턴스이다.</p>
+<p><br></br></p>
+<h4 id="lt-메타클래스를-사용해-클래스-만들기-gt"><a href="#lt-메타클래스를-사용해-클래스-만들기-gt" class="headerlink" title="&lt;메타클래스를 사용해 클래스 만들기&gt;"></a>&lt;메타클래스를 사용해 클래스 만들기&gt;</h4><p>class문을 사용하는 대신 metaclass를 사용해 클래스를 만드는 방법을 살펴보도록 하자. 위에서 봤듯이 기본 metaclass는 type이다. 따라서 다음과 같은 코드를 사용해 새 클래스를 만들 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">newClass = type(<span class="string">'myClass'</span>, (), &#123;&#125;)</span><br><span class="line">test = newClass()</span><br><span class="line">print(type(test))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">myClass</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>더 단순하게 만들고 싶다면 myClass라는 동일한 클래스 이름을 변수 이름에 할당하면 된다. 여기서는 클래스의 속성을 정의하는데 { } 딕셔너리를 사용했다.</p>
 
     </div>
 
@@ -282,11 +296,11 @@
             </li>
             
             <li>
-                <a class="footer-post" href="/2019/11/21/Python-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%B3%B8%EC%A7%88/">[Python] 클래스와 객체의 본질</a>
+                <a class="footer-post" href="/2019/11/21/Python-%EB%B3%80%EC%88%98%EC%82%AC%EC%9A%A93/">[Python] 변수사용3</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2019/11/21/Python-%EB%B3%80%EC%88%98%EC%82%AC%EC%9A%A93/">[Python] 변수사용3</a>
+                <a class="footer-post" href="/2019/11/21/Python-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%B3%B8%EC%A7%88/">[Python] 클래스와 객체의 본질</a>
             </li>
             
         </ul>
