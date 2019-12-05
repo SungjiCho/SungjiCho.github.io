@@ -147,6 +147,67 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2019/11/17/Algorithm-%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/">
+                [Algorithm] 선택정렬
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-17</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="선택정렬-selection-sort"><a href="#선택정렬-selection-sort" class="headerlink" title="선택정렬(selection sort)"></a>선택정렬(selection sort)</h1><h6 id="본-포스팅은-lt-그림으로-정리한-알고리즘과-자료구조-gt-를-바탕으로-진행합니다"><a href="#본-포스팅은-lt-그림으로-정리한-알고리즘과-자료구조-gt-를-바탕으로-진행합니다" class="headerlink" title="본 포스팅은 &lt;그림으로 정리한 알고리즘과 자료구조&gt;를 바탕으로 진행합니다."></a>본 포스팅은 &lt;그림으로 정리한 알고리즘과 자료구조&gt;를 바탕으로 진행합니다.</h6><p><br></br></p>
+<h3 id="선택정렬-알고리즘-알아보기"><a href="#선택정렬-알고리즘-알아보기" class="headerlink" title="선택정렬 알고리즘 알아보기"></a>선택정렬 알고리즘 알아보기</h3><p>선택정렬(Selection Sort) 알고리즘은 가장 작은 데이터를 찾아 가장 앞 데이터와 교환하는 알고리즘으로, 사용방법은 다음과 같습니다.</p>
+<ul>
+<li>데이터 중에서 가장 작은 것을 찾아서 처음에 있는 것과 위치를 교환합니다.</li>
+<li>두 번째부터 마지막까지의 데이터 중에서 가장 작은 것을 찾아서 두 번째와 위치를 교환합니다.</li>
+<li>위의 과정을 계속 반복합니다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">SelectionSort</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(array)<span class="number">-1</span>):</span><br><span class="line">        min_idx = i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(array)):</span><br><span class="line">            <span class="keyword">if</span> array[min_idx] &gt; array[j]:</span><br><span class="line">                array[min_idx], array[j] = array[j], array[min_idx]</span><br><span class="line">    <span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/11/17/Programmers-%EA%B0%80%EC%9A%B4%EB%8D%B0-%EA%B8%80%EC%9E%90-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/">
+                [Programmers] 가운데 글자 가져오기
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-17</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(s)</span>:</span></span><br><span class="line">    line = list(s)</span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> len(s)%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span><span class="number">-1</span>] + line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2019/11/17/Programmers-2016%EB%85%84/">
                 [Programmers] 2016년
             </a>
@@ -190,7 +251,6 @@
     
         <div class="content">
             <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(array, commands)</span>:</span></span><br><span class="line">    answer = []</span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> range(len(commands)):</span><br><span class="line">        i, j, k = commands[n][<span class="number">0</span>], commands[n][<span class="number">1</span>], commands[n][<span class="number">2</span>]</span><br><span class="line">        array_slice = array[i<span class="number">-1</span>: j]</span><br><span class="line">        array_slice.sort()</span><br><span class="line">        answer.append(array_slice[k<span class="number">-1</span>])</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
-
 <h3 id="시퀀스-타입"><a href="#시퀀스-타입" class="headerlink" title="시퀀스 타입"></a>시퀀스 타입</h3><p>위의 코드에서 배열 array는 파이썬에 내장된 시퀀스 타입인 리스트로 구현되었다.<br>시퀀스 타입의 객체는 인덱스 연산을 통해 내부 항목에 접근할 수 있다.</p>
 <h4 id="리스트"><a href="#리스트" class="headerlink" title="리스트"></a>리스트</h4><p>리스트는 중복이 가능하고 순차적인 데이터를 나타낼 수 있으며, 내부 항목을 변경가능하다.</p>
 <ul>
@@ -202,39 +262,9 @@
 <p><br></br></p>
 <h3 id="예시문제"><a href="#예시문제" class="headerlink" title="예시문제"></a>예시문제</h3><p><strong>1. 문자열 ‘algorithm’을 리스트, 튜플 타입으로 형변환하여 새 변수에 할당한다.</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'algorithm'</span></span><br><span class="line">list_s = list(s)</span><br><span class="line">tuple_s = tuple(s)</span><br><span class="line"></span><br><span class="line">print(type(s), s)</span><br><span class="line">print(type(list_s), list_s)</span><br><span class="line">print(type(tuple_s), tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line">&lt;class 'list'&gt; ['a', 'l', 'g', 'o', 'r', 'i', 't', 'h', 'm']</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">tuple</span>'&gt; <span class="params">(<span class="string">'a'</span>, <span class="string">'l'</span>, <span class="string">'g'</span>, <span class="string">'o'</span>, <span class="string">'r'</span>, <span class="string">'i'</span>, <span class="string">'t'</span>, <span class="string">'h'</span>, <span class="string">'m'</span>)</span></span></span><br></pre></td></tr></table></figure>
-
 <p><strong>2. 1번에서 할당한 리스트, 튜플 변수를 이용해 다시 문자열을 만든다.</strong></p>
 <h6 id="Ver-1"><a href="#Ver-1" class="headerlink" title="Ver.1"></a>Ver.1</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'algorithm'</span></span><br><span class="line">list_s = list(s)</span><br><span class="line">tuple_s = tuple(s)</span><br><span class="line"></span><br><span class="line">line_list_s = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(list_s)):</span><br><span class="line">    line_list_s += list_s[i]</span><br><span class="line">print(type(line_list_s), line_list_s)</span><br><span class="line"></span><br><span class="line">line_tuple_s = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(tuple_s)):</span><br><span class="line">    line_tuple_s += tuple_s[i]</span><br><span class="line">print(type(line_tuple_s), line_tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br></pre></td></tr></table></figure>
-
-
 <h6 id="Ver-2"><a href="#Ver-2" class="headerlink" title="Ver.2"></a>Ver.2</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">line_list_s = <span class="string">''</span>.join(list_s)</span><br><span class="line">print(type(line_list_s), line_list_s)</span><br><span class="line"></span><br><span class="line">line_tuple_s = <span class="string">''</span>.join(tuple_s)</span><br><span class="line">print(type(line_tuple_s), line_tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/17/Programmers-%EA%B0%80%EC%9A%B4%EB%8D%B0-%EA%B8%80%EC%9E%90-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/">
-                [Programmers] 가운데 글자 가져오기
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-17</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(s)</span>:</span></span><br><span class="line">    line = list(s)</span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> len(s)%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span><span class="number">-1</span>] + line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
 
         </div>
     
@@ -347,14 +377,9 @@
 <h6 id="“v1-v2-변수-v1과-v2가-참조하는-객체의-내용이-같은가-”"><a href="#“v1-v2-변수-v1과-v2가-참조하는-객체의-내용이-같은가-”" class="headerlink" title="“v1 == v2: 변수 v1과 v2가 참조하는 객체의 내용이 같은가?”"></a><strong><strong>“v1 == v2: 변수 v1과 v2가 참조하는 객체의 내용이 같은가?”</strong></strong></h6><h6 id="“v1-is-v2-변수-v1과-v2가-참조하는-객체는-동일-객체인가-”"><a href="#“v1-is-v2-변수-v1과-v2가-참조하는-객체는-동일-객체인가-”" class="headerlink" title="“v1 is v2: 변수 v1과 v2가 참조하는 객체는 동일 객체인가?”"></a><strong><strong>“v1 is v2: 변수 v1과 v2가 참조하는 객체는 동일 객체인가?”</strong></strong></h6><p><br></br></p>
 <p>따라서 동일한 값을 담고 있는 두 객체를 대상으로 하는 두 연산의 결과는 다음과 같다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">r2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">print(r1 <span class="keyword">is</span> r2)    <span class="comment"># r1과 r2가 참조하는 객체는 같은 객체인가?: False</span></span><br><span class="line">print(id(r1), id(r2))</span><br><span class="line"></span><br><span class="line">print(r1 == r2)    <span class="comment"># r1과 r2가 참조하는 객체에 담긴 값은 같은가?: True</span></span><br><span class="line">print(r1, r2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="number">140568777174528</span> <span class="number">140568777678016</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
-
 <p>참고로 is 연산이 True를 반환하는 상황은 다음과 같다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">r2 = r1            <span class="comment"># r1이 참조하는 리스트에 r2라는 이름을 하나 더 붙임</span></span><br><span class="line">print(r1 <span class="keyword">is</span> r2)    <span class="comment"># True</span></span><br></pre></td></tr></table></figure>
-
-
-<p>자! 그럼 다음 예제에서 보이는 객체 복사 결과를 살펴보자.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">23</span>]]  <span class="comment"># John은 미국 남자로 175cm 23세</span></span><br><span class="line">r2 = list(r1)          <span class="comment"># r1의 내용으로 새로운 리스트 만듦</span></span><br><span class="line"></span><br><span class="line">print(r1 <span class="keyword">is</span> r2)        <span class="comment"># False</span></span><br><span class="line">print(r1[<span class="number">0</span>] <span class="keyword">is</span> r2[<span class="number">0</span>])  <span class="comment"># r1과 r2의 'John'은 동일 객체인가?: True</span></span><br><span class="line">print(r1[<span class="number">1</span>] <span class="keyword">is</span> r2[<span class="number">1</span>])  <span class="comment"># r1과 r2의 ('man', 'USA')은 동일 객체인가?: True </span></span><br><span class="line">print(r1[<span class="number">2</span>] <span class="keyword">is</span> r2[<span class="number">2</span>])  <span class="comment"># r1과 r2의 [175, 23]은 동일 객체인가?: True</span></span><br></pre></td></tr></table></figure>
-
+<p>자! 그럼 다음 예제에서 보이는 객체 복사 결과를 살펴보자.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">23</span>]]  <span class="comment"># John은 미국 남자로 175cm 23세</span></span><br><span class="line">r2 = list(r1)          <span class="comment"># r1의 내용으로 새로운 리스트 만듦</span></span><br><span class="line"></span><br><span class="line">print(r1 <span class="keyword">is</span> r2)        <span class="comment"># False</span></span><br><span class="line">print(r1[<span class="number">0</span>] <span class="keyword">is</span> r2[<span class="number">0</span>])  <span class="comment"># r1과 r2의 'John'은 동일 객체인가?: True</span></span><br><span class="line">print(r1[<span class="number">1</span>] <span class="keyword">is</span> r2[<span class="number">1</span>])  <span class="comment"># r1과 r2의 ('man', 'USA')은 동일 객체인가?: True </span></span><br><span class="line">print(r1[<span class="number">2</span>] <span class="keyword">is</span> r2[<span class="number">2</span>])  <span class="comment"># r1과 r2의 [175, 23]은 동일 객체인가?: True</span></span><br></pre></td></tr></table></figure></p>
 <p>위의 예에서 r1이라는 리스트를 생성하였다.<br>위와 같이 리스트를 생성하면 리스트 안에 선언되는 값들이 리스트에 쏙 들어가 있는 형태가 아니라 다음 그림에서 보이듯이 각 값들을(객체들을) 리스트 내에서 참조하는 형태가 된다.</p>
 <p><br></br></p>
 <p><img src="/image/list_object_reference.jpeg" alt="list_object_reference"></p>
@@ -368,10 +393,9 @@
 <h6 id="문자열-객체-‘John’"><a href="#문자열-객체-‘John’" class="headerlink" title="문자열 객체: ‘John’"></a><strong><strong>문자열 객체: ‘John’</strong></strong></h6><h6 id="튜플-객체-‘man’-‘USA’"><a href="#튜플-객체-‘man’-‘USA’" class="headerlink" title="튜플 객체: (‘man’, ‘USA’)"></a><strong><strong>튜플 객체: (‘man’, ‘USA’)</strong></strong></h6><p><br></br></p>
 <p>그러나 다음 객체를 대상으로 얕은 복사를 하는 것은 문제가 될 수 있다.<br>리스트는 그 안에 담긴 값을 수정할 수 있는 객체이기 때문이다.</p>
 <p><br></br></p>
-<h6 id="리스트-객체-175-23"><a href="#리스트-객체-175-23" class="headerlink" title="리스트 객체: [175, 23]"></a><strong><strong>리스트 객체: [175, 23]</strong></strong></h6><p><br></br><br><br></br></p>
+<h6 id="리스트-객체-175-23"><a href="#리스트-객체-175-23" class="headerlink" title="리스트 객체: [175, 23]"></a><strong><strong>리스트 객체: [175, 23]</strong></strong></h6><p><br>&lt;/br&gt;<br><br></br></p>
 <h4 id="깊은-복사"><a href="#깊은-복사" class="headerlink" title="[깊은 복사]"></a>[깊은 복사]</h4><p>정리하면 값의 변경이 불가능한 immutable 객체는 얕은 복사를 해도 문제가 되지 않는다.<br>그러나 값의 변경이 가능한 mutable 객체는 얕은 복사가 문제가 될 수 있다.<br>이와 관련해서 다음 예를 보자.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">J2021 = [<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">23</span>]]  <span class="comment"># 2021년도 John의 정보</span></span><br><span class="line">J2022 = list(J2021)  <span class="comment"># 필요에 의해 John의 정보를 하나 복사했다.</span></span><br><span class="line">J2022[<span class="number">2</span>][<span class="number">1</span>] += <span class="number">1</span>     <span class="comment"># 2022년도 John의 정보, 나이 한 살 더 먹음</span></span><br><span class="line">print(J2021)         <span class="comment"># 2021년도 John의 정보 출력</span></span><br><span class="line">print(J2022)         <span class="comment"># 2022년도 John의 정보 출력</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">[<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">24</span>]]</span><br><span class="line">[<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">24</span>]]</span><br></pre></td></tr></table></figure>
-
 <p>John은 해가 지날수록 나이는 먹는다. 그래서 위의 예에서 2021년도 John의 정보를 기반으로 2022년도의 John의 정보를 만들었다. 그런데 얕은 복사로 인해 2021년의 John 정보도 바뀌어 버렸다.<br>이렇듯 mutable 객체에 저장된 값들은 변경될 수 있기 때문에 이들에 대해서는 복사 대상을 하나 더 생성하는 ‘깊은 복사’라는 것을 해야 한다. 즉 다음 객체를 대상으로 복사를 할 경우,</p>
 <p><br></br></p>
 <h6 id="‘John’-‘man’-‘USA’-175-23"><a href="#‘John’-‘man’-‘USA’-175-23" class="headerlink" title="[‘John’, (‘man’, ‘USA’), [175, 23]]"></a><strong><strong>[‘John’, (‘man’, ‘USA’), [175, 23]]</strong></strong></h6><p><br></br></p>
@@ -381,10 +405,8 @@
 <p><br></br></p>
 <p>그리고 이를 위해서는 다음 예에서 보이듯이 copy 모듈의 deepcopy 함수를 사용하면 된다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy  <span class="comment"># deepcopy 함수 호출을 위해서 copy 모듈 import</span></span><br><span class="line">J2022 = copy.deepcopy(J2021)</span><br><span class="line">J2022[<span class="number">2</span>][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">print(J2021)</span><br><span class="line">print(J2022)</span><br><span class="line">print((J2021[<span class="number">0</span>] <span class="keyword">is</span> J2022[<span class="number">0</span>]) <span class="keyword">and</span> (J2021[<span class="number">1</span>] <span class="keyword">is</span> J2022[<span class="number">1</span>]))  <span class="comment"># 얕은 복사 확인</span></span><br><span class="line">print(J2021[<span class="number">2</span>] <span class="keyword">is</span> J2022[<span class="number">2</span>])  <span class="comment"># 깊은 복사 확인</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">[<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">24</span>]]</span><br><span class="line">[<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">25</span>]]</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
-
 <p>위의 결과에서 보이듯이 deepcopy 함수의 호출 결과로 immutable 객체를 대상으로는 얕은 복사가 진행되었고 mutable 객체를 대상으로는 깊은 복사가 진행되었다. 참고로 다음의 방식으로 튜플이나 문자열을 복사하면 얕은 복사가 진행된다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">d1 = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">d2 = <span class="string">'Please'</span></span><br><span class="line">c1 = tuple(d1)   <span class="comment"># d1 기반으로 튜플 생성, 사실상 튜플 복사</span></span><br><span class="line">c2 = str(d2)     <span class="comment"># d2 기반으로 문자열 생성, 사실상 문자열 복사</span></span><br><span class="line">print(d1 <span class="keyword">is</span> c1)  <span class="comment"># d1과 c1이 참조하는 대상이 같은 객체인가? True</span></span><br><span class="line">print(d2 <span class="keyword">is</span> c2)  <span class="comment"># d2와 c2가 참조하는 대상이 같은 객체인가? True</span></span><br></pre></td></tr></table></figure>
-
 <p>메모리의 효율적 사용을 위해서 이렇듯 파이썬은 ‘선한 거짓말’을 하고 있다.<br>그러니 속아주자. 이것이 문제가 되는 상황은 없을 테니 말이다.<br><br></br></p>
 
         </div>
@@ -432,29 +454,22 @@
 <p><br></br></p>
 <h3 id="Story-01-레퍼런스-카운트와-가비지-컬렉션"><a href="#Story-01-레퍼런스-카운트와-가비지-컬렉션" class="headerlink" title="Story 01. 레퍼런스 카운트와 가비지 컬렉션"></a>Story 01. 레퍼런스 카운트와 가비지 컬렉션</h3><h4 id="가비지-컬렉션"><a href="#가비지-컬렉션" class="headerlink" title="[가비지 컬렉션]"></a>[가비지 컬렉션]</h4><p>우리는 다음과 같은 상황에서 변수 s에 문자열이 저장되었다고 표현한다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'Garbage Collection'</span></span><br></pre></td></tr></table></figure>
-
 <p>그러나 사실은 문자열 객체에 s라는 이름이 붙은 상황이다.<br>즉 파이썬의 변수는 빈 상자가 아닌 뗴었다 붙였다 할 수 있는 ‘포스트잇’의 개념이다.<br>(포스트잇은 메모를 적어서 붙이고 또 쉽게 뗄 수 있는 스티커이다.)</p>
 <p><img src="/image/stickynote.png" alt="stickynote"></p>
 <p>보통은 ‘변수에 문자열을 저장했다’ 또는 ‘변수에 객체를 저장했다’라는 식의 표현이 사용되고 또 그것이 더 자연스럽다. 하지만 지금 설명하는 파이썬의 <strong>가비지 컬렉션</strong> 메커니즘을 이해하려면 변수를 ‘포스트잇’으로 이해해야 한다. 따라서 위의 코드에 대한 표현이 다음과 같음을 알고 있어야 한다.<br>(‘참조’의 영어 표현이 ‘레퍼런스’이다.)<br><br></br></p>
-<p><strong><em>“변수 s가 문자열 ‘Garbage Collection’ ‘참조’한다.”</em></strong><br><strong><em>“변수 s가 문자열 ‘Garbage Collection’을 ‘레퍼런스’한다.”</em></strong></p>
+<p><strong>_”변수 s가 문자열 ‘Garbage Collection’ ‘참조’한다.”_</strong><br><strong>_”변수 s가 문자열 ‘Garbage Collection’을 ‘레퍼런스’한다.”_</strong></p>
 <p><br></br><br>즉 여기서 말하는 ‘참조’는 이름이 쓰인 포스트잇을 가져다 붙인 것을 뜻한다.<br>그럼 다음 코드를 보자. 이는 리스트 객체를 생성하고 이를 r이라는 이름으로 참조하고 있는 상황이다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]  <span class="comment"># r이라는이름으로 리스트를 참조</span></span><br></pre></td></tr></table></figure>
-
-
 <p>그럼 이렇게 생성된 리스트 [1, 2, 3]은 언제 소멸될까?<br>소멸되지 않고 계속 메모리 공간을 차지한다면 이는 문제가 되기 때문에 분명 소멸되는 시기가 온다.<br>그리고 그 시기는 다음과 같다.<br><br></br></p>
-<p><strong><em>“객체를 아무도 참조하지 않는 상황”</em></strong></p>
+<p><strong>_”객체를 아무도 참조하지 않는 상황”_</strong></p>
 <p><br></br></p>
 <p>즉 다음 상황에서 리스트는 소멸된다. 정확히는 소멸 대상이 된다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">r = <span class="string">'simple'</span>  <span class="comment"># 변수 r이 참조 대상을 문자열로 바꿨다.</span></span><br></pre></td></tr></table></figure>
-
-
 <p>위와 같은 상황이 벌어지면 리스트 [1, 2, 3]은 아무도 참조하지 않기 때문에 더 이상 접근할 수 없게 된다.<br>따라서 메모리에 남겨 둬봐야 공간만 차지할 뿐이다. 그래서 소멸 대상이 된다.<br>단, 소멸 대상이 되었다고 해서 바로 소멸이 되는 것은 아니다.<br>일단 소멸 대상으로 등록만 해 두고 시스템에 시간적인 여유가 생길 때 소멸시키게 된다.<br>그리고 이러한 일련의 소멸 규칙 및 과정을 가리켜 ‘가비지 컬렉션(Garbage Collection)’이라 한다.<br>그럼 다음 코드를 리스트 [1, 2, 3]을 중심으로 관찰해보자.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]  <span class="comment"># 리스트 [1, 2, 3]의 레퍼런스 카운트는 1</span></span><br><span class="line">r2 = r1         <span class="comment"># 리스트의 레퍼런스 카운트는 2로 증가</span></span><br><span class="line">r1 = <span class="string">'simple'</span>   <span class="comment"># 리스트의 레퍼런스 카운트는 다시 1로 감소</span></span><br><span class="line">r2 = <span class="string">'happy'</span>    <span class="comment"># 리스트의 레퍼런스 카운트가 0이 됨, 따라서 가비지 컬렉션 대상</span></span><br></pre></td></tr></table></figure>
-
-
 <p>객체를 참조하는 변수의 수를 가리켜 ‘레퍼런스 카운트’라 한다.<br>즉 위 예제에서는 리스트 [1, 2, 3]의 레퍼런스 카운트가 1로 시작해서 2로 증가하고, 이어서 r1과 r2가 문자열을 참조하는 상황에 이르러 결국에는 0이 된다. 그리고 레퍼런스 카운트가 0이 되었다는 것은 소멸 대상으로 등록이 되어 조만간 소멸된다는 뜻이다.</p>
 <p>그렇다면 이러한 가비지 컬렉션은 누가 진행하는 것일까?<br>뭐 그냥 파이썬이 해준다고 말해버려도 될 일이지만 조금 더 자세히 알 필요가 있어서 이에 대한 설명을 이어서 하겠다.</p>
-<p><br></br><br><br></br></p>
+<p><br>&lt;/br&gt;<br><br></br></p>
 <h4 id="파이썬-인터프리터"><a href="#파이썬-인터프리터" class="headerlink" title="[파이썬 인터프리터]"></a>[파이썬 인터프리터]</h4><p>우리가 파이썬 코드를(스크립트를) 작성하고 실행하면 이 코드는 먼저 ‘바이트 코드’라는 것으로 변환되어 어딘가에 저장된다. 그리고는 이 바이트 코드는 ‘파이썬 가상 머신(Python Virtual Machine)’ 위에서 실행이 된다.<br>비록 이러한 일련의 과정이 감춰져 있어서 우리 눈에 보이지는 않지만 말이다. 따라서 파이썬의 실행 구조는 다음과 같이 정리할 수 있다.</p>
 <p><br></br></p>
 <p><img src="/image/PVM.jpeg" alt="PVM"></p>
@@ -503,37 +518,28 @@
 <p><br></br></p>
 <h3 id="Story-02-수정-가능한-객체와-수정-불가능한-객체"><a href="#Story-02-수정-가능한-객체와-수정-불가능한-객체" class="headerlink" title="Story 02. 수정 가능한 객체와 수정 불가능한 객체"></a>Story 02. 수정 가능한 객체와 수정 불가능한 객체</h3><h4 id="immutable-amp-mutable"><a href="#immutable-amp-mutable" class="headerlink" title="[immutable &amp; mutable]"></a>[immutable &amp; mutable]</h4><p>객체가 지닌(객체에 저장된) 값의 수정이 불가능한 객체를 가리켜 <strong>‘immutable 객체’</strong>라 하며 대표적인 예로 튜플과 문자열이 있다. 반면 객체가 지닌 값의 수정이 가능한 객체르 가리켜<strong>‘mutable 객체’</strong>라 하며 대표적인 예로 리스트와 딕셔너리가 있다. 즉 다음 예에서 보이듯이 리스트는 지니고 있는 값을 수정할 수 있다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">id(r)        <span class="comment"># 리스트의 주소 정보 확인: 51637384</span></span><br><span class="line"></span><br><span class="line">r += [<span class="number">3</span>, <span class="number">4</span>]  <span class="comment"># 리스트에 값을 추가한다.</span></span><br><span class="line">r            <span class="comment"># [1, 2, 3, 4]</span></span><br><span class="line">id(r)        <span class="comment"># 리스트의 주소가 바뀌지 않았음을 확인: 51637384</span></span><br></pre></td></tr></table></figure>
-
 <p>그러나 튜플은 값을 수정할 수 없다. 따라서 튜플에 저장된 값을 수정하게 되면 다음 예에서 보이듯이 새로운 튜플이 만들어진다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">t = (<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">id(t)       <span class="comment"># 튜플의 주소 정보 확인: 58040192</span></span><br><span class="line"></span><br><span class="line">t += (<span class="number">3</span>, <span class="number">4</span>) <span class="comment"># 이때 새로운 튜플이 만들어진다.</span></span><br><span class="line">t           <span class="comment"># (1, 2, 3, 4)</span></span><br><span class="line">id(t)       <span class="comment"># t에 저장된 튜플이 바뀌었음을 확인</span></span><br></pre></td></tr></table></figure>
-
-<p><br></br><br><br></br></p>
+<p><br>&lt;/br&gt;<br><br></br></p>
 <h4 id="성격에-따라-달라지는-함수의-정의"><a href="#성격에-따라-달라지는-함수의-정의" class="headerlink" title="[성격에 따라 달라지는 함수의 정의]"></a>[성격에 따라 달라지는 함수의 정의]</h4><p>그럼 이어서 다음 함수를 보자.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_last</span><span class="params">(m, n)</span>:</span></span><br><span class="line">	m += n      <span class="comment"># m에 n의 내용을 추가한다.</span></span><br></pre></td></tr></table></figure>
-
 <p>이는 다음과 같이 리스트에 값을 추가할 때 사용하기 위해서 만든 함수이다.<br>그리고 그 목적에 맞게 잘 동작한다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">add_last(r, [<span class="number">3</span>, <span class="number">4</span>]) <span class="comment"># 리스트 r에 3과 4를 추가</span></span><br><span class="line">r                   <span class="comment"># [1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
-
 <p>그런데 이를 보고 이 함수가 튜플을 대상으로도 잘 동작할 것으로 기대하면 안 된다.<br>튜플을 대상으로 위의 함수를 호출하면 다음과 같이 엉뚱한 결과를 얻게 된다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t = (<span class="number">1</span>, <span class="number">3</span>)</span><br><span class="line">add_last(t, (<span class="number">5</span>, <span class="number">7</span>)) <span class="comment"># 튜플 t에 5와 7이 추가될 것을 기대한다.</span></span><br><span class="line">t                   <span class="comment"># 튜플에 5와 7이 추가되지 않았다: (1, 3)</span></span><br></pre></td></tr></table></figure>
-
 <p>이유는 간단하다. 함수 내에서 진행한 += 연산 과정에서 그 결과에 해당하는 새로운 튜플이 만들어졌을 뿐 원본에 값이 추가된 것은 아니기 때문이다. 이 부분을 조금 자세히 설명하면, 먼저 변수 t에 저장된 튜플 (1, 3)을 매개변수 m을 통해 함수에 전달한 상황은 다음과 같다.</p>
 <p><br></br></p>
 <p><img src="/image/immutable.jpeg" alt="immutale"></p>
 <p><br></br></p>
 <p>그러니까 함수 내의 변수 m에는 새로 만들어진 덧셈 결과가 반영된 튜플이 저장된다.<br>그러나 이때부터 t가 참조하는 튜플과 m이 참조하는 튜플은 별개의 것이 된다.<br>따라서 함수를 빠져나간 뒤에 확인해본 t의 내용에는 아무런 변화가 없다.<br>때문에 튜플의 값을 추가한 결과를 얻는 함수는 다음과 같이 만들어서 사용해야 한다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_tuple</span><span class="params">(t1, t2)</span>:</span></span><br><span class="line">	t1 += t2   <span class="comment"># += 결과로 만들어진 새로운 튜플이 t1에 저장된다.</span></span><br><span class="line">	<span class="keyword">return</span> t1  <span class="comment"># 새로 만들어진 튜플을 반환</span></span><br><span class="line"></span><br><span class="line">tp = (<span class="number">1</span>, <span class="number">3</span>)</span><br><span class="line">tp = add_tupe(tp, (<span class="number">5</span>, <span class="number">7</span>))</span><br><span class="line">tp                <span class="comment"># (1, 3, 5, 7)</span></span><br></pre></td></tr></table></figure>
-
 <p>정리하면 리스트는 변경 가능한 객체인 반면 튜플은 변경 불가능한 객체이기 때문에 이 둘을 대상으로 동일한 결과를 보이는 함수를 만들 수 없는 경우가 있다. 이러한 경우에는 원하는 결과를 얻을 수 있는 함수를 리스트와 튜플 각각에 대해 별도로 정의해야 한다.</p>
 <p>그럼 이어서 다음 예를 보자. 이 예의 min_max 함수는 리스트를 대상으로 정의된 함수이다.<br>이 함수에 리스트가 전달되면 그 리스트에 저장된 가장 큰 값과 작은 값을 출력하는데, 이를 위해서 리스트의 정렬과정을 거친다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">min_max</span><span class="params">(d)</span>:</span></span><br><span class="line">	d.sort()                       <span class="comment"># 리스트를 오름차순으로 정렬</span></span><br><span class="line">	print(d[<span class="number">0</span>], d[<span class="number">-1</span>], sep = <span class="string">','</span>)  <span class="comment"># 맨 앞의 값과 마지막 값을 출력</span></span><br><span class="line"></span><br><span class="line">l = [<span class="number">3</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">4</span>]</span><br><span class="line">min_max(l)                             <span class="comment"># 1, 5</span></span><br><span class="line">l                                      <span class="comment"># 원본의 저장 순서가 변경되었다: [1, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
-
 <p>출력된 내용을 보면 가장 큰 값과 가장 작은 값이 잘 출력되었다.<br>그런데 문제는 원본의 저장 순서가 변경되었다는 것이다. 그리고 이것이 문제가 되는 경우도 있다.<br>따라서 이러한 상황을 원치 않으면 함수 내에서 리스트를 복사한 다음에 정렬을 진행해야 한다.<br>다음과 같이 말이다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">min_max2</span><span class="params">(d)</span>:</span></span><br><span class="line">	d = list(d)                    <span class="comment"># d의 내용이 담긴 새로운 리스트 생성</span></span><br><span class="line">	d.sort()                       <span class="comment"># 원본이 아닌 복사본을 정렬한다. </span></span><br><span class="line">        print(d[<span class="number">0</span>], d[<span class="number">-1</span>], sep = <span class="string">','</span>)</span><br><span class="line"></span><br><span class="line">l = [<span class="number">3</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">4</span>]</span><br><span class="line">min_max(l)                             <span class="comment"># 1, 5</span></span><br><span class="line">l                                      <span class="comment"># 원본이 수정되지 않았다: [3, 1, 5, 4]</span></span><br></pre></td></tr></table></figure>
-
 <p>물론 위의 함수는 튜플을 대상으로 잘 동작한다.<br>다음 예제에서 보이듯이 말이다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t = (<span class="number">2</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">0</span>)</span><br><span class="line">min_max(t)                             <span class="comment"># 0, 9</span></span><br><span class="line">t                                      <span class="comment"># (2, 7, 5, 9, 0)</span></span><br></pre></td></tr></table></figure>
-
 <p>비록 함수 내에서 튜플에 담긴 내용을 갖는 리스트를 하나 생성하기는 했지만 그것이 문제가 되는 상황은 아니다. 결론을 내려보면, 함수를 잘 정의하려면 파이썬 내에서 참조하거나 조작하는 객체의 성격을 구분하고 그에 맞게 함수를 정의해야 한다. 따라서 기본적으로 문자열과 튜플은 변경이 불가능한 객체이고, 리스트와 딕셔너리는 변경이 가능한 객체라는 사실은 기억하고 있어야 한다.</p>
 
         </div>
@@ -583,6 +589,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2019/12/06/math/">math</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2019/12/01/hello-world/">Welcome to QuantPsy World</a>
             </li>
             
@@ -592,10 +602,6 @@
             
             <li>
                 <a class="footer-post" href="/2019/11/27/Python-%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%A9%94%EC%86%8C%EB%93%9C%EC%99%80-static-%EB%A9%94%EC%86%8C%EB%93%9C/">[Python] 클래스 메소드와 static </a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2019/11/26/Python-%EA%B0%9D%EC%B2%B4%EC%B2%98%EB%9F%BC-%EB%8B%A4%EB%A4%84%EC%A7%80%EB%8A%94-%ED%95%A8%EC%88%98/">[Python] 객체처럼 다뤄지는 함수</a>
             </li>
             
         </ul>
@@ -739,6 +745,22 @@
 <!-- Disqus Comments -->
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
 </body>
 

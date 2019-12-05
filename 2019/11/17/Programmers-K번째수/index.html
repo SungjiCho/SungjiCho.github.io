@@ -166,7 +166,6 @@
 
         <!-- Post Content -->
         <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(array, commands)</span>:</span></span><br><span class="line">    answer = []</span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> range(len(commands)):</span><br><span class="line">        i, j, k = commands[n][<span class="number">0</span>], commands[n][<span class="number">1</span>], commands[n][<span class="number">2</span>]</span><br><span class="line">        array_slice = array[i<span class="number">-1</span>: j]</span><br><span class="line">        array_slice.sort()</span><br><span class="line">        answer.append(array_slice[k<span class="number">-1</span>])</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
-
 <h3 id="시퀀스-타입"><a href="#시퀀스-타입" class="headerlink" title="시퀀스 타입"></a>시퀀스 타입</h3><p>위의 코드에서 배열 array는 파이썬에 내장된 시퀀스 타입인 리스트로 구현되었다.<br>시퀀스 타입의 객체는 인덱스 연산을 통해 내부 항목에 접근할 수 있다.</p>
 <h4 id="리스트"><a href="#리스트" class="headerlink" title="리스트"></a>리스트</h4><p>리스트는 중복이 가능하고 순차적인 데이터를 나타낼 수 있으며, 내부 항목을 변경가능하다.</p>
 <ul>
@@ -178,11 +177,8 @@
 <p><br></br></p>
 <h3 id="예시문제"><a href="#예시문제" class="headerlink" title="예시문제"></a>예시문제</h3><p><strong>1. 문자열 ‘algorithm’을 리스트, 튜플 타입으로 형변환하여 새 변수에 할당한다.</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'algorithm'</span></span><br><span class="line">list_s = list(s)</span><br><span class="line">tuple_s = tuple(s)</span><br><span class="line"></span><br><span class="line">print(type(s), s)</span><br><span class="line">print(type(list_s), list_s)</span><br><span class="line">print(type(tuple_s), tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line">&lt;class 'list'&gt; ['a', 'l', 'g', 'o', 'r', 'i', 't', 'h', 'm']</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">tuple</span>'&gt; <span class="params">(<span class="string">'a'</span>, <span class="string">'l'</span>, <span class="string">'g'</span>, <span class="string">'o'</span>, <span class="string">'r'</span>, <span class="string">'i'</span>, <span class="string">'t'</span>, <span class="string">'h'</span>, <span class="string">'m'</span>)</span></span></span><br></pre></td></tr></table></figure>
-
 <p><strong>2. 1번에서 할당한 리스트, 튜플 변수를 이용해 다시 문자열을 만든다.</strong></p>
 <h6 id="Ver-1"><a href="#Ver-1" class="headerlink" title="Ver.1"></a>Ver.1</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'algorithm'</span></span><br><span class="line">list_s = list(s)</span><br><span class="line">tuple_s = tuple(s)</span><br><span class="line"></span><br><span class="line">line_list_s = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(list_s)):</span><br><span class="line">    line_list_s += list_s[i]</span><br><span class="line">print(type(line_list_s), line_list_s)</span><br><span class="line"></span><br><span class="line">line_tuple_s = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(tuple_s)):</span><br><span class="line">    line_tuple_s += tuple_s[i]</span><br><span class="line">print(type(line_tuple_s), line_tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br></pre></td></tr></table></figure>
-
-
 <h6 id="Ver-2"><a href="#Ver-2" class="headerlink" title="Ver.2"></a>Ver.2</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">line_list_s = <span class="string">''</span>.join(list_s)</span><br><span class="line">print(type(line_list_s), line_list_s)</span><br><span class="line"></span><br><span class="line">line_tuple_s = <span class="string">''</span>.join(tuple_s)</span><br><span class="line">print(type(line_tuple_s), line_tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br></pre></td></tr></table></figure>
 
     </div>
@@ -226,6 +222,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2019/12/06/math/">math</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2019/12/01/hello-world/">Welcome to QuantPsy World</a>
             </li>
             
@@ -235,10 +235,6 @@
             
             <li>
                 <a class="footer-post" href="/2019/11/27/Python-%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%A9%94%EC%86%8C%EB%93%9C%EC%99%80-static-%EB%A9%94%EC%86%8C%EB%93%9C/">[Python] 클래스 메소드와 static </a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2019/11/26/Python-%EA%B0%9D%EC%B2%B4%EC%B2%98%EB%9F%BC-%EB%8B%A4%EB%A4%84%EC%A7%80%EB%8A%94-%ED%95%A8%EC%88%98/">[Python] 객체처럼 다뤄지는 함수</a>
             </li>
             
         </ul>
@@ -382,6 +378,22 @@
 <!-- Disqus Comments -->
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
 </body>
 

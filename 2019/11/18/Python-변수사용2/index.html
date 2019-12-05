@@ -202,10 +202,8 @@ Stor">
 <p><br></br></p>
 <h3 id="Story-04-리스트-컴프리헨션"><a href="#Story-04-리스트-컴프리헨션" class="headerlink" title="Story 04. 리스트 컴프리헨션"></a>Story 04. 리스트 컴프리헨션</h3><h4 id="리스트-생성-방법"><a href="#리스트-생성-방법" class="headerlink" title="[리스트 생성 방법]"></a>[리스트 생성 방법]</h4><p>먼저 리스트를 생성하는 기본 방법들을 정리해보겠다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]          <span class="comment"># 리스트를 생성하는 가장 일반적인 방법</span></span><br><span class="line">r2 = []                 <span class="comment"># 빈 리스트를 생성하는 방법</span></span><br><span class="line">r3 = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]     <span class="comment"># 리스트가 포함된 리스트를 생성하는 방법</span></span><br></pre></td></tr></table></figure>
-
 <p>다음은 list 함수를 호출해서 리스트를 생성하는 방법들이다.<br>list 함수에 전달된 내용으로 구성된 리스트가 만들어진다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">r4 = list(<span class="string">'Hello'</span>)      <span class="comment"># 문자열을 전달해서 리스트를 생성 </span></span><br><span class="line">r5 = list((<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>))    <span class="comment"># 튜플을 전달해서 리스트를 생성</span></span><br><span class="line">r6 = list(range(<span class="number">0</span>, <span class="number">5</span>))  <span class="comment"># 레인지를 전달해서 리스트를 생성</span></span><br></pre></td></tr></table></figure>
-
 <p>단순한 리스트는 위와 같은 방법으로 충분히 만들 수 있다.<br>그러나 조건이 복잡한 리스트들, 예를 들어서 아래 요구 조건의 리스트를 만들 때는,</p>
 <h6 id="1-2-3-4-5-의-모든-값을-두-배씩-증가시킨-값을-지니는-리스트를-만들어라"><a href="#1-2-3-4-5-의-모든-값을-두-배씩-증가시킨-값을-지니는-리스트를-만들어라" class="headerlink" title="[1, 2, 3, 4, 5]의 모든 값을 두 배씩 증가시킨 값을 지니는 리스트를 만들어라."></a>[1, 2, 3, 4, 5]의 모든 값을 두 배씩 증가시킨 값을 지니는 리스트를 만들어라.</h6><p>다음과 같이 for 루프를 사용해야 한다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">r2 = []                <span class="comment"># 일단 빈 리스트를 생성하고</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> r1::</span><br><span class="line">	r2.append(i * <span class="number">2</span>)  <span class="comment"># 두 배씩 증가시켜서 리스트 r2에 저장</span></span><br><span class="line"></span><br><span class="line">r2      <span class="comment"># [2, 4, 6, 8, 10]</span></span><br></pre></td></tr></table></figure>
@@ -251,6 +249,10 @@ Stor">
         <ul>
             
             <li>
+                <a class="footer-post" href="/2019/12/06/math/">math</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2019/12/01/hello-world/">Welcome to QuantPsy World</a>
             </li>
             
@@ -260,10 +262,6 @@ Stor">
             
             <li>
                 <a class="footer-post" href="/2019/11/27/Python-%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%A9%94%EC%86%8C%EB%93%9C%EC%99%80-static-%EB%A9%94%EC%86%8C%EB%93%9C/">[Python] 클래스 메소드와 static </a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2019/11/26/Python-%EA%B0%9D%EC%B2%B4%EC%B2%98%EB%9F%BC-%EB%8B%A4%EB%A4%84%EC%A7%80%EB%8A%94-%ED%95%A8%EC%88%98/">[Python] 객체처럼 다뤄지는 함수</a>
             </li>
             
         </ul>
@@ -407,6 +405,22 @@ Stor">
 <!-- Disqus Comments -->
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
 </body>
 

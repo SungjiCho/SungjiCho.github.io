@@ -205,14 +205,9 @@ Stor">
 <h6 id="“v1-v2-변수-v1과-v2가-참조하는-객체의-내용이-같은가-”"><a href="#“v1-v2-변수-v1과-v2가-참조하는-객체의-내용이-같은가-”" class="headerlink" title="“v1 == v2: 변수 v1과 v2가 참조하는 객체의 내용이 같은가?”"></a><strong><strong>“v1 == v2: 변수 v1과 v2가 참조하는 객체의 내용이 같은가?”</strong></strong></h6><h6 id="“v1-is-v2-변수-v1과-v2가-참조하는-객체는-동일-객체인가-”"><a href="#“v1-is-v2-변수-v1과-v2가-참조하는-객체는-동일-객체인가-”" class="headerlink" title="“v1 is v2: 변수 v1과 v2가 참조하는 객체는 동일 객체인가?”"></a><strong><strong>“v1 is v2: 변수 v1과 v2가 참조하는 객체는 동일 객체인가?”</strong></strong></h6><p><br></br></p>
 <p>따라서 동일한 값을 담고 있는 두 객체를 대상으로 하는 두 연산의 결과는 다음과 같다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">r2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">print(r1 <span class="keyword">is</span> r2)    <span class="comment"># r1과 r2가 참조하는 객체는 같은 객체인가?: False</span></span><br><span class="line">print(id(r1), id(r2))</span><br><span class="line"></span><br><span class="line">print(r1 == r2)    <span class="comment"># r1과 r2가 참조하는 객체에 담긴 값은 같은가?: True</span></span><br><span class="line">print(r1, r2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="number">140568777174528</span> <span class="number">140568777678016</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
-
 <p>참고로 is 연산이 True를 반환하는 상황은 다음과 같다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">r2 = r1            <span class="comment"># r1이 참조하는 리스트에 r2라는 이름을 하나 더 붙임</span></span><br><span class="line">print(r1 <span class="keyword">is</span> r2)    <span class="comment"># True</span></span><br></pre></td></tr></table></figure>
-
-
-<p>자! 그럼 다음 예제에서 보이는 객체 복사 결과를 살펴보자.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">23</span>]]  <span class="comment"># John은 미국 남자로 175cm 23세</span></span><br><span class="line">r2 = list(r1)          <span class="comment"># r1의 내용으로 새로운 리스트 만듦</span></span><br><span class="line"></span><br><span class="line">print(r1 <span class="keyword">is</span> r2)        <span class="comment"># False</span></span><br><span class="line">print(r1[<span class="number">0</span>] <span class="keyword">is</span> r2[<span class="number">0</span>])  <span class="comment"># r1과 r2의 'John'은 동일 객체인가?: True</span></span><br><span class="line">print(r1[<span class="number">1</span>] <span class="keyword">is</span> r2[<span class="number">1</span>])  <span class="comment"># r1과 r2의 ('man', 'USA')은 동일 객체인가?: True </span></span><br><span class="line">print(r1[<span class="number">2</span>] <span class="keyword">is</span> r2[<span class="number">2</span>])  <span class="comment"># r1과 r2의 [175, 23]은 동일 객체인가?: True</span></span><br></pre></td></tr></table></figure>
-
+<p>자! 그럼 다음 예제에서 보이는 객체 복사 결과를 살펴보자.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">23</span>]]  <span class="comment"># John은 미국 남자로 175cm 23세</span></span><br><span class="line">r2 = list(r1)          <span class="comment"># r1의 내용으로 새로운 리스트 만듦</span></span><br><span class="line"></span><br><span class="line">print(r1 <span class="keyword">is</span> r2)        <span class="comment"># False</span></span><br><span class="line">print(r1[<span class="number">0</span>] <span class="keyword">is</span> r2[<span class="number">0</span>])  <span class="comment"># r1과 r2의 'John'은 동일 객체인가?: True</span></span><br><span class="line">print(r1[<span class="number">1</span>] <span class="keyword">is</span> r2[<span class="number">1</span>])  <span class="comment"># r1과 r2의 ('man', 'USA')은 동일 객체인가?: True </span></span><br><span class="line">print(r1[<span class="number">2</span>] <span class="keyword">is</span> r2[<span class="number">2</span>])  <span class="comment"># r1과 r2의 [175, 23]은 동일 객체인가?: True</span></span><br></pre></td></tr></table></figure></p>
 <p>위의 예에서 r1이라는 리스트를 생성하였다.<br>위와 같이 리스트를 생성하면 리스트 안에 선언되는 값들이 리스트에 쏙 들어가 있는 형태가 아니라 다음 그림에서 보이듯이 각 값들을(객체들을) 리스트 내에서 참조하는 형태가 된다.</p>
 <p><br></br></p>
 <p><img src="/image/list_object_reference.jpeg" alt="list_object_reference"></p>
@@ -226,10 +221,9 @@ Stor">
 <h6 id="문자열-객체-‘John’"><a href="#문자열-객체-‘John’" class="headerlink" title="문자열 객체: ‘John’"></a><strong><strong>문자열 객체: ‘John’</strong></strong></h6><h6 id="튜플-객체-‘man’-‘USA’"><a href="#튜플-객체-‘man’-‘USA’" class="headerlink" title="튜플 객체: (‘man’, ‘USA’)"></a><strong><strong>튜플 객체: (‘man’, ‘USA’)</strong></strong></h6><p><br></br></p>
 <p>그러나 다음 객체를 대상으로 얕은 복사를 하는 것은 문제가 될 수 있다.<br>리스트는 그 안에 담긴 값을 수정할 수 있는 객체이기 때문이다.</p>
 <p><br></br></p>
-<h6 id="리스트-객체-175-23"><a href="#리스트-객체-175-23" class="headerlink" title="리스트 객체: [175, 23]"></a><strong><strong>리스트 객체: [175, 23]</strong></strong></h6><p><br></br><br><br></br></p>
+<h6 id="리스트-객체-175-23"><a href="#리스트-객체-175-23" class="headerlink" title="리스트 객체: [175, 23]"></a><strong><strong>리스트 객체: [175, 23]</strong></strong></h6><p><br>&lt;/br&gt;<br><br></br></p>
 <h4 id="깊은-복사"><a href="#깊은-복사" class="headerlink" title="[깊은 복사]"></a>[깊은 복사]</h4><p>정리하면 값의 변경이 불가능한 immutable 객체는 얕은 복사를 해도 문제가 되지 않는다.<br>그러나 값의 변경이 가능한 mutable 객체는 얕은 복사가 문제가 될 수 있다.<br>이와 관련해서 다음 예를 보자.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">J2021 = [<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">23</span>]]  <span class="comment"># 2021년도 John의 정보</span></span><br><span class="line">J2022 = list(J2021)  <span class="comment"># 필요에 의해 John의 정보를 하나 복사했다.</span></span><br><span class="line">J2022[<span class="number">2</span>][<span class="number">1</span>] += <span class="number">1</span>     <span class="comment"># 2022년도 John의 정보, 나이 한 살 더 먹음</span></span><br><span class="line">print(J2021)         <span class="comment"># 2021년도 John의 정보 출력</span></span><br><span class="line">print(J2022)         <span class="comment"># 2022년도 John의 정보 출력</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">[<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">24</span>]]</span><br><span class="line">[<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">24</span>]]</span><br></pre></td></tr></table></figure>
-
 <p>John은 해가 지날수록 나이는 먹는다. 그래서 위의 예에서 2021년도 John의 정보를 기반으로 2022년도의 John의 정보를 만들었다. 그런데 얕은 복사로 인해 2021년의 John 정보도 바뀌어 버렸다.<br>이렇듯 mutable 객체에 저장된 값들은 변경될 수 있기 때문에 이들에 대해서는 복사 대상을 하나 더 생성하는 ‘깊은 복사’라는 것을 해야 한다. 즉 다음 객체를 대상으로 복사를 할 경우,</p>
 <p><br></br></p>
 <h6 id="‘John’-‘man’-‘USA’-175-23"><a href="#‘John’-‘man’-‘USA’-175-23" class="headerlink" title="[‘John’, (‘man’, ‘USA’), [175, 23]]"></a><strong><strong>[‘John’, (‘man’, ‘USA’), [175, 23]]</strong></strong></h6><p><br></br></p>
@@ -239,10 +233,8 @@ Stor">
 <p><br></br></p>
 <p>그리고 이를 위해서는 다음 예에서 보이듯이 copy 모듈의 deepcopy 함수를 사용하면 된다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy  <span class="comment"># deepcopy 함수 호출을 위해서 copy 모듈 import</span></span><br><span class="line">J2022 = copy.deepcopy(J2021)</span><br><span class="line">J2022[<span class="number">2</span>][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">print(J2021)</span><br><span class="line">print(J2022)</span><br><span class="line">print((J2021[<span class="number">0</span>] <span class="keyword">is</span> J2022[<span class="number">0</span>]) <span class="keyword">and</span> (J2021[<span class="number">1</span>] <span class="keyword">is</span> J2022[<span class="number">1</span>]))  <span class="comment"># 얕은 복사 확인</span></span><br><span class="line">print(J2021[<span class="number">2</span>] <span class="keyword">is</span> J2022[<span class="number">2</span>])  <span class="comment"># 깊은 복사 확인</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">[<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">24</span>]]</span><br><span class="line">[<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">25</span>]]</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
-
 <p>위의 결과에서 보이듯이 deepcopy 함수의 호출 결과로 immutable 객체를 대상으로는 얕은 복사가 진행되었고 mutable 객체를 대상으로는 깊은 복사가 진행되었다. 참고로 다음의 방식으로 튜플이나 문자열을 복사하면 얕은 복사가 진행된다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">d1 = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">d2 = <span class="string">'Please'</span></span><br><span class="line">c1 = tuple(d1)   <span class="comment"># d1 기반으로 튜플 생성, 사실상 튜플 복사</span></span><br><span class="line">c2 = str(d2)     <span class="comment"># d2 기반으로 문자열 생성, 사실상 문자열 복사</span></span><br><span class="line">print(d1 <span class="keyword">is</span> c1)  <span class="comment"># d1과 c1이 참조하는 대상이 같은 객체인가? True</span></span><br><span class="line">print(d2 <span class="keyword">is</span> c2)  <span class="comment"># d2와 c2가 참조하는 대상이 같은 객체인가? True</span></span><br></pre></td></tr></table></figure>
-
 <p>메모리의 효율적 사용을 위해서 이렇듯 파이썬은 ‘선한 거짓말’을 하고 있다.<br>그러니 속아주자. 이것이 문제가 되는 상황은 없을 테니 말이다.<br><br></br></p>
 
     </div>
@@ -286,6 +278,10 @@ Stor">
         <ul>
             
             <li>
+                <a class="footer-post" href="/2019/12/06/math/">math</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2019/12/01/hello-world/">Welcome to QuantPsy World</a>
             </li>
             
@@ -295,10 +291,6 @@ Stor">
             
             <li>
                 <a class="footer-post" href="/2019/11/27/Python-%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%A9%94%EC%86%8C%EB%93%9C%EC%99%80-static-%EB%A9%94%EC%86%8C%EB%93%9C/">[Python] 클래스 메소드와 static </a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2019/11/26/Python-%EA%B0%9D%EC%B2%B4%EC%B2%98%EB%9F%BC-%EB%8B%A4%EB%A4%84%EC%A7%80%EB%8A%94-%ED%95%A8%EC%88%98/">[Python] 객체처럼 다뤄지는 함수</a>
             </li>
             
         </ul>
@@ -442,6 +434,22 @@ Stor">
 <!-- Disqus Comments -->
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
 </body>
 
