@@ -147,8 +147,8 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2019/12/06/math/">
-                math
+            <a href="/2019/12/06/SEM-%EA%B5%AC%EC%A1%B0%EB%B0%A9%EC%A0%95%EC%8B%9D-%EB%AA%A8%ED%98%95%EC%9D%98-%EC%86%8C%EA%B0%9C/">
+                [SEM] 구조방정식 모형의 소개
             </a>
         </h1>
         <div class="post-info">
@@ -162,13 +162,13 @@
 
     
         <div class="content">
-            <script type="math/tex; mode=display">
-\begin{pmatrix}
- 1 & a_1 & a_1^2 & \cdots & a_1^n \\\\
- 1 & a_2 & a_2^2 & \cdots & a_2^n \\\\
- \vdots  & \vdots& \vdots & \ddots & \vdots \\\\
- 1 & a_m & a_m^2 & \cdots & a_m^n    
- \end{pmatrix}</script>
+            <h1 id="1-구조방정식-모형의-소개"><a href="#1-구조방정식-모형의-소개" class="headerlink" title="1. 구조방정식 모형의 소개"></a>1. 구조방정식 모형의 소개</h1><h6 id="본-포스팅은-lt-구조방정식-모형의-기본과-확장-gt-을-바탕으로-진행합니다"><a href="#본-포스팅은-lt-구조방정식-모형의-기본과-확장-gt-을-바탕으로-진행합니다" class="headerlink" title="본 포스팅은 &lt;구조방정식 모형의 기본과 확장&gt;을 바탕으로 진행합니다."></a>본 포스팅은 &lt;구조방정식 모형의 기본과 확장&gt;을 바탕으로 진행합니다.</h6><p><br></br></p>
+<h3 id="1-1-구조방정식이란"><a href="#1-1-구조방정식이란" class="headerlink" title="1.1 구조방정식이란?"></a>1.1 구조방정식이란?</h3><p>구조방정식 모형(structural equation modeling 또는 structural equation model, SEM)이란 무엇인가?<br>하나의 문장으로 정의하고자 한 연구자들도 있어 왔지만, 한 문장으로 이루어진 정의가 SEM을 이해하고 이용하는 데 있어서 큰 도움을 줄 것 같지는 않다. 기본적으로 학계에서 SEM이라고 하면 이는 크게 두 가지 의미(좁은 의미와 넓은 의미)로 받아들여질 수 있다. 먼저 좁은 의미로는 잠재변수들(latent variables) 간의 구조적인 관계(회귀 관계)를 확인하는 하나의 통계모형이다. 예를 들어 성격, 인지능력, 직업흥미라는 추상적인 개념을 구체적인 수치를 가진 관찰변수(수집된 자료)를 이용하여 만들어 내고, 이렇게 만들어진 추상적인 변수(잠재변수)들 간에 서로 주고받는 영향을 구조방정식 모형을 통하여 추정하고 검정하게 된다. 이처럼 심리학 또는 교육학에서는 우울, 불안, 효능감, 능력 등의 수많은 개인수준의 잠재변수들이 만들어지고, 이 잠재변수들 간의 영향관계가 연구되는 것이 일반적이다.</p>
+<p>반면 SEM을 넓은 의미로 보면, 이는 구조방정식의 수식이나 경로도 표현 방식으로 나타내어질 수 있는 모든 통계모형을 일컫거나 또는 그와 같은 표현 방식 자체, 즉 틀(framework)을 나타낸다. 예를 들어, 우리가 잘 알고 있는 회귀분석모형, 분산분석모형, 요인분석모형 등도 모두 SEM의 틀 안에서 추정 가능하며, 더욱 발전적인 기법들인 문항반응이론모형, 잠재계층분석, 다층모형 등도 크게 SEM의 틀 안에 있다고 볼 수 있다. 즉, SEM은 이미 존재하는 많은 통계 방법들과 현재 발전하고 있는 여러 고급기법들을 하나의 형식으로 일반화할수 있는 매우 강력한 틀이라고 할 수 있다. 이런 경우, 특히 잠재변수가 사용되는 모형들의 경우, SEM이라는 표현 대신 잠재변수모형이라는 단어를 사용하기도 한다.</p>
+<p>정리하자면, SEM은 작은 의미로는 잠재변수 간의 구조관계를 연구하는 하나의 통계모형이며, 이때는 structural equation model이라는 표현과 상통한다. 또한 크게는 관찰변수나 잠재변수를 사용하고, 구조방정식 표현 방법으로 나타내어질 수 있는 모든 모형을 가리킨다고 볼 수 있는데, 이때는 structural equation modeling framework라는 표현과 맞닿아 있다.</p>
+<p><br></br></p>
+<h3 id="1-2-구조방정식-모형의-한계"><a href="#1-2-구조방정식-모형의-한계" class="headerlink" title="1.2 구조방정식 모형의 한계"></a>1.2 구조방정식 모형의 한계</h3><p>구조방정식을 소개하는 장에서 미리 구조방정식 모형의 한계를 논한다는 것이 성급한 면도 있지만, 여기서 밝힐 부분은 매우 중요하며 구조방정식을 공부하는 내내 마음속에 담아 두어야 할 내용이다. 여러 학문 분야의 많은 연구자들이 자신의 연구가설에 맞는 무형의 경로도를 설정하고, 즉 어떤 변수에서 다른 변수로 가는 화살표를 설정하고, 프로그램을 이용해 그 모형을 추정한 다음, 만약 여러 다양한 모형의 적합도(모형이 자료에 부합하는 정도) 지수가 두루 만족되었다면 마치 자신의 모형이 진정한 모형(true model)인 것처럼 과장해서 해석하는 경향이 있다. 즉, 모형의 적합도가 좋다면 연구자가 설정한 변수 간 화살표의 방향이 마치 본인이 추정한 모형에 의해서 증명되었다는 생각을 하는 경우가 많다. 결론적으로 말해서 이런 생각은 옳지 않으며, 앞으로 구조방정식을 사용함에 있어서 가장 주의해야 할 부분이라고 할 수 있다.</p>
+
         </div>
     
 
@@ -770,7 +770,7 @@
         <ul>
             
             <li>
-                <a class="footer-post" href="/2019/12/06/math/">math</a>
+                <a class="footer-post" href="/2019/12/06/SEM-%EA%B5%AC%EC%A1%B0%EB%B0%A9%EC%A0%95%EC%8B%9D-%EB%AA%A8%ED%98%95%EC%9D%98-%EC%86%8C%EA%B0%9C/">[SEM] 구조방정식 모형의 소개</a>
             </li>
             
             <li>
@@ -926,22 +926,6 @@
 <!-- Disqus Comments -->
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
 </body>
 
