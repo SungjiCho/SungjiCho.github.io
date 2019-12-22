@@ -147,6 +147,214 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2019/11/21/Python-%EB%B3%80%EC%88%98%EC%82%AC%EC%9A%A93/">
+                [Python] 변수사용3
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-21</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="파이썬에서-변수를-어떻게-사용할-수-있을까-3"><a href="#파이썬에서-변수를-어떻게-사용할-수-있을까-3" class="headerlink" title="파이썬에서 변수를 어떻게 사용할 수 있을까?  (3)"></a>파이썬에서 <strong>변수</strong>를 어떻게 사용할 수 있을까?  (3)</h1><h6 id="본-포스팅은-lt-윤성우의-열혈-파이썬-중급편-gt-과-lt-처음-시작하는-파이썬-gt-을-바탕으로-진행합니다"><a href="#본-포스팅은-lt-윤성우의-열혈-파이썬-중급편-gt-과-lt-처음-시작하는-파이썬-gt-을-바탕으로-진행합니다" class="headerlink" title="본 포스팅은 &lt;윤성우의 열혈 파이썬 중급편&gt;과 &lt;처음 시작하는 파이썬&gt;을 바탕으로 진행합니다."></a>본 포스팅은 &lt;윤성우의 열혈 파이썬 중급편&gt;과 &lt;처음 시작하는 파이썬&gt;을 바탕으로 진행합니다.</h6><h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ul>
+<li>Story 03. 깊은 복사와 얕은 복사<ul>
+<li>[두 객체의 비교와 복사]</li>
+<li>[깊은 복사]</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Story 04. 리스트 컴프리헨션<ul>
+<li>[리스트 생성 방법]</li>
+<li>[조건 필터 추가하기]</li>
+<li>[리스트 컴프리헨션에 for 한번 더 들어가는 경우]</li>
+<li>[이중 for 루프에 조건 필터 추가]</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Story 05. Iterable 객체와 Iterator 객체]<ul>
+<li>[iter 함수]</li>
+<li>[Iterable 객체와 Iterator 객체의 구분]</li>
+<li>[스페셜 메소드]</li>
+<li>[Iterable 객체의 종류와 확인 방법]</li>
+<li>[for 루프와 Iterable 객체]</li>
+</ul>
+</li>
+</ul>
+<p><br></br></p>
+<h3 id="Story-05-Iterable-객체와-Iterator-객체"><a href="#Story-05-Iterable-객체와-Iterator-객체" class="headerlink" title="Story 05. Iterable 객체와 Iterator 객체"></a>Story 05. Iterable 객체와 Iterator 객체</h3><h4 id="iter-함수"><a href="#iter-함수" class="headerlink" title="[iter 함수]"></a>[iter 함수]</h4><p>하나 이상의 값을 저장하는 일과 저장된 값들을 하나씩 꺼내 보는 일은 단순하지만 중요한 일이다.<br>그리고 자주 필요한 일이기도 하다. 물론 우리는 다음과 같이 for 루프를 기반으로 이러한 일을 진행할 수 있다. 지금부터는 코딩도장을 바탕으로 <strong>iter</strong>, <strong>next</strong> 메서드를 구현해서 이터레이터를 직접 만들어보고 그 동작원리를 살펴보도록 하자.</p>
+<p>다음은 간단하게 range(횟수)처럼 동작하는 이터레이터이다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 이터레이터이름:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="comment"># 코드</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__next__</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="comment"># 코드</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Counter</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, stop)</span>:</span></span><br><span class="line">		self.current = <span class="number">0</span>   <span class="comment"># 현재 숫자 유지</span></span><br><span class="line">		self.stop = stop   <span class="comment"># 반복을 끝낼 숫자</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> self        <span class="comment"># 현재 인스턴스를 반환: iterator 객체 얻는 방법</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__next__</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">if</span> self.current &lt; self.stop: </span><br><span class="line">			r = self.current   <span class="comment"># 반환할 숫자를 변수에 저장</span></span><br><span class="line">			self.current += <span class="number">1</span></span><br><span class="line">			<span class="keyword">return</span> r</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="keyword">raise</span> StopIteration</span><br><span class="line"></span><br><span class="line"><span class="comment"># 사용예시</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> Counter(<span class="number">3</span>):</span><br><span class="line">	print(i, end=<span class="string">' '</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line"><span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>실행을 해보면 0 1 2가 나오는데, 이렇게 0부터 지정된 숫자 직전까지 반복하는 이터레이터 Counter를 정의했다. 먼저 클래스로 이터레이터를 작성하려면 <strong>init</strong> 메서드를 만든다. 여기서는 Counter(3) 처럼 반복을 끝낼 숫자를 받았으므로 self.stop에 stop을 넣어준다. 그리고 반복할 때마다 현재 숫자를 유지해야 하므로 속성 self.current에 0을 넣어준다(0부터 지정된 숫자 직전까지 반복하므로 0을 넣는다).</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, stop)</span>:</span></span><br><span class="line">	self.current = <span class="number">0</span>          <span class="comment"># 0부터 지정된 숫자 직전까지 반복</span></span><br><span class="line">	self.stop = stop          <span class="comment"># 반복을 끝낼 숫자</span></span><br></pre></td></tr></table></figure>
+<p>그리고 <strong>iter</strong> 메서드를 만드는데 여기서는 self만 반환하면 끝이다. 그래서 Counter 객체를 얻는 방법은 iter 함수를 호출하는 것이다. 이 객체는 리스트, 문자열, 딕셔너리, 세트, range처럼 <strong>iter</strong>를 호출해줄 반복 가능한 객체(iterable)가 없으므로 현재 인스턴스를 반환하면 된다. 즉, 이 객체는 반복 가능한 객체이면서 이터레이터이다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> self                <span class="comment"># 현재 인스턴스를 반환</span></span><br></pre></td></tr></table></figure>
+<p>그 다음에 <strong>next</strong> 메서드를 만든다. <strong>next</strong>에서는 조건에 따라 숫자를 만들어 내거나StopIteration 예외를 발생시킨다. 현재 숫자 self.current가 반복을 끝낼 숫자 self.stop보다 작을 때는 self.current를 1 증가시키고 현재 숫자를 반환한다. 이때 1 증가한 숫자를 반환하지 않도록 숫자를 증가시키기 전에 r = self.current 처럼 반환할 숫자를 변수에 저장해 놓는다. 그 다음에 self.current가 self.stop 보다 크거나 같아질 때는 raise StopIteration으로 예외를 발생시킨다.</p>
+<p>참고로 이터레이터는 언패킹이 가능하며, 이터레이터가 반복하는 횟수와 변수의 개수는 같아야 한다.</p>
+<p>이처럼 값을 꺼내는 방법이 조금 더 유연해진다면 우리가 할 수 있는 일의 범위는 더 넓어질 것이다. 그래서 그 유연한 방법을 소개하고자 한다. 그럼 이와 관련하여 다음 예를 보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ds = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">ir = iter(ds)               <span class="comment"># iterator 객체를 얻는 방법</span></span><br><span class="line">next(ir)                    <span class="comment"># iterator 객체를 통해 값을 하나 꺼내는 방법, 첫 번째 값 반환</span></span><br><span class="line">next(ir)                    <span class="comment"># 두 번째 값 반환</span></span><br><span class="line">next(ir)                    <span class="comment"># 세 번째 값 반환</span></span><br><span class="line">next(ir)                    <span class="comment"># 네 번째 값 반환</span></span><br></pre></td></tr></table></figure>
+<p>위 예제에서는 iter라는 이름의 함수를 호출하면서 리스트를 전달했다.<br>그러면 iter 함수는 객체를 생성해서 반환하는데, 이는 리스트에서 값을 꺼내는 기능을 제공하는 객체이다. 그리고 이러한 구조를 그림으로 정리하면 다음과 같다.</p>
+<p><br></br></p>
+<p><img src="/image/iterator.jpeg" alt="iterator"></p>
+<p><br></br></p>
+<p>즉 위 예제에서는 다음과 같이 리스트 ds를 전달하면서 iter 함수를 호출하였다.</p>
+<p><br></br></p>
+<h6 id="ir-iter-ds-iterator-객체를-얻는-방법"><a href="#ir-iter-ds-iterator-객체를-얻는-방법" class="headerlink" title="ir = iter(ds)        # iterator 객체를 얻는 방법"></a>ir = iter(ds)        # iterator 객체를 얻는 방법</h6><p><br></br></p>
+<p>그러면 iter 함수는 리스트 ds에 접근하는 도구인 ‘iterator 객체’라는 것을 생성해서 반환한다. 즉 위의 문장이 실행되면 변수 ir은 ‘iterator 객체’를 참조하는(저장한) 상황이 된다. 그럼 이어서 이 객체를 전달하면서 다음과 같이 next 함수를 호출해서 리스트에 저장된 값을 하나씩 얻을 수 있다.</p>
+<p><br></br></p>
+<h6 id="next-ir-다음-값을-반환해라"><a href="#next-ir-다음-값을-반환해라" class="headerlink" title="next(ir)            # 다음 값을 반환해라!"></a>next(ir)            # 다음 값을 반환해라!</h6><p><br></br></p>
+<p>사용 방법은 단순하다. 계속해서 next 함수를 호출하면서 iterator 객체를 전달하면 된다. 그러면 첫 번째 값부터 마지막 값까지 순차적으로 반환된다. 그리고 마지막 값을 얻었음에도 불구하고 다시 next 함수를 호출하면서 StopIteration 예외가 발생한다.</p>
+<p>그렇다면 다시 처음부터 값을 얻으려면 어떻게 해야 할까? 다음 예제에서 보이듯이 iterator 객체를 다시 얻으면 된다. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ds = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">ir = iter(ds)              <span class="comment"># iterator 객체 얻음</span></span><br><span class="line">next(ir)                   <span class="comment"># 1</span></span><br><span class="line">next(ir)                   <span class="comment"># 2</span></span><br><span class="line">next(ir)                   <span class="comment"># 마지막 값을 이미 반환했기 때문에 StopIteration 예외 발생</span></span><br><span class="line">ir = iter(ds)              <span class="comment"># 다시 iterator 객체 얻음</span></span><br><span class="line">next(ir)                   <span class="comment"># 1</span></span><br><span class="line">next(ir)                   <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
+<p>이런 방식으로 값을 꺼내게 되면 원하는 시기에 하나씩 값을 꺼낼 수 있다. 이는 마치 아이가 먹고 싶을 때마다 사탕을 하나씩 꺼내 먹는 것과 같다. 사탕 전체를 계속 꺼내 먹을 수도 있지만 마지막 사탕은 남겨 뒀다가 내일 먹을 수도 있는 것이다. 즉 꺼내는 방법과 꺼낸 값을 처리하는 방법에 있어서도 유연성이 생긴다.</p>
+<p><br></br></p>
+<h4 id="Iterable-객체와-Iterator-객체의-구분"><a href="#Iterable-객체와-Iterator-객체의-구분" class="headerlink" title="[Iterable 객체와 Iterator 객체의 구분]"></a>[Iterable 객체와 Iterator 객체의 구분]</h4><p>iter 함수가 반환하는 객체를 가리켜 ‘iterator 객체’라 하고 iterator 객체를 얻을 수 있는 리스트와 같은 객체를 가리켜 ‘iterable 객체’라 한다. </p>
+<p><br></br></p>
+<h6 id="Iterable-객체-iter-함수에-인자로-전달-가능한-객체"><a href="#Iterable-객체-iter-함수에-인자로-전달-가능한-객체" class="headerlink" title="Iterable 객체 : iter 함수에 인자로 전달 가능한 객체"></a>Iterable 객체 : iter 함수에 인자로 전달 가능한 객체</h6><h6 id="Iterator-객체-iter-함수가-생성해서-반환하는-객체"><a href="#Iterator-객체-iter-함수가-생성해서-반환하는-객체" class="headerlink" title="Iterator 객체 : iter 함수가 생성해서 반환하는 객체"></a>Iterator 객체 : iter 함수가 생성해서 반환하는 객체</h6><p><br></br></p>
+<p>즉 어떤 객체가 iterable 객체인지 확인하는 가장 쉬운 방법은 iter 함수에 전달해 보는 것이다.<br>전달 결과로 오류 없이 iterator 객체가 만들어진다면 이는 iterable 객체인 것이다. 그리고 이 두 용어를 앞으로 자주 보게 될 것이다. 따라서 잘 정리해 둘 필요가 있다. 다음과 같이 한번 정리해 두면 헷갈리지 않는다</p>
+<p><br></br></p>
+<h6 id="“iterable-객체를-대상으로-iter-함수를-호출해서-iterator-객체를-만든다-”"><a href="#“iterable-객체를-대상으로-iter-함수를-호출해서-iterator-객체를-만든다-”" class="headerlink" title="“iterable 객체를 대상으로 iter 함수를 호출해서 iterator 객체를 만든다.”"></a>“iterable 객체를 대상으로 iter 함수를 호출해서 iterator 객체를 만든다.”</h6><h6 id="“iterator-객체를-생성할-수-있는-대상이-되는-것이-iterable-객체이다-”"><a href="#“iterator-객체를-생성할-수-있는-대상이-되는-것이-iterable-객체이다-”" class="headerlink" title="“iterator 객체를 생성할 수 있는 대상이 되는 것이 iterable 객체이다.”"></a>“iterator 객체를 생성할 수 있는 대상이 되는 것이 iterable 객체이다.”</h6><p><br></br></p>
+<h4 id="스페셜-메소드"><a href="#스페셜-메소드" class="headerlink" title="[스페셜 메소드]"></a>[스페셜 메소드]</h4><p>앞서 다음과 같은 방식으로 예제를 작성했기 때문에 iter 함수와 next 함수는 객체에 속하지 않는 함수처럼 보인다.<br>그러나 위의 예제의 실제 함수의 호출 형태는 다음과 같다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ds = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">ir = ds.__iter__()      <span class="comment"># iter 함수 호출의 실제 모습</span></span><br><span class="line">print(ir.__next__())    <span class="comment"># 1; next 함수 호출의 실제 모습</span></span><br><span class="line">print(ir.__next__())    <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
+<p>즉 iter 함수 호출은 파이썬 인터프리터에 의해 <strong>iter</strong> 메소드 호출로 이어지고,</p>
+<p><br></br></p>
+<h6 id="ir-iter-ds-gt-ir-ds-iter"><a href="#ir-iter-ds-gt-ir-ds-iter" class="headerlink" title="ir = iter(ds)  -&gt;  ir = ds.iter()"></a>ir = iter(ds)  -&gt;  ir = ds.<strong>iter</strong>()</h6><p><br></br></p>
+<h6 id="next-ir-gt-ir-next"><a href="#next-ir-gt-ir-next" class="headerlink" title="next(ir)  -&gt;  ir.next()"></a>next(ir)  -&gt;  ir.<strong>next</strong>()</h6><p><br></br></p>
+<p>따라서 다음과 같이 정리할 수 있다.</p>
+<p><br></br></p>
+<h6 id="“리스트의-iter-메소드-호출을-통해서-iterator-객체를-얻게-된다-”"><a href="#“리스트의-iter-메소드-호출을-통해서-iterator-객체를-얻게-된다-”" class="headerlink" title="“리스트의 iter 메소드 호출을 통해서 iterator 객체를 얻게 된다.”"></a>“리스트의 <strong>iter</strong> 메소드 호출을 통해서 iterator 객체를 얻게 된다.”</h6><h6 id="“iterator-객체의-next메소드-호출을-통해서-값을-하나씩-얻게-된다-”"><a href="#“iterator-객체의-next메소드-호출을-통해서-값을-하나씩-얻게-된다-”" class="headerlink" title="“iterator 객체의 next메소드 호출을 통해서 값을 하나씩 얻게 된다.”"></a>“iterator 객체의 <strong>next</strong>메소드 호출을 통해서 값을 하나씩 얻게 된다.”</h6><p><br></br></p>
+<p>그리고 이렇듯 직접 호출하지 않아도 파이썬 인터프리터에 의해서 호출되는 메소드를 가리켜 다음과 같이 부른다.</p>
+<p><br></br></p>
+<h6 id="스페셜-메소드-Special-Method-파이썬-인터프리터에-의해서-호출되는-메소드"><a href="#스페셜-메소드-Special-Method-파이썬-인터프리터에-의해서-호출되는-메소드" class="headerlink" title="스페셜 메소드(Special Method): 파이썬 인터프리터에 의해서 호출되는 메소드"></a>스페셜 메소드(Special Method): 파이썬 인터프리터에 의해서 호출되는 메소드</h6><p><br></br></p>
+<p>객체 생성 시 자동으로 호출되는 <strong>init</strong> 메소드도 스페셜 메소드이다.<br>그리고 이미 짐작했겠지만 스페셜 메소드는 그 나름의 이름 규칙이 있다.<br>이름의 앞과 뒤에 _를 두 개씩 붙여주는 것이다. 앞으로 다양한 스페셜 메소드를 접하게 된 지금은 그 존재르 알게 된 것에 만족하자.</p>
+<p><br></br></p>
+<h4 id="Iterable-객체의-종류와-확인-방법"><a href="#Iterable-객체의-종류와-확인-방법" class="headerlink" title="[Iterable 객체의 종류와 확인 방법]"></a>[Iterable 객체의 종류와 확인 방법]</h4><p>우리는 리스트를 통해서 iterator 객체를 얻을 수 있다. 그럼 혹시 튜플이나 문자열을 통해서 iterator 객체를 얻을 수 있지 않을까? 맞다. 얻을 수 있다. 그럼 먼저 튜플을 대상으로 이 사실을 확인해보겠다.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">td = (<span class="string">'one'</span>, <span class="number">2</span>, [<span class="string">'three'</span>, <span class="number">3</span>])</span><br><span class="line">ir = iter(td)                    <span class="comment"># 튜플을 대상으로 iterator 객체 반환을 명령</span></span><br><span class="line">print(next(ir), type(ir))        <span class="comment"># iterator 객체를 통해 튜플에 저장된 첫 번째 값을 얻음</span></span><br><span class="line">print(next(ir), type(ir))        <span class="comment"># 두 번째 값을 얻음</span></span><br><span class="line">print(next(ir), type(ir))        <span class="comment"># 세 번째 값을 얻음</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">one &lt;<span class="class"><span class="keyword">class</span> '<span class="title">tuple_iterator</span>'&gt;</span></span><br><span class="line"><span class="class">2 &lt;<span class="title">class</span> '<span class="title">tuple_iterator</span>'&gt;</span></span><br><span class="line">['three', 3] &lt;class 'tuple_iterator'&gt;</span><br></pre></td></tr></table></figure>
+<p>마찬가지로 문자열을 대상으로 iterator 객체를 얻을 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"iteration"</span></span><br><span class="line">ir = iter(s)</span><br><span class="line">print(next(ir), type(ir))</span><br><span class="line">print(next(ir), type(ir))</span><br><span class="line">print(next(ir), type(ir))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">i &lt;<span class="class"><span class="keyword">class</span> '<span class="title">str_iterator</span>'&gt;</span></span><br><span class="line"><span class="class"><span class="title">t</span> &lt;<span class="title">class</span> '<span class="title">str_iterator</span>'&gt;</span></span><br><span class="line"><span class="class"><span class="title">e</span> &lt;<span class="title">class</span> '<span class="title">str_iterator</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+<p>즉 리스트, 튜플, 문자열은 모두 iterator 객체를 반환하는 ‘iterable 객체’이다.<br>참고로 다음과 같이 dir 함수를 호출해서 <strong>iter</strong>메소드가 존재하는지 확인하는 방법으로도 iterable 객체인지 아닌지 판단할 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dir([<span class="number">1</span>, <span class="number">2</span>])        <span class="comment"># 리스트 객체 안에 있는 것들의 이름을 보여라</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">[<span class="string">'__add__'</span>, <span class="string">'__class__'</span>, <span class="string">'__contains__'</span>, <span class="string">'__delattr__'</span>, <span class="string">'__delitem__'</span>, <span class="string">'__dir__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__eq__'</span>, <span class="string">'__format__'</span>, <span class="string">'__ge__'</span>, <span class="string">'__getattribute__'</span>, <span class="string">'__getitem__'</span>, <span class="string">'__gt__'</span>, <span class="string">'__hash__'</span>, <span class="string">'__iadd__'</span>, <span class="string">'__imul__'</span>, <span class="string">'__init__'</span>, <span class="string">'__init_subclass__'</span>, <span class="string">'__iter__'</span>, <span class="string">'__le__'</span>, <span class="string">'__len__'</span>, <span class="string">'__lt__'</span>, <span class="string">'__mul__'</span>, <span class="string">'__ne__'</span>, <span class="string">'__new__'</span>, <span class="string">'__reduce__'</span>, <span class="string">'__reduce_ex__'</span>, <span class="string">'__repr__'</span>, <span class="string">'__reversed__'</span>, <span class="string">'__rmul__'</span>, <span class="string">'__setattr__'</span>, <span class="string">'__setitem__'</span>, <span class="string">'__sizeof__'</span>, <span class="string">'__str__'</span>, <span class="string">'__subclasshook__'</span>, <span class="string">'append'</span>, <span class="string">'clear'</span>, <span class="string">'copy'</span>, <span class="string">'count'</span>, <span class="string">'extend'</span>, <span class="string">'index'</span>, <span class="string">'insert'</span>, <span class="string">'pop'</span>, <span class="string">'remove'</span>, <span class="string">'reverse'</span>, <span class="string">'sort'</span>]</span><br></pre></td></tr></table></figure>
+<p>만약에 True 또는 False로 답을 듣기 원한다면 다음과 같이 hasattr 함수 호출을 통해서 <strong>iter</strong> 함수가 있는지 직접 물어볼 수도 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hasattr([<span class="number">1</span>, <span class="number">2</span>], <span class="string">'__iter__'</span>)       <span class="comment"># 리스트에 __iter__ 함수가 있나요?</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p><br></br></p>
+<h4 id="for-루프와-Iterable-객체"><a href="#for-루프와-Iterable-객체" class="headerlink" title="[for 루프와 Iterable 객체]"></a>[for 루프와 Iterable 객체]</h4><p>사실 for 루프도 값을 하나씩 꺼내기 위해 iterable 객체를 생성해서 이것의 도움을 받는다.<br>즉 다음 코드는,</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]:</span><br><span class="line">	print(i, end=<span class="string">' '</span>)</span><br></pre></td></tr></table></figure>
+<p>내부적으로 다음과 같은 형태로 동작한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ir = iter([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])          <span class="comment"># iterator 객체를 얻는다.</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		i = next(ir)  <span class="comment"># iterator 객체를 통해서 값을 하나씩 꺼낸다.</span></span><br><span class="line">		print(i, end = <span class="string">' '</span>)</span><br><span class="line">	<span class="keyword">except</span> StopIteration: <span class="comment"># 더 이상 꺼낼 것이 없으면,</span></span><br><span class="line">		<span class="keyword">break</span>         <span class="comment"># 이 루프를 탈출한다.</span></span><br></pre></td></tr></table></figure>
+<p>따라서 for 루프의 반복 대상은 반드시 ‘iterable 객체’이어야 한다. iter 함수의 인자로 전달 가능한 iterable 객체이어야 한다. 그래서 iterable 객체인 리스트, 튜플, 문자열은 for 루프의 반복 대상이 될 수 있는 것이다.</p>
+<p>그런데 다음 예에서 보이듯이 for 루프에 iterable 객체가 아닌 iterator 객체를 두어도 정상적으로 동작을 한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ir = iter([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])          <span class="comment"># ir에 저장되는 것은 iterator 객체</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> ir:                  <span class="comment"># for 루프에 iterator 객체를 가져다 두었다.</span></span><br><span class="line">	print(i, end=<span class="string">' '</span>)</span><br></pre></td></tr></table></figure>
+<p>이렇듯 iterator 객체를 가져다 두어도 잘 동작하는 이유는 iter 함수에 iterator 객체를 전달하면 전달된 iterator 객체를 그대로 되돌려 주기 때문이다. 다음 예제에서 보이듯이 말이다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ir1 = iter([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])        <span class="comment"># 리스트의 iterator 객체를 얻음</span></span><br><span class="line">ir2 = iter(ir1)              <span class="comment"># iterator 객체를 전달하면서 다시 iterator 객체를 얻음</span></span><br><span class="line">ir1 <span class="keyword">is</span> ir2                   <span class="comment"># True: ir1과 ir2가 참조하는 객체는 같은 객체이다.</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/11/21/Python-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%B3%B8%EC%A7%88/">
+                [Python] 클래스와 객체의 본질
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-21</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="Story-특별편-클래스와-객체의-본질"><a href="#Story-특별편-클래스와-객체의-본질" class="headerlink" title="Story 특별편. 클래스와 객체의 본질"></a>Story 특별편. 클래스와 객체의 본질</h1><h4 id="객체-안에-변수가-만들어지는-시점"><a href="#객체-안에-변수가-만들어지는-시점" class="headerlink" title="[객체 안에 변수가 만들어지는 시점]"></a>[객체 안에 변수가 만들어지는 시점]</h4><p>소프트웨어 공학 관점에서의 클래스와 객체에 대한 설명을 먼저 살펴보자.</p>
+<p><br></br></p>
+<h5 id="클래스-객체를-만들기-위한-일종의-설계도"><a href="#클래스-객체를-만들기-위한-일종의-설계도" class="headerlink" title="클래스: 객체를 만들기 위한 일종의 설계도"></a>클래스: 객체를 만들기 위한 일종의 설계도</h5><h5 id="객체-클래스를-기반으로-만들어진-실제-사물"><a href="#객체-클래스를-기반으로-만들어진-실제-사물" class="headerlink" title="객체: 클래스를 기반으로 만들어진 실제 사물"></a>객체: 클래스를 기반으로 만들어진 실제 사물</h5><p><br></br></p>
+<p>즉 위의 정의는 언어에 따라 달라지는 내용이 아니다. 그런데 파이썬의 클래스와 객체에는 조금 독특한 부분이 있다.<br>그래서 지금부터 이에 대해서 설명하고자 한다. 일단 다음 클래스 정의를 보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Simple</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">seti</span><span class="params">(self, i)</span>:</span>    <span class="comment"># seti 메소드의 정의</span></span><br><span class="line">		self.i = i</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">geti</span><span class="params">(self)</span>:</span>       <span class="comment"># geti 메소드의 정의</span></span><br><span class="line">		<span class="keyword">return</span> self.i</span><br></pre></td></tr></table></figure>
+<p>클래스의 기본 정의는 다음과 같다.</p>
+<p><br></br></p>
+<h5 id="“클래스-내에-들어갈-변수와-데이터와-메소드를-기능을-결정하는-것”"><a href="#“클래스-내에-들어갈-변수와-데이터와-메소드를-기능을-결정하는-것”" class="headerlink" title="“클래스 내에 들어갈 변수와(데이터와) 메소드를(기능을) 결정하는 것”"></a>“클래스 내에 들어갈 변수와(데이터와) 메소드를(기능을) 결정하는 것”</h5><p><br></br></p>
+<p>그런데 위의 클래스에는 메소드의 정의만 존재한다. 즉 변수의 선언은 존재하지 않는다.<br>그러나 파이썬은 객체에 필요한 변수를 알아서 생성해준다. 그리고 객체 내에 변수가 생성되는 정확한 시점은 다음과 같다.</p>
+<p><br></br></p>
+<h5 id="“객체-내에서-해당-변수를-대상으로-대입-연산을-처음-진행하는-순간”"><a href="#“객체-내에서-해당-변수를-대상으로-대입-연산을-처음-진행하는-순간”" class="headerlink" title="“객체 내에서 해당 변수를 대상으로 대입 연산을 처음 진행하는 순간”"></a>“객체 내에서 해당 변수를 대상으로 대입 연산을 처음 진행하는 순간”</h5><p><br></br></p>
+<p>따라서 위의 클래스를 대상으로 다음과 같이 객체를 생성하고 메소드를 호출하면 문제가 없다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s1 = Simple()</span><br><span class="line">s1.seti(<span class="number">200</span>)          <span class="comment"># 이 메소드의 실행 과정에서 객체 내에 변수 i가 만들어진다.</span></span><br><span class="line">s1.geti()             <span class="comment"># 200</span></span><br></pre></td></tr></table></figure>
+<p>seti 메소드를 호출하면 그 안에서 다음 문장이 실행되면서 객체 내에 변수 i가 만들어지기 때문이다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">self.i = i   <span class="comment"># 처음 이 문장이 실행되면 객체 내에 변수 i가 만들어짐</span></span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<p>그러나 다음과 같이 geti 메소드를 먼저 호출해 버리면 이때는 오류가 발생한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s2 = Simple()</span><br><span class="line">s2.geti()  <span class="comment"># 아직 객체 내에 변수 i가 없는 상태이므로 오류 발생!</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">AttributeError: <span class="string">'Simple'</span> object has no attribute <span class="string">'i'</span></span><br><span class="line">The terminal process terminated <span class="keyword">with</span> exit code: <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>그러나 클래스를 정의할 때, 객체 생성 시 자동으로 호출되는 <strong>init</strong>메소드를 다음과 같이 정의하고 또 그 안에서 객체 내에 필요한 모든 변수를 초기화 해주기만 한다면 위에서 보인 오류 상황은 걱정하지 않아도 된다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Simpe2</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.i = <span class="number">0</span>   <span class="comment"># 변수 초기화, 이 순간에 변수 i가 만들어짐</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">seti</span><span class="params">(self, i)</span>:</span></span><br><span class="line">        self.i = i</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">geti</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.i</span><br><span class="line"></span><br><span class="line">s = Simpe2()</span><br><span class="line">print(s.geti())   <span class="comment"># 0</span></span><br><span class="line">s.seti(<span class="number">25</span>)</span><br><span class="line">print(s.geti())   <span class="comment"># 25</span></span><br></pre></td></tr></table></figure>
+<p><strong>init</strong>의 호출이 왼료되는 시점을 객체 생성이 완료되는 시점을 판단한다.<br>따라서 <strong>init</strong> 메소드를 잘 정의했다는 가정하에서 다음 규칙은 파이썬에서도 여전히 유효하다.</p>
+<p><br></br></p>
+<h5 id="“설계도에-해당하는-클래스를-바탕으로-만들어진-객체에는-변수와-메소드가-담겨-있다-”"><a href="#“설계도에-해당하는-클래스를-바탕으로-만들어진-객체에는-변수와-메소드가-담겨-있다-”" class="headerlink" title="“설계도에 해당하는 클래스를 바탕으로 만들어진 객체에는 변수와 메소드가 담겨 있다.”"></a>“설계도에 해당하는 클래스를 바탕으로 만들어진 객체에는 변수와 메소드가 담겨 있다.”</h5><p><br></br></p>
+<p>그리고 위의 규칙이 깨지지 않도록 <strong>init</strong> 메소드를 잘 정의하는 것이(모든 변수를 적절히 초기화하는 것이) 중요하다.</p>
+<p><br></br></p>
+<h4 id="객체에-변수와-메소드-붙였다-떼었다-해보기"><a href="#객체에-변수와-메소드-붙였다-떼었다-해보기" class="headerlink" title="[객체에 변수와 메소드 붙였다 떼었다 해보기]"></a>[객체에 변수와 메소드 붙였다 떼었다 해보기]</h4><p>당장 유용하게 사용될 특성은 아니지만, 알아 두면 파이썬에 대한 이해도가 깊어지는 다음 특성을 살펴보려고 한다.</p>
+<p><br></br></p>
+<h5 id="“파이썬의-객체에는-변수와-메소드를-붙이기도-하고-떼기도-할-수-있다-”"><a href="#“파이썬의-객체에는-변수와-메소드를-붙이기도-하고-떼기도-할-수-있다-”" class="headerlink" title="“파이썬의 객체에는 변수와 메소드를 붙이기도 하고 떼기도 할 수 있다.”"></a>“파이썬의 객체에는 변수와 메소드를 붙이기도 하고 떼기도 할 수 있다.”</h5><p><br></br></p>
+<p>프로그램을 만들 때 이런 특성을 직접적으로 사용하지는 않는다.<br>따라서 파이썬의 객체 특성을 조금 깊이 이해한다는 생각으로 재미를 느껴가며 이어지는 설명을 들어보자. 그럼 다음 예를 보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SoSimple</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">geti</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.i</span><br><span class="line"></span><br><span class="line">ss = SoSimple()</span><br><span class="line">ss.i = <span class="number">27</span>         <span class="comment"># 이 순간 변수 ss에 담긴 객체에 i라는 변수가 생긴다. </span></span><br><span class="line">print(ss.geti())  <span class="comment"># ss에 담긴 객체에 i가 생겼으므로 geti 메소드 호출 가능</span></span><br></pre></td></tr></table></figure>
+<p>위의 예에서는 객체 생성 이후에 다음과 같은 형태로 변수 i를 객체에 추가하였다. 이렇듯 변수 i를 추가했기 때문에 이어서 geti 메소드를 호출할 수 있었다.</p>
+<p>그리고 위의 코드에 이어서 다음 코드도 실행해보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ss.hello = <span class="keyword">lambda</span>: print(<span class="string">'hi~'</span>)  <span class="comment"># hello라는 메소드 추가</span></span><br><span class="line">ss.hello()</span><br></pre></td></tr></table></figure>
+<p>위의 예에서는 람다식을 기반으로 만든 함수를 hello라는 이름으로 객체에 추가하였다. 이렇듯 객체에는 함수도 추가할 수 있다. 그럼 위의 코드에 이어서 다음 코드도 실행해보자. 이는 앞서 추가했던 i와 hello를 객체에서 삭제하는 코드이다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> ss.i     <span class="comment"># ss에 담긴 객체에서 변수 i 삭제</span></span><br><span class="line"><span class="keyword">del</span> ss.hello <span class="comment"># ss에 담긴 객체에서 메소드 hello 삭제</span></span><br></pre></td></tr></table></figure>
+<p>이렇듯 i와 hello를 삭제하고 나면, 이 둘에 접근하는 코드 ss.geti()에서는 오류가 발생한다.<br>사실 다른 객체지향 언어에 경험이 있는 이들에게는 지금 설명한 이러한 유연함이 꽤 불편하게 다가올 수 있다. 그러나 이러한 유연함을 클래스와 객체를 지원하기 위한 파이썬의 독특한 특성으로 정리한다면 불편함은 덜할 것이다.</p>
+<p><br></br></p>
+<h4 id="클래스에-변수-추가하기"><a href="#클래스에-변수-추가하기" class="headerlink" title="[클래스에 변수 추가하기]"></a>[클래스에 변수 추가하기]</h4><p>본격적으로 클래스에 변수를 추가해 보기 전에 클래스 변수를 살펴보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>:</span></span><br><span class="line">    cv = <span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_iv</span><span class="params">(self, iv)</span>:</span></span><br><span class="line">        self.iv = iv</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_iv</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.iv</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    t = Test()</span><br><span class="line">    print(t.cv)</span><br><span class="line">    print(t.get_iv())</span><br><span class="line"></span><br><span class="line">main()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line">AttributeError: <span class="string">'Test'</span> object has no attribute <span class="string">'iv'</span></span><br></pre></td></tr></table></figure>
+<p>이처럼 클래스 변수와 객체 변수가 생성 시점이 다르다는 것을 확인해 볼 수 있다.<br>다시 돌아와 앞서 객체에 변수를 추가해 보았는데, 이와 유사하게 파이썬에서는 클래스에도 변수를 추가할 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Simple</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, i)</span>:</span></span><br><span class="line">        self.i = i</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">geti</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.i</span><br><span class="line"></span><br><span class="line">Simple.n = <span class="number">7</span>   <span class="comment"># Simple 클래스에 변수 n을 추가하고 7로 초기화</span></span><br><span class="line">print(Simple.n)</span><br></pre></td></tr></table></figure>
+<p>여기서 한가지 의문이 드는 것은, 클래스는 객체와 달리 설계도일 뿐인데 어떻게 변수를 추가할 수 있느냐는 것이다. 그런데 이렇듯 변수 추가가 가능한 이유는 다음에 있다.</p>
+<p><br></br></p>
+<h5 id="“파이썬의-클래스는-클래스이자-객체이다-”"><a href="#“파이썬의-클래스는-클래스이자-객체이다-”" class="headerlink" title="“파이썬의 클래스는 클래스이자 객체이다.”"></a>“파이썬의 클래스는 클래스이자 객체이다.”</h5><p><br></br></p>
+<p>이렇듯 프로그래머가 직접 정의하는 클래스들은 ‘type이라는 클래스’의 객체이다.<br>그래서 객체에 변수를 추가하듯이 클래스에도 변수를 추가할 수 있다. 그럼 위의 예제에 이어서 다음 예제를 실행해보자.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s1 = Simple(<span class="number">3</span>)</span><br><span class="line">s2 = Simple(<span class="number">5</span>)</span><br><span class="line">print(s1.n, s1.geti(), sep=<span class="string">', '</span>)</span><br><span class="line">print(s2.n, s2.geti(), sep=<span class="string">', '</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">7, 4411308880, &lt;class 'int'&gt;, 3, 4411308752, &lt;class 'int'&gt;</span><br><span class="line">7, 4411308880, &lt;class 'int'&gt;, 5, 4411308816, &lt;class 'int'&gt;</span><br></pre></td></tr></table></figure>
+<p>위의 예제에서는 정확히는 변수 n의 값을 얻기 위해 접근하였다.<br>이 경우 s1과 s2의 객체에서 n을 찾는다. 그러나 이 두 객체에는 n이 없다.<br>이때 파이썬은 해당 객체의 설계도에 해당하는 클래스를 찾아가서 n을 찾는다. 즉 두 경우 모두 Simple 클래스에서 n을 찾는다. 그래서 s1을 통해 n을 출력한 결과와 s2를 통해서 n을 출력한 결과가 동일하다.</p>
+<p><br></br></p>
+<h5 id="“클래스에-속하는-변수를-만들-수-있다-”"><a href="#“클래스에-속하는-변수를-만들-수-있다-”" class="headerlink" title="“클래스에 속하는 변수를 만들 수 있다.”"></a>“클래스에 속하는 변수를 만들 수 있다.”</h5><h5 id="“객체에-‘찾는-변수’가-없으면-해당-객체의-클래스로-찾아가서-그-변수를-찾는다-”"><a href="#“객체에-‘찾는-변수’가-없으면-해당-객체의-클래스로-찾아가서-그-변수를-찾는다-”" class="headerlink" title="“객체에 ‘찾는 변수’가 없으면 해당 객체의 클래스로 찾아가서 그 변수를 찾는다.”"></a>“객체에 ‘찾는 변수’가 없으면 해당 객체의 클래스로 찾아가서 그 변수를 찾는다.”</h5><p><br></br></p>
+<h4 id="파이썬에서는-클래스도-객체"><a href="#파이썬에서는-클래스도-객체" class="headerlink" title="[파이썬에서는 클래스도 객체]"></a>[파이썬에서는 클래스도 객체]</h4><p>파이썬은 클래스도 객체로 간주한다. 다음과 같이 우리에게 익숙한 방식으로 파이썬에서 클래스를 만들어보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">myClass</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>위의 코드는 단순히 myClass라는 이름의 객체가 메모리에 만들어진 것을 의미한다. 이 객체는 새 객체를 만들 수 있으므로 클래스로 간주된다. 이는 클래스 자체가 객체이기 때문에 파이썬에서는 클래스에 객체 연산을 적용할 수 있다는 것을 알 수 있다.따라서 다음과 같이 클래스를 변수에 할당하는 것과 같은 작업을 수행할 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">myClass_obj = myClass()</span><br><span class="line">print(myClass_obj)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;__main__.myClass object at <span class="number">0x7fa440193f40</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>다음과 같이 myClass 클래스를 매개변수로 메소드에 전달할 수도 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myClass_mth</span><span class="params">(object)</span>:</span></span><br><span class="line">    print(object)</span><br><span class="line"></span><br><span class="line">myClass_mth(myClass)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">myClass</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+<p>다른 연산도 일반적으로 객체에 적용할 수 있다.</p>
+<p><br></br></p>
+<h4 id="lt-메타클래스-gt"><a href="#lt-메타클래스-gt" class="headerlink" title="&lt;메타클래스&gt;"></a>&lt;메타클래스&gt;</h4><p>type은 우리가 지금까지 어떤 객체의 자료형을 확인할 때 호출해 왔던 함수의 이름이다. 그런데 이는 사실 클래스의 이름이다. (그러나 함수처럼 사용할 수 있으며, 이렇게 사용할 때 자료형의 종류를 알려주게 된다. 이러한 사실은 다음과 같이 간단히 알 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(type(myClass))</span><br><span class="line">print(type)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">type</span>'&gt;</span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">type</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+<p>type이 그저 함수일 뿐이라면 <function type at ~>의 형태로 출력이 이뤄진다. 그런데 클래스이기 때문에 위와 같이 출력이 이뤄졌다. 또한 파이썬에서 클래스의 타입은 type이라고 결론내릴 수 있다.</p>
+<p>type과 metaclass 간의 관계는 무엇일까? 기본 metaclass가 type인 경우 type은 metaclass이다. 기본 metaclass가 type인 경우 type은 metaclass이다. 즉, type이 type이라는 뜻이다. metaclass라는 용어는 단순히 클래스를 만드는데 사용되는 것을 의미한다. 즉, 메타클래스는 클래스의 클래스이며, 이 경우 클래스의 인스턴스가 클래스라는 것을 의미한다. 따라서 type의 인스턴스가 클래스이기 때문에 type은 metaclass로 간주된다. 예를 들어, 위의 코드에서 metaclass가 type으로 간주되는 myClass 클래스를 만드는데 사용되었다. 따라서 객체가 클래스의 인스턴스인 것처럼 클래스는 metaclass의 인스턴스이다.</p>
+<p><br></br></p>
+<h4 id="lt-메타클래스를-사용해-클래스-만들기-gt"><a href="#lt-메타클래스를-사용해-클래스-만들기-gt" class="headerlink" title="&lt;메타클래스를 사용해 클래스 만들기&gt;"></a>&lt;메타클래스를 사용해 클래스 만들기&gt;</h4><p>class문을 사용하는 대신 metaclass를 사용해 클래스를 만드는 방법을 살펴보도록 하자. 위에서 봤듯이 기본 metaclass는 type이다. 따라서 다음과 같은 코드를 사용해 새 클래스를 만들 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">newClass = type(<span class="string">'myClass'</span>, (), &#123;&#125;)</span><br><span class="line">test = newClass()</span><br><span class="line">print(type(test))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">myClass</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+<p>더 단순하게 만들고 싶다면 myClass라는 동일한 클래스 이름을 변수 이름에 할당하면 된다. 여기서는 클래스의 속성을 정의하는데 { } 딕셔너리를 사용했다.</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2019/11/20/HTML5-CSS3/">
                 [HTML5+CSS3] HTML과의 첫 만남
             </a>
@@ -337,6 +545,47 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2019/11/17/Programmers-K%EB%B2%88%EC%A7%B8%EC%88%98/">
+                [Programmers] K번째수
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-17</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(array, commands)</span>:</span></span><br><span class="line">    answer = []</span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> range(len(commands)):</span><br><span class="line">        i, j, k = commands[n][<span class="number">0</span>], commands[n][<span class="number">1</span>], commands[n][<span class="number">2</span>]</span><br><span class="line">        array_slice = array[i<span class="number">-1</span>: j]</span><br><span class="line">        array_slice.sort()</span><br><span class="line">        answer.append(array_slice[k<span class="number">-1</span>])</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+<h3 id="시퀀스-타입"><a href="#시퀀스-타입" class="headerlink" title="시퀀스 타입"></a>시퀀스 타입</h3><p>위의 코드에서 배열 array는 파이썬에 내장된 시퀀스 타입인 리스트로 구현되었다.<br>시퀀스 타입의 객체는 인덱스 연산을 통해 내부 항목에 접근할 수 있다.</p>
+<h4 id="리스트"><a href="#리스트" class="headerlink" title="리스트"></a>리스트</h4><p>리스트는 중복이 가능하고 순차적인 데이터를 나타낼 수 있으며, 내부 항목을 변경가능하다.</p>
+<ul>
+<li><p>정렬하기(sort, sorted)<br>sort는 리스트 자체를 정렬, sorted는 리스트의 정렬 복사본을 반환한다.</p>
+</li>
+<li><p>리스트 복사(copy)<br>copy 함수, list 함수, 슬라이스 연산[:]</p>
+</li>
+</ul>
+<p><br></br></p>
+<h3 id="예시문제"><a href="#예시문제" class="headerlink" title="예시문제"></a>예시문제</h3><p><strong>1. 문자열 ‘algorithm’을 리스트, 튜플 타입으로 형변환하여 새 변수에 할당한다.</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'algorithm'</span></span><br><span class="line">list_s = list(s)</span><br><span class="line">tuple_s = tuple(s)</span><br><span class="line"></span><br><span class="line">print(type(s), s)</span><br><span class="line">print(type(list_s), list_s)</span><br><span class="line">print(type(tuple_s), tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line">&lt;class 'list'&gt; ['a', 'l', 'g', 'o', 'r', 'i', 't', 'h', 'm']</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">tuple</span>'&gt; <span class="params">(<span class="string">'a'</span>, <span class="string">'l'</span>, <span class="string">'g'</span>, <span class="string">'o'</span>, <span class="string">'r'</span>, <span class="string">'i'</span>, <span class="string">'t'</span>, <span class="string">'h'</span>, <span class="string">'m'</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>2. 1번에서 할당한 리스트, 튜플 변수를 이용해 다시 문자열을 만든다.</strong></p>
+<h6 id="Ver-1"><a href="#Ver-1" class="headerlink" title="Ver.1"></a>Ver.1</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'algorithm'</span></span><br><span class="line">list_s = list(s)</span><br><span class="line">tuple_s = tuple(s)</span><br><span class="line"></span><br><span class="line">line_list_s = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(list_s)):</span><br><span class="line">    line_list_s += list_s[i]</span><br><span class="line">print(type(line_list_s), line_list_s)</span><br><span class="line"></span><br><span class="line">line_tuple_s = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(tuple_s)):</span><br><span class="line">    line_tuple_s += tuple_s[i]</span><br><span class="line">print(type(line_tuple_s), line_tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br></pre></td></tr></table></figure>
+<h6 id="Ver-2"><a href="#Ver-2" class="headerlink" title="Ver.2"></a>Ver.2</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">line_list_s = <span class="string">''</span>.join(list_s)</span><br><span class="line">print(type(line_list_s), line_list_s)</span><br><span class="line"></span><br><span class="line">line_tuple_s = <span class="string">''</span>.join(tuple_s)</span><br><span class="line">print(type(line_tuple_s), line_tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2019/11/17/Programmers-%EA%B0%80%EC%9A%B4%EB%8D%B0-%EA%B8%80%EC%9E%90-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/">
                 [Programmers] 가운데 글자 가져오기
             </a>
@@ -386,163 +635,6 @@
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/17/Programmers-K%EB%B2%88%EC%A7%B8%EC%88%98/">
-                [Programmers] K번째수
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-17</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(array, commands)</span>:</span></span><br><span class="line">    answer = []</span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> range(len(commands)):</span><br><span class="line">        i, j, k = commands[n][<span class="number">0</span>], commands[n][<span class="number">1</span>], commands[n][<span class="number">2</span>]</span><br><span class="line">        array_slice = array[i<span class="number">-1</span>: j]</span><br><span class="line">        array_slice.sort()</span><br><span class="line">        answer.append(array_slice[k<span class="number">-1</span>])</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
-<h3 id="시퀀스-타입"><a href="#시퀀스-타입" class="headerlink" title="시퀀스 타입"></a>시퀀스 타입</h3><p>위의 코드에서 배열 array는 파이썬에 내장된 시퀀스 타입인 리스트로 구현되었다.<br>시퀀스 타입의 객체는 인덱스 연산을 통해 내부 항목에 접근할 수 있다.</p>
-<h4 id="리스트"><a href="#리스트" class="headerlink" title="리스트"></a>리스트</h4><p>리스트는 중복이 가능하고 순차적인 데이터를 나타낼 수 있으며, 내부 항목을 변경가능하다.</p>
-<ul>
-<li><p>정렬하기(sort, sorted)<br>sort는 리스트 자체를 정렬, sorted는 리스트의 정렬 복사본을 반환한다.</p>
-</li>
-<li><p>리스트 복사(copy)<br>copy 함수, list 함수, 슬라이스 연산[:]</p>
-</li>
-</ul>
-<p><br></br></p>
-<h3 id="예시문제"><a href="#예시문제" class="headerlink" title="예시문제"></a>예시문제</h3><p><strong>1. 문자열 ‘algorithm’을 리스트, 튜플 타입으로 형변환하여 새 변수에 할당한다.</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'algorithm'</span></span><br><span class="line">list_s = list(s)</span><br><span class="line">tuple_s = tuple(s)</span><br><span class="line"></span><br><span class="line">print(type(s), s)</span><br><span class="line">print(type(list_s), list_s)</span><br><span class="line">print(type(tuple_s), tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line">&lt;class 'list'&gt; ['a', 'l', 'g', 'o', 'r', 'i', 't', 'h', 'm']</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">tuple</span>'&gt; <span class="params">(<span class="string">'a'</span>, <span class="string">'l'</span>, <span class="string">'g'</span>, <span class="string">'o'</span>, <span class="string">'r'</span>, <span class="string">'i'</span>, <span class="string">'t'</span>, <span class="string">'h'</span>, <span class="string">'m'</span>)</span></span></span><br></pre></td></tr></table></figure>
-<p><strong>2. 1번에서 할당한 리스트, 튜플 변수를 이용해 다시 문자열을 만든다.</strong></p>
-<h6 id="Ver-1"><a href="#Ver-1" class="headerlink" title="Ver.1"></a>Ver.1</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'algorithm'</span></span><br><span class="line">list_s = list(s)</span><br><span class="line">tuple_s = tuple(s)</span><br><span class="line"></span><br><span class="line">line_list_s = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(list_s)):</span><br><span class="line">    line_list_s += list_s[i]</span><br><span class="line">print(type(line_list_s), line_list_s)</span><br><span class="line"></span><br><span class="line">line_tuple_s = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(tuple_s)):</span><br><span class="line">    line_tuple_s += tuple_s[i]</span><br><span class="line">print(type(line_tuple_s), line_tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br></pre></td></tr></table></figure>
-<h6 id="Ver-2"><a href="#Ver-2" class="headerlink" title="Ver.2"></a>Ver.2</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">line_list_s = <span class="string">''</span>.join(list_s)</span><br><span class="line">print(type(line_list_s), line_list_s)</span><br><span class="line"></span><br><span class="line">line_tuple_s = <span class="string">''</span>.join(tuple_s)</span><br><span class="line">print(type(line_tuple_s), line_tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/17/Python-%EB%B3%80%EC%88%98%EC%82%AC%EC%9A%A91/">
-                [Python] 변수사용 (1)
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-17</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="파이썬에서-변수를-어떻게-사용할-수-있을까-1"><a href="#파이썬에서-변수를-어떻게-사용할-수-있을까-1" class="headerlink" title="파이썬에서 변수를 어떻게 사용할 수 있을까?  (1)"></a>파이썬에서 <strong>변수</strong>를 어떻게 사용할 수 있을까?  (1)</h1><h6 id="본-포스팅은-lt-윤성우의-열혈-파이썬-중급편-gt-과-lt-처음-시작하는-파이썬-gt-을-바탕으로-진행합니다"><a href="#본-포스팅은-lt-윤성우의-열혈-파이썬-중급편-gt-과-lt-처음-시작하는-파이썬-gt-을-바탕으로-진행합니다" class="headerlink" title="본 포스팅은 &lt;윤성우의 열혈 파이썬 중급편&gt;과 &lt;처음 시작하는 파이썬&gt;을 바탕으로 진행합니다."></a>본 포스팅은 &lt;윤성우의 열혈 파이썬 중급편&gt;과 &lt;처음 시작하는 파이썬&gt;을 바탕으로 진행합니다.</h6><h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ul>
-<li>Story 03. 깊은 복사와 얕은 복사<ul>
-<li>[두 객체의 비교와 복사]</li>
-<li>[깊은 복사]</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>Story 04. 리스트 컴프리헨션<ul>
-<li>[리스트 생성 방법]</li>
-<li>[조건 필터 추가하기]</li>
-<li>[리스트 컴프리헨션에 for 한번 더 들어가는 경우]</li>
-<li>[이중 for 루프에 조건 필터 추가]</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>Story 05. Iterable 객체와 Iterator 객체]<ul>
-<li>[iter 함수]</li>
-<li>[Iterable 객체와 Iterator 객체의 구분]</li>
-<li>[스페셜 메소드]</li>
-<li>[Iterable 객체의 종류와 확인 방법]</li>
-<li>[for 루프와 Iterable 객체]</li>
-</ul>
-</li>
-</ul>
-<p><br></br></p>
-<h3 id="Story-03-깊은-복사와-얕은-복사"><a href="#Story-03-깊은-복사와-얕은-복사" class="headerlink" title="Story 03. 깊은 복사와 얕은 복사"></a>Story 03. 깊은 복사와 얕은 복사</h3><h4 id="두-객체의-비교와-복사"><a href="#두-객체의-비교와-복사" class="headerlink" title="[두 객체의 비교와 복사]"></a>[두 객체의 비교와 복사]</h4><p>객체를 비교할 때 사용할 수 있는 두 가지 연산자를 정리하면 다음과 같다.</p>
-<p><br></br></p>
-<h6 id="“v1-v2-변수-v1과-v2가-참조하는-객체의-내용이-같은가-”"><a href="#“v1-v2-변수-v1과-v2가-참조하는-객체의-내용이-같은가-”" class="headerlink" title="“v1 == v2: 변수 v1과 v2가 참조하는 객체의 내용이 같은가?”"></a><strong><strong>“v1 == v2: 변수 v1과 v2가 참조하는 객체의 내용이 같은가?”</strong></strong></h6><h6 id="“v1-is-v2-변수-v1과-v2가-참조하는-객체는-동일-객체인가-”"><a href="#“v1-is-v2-변수-v1과-v2가-참조하는-객체는-동일-객체인가-”" class="headerlink" title="“v1 is v2: 변수 v1과 v2가 참조하는 객체는 동일 객체인가?”"></a><strong><strong>“v1 is v2: 변수 v1과 v2가 참조하는 객체는 동일 객체인가?”</strong></strong></h6><p><br></br></p>
-<p>따라서 동일한 값을 담고 있는 두 객체를 대상으로 하는 두 연산의 결과는 다음과 같다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">r2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">print(r1 <span class="keyword">is</span> r2)    <span class="comment"># r1과 r2가 참조하는 객체는 같은 객체인가?: False</span></span><br><span class="line">print(id(r1), id(r2))</span><br><span class="line"></span><br><span class="line">print(r1 == r2)    <span class="comment"># r1과 r2가 참조하는 객체에 담긴 값은 같은가?: True</span></span><br><span class="line">print(r1, r2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="number">140568777174528</span> <span class="number">140568777678016</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
-<p>참고로 is 연산이 True를 반환하는 상황은 다음과 같다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">r2 = r1            <span class="comment"># r1이 참조하는 리스트에 r2라는 이름을 하나 더 붙임</span></span><br><span class="line">print(r1 <span class="keyword">is</span> r2)    <span class="comment"># True</span></span><br></pre></td></tr></table></figure>
-<p>자! 그럼 다음 예제에서 보이는 객체 복사 결과를 살펴보자.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">23</span>]]  <span class="comment"># John은 미국 남자로 175cm 23세</span></span><br><span class="line">r2 = list(r1)          <span class="comment"># r1의 내용으로 새로운 리스트 만듦</span></span><br><span class="line"></span><br><span class="line">print(r1 <span class="keyword">is</span> r2)        <span class="comment"># False</span></span><br><span class="line">print(r1[<span class="number">0</span>] <span class="keyword">is</span> r2[<span class="number">0</span>])  <span class="comment"># r1과 r2의 'John'은 동일 객체인가?: True</span></span><br><span class="line">print(r1[<span class="number">1</span>] <span class="keyword">is</span> r2[<span class="number">1</span>])  <span class="comment"># r1과 r2의 ('man', 'USA')은 동일 객체인가?: True </span></span><br><span class="line">print(r1[<span class="number">2</span>] <span class="keyword">is</span> r2[<span class="number">2</span>])  <span class="comment"># r1과 r2의 [175, 23]은 동일 객체인가?: True</span></span><br></pre></td></tr></table></figure></p>
-<p>위의 예에서 r1이라는 리스트를 생성하였다.<br>위와 같이 리스트를 생성하면 리스트 안에 선언되는 값들이 리스트에 쏙 들어가 있는 형태가 아니라 다음 그림에서 보이듯이 각 값들을(객체들을) 리스트 내에서 참조하는 형태가 된다.</p>
-<p><br></br></p>
-<p><img src="/image/list_object_reference.jpeg" alt="list_object_reference"></p>
-<p><br></br></p>
-<p>그리고 위의 예에서는 list 함수를 호출하면서 리스트를 전달하였다.<br>따라서 전달된 리스트의 내용이 담긴 새로운 리스트가 만들어지는데 그 결과를 다음과 같다.</p>
-<p><br></br></p>
-<p><img src="/image/list_copy.jpeg" alt="list_copy"></p>
-<p><br></br></p>
-<p>이러한 형태의 복사를 ‘얕은 복사’라 한다.<br>그리고 ‘얕은 복사’가 파이썬이 복사를 진행하는 기본 방식이다.<br>사실 위의 경우 다음 두 가지를 대상으로는 얕은 복사를 진행하는 것이 더 합리적이다.<br>이 둘은 그 값의 변경이 불가능한 ‘immutable 객체’이므로 얕은 복사를 해도 문제가 되지 않기 때문이다.</p>
-<p><br></br></p>
-<h6 id="문자열-객체-‘John’"><a href="#문자열-객체-‘John’" class="headerlink" title="문자열 객체: ‘John’"></a><strong><strong>문자열 객체: ‘John’</strong></strong></h6><h6 id="튜플-객체-‘man’-‘USA’"><a href="#튜플-객체-‘man’-‘USA’" class="headerlink" title="튜플 객체: (‘man’, ‘USA’)"></a><strong><strong>튜플 객체: (‘man’, ‘USA’)</strong></strong></h6><p><br></br></p>
-<p>그러나 다음 객체를 대상으로 얕은 복사를 하는 것은 문제가 될 수 있다.<br>리스트는 그 안에 담긴 값을 수정할 수 있는 객체이기 때문이다.</p>
-<p><br></br></p>
-<h6 id="리스트-객체-175-23"><a href="#리스트-객체-175-23" class="headerlink" title="리스트 객체: [175, 23]"></a><strong><strong>리스트 객체: [175, 23]</strong></strong></h6><p><br>&lt;/br&gt;<br><br></br></p>
-<h4 id="깊은-복사"><a href="#깊은-복사" class="headerlink" title="[깊은 복사]"></a>[깊은 복사]</h4><p>정리하면 값의 변경이 불가능한 immutable 객체는 얕은 복사를 해도 문제가 되지 않는다.<br>그러나 값의 변경이 가능한 mutable 객체는 얕은 복사가 문제가 될 수 있다.<br>이와 관련해서 다음 예를 보자.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">J2021 = [<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">23</span>]]  <span class="comment"># 2021년도 John의 정보</span></span><br><span class="line">J2022 = list(J2021)  <span class="comment"># 필요에 의해 John의 정보를 하나 복사했다.</span></span><br><span class="line">J2022[<span class="number">2</span>][<span class="number">1</span>] += <span class="number">1</span>     <span class="comment"># 2022년도 John의 정보, 나이 한 살 더 먹음</span></span><br><span class="line">print(J2021)         <span class="comment"># 2021년도 John의 정보 출력</span></span><br><span class="line">print(J2022)         <span class="comment"># 2022년도 John의 정보 출력</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">[<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">24</span>]]</span><br><span class="line">[<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">24</span>]]</span><br></pre></td></tr></table></figure>
-<p>John은 해가 지날수록 나이는 먹는다. 그래서 위의 예에서 2021년도 John의 정보를 기반으로 2022년도의 John의 정보를 만들었다. 그런데 얕은 복사로 인해 2021년의 John 정보도 바뀌어 버렸다.<br>이렇듯 mutable 객체에 저장된 값들은 변경될 수 있기 때문에 이들에 대해서는 복사 대상을 하나 더 생성하는 ‘깊은 복사’라는 것을 해야 한다. 즉 다음 객체를 대상으로 복사를 할 경우,</p>
-<p><br></br></p>
-<h6 id="‘John’-‘man’-‘USA’-175-23"><a href="#‘John’-‘man’-‘USA’-175-23" class="headerlink" title="[‘John’, (‘man’, ‘USA’), [175, 23]]"></a><strong><strong>[‘John’, (‘man’, ‘USA’), [175, 23]]</strong></strong></h6><p><br></br></p>
-<p>다음 그림에서 보이듯이 변경 불가능한 ‘John’과 (‘man’, ‘USA’)은 얕은 복사, 변경 가능한 [175, 23]은 깊은 복사를 진행하는 것이 안전성과 성능을 모두 만족시키는 방법이 된다.</p>
-<p><br></br></p>
-<p><img src="/image/list_copy_deep.jpeg" alt="list_copy_deep"></p>
-<p><br></br></p>
-<p>그리고 이를 위해서는 다음 예에서 보이듯이 copy 모듈의 deepcopy 함수를 사용하면 된다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy  <span class="comment"># deepcopy 함수 호출을 위해서 copy 모듈 import</span></span><br><span class="line">J2022 = copy.deepcopy(J2021)</span><br><span class="line">J2022[<span class="number">2</span>][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">print(J2021)</span><br><span class="line">print(J2022)</span><br><span class="line">print((J2021[<span class="number">0</span>] <span class="keyword">is</span> J2022[<span class="number">0</span>]) <span class="keyword">and</span> (J2021[<span class="number">1</span>] <span class="keyword">is</span> J2022[<span class="number">1</span>]))  <span class="comment"># 얕은 복사 확인</span></span><br><span class="line">print(J2021[<span class="number">2</span>] <span class="keyword">is</span> J2022[<span class="number">2</span>])  <span class="comment"># 깊은 복사 확인</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">[<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">24</span>]]</span><br><span class="line">[<span class="string">'John'</span>, (<span class="string">'man'</span>, <span class="string">'USA'</span>), [<span class="number">175</span>, <span class="number">25</span>]]</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
-<p>위의 결과에서 보이듯이 deepcopy 함수의 호출 결과로 immutable 객체를 대상으로는 얕은 복사가 진행되었고 mutable 객체를 대상으로는 깊은 복사가 진행되었다. 참고로 다음의 방식으로 튜플이나 문자열을 복사하면 얕은 복사가 진행된다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">d1 = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">d2 = <span class="string">'Please'</span></span><br><span class="line">c1 = tuple(d1)   <span class="comment"># d1 기반으로 튜플 생성, 사실상 튜플 복사</span></span><br><span class="line">c2 = str(d2)     <span class="comment"># d2 기반으로 문자열 생성, 사실상 문자열 복사</span></span><br><span class="line">print(d1 <span class="keyword">is</span> c1)  <span class="comment"># d1과 c1이 참조하는 대상이 같은 객체인가? True</span></span><br><span class="line">print(d2 <span class="keyword">is</span> c2)  <span class="comment"># d2와 c2가 참조하는 대상이 같은 객체인가? True</span></span><br></pre></td></tr></table></figure>
-<p>메모리의 효율적 사용을 위해서 이렇듯 파이썬은 ‘선한 거짓말’을 하고 있다.<br>그러니 속아주자. 이것이 문제가 되는 상황은 없을 테니 말이다.<br><br></br></p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/17/Programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98/">
-                [Programmers] 수박수박수박수박수박수?
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-17</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(n)</span>:</span></span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> n%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        answer = <span class="string">'수박'</span>*(n//<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = <span class="string">'수박'</span>*(n//<span class="number">2</span>) + <span class="string">'수'</span></span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -585,19 +677,19 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2019/12/22/SEM-%EC%B8%A1%EC%A0%95%EB%AA%A8%ED%98%95/">[SEM] 측정모형</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/12/22/SEM-%EC%B8%A1%EC%A0%95%EB%AA%A8%ED%98%95%EC%9D%98-%ED%99%95%EC%9E%A5/">[SEM] 측정모형의 확장</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2019/12/21/Python-%EC%B6%94%EC%83%81%ED%81%B4%EB%9E%98%EC%8A%A4/">[Python] 추상클래스</a>
             </li>
             
             <li>
                 <a class="footer-post" href="/2019/12/21/Vuejs-%ED%95%84%EC%88%98%EA%B8%B0%EC%88%A0-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0/">[Vuejs] 필수기술 살펴보기</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2019/12/09/Database-%EA%B4%80%EA%B3%84%EB%8C%80%EC%88%98/">[Database] 관계대수</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2019/12/06/SEM-%EA%B5%AC%EC%A1%B0%EB%B0%A9%EC%A0%95%EC%8B%9D-%EB%AA%A8%ED%98%95%EC%9D%98-%EC%86%8C%EA%B0%9C/">[SEM] 구조방정식 모형의 소개</a>
             </li>
             
         </ul>
