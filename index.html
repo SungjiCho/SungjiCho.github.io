@@ -658,7 +658,7 @@
 <h4 id="벡터-간-유사도"><a href="#벡터-간-유사도" class="headerlink" title="벡터 간 유사도"></a>벡터 간 유사도</h4><p>앞에서 동시발생 행렬을 활용해 단어를 벡터로 표현하는 방법을 알아봤다. 그럼 계속해서 벡터 사이의 유사도를 측정하는 방법을 살펴보자. 벡터 사이의 유사도를 측정하는 방법은 다양하다. 대표적으로는 벡터의 내적이나 유클리드 거리 등을 꼽을 수 있다. 그 외에도 다양하지만, 단어 벡터의 유사도를 나타낼 때는 코사인 유사도를 자주 이용한다. 두 벡터 $\vec{x}\mathit{=(x_1, x_2, …, x_n)}$과 $\vec{y}\mathit{=(y_1, y_2, …, y_n)}$이 있다면, 코사인 유사도는 다음 식으로 정의됩니다.</p>
 <p></p>
 
-<script type="math/tex; mode=display">similarity( \vec{x}, \vec{y}) = \left( \frac{ \vec{x} \cdot \vec{y}}{|| \vec{x}|| || \vec{y}||} \right</script><p></p>
+<script type="math/tex; mode=display">similarity( \vec{x}, \vec{y}) = {\vec{x} \cdot \vec{y}} \over {||\vec{x} ||\vec{y}||}</script><p></p>
 
 <p>위 식의 분자에는 벡터의 내적이, 분모에는 각 벡터의 노름(norm)이 등장한다. 노름은 벡터의 크기를 나타낸 것으로, 여기에서는 벡터의 각 원소를 제곱해 더한 후 다시 제곱근을 구해 계산하는 L2 노름을 구한다. 이 식의 핵심은 벡터를 정규화하고 내적을 구하는 것이다. 코사인 유사도를 직관적으로 풀어보자면 두 벡터가 가리키는 방향이 얼마나 비슷한가이다. 두 벡터의 방향이 완전히 같다면 코사인 유사도가 1이 되며, 완전히 반대라면 -1이 된다.</p>
 <p></p>
@@ -747,7 +747,7 @@
 <p>이 문제를 해결하기 위해 점별 상호정보량(Pointwise Mutual Information, PMI)이라는 척도를 사용한다. PMI는 확률 변수 $\mathit{x}, \mathit{y}$에 대해 다음 식으로 정의된다.</p>
 <p></p>
 
-<script type="math/tex; mode=display">PMI(x, y) = log_2 \left{P(x)P(y)}{P(x, y)} \right</script><p></p>
+<script type="math/tex; mode=display">PMI(x, y) = log_2 {P(x, y)} \over {P(x) P(y)}</script><p></p>
 
 <p>위 식에서 $\mathit{P(x)}$는 $\mathit{x}$가 일어날 확률, $\mathit{P(y)}$는 $\mathit{y}$가 일어날 확률, $\mathit{P(x, y)}$는 $\mathit{x}, \mathit{y}$가 동시에 일어날 확률을 뜻한다. 이 PMI 값이 높을수록 관련성이 높다는 의미이다.</p>
 <p></p>
