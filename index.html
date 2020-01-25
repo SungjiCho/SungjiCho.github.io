@@ -758,7 +758,7 @@
 <p>그럼 동시발생 행렬(각 원소는 동시발생한 단어의 횟수)을 사용하여 위의 식을 다시 써보자. $\mathit{C}$는 동시발생 행렬, $\mathit{C(x, y)}$는 단어 $\mathit{x, y}$가 동시발생하는 횟수, $\mathit{C(x), C(y)}$는 각 단어의 등장 횟수이다. 이때 말뭉치에 포함된 단어 수를 $\mathit{N}$이라 하면, 다음과 같이 변한다.</p>
 <p></p>
 
-<script type="math/tex; mode=display">PMI(x, y) = log_2 \frac{P(x)P(y)}{P(x, y)} = log_2 \frac{ \frac{C(x, y)}{N} }{ \frac{C(x)}{N} \frac{C(y)}{N} } = log_2 \frac{C(x, y)} \cdot N}{C(x) Cy)}</script><p></p>
+<script type="math/tex; mode=display">PMI(x, y) = \log{2} \frac{P(x)P(y)}{P(x, y)} = \log{2} \frac{ \frac{C(x, y)}{N} }{ \frac{C(x)}{N} \frac{C(y)}{N} } = \log{2} \frac{C(x, y)} \cdot N}{C(x) Cy)}</script><p></p>
 
 <p>위 식에 따라 동시발생 행렬로부터 PMI를 구할 수 있다. 그러면 위 식대로 구체적인 계산을 해보자. 말뭉치의 단어 수를 10,000이라 하고, the와 car와 drive가 각각 1,000번, 20번, 10번 등장했다고 해보자. 그리고 the와 car의 동시발생 수는 10회, car와 drive의 동시발생 수는 5회라고 가정하자. 이 조건이라면, 동시발생 횟수 관점에서는 car는 drive보다 the와 관련이 깊다고 나온다. 그렇다면 PMI 관점에서는 어떨까?</p>
 <p></p>
