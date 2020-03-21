@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Xib와 테이블뷰 셀 커스터마이즈
+1. 인터페이스 구성하기자, 먼저 아래와 같이 전체적인 앱 플로우를 구성하기 위하여 본 포스팅에서 사용될 테이블뷰와 탭바 컨트롤러를 공식문서에서 어떻게 설명하였는지 먼저 살펴보도록 하자. 아래는 직관적으로 이해가 잘 되는 개요 부분을 ">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Sunny Cho">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="[iOS] 앱 개발 번외편 (3)"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="QuantPsy"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>[iOS] 앱 개발 번외편 (3) - QuantPsy</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2020/03/15/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%B2%88%EC%99%B8%ED%8E%B8-3/">
+                [iOS] 앱 개발 번외편 (3)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-03-15</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/ios/">iOS</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="Xib와-테이블뷰-셀-커스터마이즈"><a href="#Xib와-테이블뷰-셀-커스터마이즈" class="headerlink" title="Xib와 테이블뷰 셀 커스터마이즈"></a>Xib와 테이블뷰 셀 커스터마이즈</h1><p><br></p>
+<h3 id="1-인터페이스-구성하기"><a href="#1-인터페이스-구성하기" class="headerlink" title="1. 인터페이스 구성하기"></a>1. 인터페이스 구성하기</h3><p>자, 먼저 아래와 같이 전체적인 앱 플로우를 구성하기 위하여 본 포스팅에서 사용될 테이블뷰와 탭바 컨트롤러를 공식문서에서 어떻게 설명하였는지 먼저 살펴보도록 하자. 아래는 직관적으로 이해가 잘 되는 개요 부분을 발췌하였다.</p>
+<p><br></p>
+<p><br></p>
+<h4 id="Class-UITableView"><a href="#Class-UITableView" class="headerlink" title="Class UITableView"></a>Class UITableView</h4><p>A view that presents data using rows arranged in a single column</p>
+<p><br></p>
+<p>Table views on iOS display a single column of vertically scrolling content, divided into rows. Each row in the table contains one piece of your app’s content. For example, the Contacts app displays the name of each contact in a separate row, and the main page of the Settings app displays the available groups of settings. You can configure a table to display a single long list of rows, or you can group related rows into sections to make navigating the content easier.</p>
+<p><br></p>
+<p>Tables are commonly used by apps whose data is highly structured or organized hierarchically. Apps that contain hierarchical data often use tables in conjunction with a navigation view controller, which facilitates navigation between different levels of the hierarchy. For example, the Settings app uses tables and a navigation controller to organize the system settings.</p>
+<p><br></p>
+<p>UITableView manages the basic apperance of the table, but your app provides the cells(UITableViewCell objects) that display the actual content. The standard cell configurations display a simple combination of text and images, but you can define custom cells that display any content you want. You can also supply header and footer views to provide additional information for groups of cells.</p>
+<p><br><br></p>
+<h4 id="UITabBarController"><a href="#UITabBarController" class="headerlink" title="UITabBarController"></a>UITabBarController</h4><p>A container view controller that manages a radio-style selection interface, where the selection determines which child view controller to display.</p>
+<p><br></p>
+<p>The tab bar interface displays tabs at the bottom of the window for selecting between the different modes and for displaying the views for that mode. This class is generally used as-is, but may also be subclassed.</p>
+<p><br></p>
+<p>Each tab of a tab bar controller interface is associated with a custom view controller. When the user selects a specfic tab, the tab bar controller displays the root view of the corresponding view controller, replacing any previous views. (User taps always display the root view of the tab, regardless of which tab was previously selected. This is true even if the tab was already selected.) Because selecting a tab replace the contents of the interface, the type of interface managed in each tab need not be similar in any way. In fact, tab bar interfaces are commonly used either to present different types of information or to present the same information using a completely different style of interface.</p>
+<p><br></p>
+<p>You should never access the tab bar view of a tab bar controller directly. To configure the tabs of a tab bar controller, you assign the view controllers that provide the root view for each tab to the viewControllers property. The order in which you specify the view controllers determines the oreder in which they appear in the tab bar. When setting this property, you should assign a value to the selectedViewController property to indicate which view controller is selected initially. (You can also select view controllers by array index using the selectedIndex property.) When you embed the tab bar controller’s view (obtained using the inherited vieww property) in your app window, the tab bar controller automatically selects that view controller and displays its contents, resizing them as needed to fit the tab bar interface.</p>
+<p><br></p>
+<p>Tab bar items are configured through their corresponding view controller. To associate a tab bar item with a view controller, create a new instance of the UITabBarItem class, configure it appropriately for the view controller, and assign it to the view controller’s tabBarItem property. If you don’t provide a custom tab bar item for your view controller, the view controller creates a default item containing no image and the text from the view controller’s title property.</p>
+<p><br></p>
+<p>As the user interacts with a tab bar interface, the tab bar controller objects sends notifications about the interactions to its delegate. The delegate can be any object you specify but must conform to the UITabBarControllerDelegate protocol. You can use the delegate to prevent specific tab bar items from being selected and to perform additional tasks when tabs are selected. You can also use the delegate to monitor changes to the tab bar that are made by the More navigation controller.</p>
+<p><br><hr><br></p>
+<h3 id="2-모델-코드작성"><a href="#2-모델-코드작성" class="headerlink" title="2. 모델 코드작성"></a>2. 모델 코드작성</h3><p>우선 도서 정보를 담을 틀인 BookVO 클래스를 작성해보자.</p>
+<p><br></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookVO</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> bookImage: <span class="type">String?</span>  <span class="comment">// 도서 커버 이미지 주소</span></span><br><span class="line">    <span class="keyword">var</span> title: <span class="type">String?</span>  <span class="comment">// 도서 이름</span></span><br><span class="line">    <span class="keyword">var</span> price: <span class="type">String?</span>  <span class="comment">// 도서 가격</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>위 클래스는 도서 정보를 담기 위한 객체이다. BookVO 클래스에는 몇 개의 프로퍼티가 정의되어 있는데, 도서의 커서 이미지 주소를 저장하기 위한 bookImage, 도서 이름을 저장하기 위한 title, 도서 가격을 위한 price가 있다. 우리는 이들 변수 각각에 값을 저장하지만, 전달할 때는 BookVO 클래스의 인스턴스 자체를 전달하게 된다. 값을 주고 받을 때 개별 변수가 아니라 클래스 인스턴스 자체가 전달되므로 각 변수에 저장된 값들의 관련성이 유지될 수 있음은 물론, 여러 개의 변수가 필요하지도 않다. 이렇게 만들어진 클래스 인스턴스는 테이블 뷰의 셀 하나하나를 구성하는 데이터 소스로 사용된다. 각각의 프로퍼티는 비어있을 수도 있으므로 옵셔널 타입으로 선언한다.</p>
+<p><br></p>
+<p>참고로 VO의 의미인 Value Object 패턴을 함께 알아보자. 이는 데이터 저장을 전달하는 클래스를 별도로 분리하는 설계 방식을 말하는데, 줄여서 VO라고 한 것이다. 객체 지향 설계에서는 매우 자주 활용되는 방식이다. VO 패턴을 쉽게 생각하자면 일종의 식판이라고 할 수 있다. 밥그릇, 국그릇 등을 올려놓는 식판 말이다. 식판 위에 올라가는 밥그릇, 국그릇, 반찬 그릇 등에는 밥이나 국, 그리고 반찬이 담기듯이 VO 패턴의 클래스에 올려지는 각종 변수들은 해당하는 데이터를 담는 역할을 한다. 밥그릇에 밥을 담고 국그릇에 국을 담고 반찬 그릇에 반찬을 담아 식판 위에 올려놓은 다음에 식탁으로 갈 때에는 각각의 그릇들을 들고 가는 것이 아니라 식판 하나만 들고 가면 된다. 식판을 들고 가면 자연스레 밥과 국, 반찬은 함께 이동하게 된다. VO 패턴도 마찬가지이다. 클래스 인스턴스 내부의 속성에 각각의 데이터들을 담은 다음, 전달할 때에는 클래스 인스턴스 전체를 전달하기 때문에 자연스레 클래스 내부의 변수에 저장된 값도 함께 전달된다.</p>
+<p><br><hr><br></p>
+<h3 id="3-웹-데이터-요청-코드-작성"><a href="#3-웹-데이터-요청-코드-작성" class="headerlink" title="3. 웹 데이터 요청 코드 작성"></a>3. 웹 데이터 요청 코드 작성</h3><p>본 포스팅에서는 오픈 API 중 하나인 api.itbook.store를 사용하여 API를 호출하고 응답 데이터를 받아 화면에 표시하도록 하겠다.  </p>
+<p>그러면 본격적으로 테이블뷰의 셀은 어떻게 커스터마이즈 할 수 있을까? 쉽게 말해 기본적으로 제공되는 테이블뷰의 셀 스타일에서 벗어나 원하는 모양의 커스텀 셀을 직접 만들 수 없을까? 이제까지는 스토리보드에 셀 프로토타입이 만들어져 있었고, 그 프로토타입을 원하는 모양으로 만든 다음에 Identifier를 부여해서 코드에서 불러와 사용을 했었다. 그러나 이처럼 하나의 테이블뷰에서 프로토타입을 구현해 두면 다른 테이블뷰에서 사용하기 불편하다. 그래서 두 테이블 뷰에서 동시에 동일한 테이블 뷰의 셀을 사용하기 위해 셀 클래스를 따로 만들고, 인터페이스 파일을 따로 구현해 볼 것이다. 여기서는 Xib를 사용해 볼 것이다. Xib는Xml Interface Builder의 약자로 스토리보드가 생기기 전에 많이 사용하였으며, Xib 이전에는 Nib(NeXT Interface Builder)가 사용되었다. Nib에서 Xib로 변경된 이유에는 소스코드 매니지먼트가 있다. Nib은 바이너리 아카이브 파일로 이루어진 통짜 파일이라 코드의 변경 및 추적이 어렵다. 이를 Xml 기반인 Xib를 사용해서 코드의 변경 이력을 확인하기 수월하도록 개선하였다. 그러나 Xib는 각각의 뷰마다 인터페이스 파일을 생성해주어야 했기 때문에 스토리보드처럼 뷰 사이의 흐름을 파악하기는 어렵고 인터페이스 파일이 많아지는 단점이 있었다. 그래서 스토리보드가 등장했으나 지금도 인터페이스 빌더에서 Xib를 사용할 수 있다는 점이 중요하다. 이를 활용하여 자주 사용할 뷰를 만들어두고 계속해서 재사용한다거나 단독으로 뷰 컨트롤러 인터페이스를 구현할 수 있다. Xib 파일을 빌드하면 Nib 파일로 변환된다.     </p>
+<p><br></p>
+<p>먼저 UITableView 클래스를 상속받는 BookTableViewCell 클래스를 만들어보자. 이후 커스텀 셀을 위한 델리게이트 프로토콜을 만들어볼 것이다. 즉, 셀이 스스로 처리하지 못하는 일을 누군가에게 맡길 것이다.  </p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/ios/">#iOS</a> <a href="/tags/swift/">#swift</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo" target="_blank" rel="noopener">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2020/03/19/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-7/">[iOS] 앱 개발 도전기 (7)</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/03/19/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-6/">[iOS] 앱 개발 도전기 (6)</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/03/15/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%B2%88%EC%99%B8%ED%8E%B8-3/">[iOS] 앱 개발 번외편 (3)</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/03/14/sem-%EB%B2%A0%EC%9D%B4%EC%A7%80%EC%95%88-%EA%B5%AC%EC%A1%B0%EB%B0%A9%EC%A0%95%EC%8B%9D/">[SEM] 베이지안 구조방정식</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/algorithm/">algorithm</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/algorithm/selection-sort/">selection sort</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/natural-language-processing/">natural language processi</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/edwith/">edwith</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/" target="_blank" rel="noopener">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+</body>
+
+</html>

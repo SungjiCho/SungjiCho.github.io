@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="로그인 - 회원가입 구현하기
+앱 사용자에게 어떤 식으로든 메시지를 전달하고 싶을 때가 있습니다. 그것이 오류에 대한 안내 메시지이거나 혹은 오랫동안 접속하지 않은 사용자에 대한 초대 메시지이거나 간에 메시지를 보내야할 필요가 있죠. 모바일 서비스는 기본적으로 제작자와 ">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Sunny Cho">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="[iOS] 앱 개발 번외편 (2)"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="QuantPsy"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>[iOS] 앱 개발 번외편 (2) - QuantPsy</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2020/03/11/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%B2%88%EC%99%B8%ED%8E%B8-2/">
+                [iOS] 앱 개발 번외편 (2)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-03-11</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/ios/">iOS</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="로그인-회원가입-구현하기"><a href="#로그인-회원가입-구현하기" class="headerlink" title="로그인 - 회원가입 구현하기"></a>로그인 - 회원가입 구현하기</h1><p><br></p>
+<p>앱 사용자에게 어떤 식으로든 메시지를 전달하고 싶을 때가 있습니다. 그것이 오류에 대한 안내 메시지이거나 혹은 오랫동안 접속하지 않은 사용자에 대한 초대 메시지이거나 간에 메시지를 보내야할 필요가 있죠. 모바일 서비스는 기본적으로 제작자와 사용자 간의 대화입니다. 제공자가 제공하는 기능과 콘텐츠, 그리고 서비스를 사용자가 이용하는 과정에서 발생하는 액션과 피드백 작용이 이들 대화의 거의 대부분을 차지하죠. 그래서 모바일 서비스에서 이루어지는 대화는 함축적인 기호나 화면 구성, 콘텐츠를 통해 간접적으로 이루어지는 경우가 많습니다.</p>
+<p><br></p>
+<p>하지만 때로는 보다 직접 명시적인 메시지를 전달해야 할 때가 있습니다. 서버 점검 때문에 일정 시간 동안 서비스 사용이 제한될 때 이를 안내하거나, 네트워크가 연결됮지 않은 상태를 사용자에게 인지시키고, 한동안 접속하지 않은 사용자에게 초대 메시지를 보내는 등의 경우가 이에 해당합니다. 이럴 때를 위해 코코아 터치 프레임워크에서는 사용자에게 미시지를 보낼 수 있는 다양한 방법을 지원합니다. 앱 내에서 사용자에게 메시지를 전달하는 대표적인 방법으로는 다음과 같은 것들을 꼽을 수 있습니다.</p>
+<p><br></p>
+<ul>
+<li>메시지창(알림창)</li>
+<li>로컬 알림</li>
+<li>서버 알림(푸시 알림)</li>
+</ul>
+<p><br></p>
+<p>인터넷을 사용해 본 분이라면 거의 대부분은 메시지 창, 혹은 알림창을 경험해 봤을 겁니다. 사각형의 박스 안에서 메시지를 출력하고, 버튼을 눌러 의사를 표현하도록 하는 것이 바로 알림창이죠. 사용자에게 즉각적으로 메시지를 전달할 수 있으면서 주의를 환기할 수도 있고, 다른 화면 요소에 묻혀 인식되지 않을 위험성도 낮아져 주로 경고나 알림 메시지 등에서 널리 사용되는 창입니다.</p>
+<p><br></p>
+<p>하지만 한 가지 단점이 있다면 이 알림창은 앱이 실행 중일 때만 동작한다는 것입니다. 사용자에게 즉각적으로 메시지를 전달해야 할 필요가 있을 경우에도 사용자가 앱을 실행하지 않으면 알림창을 노출할 수 없는 한계가 있죠. 이를 보완하기 위해 고안된 것이 로컬 알림과 서버 알림 기능입니다.</p>
+<p><br></p>
+<p>로컬 알림과 서버 알림은 소위 우리가 말하는 푸시 메시지 기능입니다. 아이폰을 사용해 본 적이 있는 분이라면 앱을 켜 놓지 않아도 아이폰 화면에 전달되는 메시지들을 본 적이 있을 겁니다. 이들 알림은 바로 이 기능을 가리킵니다. 공식 용어로 이들을 로컬 노티피케이션, 포시 노티피케이션이라고 부르지만 실무 현장에서는 그냥 로컬 푸시, 서버 푸시라고 부르는 경우가 더 많습니다.</p>
+<p><br></p>
+<p>기본적으로 모바일 디바이스 내에서 로컬 푸시와 서버 푸시를 구현하는 메커니즘은 거의 동일합니다. 하지만 메시지의 출처는 전혀 다릅니다. 로컬 푸시가 앱 내부에서 특쩡 프로세스에 의해 등록된 메시지를 iOS가 전달하는 방식이라면 서버 푸시는 별도의 서버를 통해 APNs(Apple Push Notification Service)라는 애플 고유의 메시징 시스템에게 보낸 메시지가 네트워크를 통해 전달되는 방식입니다. </p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/ios/">#iOS</a> <a href="/tags/swift/">#swift</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo" target="_blank" rel="noopener">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2020/03/19/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-7/">[iOS] 앱 개발 도전기 (7)</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/03/19/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-6/">[iOS] 앱 개발 도전기 (6)</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/03/15/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%B2%88%EC%99%B8%ED%8E%B8-3/">[iOS] 앱 개발 번외편 (3)</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/03/14/sem-%EB%B2%A0%EC%9D%B4%EC%A7%80%EC%95%88-%EA%B5%AC%EC%A1%B0%EB%B0%A9%EC%A0%95%EC%8B%9D/">[SEM] 베이지안 구조방정식</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/algorithm/">algorithm</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/algorithm/selection-sort/">selection sort</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/natural-language-processing/">natural language processi</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/edwith/">edwith</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/" target="_blank" rel="noopener">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+</body>
+
+</html>
