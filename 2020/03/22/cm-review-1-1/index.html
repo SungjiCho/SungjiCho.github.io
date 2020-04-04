@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Computational Modeling Review본 포스팅은 “Computational Models of Cognition and Behavior(2018)”와 “Bayesian Cognitive Modeling”을 정리한 내용입니다.
+1 IntroductionMo">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Sunny Cho">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="[Computational Modeling] Review (1)"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="QuantPsy"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>[Computational Modeling] Review (1) - QuantPsy</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2020/03/22/cm-review-1-1/">
+                [Computational Modeling] Review (1)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-03-22</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/computational-modeling/">Computational Modeling</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="Computational-Modeling-Review"><a href="#Computational-Modeling-Review" class="headerlink" title="Computational Modeling Review"></a>Computational Modeling Review</h1><h5 id="본-포스팅은-“Computational-Models-of-Cognition-and-Behavior-2018-”와-“Bayesian-Cognitive-Modeling”을-정리한-내용입니다"><a href="#본-포스팅은-“Computational-Models-of-Cognition-and-Behavior-2018-”와-“Bayesian-Cognitive-Modeling”을-정리한-내용입니다" class="headerlink" title="본 포스팅은 “Computational Models of Cognition and Behavior(2018)”와 “Bayesian Cognitive Modeling”을 정리한 내용입니다."></a>본 포스팅은 “Computational Models of Cognition and Behavior(2018)”와 “Bayesian Cognitive Modeling”을 정리한 내용입니다.</h5><p><br></p>
+<h4 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1 Introduction"></a>1 Introduction</h4><h5 id="Models-and-Theories-in-Science"><a href="#Models-and-Theories-in-Science" class="headerlink" title="Models and Theories in Science"></a>Models and Theories in Science</h5><p>Cognitive scientists seek to understand how the mind works. That is, we want to describe and predict people’s behavior, and we ultimately wish to explain it, in the same way that physicists predict the motion of an apple that is dislodged from its tree (and can accuratetly describe its downward path) and explain its trajectory (by applealing to gravity). For example, if you forgot someone’s name when you are distracted seconds after being introduced to her, we would like to know what cognitive process is responsible for this failure. Was it lack of attention? Forgetting over time? Can we know ahead of time whether or not you will remember that person’s name?</p>
+<p><br></p>
+<p>The central thesis of this book is that to answer questions such as these, cognitive scientists must rely on quantitative mathematical models, just like physicists who research gravity. We suggest that to expand our knowledge of the human mind, consideration of the data and verbal theorizing are insufficient on their own.</p>
+<p><br></p>
+<p>This thesis is best illustrated by considering something that is simpler and more readily understood that the mind. Have a look at the data which represent the position of planets in the night sky over time. How might one descibe thie peculiar pattern of motion? How would you explain it? The strange loops in the otherwise consistently curvlinear paths describe the famous “retrograde motion” of the planets - that is, their propensity to suddenly reverse direction for sometime before resuming their initial path. What explains retrograde motion? It took more than a thousand years for a satisfactory answer to that question to become available, when Copernicus replaced the goecentric Ptolemaic system with a heliocentric model: Today, we know that retrograde motion arises from the fact that the planets travel at different speeds along their orbits; hence, as Earth “overtakes” Mars, for example, the red planet will appear to reverse direction as it falls behind the speeding Earth.</p>
+<p><br></p>
+<p>This example permits several conclusions that will be relevant throughout the reminder of this book. First, the pattern of data deifes description and explanation unless one has a model of the underlying process. It is only with the aid of a model that one can describe and explain planetary motion, even at a verbal level. Second, any model that explains the data is itself unobservable. That is, although the Copernican model is readily communicated and represented, it cannot be directly observed. Instead, the model is an abstract explanatory device that “exists” primaily in the minds of the people who use it to describe, predict, and explain the data. Third, there nealy always are several possible models that can explain a given data set. This point is worth exploring in a bit more detail. The answer to this question is quite fascinating and requires that we move toward a quantitative level of modeling.</p>
+<p><br><br></p>
+<h5 id="Memory-retention"><a href="#Memory-retention" class="headerlink" title="Memory retention"></a>Memory retention</h5><p>Finding a lawful relationship between memory retention and time is one of the oldest cognitive modeling question, going back to Ebbinghaus in the 1880s. The usual experiment involves giving people many items of information on a list, and then testing their ability to remember itmes from the list after different periods of time have elapsed. Various mathematical functions, usually with psychological interpretations, have been proposed as describing the relationship between time and the level of retention. </p>
+<p><br></p>
+<p>We consider a simplified version of the exponential decay model. The model assumes that the probability that an item will be remembered after a period of time $\mathit{t}$ has elapsed is $\theta_t = exp(-\alpha t) + \beta$, with the restriction $0 &lt; \theta_t &lt; 1$. The $\alpha$ parameter corresponds to the rate of decay of information. The $\beta$ parameter corresponds to a baseline level of remembering that is assumed to remain even after very long time periods. Our analyses using this model are based on fictitious data from a potential memory retention study, to help illustrate key modeling points.</p>
+<p><br></p>
+<p><img src="/image/cm1.png" alt="cm1"></p>
+<p><br></p>
+<p>These data are given in Table 10.1, and relate to 4 subjects tested on 18 items at 10 time intervals: 1, 2, 4, 7, 12, 21, 35, 59, 99, and 200. The number of items tested and the first 9 time intervals are those used by Rubin et al. (1999). Each datum in Table 10.1 counts the number of correct memory recalls for each subject at each time interval. Included in Table 10.1 are missing data, shown by “?” symbols, so subjects have missing data for the final time period of 200, which tests the ability of models to generalize to new measurements. For Subject 4, these are no data at all, which tests the ability of models to generalize to new subjects. </p>
+<p><br></p>
+<p><img src="/image/cm2.png" alt="cm2"></p>
+<p><br></p>
+<h5 id="No-individual-differences"><a href="#No-individual-differences" class="headerlink" title="No individual differences"></a>No individual differences</h5><p>The graphical model for our first attempt to account for the data is shown in Figure 10.1. The model assumes that every subject has the same retention curve, and so there is one true value for the $\alpha$ and $\beta$ parameters. The outer plate corresponds to the different time periods with values given by the observed $t_j$ variable. Together with the $\alpha$ and $\beta$ parameters, the time period defines the probability $\theta_j$ that the jth item will be remembered. The inner plate corresponds to the subjects. Each has the same probability of recall at any given time period, but their experimental data, given by the success counts $k_{ij}$, vary, and are bionomially distributed according to the success rate and number of trials.</p>
+<p><br></p>
+<p>The script Retention_1.txt implements the graphical model in WinBUGS. Note that the code calculates the success rate for each subject at each interval separately, and so in more elaborate than it needs to be:</p>
+<p><br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Retention With No Individual Differences</span></span><br><span class="line">model&#123;</span><br><span class="line">  <span class="comment"># Observed and Predicted Data</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      k[i, j] ~ dbin(theta[i, j], n)</span><br><span class="line">      predk[i, j] ~ dbin(theta[i, j], n)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Retention Rate At Each Lag For Each Subject Decays Exponentially</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      theta[i, j] &lt;- min(<span class="number">1</span>, exp(-alpha*t[j]+beta)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Priors</span></span><br><span class="line">  alpha ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">  beta ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>The code applies the model to the data, and produces analysis of the posterior and posterior predictive distributions. The joint posterior distribution of $\alpha$ and $\beta$ is shown in the main panel of Figure 10.2, as a two-dimensional scatter plot.</p>
+<p><br></p>
+<p><img src="/image/cm3.png" alt="cm3"></p>
+<p><br></p>
+<p>Each of the points in the scatter-plot corresponds to a posterior sample selected at random from those available. The marginal distributions of both $\alpha$ and $\beta$ are shown below and to the right, and are based on all samples. The marginals show the distribution of each parameter, conditioned on the data, considered independently of the other parameter (i.e., averaged across the other parameter). It is clear from Figure 10.2 that the joint posterior carries more information than the two marginal distributions. If the joint posterior were independent, it would be just the product of the two marginal. But the joint posterior shows a mild relationship, with larger values of $\alpha$ generally corresponding to larger values of $\beta$.</p>
+<p><br></p>
+<p><img src="/image/cm4.png" alt="cm4"></p>
+<p><br></p>
+<p>This can be interpreted psychologically as meaning that it is uncertain whether the parameters are a relatively higher baseline coupled with a relatively higher decay rate, or a relatively lower baseline coupled with a relatively lower decay rate. Figure 10.3 shows the posterior predictive distribution over the number of successful retentions at each time interval. For each subject, at each interval, the squares show the posterior mass given to each possible number of items recalled. These correspond to the model’s predictions about observed behavior in the retention experiment, based on what the model has learned from the data. Also shown, by the black squres and connecting lines, are the actual observed data for each subject, where available. </p>
+<p><br></p>
+<p>The obvious feature of Figure 10.3 is that the current model does not meet a basic requirement of descriptive adequacy. For both Subjects 1 and 3 the model gives little posterior mass to the observed data at many time periods. It describes a steeper rate of decay than shown by the data of Subject 1, and a shallower rate of decay than shown by the data of Subject 3. After evaluating the model using the posterior predictive analysis, we can conclude that the modeling assumption of no individual differences is inappropriate. It is important to understand that this conclusion neuters the usefulness of the posterior distribution over parameters shown in Figure 10.2. The posterior distribution is conditioned on the assumption that the model is appropriate, and is not relevant when the model is fundamentally deficient.</p>
+<p><br><br></p>
+<h5 id="Full-individual-differences"><a href="#Full-individual-differences" class="headerlink" title="Full individual differences"></a>Full individual differences</h5><p>A revised graphical model that does accommodate individual differences is shown in Figure 10.4. The change from the previous model is that the ith subject now has their own $\alpha_i$ and $\beta_i$ parameters, and that the probability of retention for an item $\theta_{ij}$ now changes for both subjects and retention intervals.</p>
+<p><br></p>
+<p><img src="/image/cm5.png" alt="cm5"></p>
+<p><br></p>
+<p>The script Retention_2.txt implements the graphical model in WinBUGS:</p>
+<p><br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Retention With Full Individual Differences</span></span><br><span class="line">model&#123;</span><br><span class="line">  <span class="comment"># Observed and Predicted Data</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      k[i, j] ~ dbin(theta[i,j], n)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Retention Rate At Each Lag For Each Subject Decays Exponentially</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      theta[i, j] &lt;- min(<span class="number">1</span>, exp(-alpha[i]*t[j]) + beta[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Priors For Each Subject</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    alpha[i] ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">    beta[i] ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>The code applies the model to the same data and again produces analysis of the posterior and posterior predictive distributions. </p>
+<p><br></p>
+<p><img src="/image/cm6.png" alt="cm6"></p>
+<p><br></p>
+<p>The joint posterior distributions for each subject are shown in the main panel of Figure 10.5. Each point in the scatter-plot corresponds to a posterior sample, with different markers representing different subjects. The first, second, third, and fourth subjects use squre, circular, triangular, and cross markers, respectively. The marginal distributions are shown below and to the right, and use different line styles to represent the subjects.</p>
+<p><br></p>
+<p><img src="/image/cm7.png" alt="cm7"></p>
+<p><br></p>
+<p>Figure 10.6 shows the same analysis of the posterior predictive distributions over the number of successful retentions at each time interval, for each subject. It is clear that allowing for individual differences lets the model achieve a basic level of descriptive adequacy for Subjects 1, 2, and 3. The posteriors in Figure 10.5 show that different values for the $\alpha$ decay parameter are used for each of these subjects, corresponding to our intuitions from the earlier analysis.</p>
+<p><br></p>
+<p>The weakness in the current model is evident in its predictions for Subject 4. Because each subject is assumed to have decay and baseline parameters that are different, the only information the model has about the new subject is the priors for the $\alpha$ and $\beta$ parameters. The relationships between parameters for subjects that are visually evident in Figure 10.5 are not formally captured by the model. This means, as shown in Figure 10.5, the posterior for Subject 4 are just the priors, and so the posterior predictive distribution for Subject 4, as shown in Figure 10.6, does not have any useful structure. In this way, the model fails a basic test of generalizability, since it does not make sensible predictions for the behavior of subjects other than those for whom data are available. Intuitively, one might want to predict that Subject 4 will be likely to have model parameters consistent with regularties in the inferred parameters for Subjects 1, 2, and 3.</p>
+<p><br><br></p>
+<h5 id="Structured-individual-differences"><a href="#Structured-individual-differences" class="headerlink" title="Structured individual differences"></a>Structured individual differences</h5><p>The relationship between the parameters of different subjects, visually evident in Figure 10.5, can be captured using a hierarchical model. A graphical model implementing this approach is shown in Figure 10.7. The key cahnge is that now the $\alpha_i$ and $\beta_i$ parameters for each subject are modeled as coming from Gaussian distributions. The over-arching Gaussian distribution models this group-level structure for each parameter. This group structure itself has parameters, in the form of means $\mu_{\alpha}$ for the decay and $\mu_{\beta}$ for the baseline, and precisions $\lambda_{\alpha}$ for the decay and $\lambda_{\beta}$ for the baseline. In this way, the individual differences between subjects are given structure.</p>
+<p><br></p>
+<p>Each $\alpha_i$ and $\beta_i$ parameter is independently sampled, so they can be different, but they are sampled from the same distribution, so they have a relationship to one another. This means that inferences made for one subject influence predictions made for another. This means that inferences made for one subject influence predictions made for another. Since the means and precisions of the gorup-level distributions are common to all subjects, what is learned about them from one subject affects what is known about another. In addition, because they are sampled from over-arching distributions, the $\alpha_i$, and $\beta_i$ parameters at the individual subject level no longer have priors explicitly specified, but inherit them from the priors on the means and precisions of the group-level Gaussian distributions. The script Retention_3.txt implements the graphical model in WinBUGS:</p>
+<p><br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Retention With Structured Individual Differences</span></span><br><span class="line">model&#123;</span><br><span class="line">  <span class="comment"># Observed and Predicted Data</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      k[i, j] ~ dbin(theta[i, j], n)</span><br><span class="line">      predk[i, j] ~ dbin(theta[i, j], n)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Retention Rate At Each Lag For Each Subject Decays Exponentially</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      theta[i, j] &lt;- min(<span class="number">1</span>, exp(-alpha[i]*t[j]+beta[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Parameters For Each Subject Drawn From Gaussian Group Distributions</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    alpha[i] ~ dnorm(alphamu, alphalambda)I(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">    beta[i] ~ dnorm(betamu, betalambda)I(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Priors For Group Distributions</span></span><br><span class="line">  alphamu ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">  alphalambda ~ dgamma(<span class="number">.001</span>,<span class="number">.001</span>)I(<span class="number">.001</span>,)</span><br><span class="line">  alphasigma &lt;- <span class="number">1</span>/sqrt(alphalambda)</span><br><span class="line">  betalambda ~ dgamma(<span class="number">.001</span>,<span class="number">.001</span>)I(<span class="number">.001</span>,)</span><br><span class="line">  betasigma &lt;- <span class="number">1</span>/sqrt(betalambda)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>The code applies the model to the data, and again produces an analysis of the posterior and posterior predictive distributions. The joint amd marginal posterior distributions for this model are shown in Figure 10.8 using the same markers and lines as before. For Subjects 1, 2, and 3, these distributions are extremely similar to those found using the full individual differences model. The important difference is for Subject 4, who now sensible posterior distributions for both parameters. For the decay parameter $\alpha$ there is still considerable uncertainty, consistent with the range of values seen for the first three subjects, but for the baseline parameter $\beta$, Subject 4 now has a much more constrained posterior distribution.</p>
+<p><br></p>
+<p><img src="/image/cm8.png" alt="cm8"></p>
+<p><br></p>
+<p>The posterior predictive distributions for each subject under the hierarchical model are shown in Figure 10.9. The preditions remain useful for the first three subjects, and are now also appropriate for Subject 4. The structured prediction for Subject 4, from whom no data have yet been collected, comes directly from the nature of the hierarchical model. Based on the data from Subjects 1, 2, and 3, inferences are made about the means and precisions of the group distributions for the two parameters of the retention model. The new Subject 4 has values sampled from the Gaussians with these parameters, producing the sensible parameter distributions in Figure 10.8 that lead to the sensible predictive distributions in Figure 10.9.</p>
+<p><br></p>
+<p><img src="/image/cm9.png" alt="cm9"></p>
+<p><br></p>
+<p>Psychologically, hierarchical models are powerful because they are able to represent knowledge at different levels of abstraction in a cognitive process(Lee, 2011a). Just as the data have been assumed to be generated by the decay and baseline parameters combining in a memory process for individual subjects, the hierarchical model assumes that those parameters themselves are generated by more abstract latent parameters that describe group distributions across subjects. In other words, a hierarchical model lets a theory of memory retention be combined with a theory of individual differences, to provide a more complete account of behavioral data from multiple subjects.</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/computational-modeling/">#Computational Modeling</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo" target="_blank" rel="noopener">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2020/04/04/beakjoon-1-6/">[BeakJoon] A-B</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/04/02/beakjoon-1-5/">[BeakJoon] A+B</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/04/01/hci-paper-survey/">[HCI] CHI 2018 Paper Surv</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/03/31/beakjoon-1-2/">[BeakJoon] We love kriii</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/algorithm/">algorithm</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/algorithm/selection-sort/">selection sort</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/baekjoon/">BAEKJOON</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/vuejs/">vuejs</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/" target="_blank" rel="noopener">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+</body>
+
+</html>
