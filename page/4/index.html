@@ -1108,6 +1108,37 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2019/11/17/Programmers-2016%EB%85%84/">
+                [Programmers] 2016년
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-17</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/programmers/">programmers</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    day = [<span class="string">'THU'</span>, <span class="string">'FRI'</span>, <span class="string">'SAT'</span>, <span class="string">'SUN'</span>, <span class="string">'MON'</span>, <span class="string">'TUE'</span>, <span class="string">'WED'</span>]</span><br><span class="line">    month = [<span class="number">31</span>, <span class="number">29</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>]</span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">1</span>:</span><br><span class="line">        answer = day[b%<span class="number">7</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        total = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(a<span class="number">-1</span>):</span><br><span class="line">            total += month[i]</span><br><span class="line">        answer = day[(total+b)%<span class="number">7</span>]</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2019/11/17/Programmers-K%EB%B2%88%EC%A7%B8%EC%88%98/">
                 [Programmers] K번째수
             </a>
@@ -1142,37 +1173,6 @@
 <p><strong>2. 1번에서 할당한 리스트, 튜플 변수를 이용해 다시 문자열을 만든다.</strong></p>
 <h6 id="Ver-1"><a href="#Ver-1" class="headerlink" title="Ver.1"></a>Ver.1</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'algorithm'</span></span><br><span class="line">list_s = list(s)</span><br><span class="line">tuple_s = tuple(s)</span><br><span class="line"></span><br><span class="line">line_list_s = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(list_s)):</span><br><span class="line">    line_list_s += list_s[i]</span><br><span class="line">print(type(line_list_s), line_list_s)</span><br><span class="line"></span><br><span class="line">line_tuple_s = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(tuple_s)):</span><br><span class="line">    line_tuple_s += tuple_s[i]</span><br><span class="line">print(type(line_tuple_s), line_tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br></pre></td></tr></table></figure>
 <h6 id="Ver-2"><a href="#Ver-2" class="headerlink" title="Ver.2"></a>Ver.2</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">line_list_s = <span class="string">''</span>.join(list_s)</span><br><span class="line">print(type(line_list_s), line_list_s)</span><br><span class="line"></span><br><span class="line">line_tuple_s = <span class="string">''</span>.join(tuple_s)</span><br><span class="line">print(type(line_tuple_s), line_tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/17/Programmers-%EA%B0%80%EC%9A%B4%EB%8D%B0-%EA%B8%80%EC%9E%90-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/">
-                [Programmers] 가운데 글자 가져오기
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-17</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/programmers/">programmers</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(s)</span>:</span></span><br><span class="line">    line = list(s)</span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> len(s)%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span><span class="number">-1</span>] + line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
 
         </div>
     
@@ -1221,6 +1221,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2020/04/04/SEM-%EC%B8%A1%EC%A0%95%EB%AA%A8%ED%98%95/">[SEM] 측정모형</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2020/04/04/beakjoon-1-6/">[BeakJoon] A-B</a>
             </li>
             
@@ -1230,10 +1234,6 @@
             
             <li>
                 <a class="footer-post" href="/2020/04/01/hci-paper-survey/">[HCI] CHI 2018 Paper Surv</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2020/03/31/beakjoon-1-2/">[BeakJoon] We love kriii</a>
             </li>
             
         </ul>
