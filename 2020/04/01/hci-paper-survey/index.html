@@ -177,7 +177,19 @@ ABSTRACTPredicting human performance in interacti">
 <p><br></p>
 <h5 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h5><p>Seeking models for predicting human performance in performing an interaction task has long been pursued in the field of human computer interaction. In addtion to the scientific value of understanding human behaviors, creating these models has practical values in user interface design and development. A predictive model allows a developer or designer to understand the expected performance of an interface without having to test it with real users, which can be expensive and effort consuming.</p>
 <p><br></p>
-<p>Several predictive models of human performance have been devised, including Fitts’ law and Hick’s law, which rooted in information theory and experimental psychology. However, these models capture a certain aspect of human performance in isolation, e.g., motor control or decision making. They are limited in modeling human performance in realistic interaction tasks where multiple factors interplay.  </p>
+<p>Several predictive models of human performance have been devised, including Fitts’ law and Hick’s law, which rooted in information theory and experimental psychology. However, these models capture a certain aspect of human performance in isolation, e.g., motor control or decision making. They are limited in modeling human performance in realistic interaction tasks where multiple factors interplay.</p>
+<p><br></p>
+<p>In this work, we take a departure from existing analytical approaches for performance modeling by using a data-driven approach based on the recent advance in deep learning. Deep learning has proven successful in many domains, such as computer vision and natural language processing. It relieves the need of careful feature engineering and of a great amount of domain knowledge in creating a predictive model. It can also capture patterns that only manifest in the data but are difficult to articulate in an analytical form.</p>
+<p><br></p>
+<p>In particular, we devise a predictive model for interaction performance based on a deep recurrent neural net architecture using Long-Short Term Memory(LSTM). The unique architecture of our LSTM-based model allows us to naturally capture a variety of factors that come into play in UI tasks, including not only what human users are perceiving and performing at the moment but also what they have learned from the past regarding an interaction task.</p>
+<p><br></p>
+<p><img src="/image/hci1.png" alt="hci1"></p>
+<p><br></p>
+<p>Figure 1. A high-level illustration of our approach for predicting human time performance. The model, mimicking a human user, not only sees the UI and task at the moment but also remembers what is has experienced previously, through its recurrent layer. The representation of the UI and task at each step is ahieved via another recurrent net.</p>
+<p><br></p>
+<p>To scope our work, we focus on a common task on desktop and smartphones, where users select a target item from a vertical menu or list, e.g., choosing a song to play, a person to contact, selecting an application in the start menu or simply activating a command in a drop-dowwn menu. Because users often need to perform these selection tasks repeatedly over the time, we investigate our approach in the context of a sequence of selection tasks.</p>
+<p><br></p>
+<p>We design a novel hierarchical deep architecture for menu performance modeling. In our architecture, a recurrent neural net is used to encode UI attributes and tasks at each target item selection. This allows us to represent a menu with a varied length and to easily incorporate any additional UI attributes such as visual appearance and semantics. We then use another recurrent net to capture learning effects, a major component in human performance. The entire model is learned end-to-end using stochastic gradient descent. The model outperforms existing analytical methods in various settings for predicting selection time. Importantly, it is easily extensible for accomodating new UI feature and human factors involved in an interaction task.   </p>
 
     </div>
 
@@ -258,7 +270,7 @@ ABSTRACTPredicting human performance in interacti">
         </li>
         
         <li>
-            <a class="footer-post" href="/categories/vuejs/">vuejs</a>
+            <a class="footer-post" href="/categories/computational-modeling/">Computational Modeling</a>
         </li>
         
     </ul>
