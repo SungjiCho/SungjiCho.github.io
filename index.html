@@ -169,11 +169,10 @@
             <h1 id="밑바닥부터-시작하는-자연어처리-4"><a href="#밑바닥부터-시작하는-자연어처리-4" class="headerlink" title="밑바닥부터 시작하는 자연어처리 (4)"></a>밑바닥부터 시작하는 자연어처리 (4)</h1><p><br></p>
 <h4 id="RNN이란"><a href="#RNN이란" class="headerlink" title="RNN이란"></a>RNN이란</h4><p>RNN(Recurrent Neural Network)의 ‘Recurrent’는 라틴어에서 온 말로, ‘몇 번이나 반복해서 일어나는 일’을 뜻합니다. 우리말로는 ‘재발한다’, ‘주기적으로 일어난다’, ‘순환한다’ 등으로 번역됩니다. 그래서 RNN을 직역하면 ‘순환하는 신경망’이 되는 것이죠. 이번 절에서는 이 ‘순환한다’는 말에 의미를 곱씹어 보겠습니다.</p>
 <p><br></p>
-<h4 id="순환하는-신경망"><a href="#순환하는-신경망" class="headerlink" title="순환하는 신경망"></a>순환하는 신경망</h4><p>바로 본론으로 들어가서, ‘순환한다’에는 어떤 의미가 담겨 있을까요? 물론 ‘반복해서 되돌아감’을 의미합니다. 어느 한 지점에서 시작한 것이, 시간을 지나 다시 원래 장소로 돌아오는 것, 그리고 이 과정을 반복하는 것이 바로 ‘순환’입니다. 여기서 하나 주목할 사실은, 순환하기 위해서는 ‘닫힌 경로’가 필요하다는 것입니다. ‘닫힌 경로’ 혹은 ‘순환하는 경로’가 존재해야 데이터가 같은 장소를 반복해 왕래할 수 있습니다. 그리고 데이터가 순환하면서 정보가 끊임없이 갱신되게 됩니다. RNN의 특징은 순환하는 경로(닫힌 경로)가 있다는 것입니다. 이 순환 경로를 따라 데이터는 끊임없이 순환할 수 있습니다. 그리고 데이터가 순환되기 때문에 과거의 정보를 기억하는 동시에 최신 데이터로 갱신될 수 있는 것이죠. RNN 계층은 순환하는 경로를 포함합니다. 이 순환 경로를 따라 데이터를 계층 안에서 순환시킬 수 있지요. 이는 시계열 데이터 <script type="math/tex">(x_0, x_1, ..., x_t, ...)</script>가 RNN 계층에 입력됨을 표현한 것입니다. 그리고 그 입력에 대응하여 <script type="math/tex">(h_0, h_1, ..., h_t, ...)</script>가 출력됩니다. 또한, 각 시각에 입력되는 <script type="math/tex">x_t</script>는 벡터라고 가정합니다. 문장(단어 순서)을 다루는 경우를 예로 든다면 각 단어의 분산 표현(단어 벡터)이 <script type="math/tex">x_t</script>가 되며, 이 분산 표현이 순서대로 하나씩 RNN 계층에 입력되는 것입니다. </p>
+<h4 id="순환하는-신경망"><a href="#순환하는-신경망" class="headerlink" title="순환하는 신경망"></a>순환하는 신경망</h4><p>바로 본론으로 들어가서, ‘순환한다’에는 어떤 의미가 담겨 있을까요? 물론 ‘반복해서 되돌아감’을 의미합니다. 어느 한 지점에서 시작한 것이, 시간을 지나 다시 원래 장소로 돌아오는 것, 그리고 이 과정을 반복하는 것이 바로 ‘순환’입니다. 여기서 하나 주목할 사실은, 순환하기 위해서는 ‘닫힌 경로’가 필요하다는 것입니다. ‘닫힌 경로’ 혹은 ‘순환하는 경로’가 존재해야 데이터가 같은 장소를 반복해 왕래할 수 있습니다. 그리고 데이터가 순환하면서 정보가 끊임없이 갱신되게 됩니다. RNN의 특징은 순환하는 경로(닫힌 경로)가 있다는 것입니다. 이 순환 경로를 따라 데이터는 끊임없이 순환할 수 있습니다. 그리고 데이터가 순환되기 때문에 과거의 정보를 기억하는 동시에 최신 데이터로 갱신될 수 있는 것이죠. RNN 계층은 순환하는 경로를 포함합니다. 이 순환 경로를 따라 데이터를 계층 안에서 순환시킬 수 있지요. 이는 시계열 데이터 $(x_0, x_1, …, x_t, …)$가 RNN 계층에 입력됨을 표현한 것입니다. 그리고 그 입력에 대응하여 $(h_0, h_1, …, h_t, …)$가 출력됩니다. 또한, 각 시각에 입력되는 $x_t$는 벡터라고 가정합니다. 문장(단어 순서)을 다루는 경우를 예로 든다면 각 단어의 분산 표현(단어 벡터)이 $x_t$가 되며, 이 분산 표현이 순서대로 하나씩 RNN 계층에 입력되는 것입니다. </p>
 <p><br></p>
 <h4 id="순환-구조-펼치기"><a href="#순환-구조-펼치기" class="headerlink" title="순환 구조 펼치기"></a>순환 구조 펼치기</h4><p>RNN 계층의 순환 구조를 펼침으로써 오른쪽으로 성장하는 긴 신경망으로 변신시킬 수 있습니다. 지금까지 본 피드포워드 신경망과 같은 구조죠(피드포워드에서는 데이터가 한 방향으로만 흐릅니다). 다만, 다수의 RNN 계층 모두가 실제로는 ‘같은 계층’인 것이 지금까지의 신경망과는 다릅니다. 각 시각의 RNN 계층은 그 계층으로의 입력과 1개 전의 RNN 계층으로부터의 출력을 받습니다. 그리고 이 두 정보를 바탕으로 현 시각의 출력을 계산합니다. 이때 수행하는 계산의 수식은 다음과 같습니다.</p>
-<p>$h_t = tanh(h_{t-1}W_h + x_t W_x + b)$</p>
-
+<script type="math/tex; mode=display">h_t = tanh(h_{t-1}W_h + x_t W_x + b)</script>
         </div>
     
 
@@ -403,6 +402,41 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2020/03/31/beakjoon-1-1/">
+                [BeakJoon] Hello World
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-03-31</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/baekjoon/">BAEKJOON</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="컴파일-에러"><a href="#컴파일-에러" class="headerlink" title="컴파일 에러"></a>컴파일 에러</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="런타임-에러"><a href="#런타임-에러" class="headerlink" title="런타임 에러"></a>런타임 에러</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.print(<span class="string">"Hello World!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="맞았습니다"><a href="#맞았습니다" class="headerlink" title="맞았습니다!"></a>맞았습니다!</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2020/03/31/beakjoon-1-2/">
                 [BeakJoon] We love kriii
             </a>
@@ -429,41 +463,6 @@
 <h4 id="출력"><a href="#출력" class="headerlink" title="출력"></a>출력</h4><p>두 줄에 걸쳐 “강한친구 대한육군”을 한 줄에 한 번씩 출력한다.</p>
 <p><br></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Welovekriii</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">			System.out.println(<span class="string">"강한친구 대한육군"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/03/31/beakjoon-1-1/">
-                [BeakJoon] Hello World
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-03-31</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/baekjoon/">BAEKJOON</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="컴파일-에러"><a href="#컴파일-에러" class="headerlink" title="컴파일 에러"></a>컴파일 에러</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="런타임-에러"><a href="#런타임-에러" class="headerlink" title="런타임 에러"></a>런타임 에러</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.print(<span class="string">"Hello World!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="맞았습니다"><a href="#맞았습니다" class="headerlink" title="맞았습니다!"></a>맞았습니다!</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
     
@@ -835,6 +834,22 @@
 <!-- Disqus Comments -->
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
 </body>
 
