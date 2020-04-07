@@ -12,8 +12,14 @@
     
         <meta name="description" content="HCI
 
-Sequential Input: $(m_0^1, m_1^2, …, m_s^j, …)$
-m_0^1 = [target, len(first), word2vec(first)]m_1^2 = [target, len(second), word2vec(second)]m_2^3">
+THE MODEL DESIGN &amp;amp; LEARNING
+
+
+
+Encoder Net(Recurrent Net)
+
+아래는 순차적 데이터가 RNN 계층에 입력됨을 표현한 것입니다. 그리고 그 입력에 대응하여 은닉 상태가 출력됩니다.
+Sequential Input:">
     
 
     <!--Author-->
@@ -174,8 +180,34 @@ m_0^1 = [target, len(first), word2vec(first)]m_1^2 = [target, len(second), word2
         <!-- Post Content -->
         <h1 id="HCI"><a href="#HCI" class="headerlink" title="HCI"></a>HCI</h1><p><img src="/image/hci2.png" alt="hci2"></p>
 <p><br></p>
-<p>Sequential Input: $(m_0^1, m_1^2, …, m_s^j, …)$</p>
-<script type="math/tex; mode=display">m_0^1 = [target, len(first), word2vec(first)]</script><script type="math/tex; mode=display">m_1^2 = [target, len(second), word2vec(second)]</script><script type="math/tex; mode=display">m_2^3 = [target, len(third), word2vec(third)]</script>
+<h4 id="THE-MODEL-DESIGN-amp-LEARNING"><a href="#THE-MODEL-DESIGN-amp-LEARNING" class="headerlink" title="THE MODEL DESIGN &amp; LEARNING"></a>THE MODEL DESIGN &amp; LEARNING</h4><p><br></p>
+<p><img src="/image/hci3.png" alt="hci3"></p>
+<p><br></p>
+<ul>
+<li>Encoder Net(Recurrent Net)</li>
+</ul>
+<p>아래는 순차적 데이터가 RNN 계층에 입력됨을 표현한 것입니다. 그리고 그 입력에 대응하여 은닉 상태가 출력됩니다.</p>
+<p>Sequential Input: $(m_0^j, m_1^j, …, m_s^j, …)$<br>Hidden State(fixed-length vector): $(e_0^j, e_1^j, …, e_s^j, …)$</p>
+<script type="math/tex; mode=display">m_0^1 = [target, len(first), word2vec(first)]</script><script type="math/tex; mode=display">m_0^2 = [target, len(second), word2vec(second)]</script><script type="math/tex; mode=display">m_0^3 = [target, len(third), word2vec(third)]</script><p><br></p>
+<ul>
+<li>Prediction Net(Recurrent Net)</li>
+</ul>
+<p>The predictions are based on not only the task at the current step but also the hidden state of the previous step that captures the human experience while performing previous tasks.</p>
+<p>
+
+<p>Previous work in deep learning has shown that adding more layers in a deep net can improve the capacity for modeling complex behaviors. To give the model more capacity, we add a hidden layer, with ReLU as the activation function, after the recurrent layer, denoted as nonlinear projection. Finally, the time prediction is computed as a linear combination of the outcome of the nonlinear transformation layer.</p>
+<p><p><p></p>
+<p>각 순서의 RNN 계층은 그 계층으로의 입력과 1개 전의 RNN 계층으로부터의 출력을 받습니다. 그리고 이 두 정보를 바탕으로 현 순서의 출력을 계산합니다. </p>
+<script type="math/tex; mode=display">e_s^j = activation function(e_{s-1}^j W_e + m_s^j W_m + b)</script><ul>
+<li>W_m : 입력 m을 출력 e로 변환하기 위한 가중치</li>
+<li>W_e : 1개의 RNN 출력을 다음 순서의 출력으로 변환하기 위한 가중치</li>
+<li>b : 편향</li>
+</ul>
+<p>여기서 현재 스텝의 출력($e_s^j$)은 한 스텝 이전 출력($e_{s-1}^j$)에 기초해 계산됨을 알 수 있습니다. 다른 관점으로 보면, RNN은 $e$라는 ‘상태’를 가지고 있으며, 위의 식의 형태로 갱신된다고 해석할 수 있겠죠. 그래서 RNN 계층을 ‘상태를 가지는 계층’ 혹은 ‘메모리(기억력)가 있는 계층’이라고 합니다.</p>
+<p><p><p></p>
+<p>RNN 계층의 활성화 함수로는 주로 tanh 함수를 사용하는데, 이를 ReLU로 바꾸면 기울기 소실을 줄일 수 있습니다(ReLU에 $x$를 입력하면 $max(0, x)$를 출력합니다). 그 이유는 ReLU는 입력 $x$가 0 이상이면, 역전파 시 상류의 기울기를 그대로 하류에 흘려보내기 때문이죠. 즉, 기울기가 작아지지 않습니다.</p>
+<p><br></p>
+
     </div>
 
     
@@ -217,11 +249,11 @@ m_0^1 = [target, len(first), word2vec(first)]m_1^2 = [target, len(second), word2
         <ul>
             
             <li>
-                <a class="footer-post" href="/2020/04/07/fnlp-%EB%B0%91%EB%B0%94%EB%8B%A5%EB%B6%80%ED%84%B0-%EC%8B%9C%EC%9E%91%ED%95%98%EB%8A%94-%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC-4/">[FNLP] 밑바닥부터 시작하는 자연어처리 (</a>
+                <a class="footer-post" href="/2020/04/07/hci-paper-summary/">[HCI]</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2020/04/07/hci-paper-summary/">[HCI]</a>
+                <a class="footer-post" href="/2020/04/07/fnlp-%EB%B0%91%EB%B0%94%EB%8B%A5%EB%B6%80%ED%84%B0-%EC%8B%9C%EC%9E%91%ED%95%98%EB%8A%94-%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC-4/">[FNLP] 밑바닥부터 시작하는 자연어처리 (</a>
             </li>
             
             <li>
@@ -385,22 +417,6 @@ m_0^1 = [target, len(first), word2vec(first)]m_1^2 = [target, len(second), word2
 <!-- Disqus Comments -->
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
 </body>
 
