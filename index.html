@@ -184,102 +184,6 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2020/04/07/fnlp-%EB%B0%91%EB%B0%94%EB%8B%A5%EB%B6%80%ED%84%B0-%EC%8B%9C%EC%9E%91%ED%95%98%EB%8A%94-%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC-4/">
-                [FNLP] 밑바닥부터 시작하는 자연어처리 (4)
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-04-07</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/natural-language-processing/">Natural Language Processing</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="밑바닥부터-시작하는-자연어처리-4"><a href="#밑바닥부터-시작하는-자연어처리-4" class="headerlink" title="밑바닥부터 시작하는 자연어처리 (4)"></a>밑바닥부터 시작하는 자연어처리 (4)</h1><p><br></p>
-<h4 id="RNN이란"><a href="#RNN이란" class="headerlink" title="RNN이란"></a>RNN이란</h4><p>RNN(Recurrent Neural Network)의 ‘Recurrent’는 라틴어에서 온 말로, ‘몇 번이나 반복해서 일어나는 일’을 뜻합니다. 우리말로는 ‘재발한다’, ‘주기적으로 일어난다’, ‘순환한다’ 등으로 번역됩니다. 그래서 RNN을 직역하면 ‘순환하는 신경망’이 되는 것이죠. 이번 절에서는 이 ‘순환한다’는 말에 의미를 곱씹어 보겠습니다.</p>
-<p><br></p>
-<h4 id="순환하는-신경망"><a href="#순환하는-신경망" class="headerlink" title="순환하는 신경망"></a>순환하는 신경망</h4><p>바로 본론으로 들어가서, ‘순환한다’에는 어떤 의미가 담겨 있을까요? 물론 ‘반복해서 되돌아감’을 의미합니다. 어느 한 지점에서 시작한 것이, 시간을 지나 다시 원래 장소로 돌아오는 것, 그리고 이 과정을 반복하는 것이 바로 ‘순환’입니다. 여기서 하나 주목할 사실은, 순환하기 위해서는 ‘닫힌 경로’가 필요하다는 것입니다. ‘닫힌 경로’ 혹은 ‘순환하는 경로’가 존재해야 데이터가 같은 장소를 반복해 왕래할 수 있습니다. 그리고 데이터가 순환하면서 정보가 끊임없이 갱신되게 됩니다. RNN의 특징은 순환하는 경로(닫힌 경로)가 있다는 것입니다. 이 순환 경로를 따라 데이터는 끊임없이 순환할 수 있습니다. 그리고 데이터가 순환되기 때문에 과거의 정보를 기억하는 동시에 최신 데이터로 갱신될 수 있는 것이죠. RNN 계층은 순환하는 경로를 포함합니다. 이 순환 경로를 따라 데이터를 계층 안에서 순환시킬 수 있지요. 이는 시계열 데이터 $(x_0, x_1, …, x_t, …)$가 RNN 계층에 입력됨을 표현한 것입니다. 그리고 그 입력에 대응하여 $(h_0, h_1, …, h_t, …)$가 출력됩니다. 또한, 각 시각에 입력되는 $x_t$는 벡터라고 가정합니다. 문장(단어 순서)을 다루는 경우를 예로 든다면 각 단어의 분산 표현(단어 벡터)이 $x_t$가 되며, 이 분산 표현이 순서대로 하나씩 RNN 계층에 입력되는 것입니다. </p>
-<p><br></p>
-<h4 id="순환-구조-펼치기"><a href="#순환-구조-펼치기" class="headerlink" title="순환 구조 펼치기"></a>순환 구조 펼치기</h4><p>RNN 계층의 순환 구조를 펼침으로써 오른쪽으로 성장하는 긴 신경망으로 변신시킬 수 있습니다. 지금까지 본 피드포워드 신경망과 같은 구조죠(피드포워드에서는 데이터가 한 방향으로만 흐릅니다). 다만, 다수의 RNN 계층 모두가 실제로는 ‘같은 계층’인 것이 지금까지의 신경망과는 다릅니다. 각 시각의 RNN 계층은 그 계층으로의 입력과 1개 전의 RNN 계층으로부터의 출력을 받습니다. 그리고 이 두 정보를 바탕으로 현 시각의 출력을 계산합니다. 이때 수행하는 계산의 수식은 다음과 같습니다.</p>
-<script type="math/tex; mode=display">h_t = tanh(h_{t-1}W_h + x_t W_x + b)</script>
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/04/07/hci-paper-summary/">
-                [HCI]
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-04-07</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/hci/">HCI</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="HCI"><a href="#HCI" class="headerlink" title="HCI"></a>HCI</h1><p><img src="/image/hci2.png" alt="hci2"></p>
-<p><br></p>
-<h4 id="THE-MODEL-DESIGN-amp-LEARNING"><a href="#THE-MODEL-DESIGN-amp-LEARNING" class="headerlink" title="THE MODEL DESIGN &amp; LEARNING"></a>THE MODEL DESIGN &amp; LEARNING</h4><p><br></p>
-<p><img src="/image/hci3.png" alt="hci3"></p>
-<p><br></p>
-<ul>
-<li>Encoder Net(Recurrent Net)</li>
-</ul>
-<p>아래는 순차적 데이터가 RNN 계층에 입력됨을 표현한 것입니다. 그리고 그 입력에 대응하여 은닉 상태가 출력됩니다.</p>
-<p>Sequential Input: $(m_0^j, m_1^j, …, m_s^j, …)$<br>Hidden State(fixed-length vector): $(e_0^j, e_1^j, …, e_s^j, …)$</p>
-<script type="math/tex; mode=display">m_0^1 = [target, len(first), word2vec(first)]</script><script type="math/tex; mode=display">m_0^2 = [target, len(second), word2vec(second)]</script><script type="math/tex; mode=display">m_0^3 = [target, len(third), word2vec(third)]</script><p><br></p>
-<ul>
-<li>Prediction Net(Recurrent Net)</li>
-</ul>
-<p>The predictions are based on not only the task at the current step but also the hidden state of the previous step that captures the human experience while performing previous tasks.</p>
-<p>
-
-<p>Previous work in deep learning has shown that adding more layers in a deep net can improve the capacity for modeling complex behaviors. To give the model more capacity, we add a hidden layer, with ReLU as the activation function, after the recurrent layer, denoted as nonlinear projection. Finally, the time prediction is computed as a linear combination of the outcome of the nonlinear transformation layer.</p>
-<p><p><p></p>
-<p>각 순서의 RNN 계층은 그 계층으로의 입력과 1개 전의 RNN 계층으로부터의 출력을 받습니다. 그리고 이 두 정보를 바탕으로 현 순서의 출력을 계산합니다. </p>
-<script type="math/tex; mode=display">e_s^j = activation function(e_{s-1}^j W_e + m_s^j W_m + b)</script><ul>
-<li>W_m : 입력 m을 출력 e로 변환하기 위한 가중치</li>
-<li>W_e : 1개의 RNN 출력을 다음 순서의 출력으로 변환하기 위한 가중치</li>
-<li>b : 편향</li>
-</ul>
-<p>여기서 현재 스텝의 출력($e_s^j$)은 한 스텝 이전 출력($e_{s-1}^j$)에 기초해 계산됨을 알 수 있습니다. 다른 관점으로 보면, RNN은 $e$라는 ‘상태’를 가지고 있으며, 위의 식의 형태로 갱신된다고 해석할 수 있겠죠. 그래서 RNN 계층을 ‘상태를 가지는 계층’ 혹은 ‘메모리(기억력)가 있는 계층’이라고 합니다.</p>
-<p><p><p></p>
-<p>RNN 계층의 활성화 함수로는 주로 tanh 함수를 사용하는데, 이를 ReLU로 바꾸면 기울기 소실을 줄일 수 있습니다(ReLU에 $x$를 입력하면 $max(0, x)$를 출력합니다). 그 이유는 ReLU는 입력 $x$가 0 이상이면, 역전파 시 상류의 기울기를 그대로 하류에 흘려보내기 때문이죠. 즉, 기울기가 작아지지 않습니다.</p>
-<p><br><br></p>
-<p>&gt;</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
             <a href="/2020/04/04/SEM-%EC%B8%A1%EC%A0%95%EB%AA%A8%ED%98%95/">
                 [SEM] 측정모형
             </a>
@@ -467,6 +371,41 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2020/03/31/beakjoon-1-1/">
+                [BaekJoon] Hello World
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-03-31</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/baekjoon/">BAEKJOON</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="컴파일-에러"><a href="#컴파일-에러" class="headerlink" title="컴파일 에러"></a>컴파일 에러</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="런타임-에러"><a href="#런타임-에러" class="headerlink" title="런타임 에러"></a>런타임 에러</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.print(<span class="string">"Hello World!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="맞았습니다"><a href="#맞았습니다" class="headerlink" title="맞았습니다!"></a>맞았습니다!</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2020/03/31/beakjoon-1-2/">
                 [BaekJoon] We love kriii
             </a>
@@ -493,41 +432,6 @@
 <h4 id="출력"><a href="#출력" class="headerlink" title="출력"></a>출력</h4><p>두 줄에 걸쳐 “강한친구 대한육군”을 한 줄에 한 번씩 출력한다.</p>
 <p><br></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Welovekriii</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">			System.out.println(<span class="string">"강한친구 대한육군"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/03/31/beakjoon-1-1/">
-                [BaekJoon] Hello World
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-03-31</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/baekjoon/">BAEKJOON</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="컴파일-에러"><a href="#컴파일-에러" class="headerlink" title="컴파일 에러"></a>컴파일 에러</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="런타임-에러"><a href="#런타임-에러" class="headerlink" title="런타임 에러"></a>런타임 에러</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.print(<span class="string">"Hello World!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="맞았습니다"><a href="#맞았습니다" class="headerlink" title="맞았습니다!"></a>맞았습니다!</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
     
@@ -587,6 +491,139 @@
 
 </div>
             
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/03/22/cm-review-1-1/">
+                [Computational Modeling] Review (1)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-03-22</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/computational-modeling/">Computational Modeling</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="Computational-Modeling-Review"><a href="#Computational-Modeling-Review" class="headerlink" title="Computational Modeling Review"></a>Computational Modeling Review</h1><h5 id="본-포스팅은-“Computational-Models-of-Cognition-and-Behavior-2018-”와-“Bayesian-Cognitive-Modeling”을-정리한-내용입니다"><a href="#본-포스팅은-“Computational-Models-of-Cognition-and-Behavior-2018-”와-“Bayesian-Cognitive-Modeling”을-정리한-내용입니다" class="headerlink" title="본 포스팅은 “Computational Models of Cognition and Behavior(2018)”와 “Bayesian Cognitive Modeling”을 정리한 내용입니다."></a>본 포스팅은 “Computational Models of Cognition and Behavior(2018)”와 “Bayesian Cognitive Modeling”을 정리한 내용입니다.</h5><p><br></p>
+<h4 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1 Introduction"></a>1 Introduction</h4><h5 id="Models-and-Theories-in-Science"><a href="#Models-and-Theories-in-Science" class="headerlink" title="Models and Theories in Science"></a>Models and Theories in Science</h5><p>Cognitive scientists seek to understand how the mind works. That is, we want to describe and predict people’s behavior, and we ultimately wish to explain it, in the same way that physicists predict the motion of an apple that is dislodged from its tree (and can accuratetly describe its downward path) and explain its trajectory (by applealing to gravity). For example, if you forgot someone’s name when you are distracted seconds after being introduced to her, we would like to know what cognitive process is responsible for this failure. Was it lack of attention? Forgetting over time? Can we know ahead of time whether or not you will remember that person’s name?</p>
+<p><br></p>
+<p>The central thesis of this book is that to answer questions such as these, cognitive scientists must rely on quantitative mathematical models, just like physicists who research gravity. We suggest that to expand our knowledge of the human mind, consideration of the data and verbal theorizing are insufficient on their own.</p>
+<p><br></p>
+<p>This thesis is best illustrated by considering something that is simpler and more readily understood that the mind. Have a look at the data which represent the position of planets in the night sky over time. How might one descibe thie peculiar pattern of motion? How would you explain it? The strange loops in the otherwise consistently curvlinear paths describe the famous “retrograde motion” of the planets - that is, their propensity to suddenly reverse direction for sometime before resuming their initial path. What explains retrograde motion? It took more than a thousand years for a satisfactory answer to that question to become available, when Copernicus replaced the goecentric Ptolemaic system with a heliocentric model: Today, we know that retrograde motion arises from the fact that the planets travel at different speeds along their orbits; hence, as Earth “overtakes” Mars, for example, the red planet will appear to reverse direction as it falls behind the speeding Earth.</p>
+<p><br></p>
+<p>This example permits several conclusions that will be relevant throughout the reminder of this book. First, the pattern of data deifes description and explanation unless one has a model of the underlying process. It is only with the aid of a model that one can describe and explain planetary motion, even at a verbal level. Second, any model that explains the data is itself unobservable. That is, although the Copernican model is readily communicated and represented, it cannot be directly observed. Instead, the model is an abstract explanatory device that “exists” primaily in the minds of the people who use it to describe, predict, and explain the data. Third, there nealy always are several possible models that can explain a given data set. This point is worth exploring in a bit more detail. The answer to this question is quite fascinating and requires that we move toward a quantitative level of modeling.</p>
+<p><br><br></p>
+<h5 id="Memory-retention"><a href="#Memory-retention" class="headerlink" title="Memory retention"></a>Memory retention</h5><p>Finding a lawful relationship between memory retention and time is one of the oldest cognitive modeling question, going back to Ebbinghaus in the 1880s. The usual experiment involves giving people many items of information on a list, and then testing their ability to remember itmes from the list after different periods of time have elapsed. Various mathematical functions, usually with psychological interpretations, have been proposed as describing the relationship between time and the level of retention. </p>
+<p><br></p>
+<p>We consider a simplified version of the exponential decay model. The model assumes that the probability that an item will be remembered after a period of time $\mathit{t}$ has elapsed is $\theta_t = exp(-\alpha t) + \beta$, with the restriction $0 &lt; \theta_t &lt; 1$. The $\alpha$ parameter corresponds to the rate of decay of information. The $\beta$ parameter corresponds to a baseline level of remembering that is assumed to remain even after very long time periods. Our analyses using this model are based on fictitious data from a potential memory retention study, to help illustrate key modeling points.</p>
+<p><br></p>
+<p><img src="/image/cm1.png" alt="cm1"></p>
+<p><br></p>
+<p>These data are given in Table 10.1, and relate to 4 subjects tested on 18 items at 10 time intervals: 1, 2, 4, 7, 12, 21, 35, 59, 99, and 200. The number of items tested and the first 9 time intervals are those used by Rubin et al. (1999). Each datum in Table 10.1 counts the number of correct memory recalls for each subject at each time interval. Included in Table 10.1 are missing data, shown by “?” symbols, so subjects have missing data for the final time period of 200, which tests the ability of models to generalize to new measurements. For Subject 4, these are no data at all, which tests the ability of models to generalize to new subjects. </p>
+<p><br></p>
+<p><img src="/image/cm2.png" alt="cm2"></p>
+<p><br></p>
+<h5 id="No-individual-differences"><a href="#No-individual-differences" class="headerlink" title="No individual differences"></a>No individual differences</h5><p>The graphical model for our first attempt to account for the data is shown in Figure 10.1. The model assumes that every subject has the same retention curve, and so there is one true value for the $\alpha$ and $\beta$ parameters. The outer plate corresponds to the different time periods with values given by the observed $t_j$ variable. Together with the $\alpha$ and $\beta$ parameters, the time period defines the probability $\theta_j$ that the jth item will be remembered. The inner plate corresponds to the subjects. Each has the same probability of recall at any given time period, but their experimental data, given by the success counts $k_{ij}$, vary, and are bionomially distributed according to the success rate and number of trials.</p>
+<p><br></p>
+<p>The script Retention_1.txt implements the graphical model in WinBUGS. Note that the code calculates the success rate for each subject at each interval separately, and so in more elaborate than it needs to be:</p>
+<p><br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Retention With No Individual Differences</span></span><br><span class="line">model&#123;</span><br><span class="line">  <span class="comment"># Observed and Predicted Data</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      k[i, j] ~ dbin(theta[i, j], n)</span><br><span class="line">      predk[i, j] ~ dbin(theta[i, j], n)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Retention Rate At Each Lag For Each Subject Decays Exponentially</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      theta[i, j] &lt;- min(<span class="number">1</span>, exp(-alpha*t[j]+beta)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Priors</span></span><br><span class="line">  alpha ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">  beta ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>The code applies the model to the data, and produces analysis of the posterior and posterior predictive distributions. The joint posterior distribution of $\alpha$ and $\beta$ is shown in the main panel of Figure 10.2, as a two-dimensional scatter plot.</p>
+<p><br></p>
+<p><img src="/image/cm3.png" alt="cm3"></p>
+<p><br></p>
+<p>Each of the points in the scatter-plot corresponds to a posterior sample selected at random from those available. The marginal distributions of both $\alpha$ and $\beta$ are shown below and to the right, and are based on all samples. The marginals show the distribution of each parameter, conditioned on the data, considered independently of the other parameter (i.e., averaged across the other parameter). It is clear from Figure 10.2 that the joint posterior carries more information than the two marginal distributions. If the joint posterior were independent, it would be just the product of the two marginal. But the joint posterior shows a mild relationship, with larger values of $\alpha$ generally corresponding to larger values of $\beta$.</p>
+<p><br></p>
+<p><img src="/image/cm4.png" alt="cm4"></p>
+<p><br></p>
+<p>This can be interpreted psychologically as meaning that it is uncertain whether the parameters are a relatively higher baseline coupled with a relatively higher decay rate, or a relatively lower baseline coupled with a relatively lower decay rate. Figure 10.3 shows the posterior predictive distribution over the number of successful retentions at each time interval. For each subject, at each interval, the squares show the posterior mass given to each possible number of items recalled. These correspond to the model’s predictions about observed behavior in the retention experiment, based on what the model has learned from the data. Also shown, by the black squres and connecting lines, are the actual observed data for each subject, where available. </p>
+<p><br></p>
+<p>The obvious feature of Figure 10.3 is that the current model does not meet a basic requirement of descriptive adequacy. For both Subjects 1 and 3 the model gives little posterior mass to the observed data at many time periods. It describes a steeper rate of decay than shown by the data of Subject 1, and a shallower rate of decay than shown by the data of Subject 3. After evaluating the model using the posterior predictive analysis, we can conclude that the modeling assumption of no individual differences is inappropriate. It is important to understand that this conclusion neuters the usefulness of the posterior distribution over parameters shown in Figure 10.2. The posterior distribution is conditioned on the assumption that the model is appropriate, and is not relevant when the model is fundamentally deficient.</p>
+<p><br><br></p>
+<h5 id="Full-individual-differences"><a href="#Full-individual-differences" class="headerlink" title="Full individual differences"></a>Full individual differences</h5><p>A revised graphical model that does accommodate individual differences is shown in Figure 10.4. The change from the previous model is that the ith subject now has their own $\alpha_i$ and $\beta_i$ parameters, and that the probability of retention for an item $\theta_{ij}$ now changes for both subjects and retention intervals.</p>
+<p><br></p>
+<p><img src="/image/cm5.png" alt="cm5"></p>
+<p><br></p>
+<p>The script Retention_2.txt implements the graphical model in WinBUGS:</p>
+<p><br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Retention With Full Individual Differences</span></span><br><span class="line">model&#123;</span><br><span class="line">  <span class="comment"># Observed and Predicted Data</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      k[i, j] ~ dbin(theta[i,j], n)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Retention Rate At Each Lag For Each Subject Decays Exponentially</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      theta[i, j] &lt;- min(<span class="number">1</span>, exp(-alpha[i]*t[j]) + beta[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Priors For Each Subject</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    alpha[i] ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">    beta[i] ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>The code applies the model to the same data and again produces analysis of the posterior and posterior predictive distributions. </p>
+<p><br></p>
+<p><img src="/image/cm6.png" alt="cm6"></p>
+<p><br></p>
+<p>The joint posterior distributions for each subject are shown in the main panel of Figure 10.5. Each point in the scatter-plot corresponds to a posterior sample, with different markers representing different subjects. The first, second, third, and fourth subjects use squre, circular, triangular, and cross markers, respectively. The marginal distributions are shown below and to the right, and use different line styles to represent the subjects.</p>
+<p><br></p>
+<p><img src="/image/cm7.png" alt="cm7"></p>
+<p><br></p>
+<p>Figure 10.6 shows the same analysis of the posterior predictive distributions over the number of successful retentions at each time interval, for each subject. It is clear that allowing for individual differences lets the model achieve a basic level of descriptive adequacy for Subjects 1, 2, and 3. The posteriors in Figure 10.5 show that different values for the $\alpha$ decay parameter are used for each of these subjects, corresponding to our intuitions from the earlier analysis.</p>
+<p><br></p>
+<p>The weakness in the current model is evident in its predictions for Subject 4. Because each subject is assumed to have decay and baseline parameters that are different, the only information the model has about the new subject is the priors for the $\alpha$ and $\beta$ parameters. The relationships between parameters for subjects that are visually evident in Figure 10.5 are not formally captured by the model. This means, as shown in Figure 10.5, the posterior for Subject 4 are just the priors, and so the posterior predictive distribution for Subject 4, as shown in Figure 10.6, does not have any useful structure. In this way, the model fails a basic test of generalizability, since it does not make sensible predictions for the behavior of subjects other than those for whom data are available. Intuitively, one might want to predict that Subject 4 will be likely to have model parameters consistent with regularties in the inferred parameters for Subjects 1, 2, and 3.</p>
+<p><br><br></p>
+<h5 id="Structured-individual-differences"><a href="#Structured-individual-differences" class="headerlink" title="Structured individual differences"></a>Structured individual differences</h5><p>The relationship between the parameters of different subjects, visually evident in Figure 10.5, can be captured using a hierarchical model. A graphical model implementing this approach is shown in Figure 10.7. The key cahnge is that now the $\alpha_i$ and $\beta_i$ parameters for each subject are modeled as coming from Gaussian distributions. The over-arching Gaussian distribution models this group-level structure for each parameter. This group structure itself has parameters, in the form of means $\mu_{\alpha}$ for the decay and $\mu_{\beta}$ for the baseline, and precisions $\lambda_{\alpha}$ for the decay and $\lambda_{\beta}$ for the baseline. In this way, the individual differences between subjects are given structure.</p>
+<p><br></p>
+<p>Each $\alpha_i$ and $\beta_i$ parameter is independently sampled, so they can be different, but they are sampled from the same distribution, so they have a relationship to one another. This means that inferences made for one subject influence predictions made for another. This means that inferences made for one subject influence predictions made for another. Since the means and precisions of the gorup-level distributions are common to all subjects, what is learned about them from one subject affects what is known about another. In addition, because they are sampled from over-arching distributions, the $\alpha_i$, and $\beta_i$ parameters at the individual subject level no longer have priors explicitly specified, but inherit them from the priors on the means and precisions of the group-level Gaussian distributions. The script Retention_3.txt implements the graphical model in WinBUGS:</p>
+<p><br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Retention With Structured Individual Differences</span></span><br><span class="line">model&#123;</span><br><span class="line">  <span class="comment"># Observed and Predicted Data</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      k[i, j] ~ dbin(theta[i, j], n)</span><br><span class="line">      predk[i, j] ~ dbin(theta[i, j], n)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Retention Rate At Each Lag For Each Subject Decays Exponentially</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      theta[i, j] &lt;- min(<span class="number">1</span>, exp(-alpha[i]*t[j]+beta[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Parameters For Each Subject Drawn From Gaussian Group Distributions</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    alpha[i] ~ dnorm(alphamu, alphalambda)I(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">    beta[i] ~ dnorm(betamu, betalambda)I(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Priors For Group Distributions</span></span><br><span class="line">  alphamu ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">  alphalambda ~ dgamma(<span class="number">.001</span>,<span class="number">.001</span>)I(<span class="number">.001</span>,)</span><br><span class="line">  alphasigma &lt;- <span class="number">1</span>/sqrt(alphalambda)</span><br><span class="line">  betalambda ~ dgamma(<span class="number">.001</span>,<span class="number">.001</span>)I(<span class="number">.001</span>,)</span><br><span class="line">  betasigma &lt;- <span class="number">1</span>/sqrt(betalambda)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>The code applies the model to the data, and again produces an analysis of the posterior and posterior predictive distributions. The joint amd marginal posterior distributions for this model are shown in Figure 10.8 using the same markers and lines as before. For Subjects 1, 2, and 3, these distributions are extremely similar to those found using the full individual differences model. The important difference is for Subject 4, who now sensible posterior distributions for both parameters. For the decay parameter $\alpha$ there is still considerable uncertainty, consistent with the range of values seen for the first three subjects, but for the baseline parameter $\beta$, Subject 4 now has a much more constrained posterior distribution.</p>
+<p><br></p>
+<p><img src="/image/cm8.png" alt="cm8"></p>
+<p><br></p>
+<p>The posterior predictive distributions for each subject under the hierarchical model are shown in Figure 10.9. The preditions remain useful for the first three subjects, and are now also appropriate for Subject 4. The structured prediction for Subject 4, from whom no data have yet been collected, comes directly from the nature of the hierarchical model. Based on the data from Subjects 1, 2, and 3, inferences are made about the means and precisions of the group distributions for the two parameters of the retention model. The new Subject 4 has values sampled from the Gaussians with these parameters, producing the sensible parameter distributions in Figure 10.8 that lead to the sensible predictive distributions in Figure 10.9.</p>
+<p><br></p>
+<p><img src="/image/cm9.png" alt="cm9"></p>
+<p><br></p>
+<p>Psychologically, hierarchical models are powerful because they are able to represent knowledge at different levels of abstraction in a cognitive process(Lee, 2011a). Just as the data have been assumed to be generated by the decay and baseline parameters combining in a memory process for individual subjects, the hierarchical model assumes that those parameters themselves are generated by more abstract latent parameters that describe group distributions across subjects. In other words, a hierarchical model lets a theory of memory retention be combined with a theory of individual differences, to provide a more complete account of behavioral data from multiple subjects.</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/03/21/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EC%8B%A4%EC%8A%B5%ED%8E%B8-1/">
+                [iOS] 앱 개발 실습편 (1)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-03-21</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/ios/">iOS</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="내-소개-애플리케이션"><a href="#내-소개-애플리케이션" class="headerlink" title="내 소개 애플리케이션"></a>내 소개 애플리케이션</h1><h5 id="본-포스팅은-“야곰의-iOS-프로그래밍”을-정리한-내용입니다"><a href="#본-포스팅은-“야곰의-iOS-프로그래밍”을-정리한-내용입니다" class="headerlink" title="본 포스팅은 “야곰의 iOS 프로그래밍”을 정리한 내용입니다."></a>본 포스팅은 “야곰의 iOS 프로그래밍”을 정리한 내용입니다.</h5><p><br></p>
+
+        </div>
+    
+
+</div>
+            
         </section>
     </div>
 </div>
@@ -633,15 +670,15 @@
             </li>
             
             <li>
-                <a class="footer-post" href="/2020/04/07/fnlp-%EB%B0%91%EB%B0%94%EB%8B%A5%EB%B6%80%ED%84%B0-%EC%8B%9C%EC%9E%91%ED%95%98%EB%8A%94-%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC-4/">[FNLP] 밑바닥부터 시작하는 자연어처리 (</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2020/04/07/hci-paper-summary/">[HCI]</a>
-            </li>
-            
-            <li>
                 <a class="footer-post" href="/2020/04/04/SEM-%EC%B8%A1%EC%A0%95%EB%AA%A8%ED%98%95/">[SEM] 측정모형</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/04/04/beakjoon-1-6/">[BaekJoon] A-B</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/04/02/beakjoon-1-5/">[BaekJoon] A+B</a>
             </li>
             
         </ul>
@@ -655,19 +692,19 @@
     <ul>
         
         <li>
+            <a class="footer-post" href="/categories/hci/">HCI</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/nlp/">NLP</a>
+        </li>
+        
+        <li>
             <a class="footer-post" href="/categories/algorithm/">algorithm</a>
         </li>
         
         <li>
             <a class="footer-post" href="/categories/algorithm/selection-sort/">selection sort</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/edwith/">edwith</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/vuejs/">vuejs</a>
         </li>
         
     </ul>
