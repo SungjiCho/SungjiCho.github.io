@@ -10,16 +10,11 @@
 
     <!--Description-->
     
-        <meta name="description" content="HCI
+        <meta name="description" content="문제두 정수 A와 B를 입력받은 다음, A/B를 출력하는 프로그램을 작성하시오.
 
-THE MODEL DESIGN &amp;amp; LEARNING
+입력첫째 줄에 A와 B가 주어진다. (0 &amp;lt; A, B &amp;lt; 10)
 
-
-
-Encoder Net(Recurrent Net)
-
-아래는 순차적 데이터가 RNN 계층에 입력됨을 표현한 것입니다. 그리고 그 입력에 대응하여 은닉 상태가 출력됩니다.
-Sequential Input:">
+출력첫째 줄에 A/B를 출력한다. 실제 정답과 출력값의 절대오차 또는 상대오차가 10의 -9승 이하이면 정답이">
     
 
     <!--Author-->
@@ -29,7 +24,7 @@ Sequential Input:">
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="[HCI]"/>
+        <meta property="og:title" content="[BaekJoon] A/B"/>
     
 
     <!--Open Graph Description-->
@@ -51,7 +46,7 @@ Sequential Input:">
 
     <!-- Title -->
     
-    <title>[HCI] - QuantPsy</title>
+    <title>[BaekJoon] A/B - QuantPsy</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -155,18 +150,18 @@ Sequential Input:">
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2020/04/07/hci-paper-summary/">
-                [HCI]
+            <a href="/2020/04/09/beakjoon-1-7/">
+                [BaekJoon] A/B
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">2020-04-07</span>
+                <span class="date">2020-04-09</span>
             
             
             
                 <span class="category">
-                    <a href="/categories/hci/">HCI</a>
+                    <a href="/categories/baekjoon/">BAEKJOON</a>
                 </span>
             
         </div>
@@ -178,36 +173,13 @@ Sequential Input:">
         
 
         <!-- Post Content -->
-        <h1 id="HCI"><a href="#HCI" class="headerlink" title="HCI"></a>HCI</h1><p><img src="/image/hci2.png" alt="hci2"></p>
+        <h4 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h4><p>두 정수 A와 B를 입력받은 다음, A/B를 출력하는 프로그램을 작성하시오.</p>
 <p><br></p>
-<h4 id="THE-MODEL-DESIGN-amp-LEARNING"><a href="#THE-MODEL-DESIGN-amp-LEARNING" class="headerlink" title="THE MODEL DESIGN &amp; LEARNING"></a>THE MODEL DESIGN &amp; LEARNING</h4><p><br></p>
-<p><img src="/image/hci3.png" alt="hci3"></p>
+<h4 id="입력"><a href="#입력" class="headerlink" title="입력"></a>입력</h4><p>첫째 줄에 A와 B가 주어진다. (0 &lt; A, B &lt; 10)</p>
 <p><br></p>
-<ul>
-<li>Encoder Net(Recurrent Net)</li>
-</ul>
-<p>아래는 순차적 데이터가 RNN 계층에 입력됨을 표현한 것입니다. 그리고 그 입력에 대응하여 은닉 상태가 출력됩니다.</p>
-<p>Sequential Input: $(m_0^j, m_1^j, …, m_s^j, …)$<br>Hidden State(fixed-length vector): $(e_0^j, e_1^j, …, e_s^j, …)$</p>
-<script type="math/tex; mode=display">m_0^1 = [target, len(first), word2vec(first)]</script><script type="math/tex; mode=display">m_0^2 = [target, len(second), word2vec(second)]</script><script type="math/tex; mode=display">m_0^3 = [target, len(third), word2vec(third)]</script><p><br></p>
-<ul>
-<li>Prediction Net(Recurrent Net)</li>
-</ul>
-<p>The predictions are based on not only the task at the current step but also the hidden state of the previous step that captures the human experience while performing previous tasks.</p>
-<p>
-
-<p>Previous work in deep learning has shown that adding more layers in a deep net can improve the capacity for modeling complex behaviors. To give the model more capacity, we add a hidden layer, with ReLU as the activation function, after the recurrent layer, denoted as nonlinear projection. Finally, the time prediction is computed as a linear combination of the outcome of the nonlinear transformation layer.</p>
-<p><p><p></p>
-<p>각 순서의 RNN 계층은 그 계층으로의 입력과 1개 전의 RNN 계층으로부터의 출력을 받습니다. 그리고 이 두 정보를 바탕으로 현 순서의 출력을 계산합니다. </p>
-<script type="math/tex; mode=display">e_s^j = activation function(e_{s-1}^j W_e + m_s^j W_m + b)</script><ul>
-<li>W_m : 입력 m을 출력 e로 변환하기 위한 가중치</li>
-<li>W_e : 1개의 RNN 출력을 다음 순서의 출력으로 변환하기 위한 가중치</li>
-<li>b : 편향</li>
-</ul>
-<p>여기서 현재 스텝의 출력($e_s^j$)은 한 스텝 이전 출력($e_{s-1}^j$)에 기초해 계산됨을 알 수 있습니다. 다른 관점으로 보면, RNN은 $e$라는 ‘상태’를 가지고 있으며, 위의 식의 형태로 갱신된다고 해석할 수 있겠죠. 그래서 RNN 계층을 ‘상태를 가지는 계층’ 혹은 ‘메모리(기억력)가 있는 계층’이라고 합니다.</p>
-<p><p><p></p>
-<p>RNN 계층의 활성화 함수로는 주로 tanh 함수를 사용하는데, 이를 ReLU로 바꾸면 기울기 소실을 줄일 수 있습니다(ReLU에 $x$를 입력하면 $max(0, x)$를 출력합니다). 그 이유는 ReLU는 입력 $x$가 0 이상이면, 역전파 시 상류의 기울기를 그대로 하류에 흘려보내기 때문이죠. 즉, 기울기가 작아지지 않습니다.</p>
-<p><br><br></p>
-<p>&gt;</p>
+<h4 id="출력"><a href="#출력" class="headerlink" title="출력"></a>출력</h4><p>첫째 줄에 A/B를 출력한다. 실제 정답과 출력값의 절대오차 또는 상대오차가 10의 -9승 이하이면 정답이다.</p>
+<p><br></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AdivideB</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException</span>&#123;		</span><br><span class="line">		<span class="keyword">int</span> a = System.in.read();</span><br><span class="line">		System.in.read();</span><br><span class="line">		<span class="keyword">int</span> b = System.in.read();</span><br><span class="line">		System.in.read();</span><br><span class="line">		a=a-<span class="number">48</span>;</span><br><span class="line">		b=b-<span class="number">48</span>;</span><br><span class="line">		System.out.printf(<span class="string">"%.9f"</span>, a/(<span class="keyword">double</span>)b);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -216,7 +188,7 @@ Sequential Input:">
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/hci/">#HCI</a>
+            <a href="/tags/baekjoon/">#BAEKJOON</a>
         </div>
     
 
