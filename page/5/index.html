@@ -147,46 +147,8 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2019/11/17/Algorithm-%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/">
-                [Algorithm] 선택정렬
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-17</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/algorithm/">algorithm</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="선택정렬-selection-sort"><a href="#선택정렬-selection-sort" class="headerlink" title="선택정렬(selection sort)"></a>선택정렬(selection sort)</h1><h6 id="본-포스팅은-lt-그림으로-정리한-알고리즘과-자료구조-gt-를-바탕으로-진행합니다"><a href="#본-포스팅은-lt-그림으로-정리한-알고리즘과-자료구조-gt-를-바탕으로-진행합니다" class="headerlink" title="본 포스팅은 &lt;그림으로 정리한 알고리즘과 자료구조&gt;를 바탕으로 진행합니다."></a>본 포스팅은 &lt;그림으로 정리한 알고리즘과 자료구조&gt;를 바탕으로 진행합니다.</h6><p><br></br></p>
-<h3 id="선택정렬-알고리즘-알아보기"><a href="#선택정렬-알고리즘-알아보기" class="headerlink" title="선택정렬 알고리즘 알아보기"></a>선택정렬 알고리즘 알아보기</h3><p>선택정렬(Selection Sort) 알고리즘은 가장 작은 데이터를 찾아 가장 앞 데이터와 교환하는 알고리즘으로, 사용방법은 다음과 같습니다.</p>
-<ul>
-<li>데이터 중에서 가장 작은 것을 찾아서 처음에 있는 것과 위치를 교환합니다.</li>
-<li>두 번째부터 마지막까지의 데이터 중에서 가장 작은 것을 찾아서 두 번째와 위치를 교환합니다.</li>
-<li>위의 과정을 계속 반복합니다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">SelectionSort</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(array)<span class="number">-1</span>):</span><br><span class="line">        min_idx = i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(array)):</span><br><span class="line">            <span class="keyword">if</span> array[min_idx] &gt; array[j]:</span><br><span class="line">                array[min_idx], array[j] = array[j], array[min_idx]</span><br><span class="line">    <span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/17/Programmers-2016%EB%85%84/">
-                [Programmers] 2016년
+            <a href="/2019/11/17/Programmers-K%EB%B2%88%EC%A7%B8%EC%88%98/">
+                [Programmers] K번째수
             </a>
         </h1>
         <div class="post-info">
@@ -204,7 +166,52 @@
 
     
         <div class="content">
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    day = [<span class="string">'THU'</span>, <span class="string">'FRI'</span>, <span class="string">'SAT'</span>, <span class="string">'SUN'</span>, <span class="string">'MON'</span>, <span class="string">'TUE'</span>, <span class="string">'WED'</span>]</span><br><span class="line">    month = [<span class="number">31</span>, <span class="number">29</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>]</span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">1</span>:</span><br><span class="line">        answer = day[b%<span class="number">7</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        total = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(a<span class="number">-1</span>):</span><br><span class="line">            total += month[i]</span><br><span class="line">        answer = day[(total+b)%<span class="number">7</span>]</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(array, commands)</span>:</span></span><br><span class="line">    answer = []</span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> range(len(commands)):</span><br><span class="line">        i, j, k = commands[n][<span class="number">0</span>], commands[n][<span class="number">1</span>], commands[n][<span class="number">2</span>]</span><br><span class="line">        array_slice = array[i<span class="number">-1</span>: j]</span><br><span class="line">        array_slice.sort()</span><br><span class="line">        answer.append(array_slice[k<span class="number">-1</span>])</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+<h3 id="시퀀스-타입"><a href="#시퀀스-타입" class="headerlink" title="시퀀스 타입"></a>시퀀스 타입</h3><p>위의 코드에서 배열 array는 파이썬에 내장된 시퀀스 타입인 리스트로 구현되었다.<br>시퀀스 타입의 객체는 인덱스 연산을 통해 내부 항목에 접근할 수 있다.</p>
+<h4 id="리스트"><a href="#리스트" class="headerlink" title="리스트"></a>리스트</h4><p>리스트는 중복이 가능하고 순차적인 데이터를 나타낼 수 있으며, 내부 항목을 변경가능하다.</p>
+<ul>
+<li><p>정렬하기(sort, sorted)<br>sort는 리스트 자체를 정렬, sorted는 리스트의 정렬 복사본을 반환한다.</p>
+</li>
+<li><p>리스트 복사(copy)<br>copy 함수, list 함수, 슬라이스 연산[:]</p>
+</li>
+</ul>
+<p><br></br></p>
+<h3 id="예시문제"><a href="#예시문제" class="headerlink" title="예시문제"></a>예시문제</h3><p><strong>1. 문자열 ‘algorithm’을 리스트, 튜플 타입으로 형변환하여 새 변수에 할당한다.</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'algorithm'</span></span><br><span class="line">list_s = list(s)</span><br><span class="line">tuple_s = tuple(s)</span><br><span class="line"></span><br><span class="line">print(type(s), s)</span><br><span class="line">print(type(list_s), list_s)</span><br><span class="line">print(type(tuple_s), tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line">&lt;class 'list'&gt; ['a', 'l', 'g', 'o', 'r', 'i', 't', 'h', 'm']</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">tuple</span>'&gt; <span class="params">(<span class="string">'a'</span>, <span class="string">'l'</span>, <span class="string">'g'</span>, <span class="string">'o'</span>, <span class="string">'r'</span>, <span class="string">'i'</span>, <span class="string">'t'</span>, <span class="string">'h'</span>, <span class="string">'m'</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>2. 1번에서 할당한 리스트, 튜플 변수를 이용해 다시 문자열을 만든다.</strong></p>
+<h6 id="Ver-1"><a href="#Ver-1" class="headerlink" title="Ver.1"></a>Ver.1</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'algorithm'</span></span><br><span class="line">list_s = list(s)</span><br><span class="line">tuple_s = tuple(s)</span><br><span class="line"></span><br><span class="line">line_list_s = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(list_s)):</span><br><span class="line">    line_list_s += list_s[i]</span><br><span class="line">print(type(line_list_s), line_list_s)</span><br><span class="line"></span><br><span class="line">line_tuple_s = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(tuple_s)):</span><br><span class="line">    line_tuple_s += tuple_s[i]</span><br><span class="line">print(type(line_tuple_s), line_tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br></pre></td></tr></table></figure>
+<h6 id="Ver-2"><a href="#Ver-2" class="headerlink" title="Ver.2"></a>Ver.2</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">line_list_s = <span class="string">''</span>.join(list_s)</span><br><span class="line">print(type(line_list_s), line_list_s)</span><br><span class="line"></span><br><span class="line">line_tuple_s = <span class="string">''</span>.join(tuple_s)</span><br><span class="line">print(type(line_tuple_s), line_tuple_s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">str</span>'&gt; <span class="title">algorithm</span></span></span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/11/17/Programmers-%EA%B0%80%EC%9A%B4%EB%8D%B0-%EA%B8%80%EC%9E%90-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/">
+                [Programmers] 가운데 글자 가져오기
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-17</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/programmers/">programmers</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(s)</span>:</span></span><br><span class="line">    line = list(s)</span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> len(s)%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span><span class="number">-1</span>] + line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
 
         </div>
     
@@ -371,6 +378,74 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2019/11/16/Python-%EB%B3%80%EC%88%981/">
+                [Python] 변수 (1)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-16</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/python/">python</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="파이썬에서-변수의-정체는-1"><a href="#파이썬에서-변수의-정체는-1" class="headerlink" title="파이썬에서 변수의 정체는? (1)"></a>파이썬에서 <strong>변수</strong>의 정체는? (1)</h1><h6 id="본-포스팅은-lt-윤성우의-열혈-파이썬-중급편-gt-과-lt-처음-시작하는-파이썬-gt-을-바탕으로-진행합니다"><a href="#본-포스팅은-lt-윤성우의-열혈-파이썬-중급편-gt-과-lt-처음-시작하는-파이썬-gt-을-바탕으로-진행합니다" class="headerlink" title="본 포스팅은 &lt;윤성우의 열혈 파이썬 중급편&gt;과 &lt;처음 시작하는 파이썬&gt;을 바탕으로 진행합니다."></a>본 포스팅은 &lt;윤성우의 열혈 파이썬 중급편&gt;과 &lt;처음 시작하는 파이썬&gt;을 바탕으로 진행합니다.</h6><h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ul>
+<li>Story 01. 레퍼런스 카운트와 가비지 컬렉션<ul>
+<li>[가비지 컬렉션]</li>
+<li>[파이썬 인터프리터]</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Story 02. 수정 가능한 객체와 수정 불가능한 객체<ul>
+<li>[immutable &amp; mutable]</li>
+</ul>
+</li>
+</ul>
+<p><br></br></p>
+<h3 id="Story-01-레퍼런스-카운트와-가비지-컬렉션"><a href="#Story-01-레퍼런스-카운트와-가비지-컬렉션" class="headerlink" title="Story 01. 레퍼런스 카운트와 가비지 컬렉션"></a>Story 01. 레퍼런스 카운트와 가비지 컬렉션</h3><h4 id="가비지-컬렉션"><a href="#가비지-컬렉션" class="headerlink" title="[가비지 컬렉션]"></a>[가비지 컬렉션]</h4><p>우리는 다음과 같은 상황에서 변수 s에 문자열이 저장되었다고 표현한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'Garbage Collection'</span></span><br></pre></td></tr></table></figure>
+<p>그러나 사실은 문자열 객체에 s라는 이름이 붙은 상황이다.<br>즉 파이썬의 변수는 빈 상자가 아닌 뗴었다 붙였다 할 수 있는 ‘포스트잇’의 개념이다.<br>(포스트잇은 메모를 적어서 붙이고 또 쉽게 뗄 수 있는 스티커이다.)</p>
+<p><img src="/image/stickynote.png" alt="stickynote"></p>
+<p>보통은 ‘변수에 문자열을 저장했다’ 또는 ‘변수에 객체를 저장했다’라는 식의 표현이 사용되고 또 그것이 더 자연스럽다. 하지만 지금 설명하는 파이썬의 <strong>가비지 컬렉션</strong> 메커니즘을 이해하려면 변수를 ‘포스트잇’으로 이해해야 한다. 따라서 위의 코드에 대한 표현이 다음과 같음을 알고 있어야 한다.<br>(‘참조’의 영어 표현이 ‘레퍼런스’이다.)<br><br></br></p>
+<p><strong>_”변수 s가 문자열 ‘Garbage Collection’ ‘참조’한다.”_</strong><br><strong>_”변수 s가 문자열 ‘Garbage Collection’을 ‘레퍼런스’한다.”_</strong></p>
+<p><br></br><br>즉 여기서 말하는 ‘참조’는 이름이 쓰인 포스트잇을 가져다 붙인 것을 뜻한다.<br>그럼 다음 코드를 보자. 이는 리스트 객체를 생성하고 이를 r이라는 이름으로 참조하고 있는 상황이다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]  <span class="comment"># r이라는이름으로 리스트를 참조</span></span><br></pre></td></tr></table></figure>
+<p>그럼 이렇게 생성된 리스트 [1, 2, 3]은 언제 소멸될까?<br>소멸되지 않고 계속 메모리 공간을 차지한다면 이는 문제가 되기 때문에 분명 소멸되는 시기가 온다.<br>그리고 그 시기는 다음과 같다.<br><br></br></p>
+<p><strong>_”객체를 아무도 참조하지 않는 상황”_</strong></p>
+<p><br></br></p>
+<p>즉 다음 상황에서 리스트는 소멸된다. 정확히는 소멸 대상이 된다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">r = <span class="string">'simple'</span>  <span class="comment"># 변수 r이 참조 대상을 문자열로 바꿨다.</span></span><br></pre></td></tr></table></figure>
+<p>위와 같은 상황이 벌어지면 리스트 [1, 2, 3]은 아무도 참조하지 않기 때문에 더 이상 접근할 수 없게 된다.<br>따라서 메모리에 남겨 둬봐야 공간만 차지할 뿐이다. 그래서 소멸 대상이 된다.<br>단, 소멸 대상이 되었다고 해서 바로 소멸이 되는 것은 아니다.<br>일단 소멸 대상으로 등록만 해 두고 시스템에 시간적인 여유가 생길 때 소멸시키게 된다.<br>그리고 이러한 일련의 소멸 규칙 및 과정을 가리켜 ‘가비지 컬렉션(Garbage Collection)’이라 한다.<br>그럼 다음 코드를 리스트 [1, 2, 3]을 중심으로 관찰해보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]  <span class="comment"># 리스트 [1, 2, 3]의 레퍼런스 카운트는 1</span></span><br><span class="line">r2 = r1         <span class="comment"># 리스트의 레퍼런스 카운트는 2로 증가</span></span><br><span class="line">r1 = <span class="string">'simple'</span>   <span class="comment"># 리스트의 레퍼런스 카운트는 다시 1로 감소</span></span><br><span class="line">r2 = <span class="string">'happy'</span>    <span class="comment"># 리스트의 레퍼런스 카운트가 0이 됨, 따라서 가비지 컬렉션 대상</span></span><br></pre></td></tr></table></figure>
+<p>객체를 참조하는 변수의 수를 가리켜 ‘레퍼런스 카운트’라 한다.<br>즉 위 예제에서는 리스트 [1, 2, 3]의 레퍼런스 카운트가 1로 시작해서 2로 증가하고, 이어서 r1과 r2가 문자열을 참조하는 상황에 이르러 결국에는 0이 된다. 그리고 레퍼런스 카운트가 0이 되었다는 것은 소멸 대상으로 등록이 되어 조만간 소멸된다는 뜻이다.</p>
+<p>그렇다면 이러한 가비지 컬렉션은 누가 진행하는 것일까?<br>뭐 그냥 파이썬이 해준다고 말해버려도 될 일이지만 조금 더 자세히 알 필요가 있어서 이에 대한 설명을 이어서 하겠다.</p>
+<p><br>&lt;/br&gt;<br><br></br></p>
+<h4 id="파이썬-인터프리터"><a href="#파이썬-인터프리터" class="headerlink" title="[파이썬 인터프리터]"></a>[파이썬 인터프리터]</h4><p>우리가 파이썬 코드를(스크립트를) 작성하고 실행하면 이 코드는 먼저 ‘바이트 코드’라는 것으로 변환되어 어딘가에 저장된다. 그리고는 이 바이트 코드는 ‘파이썬 가상 머신(Python Virtual Machine)’ 위에서 실행이 된다.<br>비록 이러한 일련의 과정이 감춰져 있어서 우리 눈에 보이지는 않지만 말이다. 따라서 파이썬의 실행 구조는 다음과 같이 정리할 수 있다.</p>
+<p><br></br></p>
+<p><img src="/image/PVM.jpeg" alt="PVM"></p>
+<p><br></br></p>
+<p>즉 실제 파이썬 프로그램의 실행 주체는 파이썬 가상 머신, 줄여서 PVM이라고 할 수 있으며 PVM에 의해 가비지 컬렉션도 진행이 된다. 그리고 지금 설명한 파이썬 코드 변환기와 가상 머신, 그리고 기본적으로 포함되는 각종 라이브러리들을 묶어서 ‘파이썬 인터프리터’라 한다.</p>
+<p>파이썬 인터프리터는 그 종류가 다양한데 기본적으로 PVM의 구현 방식에 따라 나뉜다.<br>PVM이 C언어로 구현되어 있는 가장 일반적이고 널리 사용되는 인터프리터를 가리켜 CPython이라 부른다.<br>그리고 PVM이 자바로 구현되어 있어서 자바에 대한 접근성이 좋은 인터프리터를 가리켜 JPython이라 하며, 마이크로소프트사의 닷넷 기반으로 만들어지고 또 그 위에서 동작하는 인터프리터를 가리켜 IronPython이라 한다.<br>물론 중심이 되는 것은 CPython이다. 다만 다양한 종류의 인터프리터가 존재한다는 사실도 알아 두면 좋겠다.</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2019/11/16/Python-%EB%B3%80%EC%88%982/">
                 [Python] 변수 (2)
             </a>
@@ -429,74 +504,6 @@
 <p>물론 위의 함수는 튜플을 대상으로 잘 동작한다.<br>다음 예제에서 보이듯이 말이다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t = (<span class="number">2</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">0</span>)</span><br><span class="line">min_max(t)                             <span class="comment"># 0, 9</span></span><br><span class="line">t                                      <span class="comment"># (2, 7, 5, 9, 0)</span></span><br></pre></td></tr></table></figure>
 <p>비록 함수 내에서 튜플에 담긴 내용을 갖는 리스트를 하나 생성하기는 했지만 그것이 문제가 되는 상황은 아니다. 결론을 내려보면, 함수를 잘 정의하려면 파이썬 내에서 참조하거나 조작하는 객체의 성격을 구분하고 그에 맞게 함수를 정의해야 한다. 따라서 기본적으로 문자열과 튜플은 변경이 불가능한 객체이고, 리스트와 딕셔너리는 변경이 가능한 객체라는 사실은 기억하고 있어야 한다.</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/16/Python-%EB%B3%80%EC%88%981/">
-                [Python] 변수 (1)
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-16</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/python/">python</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="파이썬에서-변수의-정체는-1"><a href="#파이썬에서-변수의-정체는-1" class="headerlink" title="파이썬에서 변수의 정체는? (1)"></a>파이썬에서 <strong>변수</strong>의 정체는? (1)</h1><h6 id="본-포스팅은-lt-윤성우의-열혈-파이썬-중급편-gt-과-lt-처음-시작하는-파이썬-gt-을-바탕으로-진행합니다"><a href="#본-포스팅은-lt-윤성우의-열혈-파이썬-중급편-gt-과-lt-처음-시작하는-파이썬-gt-을-바탕으로-진행합니다" class="headerlink" title="본 포스팅은 &lt;윤성우의 열혈 파이썬 중급편&gt;과 &lt;처음 시작하는 파이썬&gt;을 바탕으로 진행합니다."></a>본 포스팅은 &lt;윤성우의 열혈 파이썬 중급편&gt;과 &lt;처음 시작하는 파이썬&gt;을 바탕으로 진행합니다.</h6><h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ul>
-<li>Story 01. 레퍼런스 카운트와 가비지 컬렉션<ul>
-<li>[가비지 컬렉션]</li>
-<li>[파이썬 인터프리터]</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>Story 02. 수정 가능한 객체와 수정 불가능한 객체<ul>
-<li>[immutable &amp; mutable]</li>
-</ul>
-</li>
-</ul>
-<p><br></br></p>
-<h3 id="Story-01-레퍼런스-카운트와-가비지-컬렉션"><a href="#Story-01-레퍼런스-카운트와-가비지-컬렉션" class="headerlink" title="Story 01. 레퍼런스 카운트와 가비지 컬렉션"></a>Story 01. 레퍼런스 카운트와 가비지 컬렉션</h3><h4 id="가비지-컬렉션"><a href="#가비지-컬렉션" class="headerlink" title="[가비지 컬렉션]"></a>[가비지 컬렉션]</h4><p>우리는 다음과 같은 상황에서 변수 s에 문자열이 저장되었다고 표현한다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'Garbage Collection'</span></span><br></pre></td></tr></table></figure>
-<p>그러나 사실은 문자열 객체에 s라는 이름이 붙은 상황이다.<br>즉 파이썬의 변수는 빈 상자가 아닌 뗴었다 붙였다 할 수 있는 ‘포스트잇’의 개념이다.<br>(포스트잇은 메모를 적어서 붙이고 또 쉽게 뗄 수 있는 스티커이다.)</p>
-<p><img src="/image/stickynote.png" alt="stickynote"></p>
-<p>보통은 ‘변수에 문자열을 저장했다’ 또는 ‘변수에 객체를 저장했다’라는 식의 표현이 사용되고 또 그것이 더 자연스럽다. 하지만 지금 설명하는 파이썬의 <strong>가비지 컬렉션</strong> 메커니즘을 이해하려면 변수를 ‘포스트잇’으로 이해해야 한다. 따라서 위의 코드에 대한 표현이 다음과 같음을 알고 있어야 한다.<br>(‘참조’의 영어 표현이 ‘레퍼런스’이다.)<br><br></br></p>
-<p><strong>_”변수 s가 문자열 ‘Garbage Collection’ ‘참조’한다.”_</strong><br><strong>_”변수 s가 문자열 ‘Garbage Collection’을 ‘레퍼런스’한다.”_</strong></p>
-<p><br></br><br>즉 여기서 말하는 ‘참조’는 이름이 쓰인 포스트잇을 가져다 붙인 것을 뜻한다.<br>그럼 다음 코드를 보자. 이는 리스트 객체를 생성하고 이를 r이라는 이름으로 참조하고 있는 상황이다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]  <span class="comment"># r이라는이름으로 리스트를 참조</span></span><br></pre></td></tr></table></figure>
-<p>그럼 이렇게 생성된 리스트 [1, 2, 3]은 언제 소멸될까?<br>소멸되지 않고 계속 메모리 공간을 차지한다면 이는 문제가 되기 때문에 분명 소멸되는 시기가 온다.<br>그리고 그 시기는 다음과 같다.<br><br></br></p>
-<p><strong>_”객체를 아무도 참조하지 않는 상황”_</strong></p>
-<p><br></br></p>
-<p>즉 다음 상황에서 리스트는 소멸된다. 정확히는 소멸 대상이 된다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">r = <span class="string">'simple'</span>  <span class="comment"># 변수 r이 참조 대상을 문자열로 바꿨다.</span></span><br></pre></td></tr></table></figure>
-<p>위와 같은 상황이 벌어지면 리스트 [1, 2, 3]은 아무도 참조하지 않기 때문에 더 이상 접근할 수 없게 된다.<br>따라서 메모리에 남겨 둬봐야 공간만 차지할 뿐이다. 그래서 소멸 대상이 된다.<br>단, 소멸 대상이 되었다고 해서 바로 소멸이 되는 것은 아니다.<br>일단 소멸 대상으로 등록만 해 두고 시스템에 시간적인 여유가 생길 때 소멸시키게 된다.<br>그리고 이러한 일련의 소멸 규칙 및 과정을 가리켜 ‘가비지 컬렉션(Garbage Collection)’이라 한다.<br>그럼 다음 코드를 리스트 [1, 2, 3]을 중심으로 관찰해보자.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]  <span class="comment"># 리스트 [1, 2, 3]의 레퍼런스 카운트는 1</span></span><br><span class="line">r2 = r1         <span class="comment"># 리스트의 레퍼런스 카운트는 2로 증가</span></span><br><span class="line">r1 = <span class="string">'simple'</span>   <span class="comment"># 리스트의 레퍼런스 카운트는 다시 1로 감소</span></span><br><span class="line">r2 = <span class="string">'happy'</span>    <span class="comment"># 리스트의 레퍼런스 카운트가 0이 됨, 따라서 가비지 컬렉션 대상</span></span><br></pre></td></tr></table></figure>
-<p>객체를 참조하는 변수의 수를 가리켜 ‘레퍼런스 카운트’라 한다.<br>즉 위 예제에서는 리스트 [1, 2, 3]의 레퍼런스 카운트가 1로 시작해서 2로 증가하고, 이어서 r1과 r2가 문자열을 참조하는 상황에 이르러 결국에는 0이 된다. 그리고 레퍼런스 카운트가 0이 되었다는 것은 소멸 대상으로 등록이 되어 조만간 소멸된다는 뜻이다.</p>
-<p>그렇다면 이러한 가비지 컬렉션은 누가 진행하는 것일까?<br>뭐 그냥 파이썬이 해준다고 말해버려도 될 일이지만 조금 더 자세히 알 필요가 있어서 이에 대한 설명을 이어서 하겠다.</p>
-<p><br>&lt;/br&gt;<br><br></br></p>
-<h4 id="파이썬-인터프리터"><a href="#파이썬-인터프리터" class="headerlink" title="[파이썬 인터프리터]"></a>[파이썬 인터프리터]</h4><p>우리가 파이썬 코드를(스크립트를) 작성하고 실행하면 이 코드는 먼저 ‘바이트 코드’라는 것으로 변환되어 어딘가에 저장된다. 그리고는 이 바이트 코드는 ‘파이썬 가상 머신(Python Virtual Machine)’ 위에서 실행이 된다.<br>비록 이러한 일련의 과정이 감춰져 있어서 우리 눈에 보이지는 않지만 말이다. 따라서 파이썬의 실행 구조는 다음과 같이 정리할 수 있다.</p>
-<p><br></br></p>
-<p><img src="/image/PVM.jpeg" alt="PVM"></p>
-<p><br></br></p>
-<p>즉 실제 파이썬 프로그램의 실행 주체는 파이썬 가상 머신, 줄여서 PVM이라고 할 수 있으며 PVM에 의해 가비지 컬렉션도 진행이 된다. 그리고 지금 설명한 파이썬 코드 변환기와 가상 머신, 그리고 기본적으로 포함되는 각종 라이브러리들을 묶어서 ‘파이썬 인터프리터’라 한다.</p>
-<p>파이썬 인터프리터는 그 종류가 다양한데 기본적으로 PVM의 구현 방식에 따라 나뉜다.<br>PVM이 C언어로 구현되어 있는 가장 일반적이고 널리 사용되는 인터프리터를 가리켜 CPython이라 부른다.<br>그리고 PVM이 자바로 구현되어 있어서 자바에 대한 접근성이 좋은 인터프리터를 가리켜 JPython이라 하며, 마이크로소프트사의 닷넷 기반으로 만들어지고 또 그 위에서 동작하는 인터프리터를 가리켜 IronPython이라 한다.<br>물론 중심이 되는 것은 CPython이다. 다만 다양한 종류의 인터프리터가 존재한다는 사실도 알아 두면 좋겠다.</p>
 
         </div>
     
@@ -571,19 +578,19 @@
     <ul>
         
         <li>
+            <a class="footer-post" href="/categories/hci/">HCI</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/nlp/">NLP</a>
+        </li>
+        
+        <li>
             <a class="footer-post" href="/categories/algorithm/">algorithm</a>
         </li>
         
         <li>
             <a class="footer-post" href="/categories/algorithm/selection-sort/">selection sort</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/vuejs/">vuejs</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/computational-modeling/">Computational Modeling</a>
         </li>
         
     </ul>
