@@ -617,7 +617,29 @@
 
     
         <div class="content">
-            <h1 id="내-소개-애플리케이션"><a href="#내-소개-애플리케이션" class="headerlink" title="내 소개 애플리케이션"></a>내 소개 애플리케이션</h1><h5 id="본-포스팅은-“야곰의-iOS-프로그래밍”을-정리한-내용입니다"><a href="#본-포스팅은-“야곰의-iOS-프로그래밍”을-정리한-내용입니다" class="headerlink" title="본 포스팅은 “야곰의 iOS 프로그래밍”을 정리한 내용입니다."></a>본 포스팅은 “야곰의 iOS 프로그래밍”을 정리한 내용입니다.</h5><p><br></p>
+            <h1 id="edwith-부스트코스-iOS-프로그래밍"><a href="#edwith-부스트코스-iOS-프로그래밍" class="headerlink" title="[edwith | 부스트코스] iOS 프로그래밍"></a>[edwith | 부스트코스] iOS 프로그래밍</h1><h5 id="본-포스팅은-“-부스트코스-iOS-프로그래밍”을-정리한-내용입니다"><a href="#본-포스팅은-“-부스트코스-iOS-프로그래밍”을-정리한-내용입니다" class="headerlink" title="본 포스팅은 “[부스트코스] iOS 프로그래밍”을 정리한 내용입니다."></a>본 포스팅은 “[부스트코스] iOS 프로그래밍”을 정리한 내용입니다.</h5><p><br></p>
+<h2 id="1-음원-재생기-어플리케이션"><a href="#1-음원-재생기-어플리케이션" class="headerlink" title="1. 음원 재생기 어플리케이션"></a>1. 음원 재생기 어플리케이션</h2><p><br></p>
+<h4 id="애플리케이션-만들기"><a href="#애플리케이션-만들기" class="headerlink" title="애플리케이션 만들기"></a>애플리케이션 만들기</h4><p>1) 프로젝트에 이미지 추가하기</p>
+<p>먼저 에셋(asset)을 이용해 프로젝트에서 사용할 이미지를 추가하는 방법에 대해 알아보고 에셋이란 무엇인지 공부해보도록 합시다.</p>
+<p><br></p>
+<h5 id="에셋-카탈로그란"><a href="#에셋-카탈로그란" class="headerlink" title="에셋 카탈로그란?"></a>에셋 카탈로그란?</h5><p>Xcode에서 프로젝트를 처음 생성하면 Assets.xcassets이라는 폴더가 자동으로 생성되는데, 이 폴더에서 애플리케이션에 사용될 다양한 에셋을 관리하며, 이를 에셋 카탈로그라고 합니다. 에셋 카탈로그는 에셋과 다양한 디바이스의 속성에 대한 파일의 연결을(mapping) 통해서 애플리케이션 리소스에 쉽게 접근할 수 있도록 도와줍니다. (리소스는 애플리케이션이 실행 중일 때 사용하는 이미지와 음악 파일 등을 말합니다.) 여기서 말하는 속성은 디바이스의 특징, 사이즈 클래스, 주문형 리소스, 특정 타입의 정보를 포함하고 있습니다.  </p>
+<p><br></p>
+<h5 id="앱-시닝과-앱-슬라이싱이란"><a href="#앱-시닝과-앱-슬라이싱이란" class="headerlink" title="앱 시닝과 앱 슬라이싱이란?"></a>앱 시닝과 앱 슬라이싱이란?</h5><p>앱 시닝이란 애플리케이션이 디바이스에 설치될 때 앱 스토어와 운영체제가 그 디바이스의 특성에 맞게 설치하도록 하는 설치 최적화 기술을 의미합니다. 이를 통해 애플리케이션의 설치용량을 최소화하고 다운로드의 속도를 향상시킬 수 있습니다. 앱 시닝(app thinning)의 기술 구성요소는 슬라이싱(slicing), 비트코드(bitcode), 주문형 리소스(on-demand resource)가 있습니다.</p>
+<p><br></p>
+<p>슬라이싱(slicing)은 애플리케이션이 지원하는 다양한 디바이스에 대한 여러 조각의 애플리케이션 번들(app bundle)을 생성하고 디바이스에 알맞은 조각을 전달하는 기술입니다. 개발자가 애플리케이션의 전체 버전을 iTunes Connect에 업로드하게 되면, 앱 스토어에는 각 디바이스 특성에 다양한 버전의 조각들이 생성됩니다. 사용자가 애플리케이션을 설치할 때 전체 버전이 아닌 슬라이싱된 조각들 중 사용자의 디바이스의 가장 적합한 조각이 다운로드되어 설치됩니다. 에셋 카탈로그에 관리하는 이미지들은 자동으로 적용이 됩니다. iTunes Connect란 개발자가 앱 스토어에 판매할 애플리케이션을 제츨하고 관리할 수 있도록 도와주는 웹 기반 도구입니다.</p>
+<p><br></p>
+<p><img src="/image/ios15.png" alt="ios15"></p>
+<p><br><br></p>
+<p>2) 인터페이스 빌더로 화면 구성하기(Add user interface objects to the canvas)</p>
+<p>You can lay out much of your user interface with standard windows, views, and controls from the Object library. The objects in the library meet Apple’s human interface guidelines and have been tested to ensure that they function properly. In the library toolbar, select the Object library, then drag an object from the library to the canvas. In the canvas, Interface Builder highlights a valid destination in blue. Use the guidelines to position and aligh th object.</p>
+<p><br></p>
+<p><img src="/image/ios17.png" alt="ios17"></p>
+<p><br></p>
+<p>3) 인터페이스 빌더의 객체에서 발생한 액션과 코드 연결</p>
+<p>이번에는 인터페이스 빌더에서 생성된 객체에서 발생한 액셩늘 코드와 연결해볼거에요. 여기서는 IBAction으로 객체에서 발생하는 액션을 코드로 연결해 사용자 동작에 상호 작용할 수 있도록 할거에요.</p>
+<p><br></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// MARK: IBOutlets</span></span><br><span class="line">    <span class="meta">@IBOutlet</span> <span class="keyword">var</span> playPauseButton: <span class="type">UIButton!</span></span><br><span class="line">    <span class="meta">@IBOutlet</span> <span class="keyword">var</span> timeLabel: <span class="type">UILabel!</span></span><br><span class="line">    <span class="meta">@IBOutlet</span> <span class="keyword">var</span> progressSlider: <span class="type">UISlider!</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        <span class="comment">// Do any additional setup after loading the view.</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">didReceiveMemoryWarning</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.didReceiveMemoryWarning()</span><br><span class="line">        <span class="comment">// Dispose of any resources that can be recreated.</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// MARK: IBActions</span></span><br><span class="line">    <span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">touchUpPlayPauseButton</span><span class="params">(_sender: UIButton)</span></span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Button Taped!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">sliderValueChangedOne</span><span class="params">(_sender: UISlider)</span></span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Slider Value Changed"</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
 
         </div>
     
@@ -692,19 +714,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/categories/hci/">HCI</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/nlp/">NLP</a>
-        </li>
-        
-        <li>
             <a class="footer-post" href="/categories/algorithm/">algorithm</a>
         </li>
         
         <li>
             <a class="footer-post" href="/categories/algorithm/selection-sort/">selection sort</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/vuejs/">vuejs</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/computational-modeling/">Computational Modeling</a>
         </li>
         
     </ul>
