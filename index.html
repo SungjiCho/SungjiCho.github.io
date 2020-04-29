@@ -147,6 +147,103 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2020/04/15/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EC%8B%A4%EC%8A%B5%ED%8E%B8-1/">
+                [iOS] 앱 개발 실습편 (1)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-04-15</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/ios/">iOS</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="iOS-앱-개발-실습편-1"><a href="#iOS-앱-개발-실습편-1" class="headerlink" title="[iOS] 앱 개발 실습편 (1)"></a>[iOS] 앱 개발 실습편 (1)</h1><h5 id="본-포스팅은-“야곰의-iOS-프로그래밍”와-“꼼꼼한-재은씨의-스위프트”를-바탕으로-합니다"><a href="#본-포스팅은-“야곰의-iOS-프로그래밍”와-“꼼꼼한-재은씨의-스위프트”를-바탕으로-합니다" class="headerlink" title="본 포스팅은 “야곰의 iOS 프로그래밍”와 “꼼꼼한 재은씨의 스위프트”를 바탕으로 합니다."></a>본 포스팅은 “야곰의 iOS 프로그래밍”와 “꼼꼼한 재은씨의 스위프트”를 바탕으로 합니다.</h5><p><br></p>
+<h4 id="웹-브라우저-프로젝트"><a href="#웹-브라우저-프로젝트" class="headerlink" title="웹 브라우저 프로젝트"></a>웹 브라우저 프로젝트</h4><ul>
+<li>WKWebView를 통해 웹 페이지 보여주기</li>
+<li>뒤로 가기, 앞으로 가기, 새로고침</li>
+<li>마지막 페이지 저장: 다시 실행시 로드</li>
+</ul>
+<p><br></p>
+<ul>
+<li>UI 구성하기</li>
+</ul>
+<p><br></p>
+<p><img src="/image/ios18.png" alt="ios18"></p>
+<p><br></p>
+<ul>
+<li>코드로 기능 구현하기 </li>
+</ul>
+<p><br></p>
+<h5 id="웹-뷰-Web-View"><a href="#웹-뷰-Web-View" class="headerlink" title="웹 뷰(Web View)"></a>웹 뷰(Web View)</h5><p>웹 뷰(Web View)는 HTML 페이지를 탐색하기 위해 사용하는 뷰 객체의 일종으로, 주어진 URL을 이용하여 읽어 들인 HTML 페이지를 앱 화면의 주어진 영역에 출력해주는 내장형 웹 브라우저입니다. 오브젝트 라이브러리에서 Web View라는 이름으로 제공되고 있죠. 이를 위해서 디바이스는 반드시 네트워크에 연결되어 있는 상태여야 합니다. 웹 뷰가 읽어들인 웹 페이지는 웹 뷰를 프레임으로 하여 앱 내부에 표시되는데, 이때 웹 페이지의 형태는 사파리나 크롬과 같은 모바일 브라우저에서 보여주는 것과 거의 동일합니다. 이와 같은 것을 인앱 브라우저(In-App Browser)라고 부릅니다. 웹 뷰를 이용하면 손쉽게 인앱 브라우저를 구현하여 웹 페이지를 불러들일 수 있습니다.</p>
+<p><br></p>
+<p>웹 뷰를 구현하는 클래스는 UIWebView입니다. 접두사가 UI로 시작하고 있으므로 UIKit 프레임워크에 정의되어 있음을 짐작할 수 있습니다. API 문서를 통해 간략하게 클래스의 내용을 살펴봅시다.</p>
+<p><br></p>
+<ul>
+<li>loadRequest(_:) 메소드</li>
+</ul>
+<p><br></p>
+<p>외부 HTML 파일을 읽어 들일 때 사용하는 메소드입니다. </p>
+<p><br></p>
+<p>[참고]</p>
+<p>iOS 앱에서는 main() 함수를 우리가 직접 작성하지 않는다.<br>대신 Xcode 프로젝트를 생성하면 main() 함수가 자동으로 만들어지는데,<br>여기에는 iOS 앱이 실행될 때 처리해야 할 내용이 작성되어 있기 때문에<br>main() 함수를 건드릴 필요가 없다.</p>
+<p>main() 함수가 하는 일은 앱 실행 시 UIApplicationMain() 함수를 호출하고, 그 결과로 UIApplication 객체를 반환합니다. 생성된 UIApplication 객체는 UIKit 프레임워크에 속해 있으므로 이후의 앱 제어권은 UIKit 프레임워크로 이관됩니다.</p>
+<p>UIApplicationMain() 함수는 그 중에서도 iOS 앱에 속하는 부분의 엔트리 포인트라고 할 수 있습니다. 이 함수가 생성하는 UIApplication은 앱의 본체라고 할 수 있는 객체로, 사실상 앱 그 자체를 의미합니다. 우리가 작성한 커스텀 코드나 객체들, 그리고 우리가 앱의 기능이라고 생각하는 모든 것들은 다 UIApplication에 포함되어 있는 하위 객체입니다. 모바일 디바이스에 설치된 앱을 실행하면 초기 구동 과정을 거쳐 앱 프로세스가 메모리에 등록되는데, 이때의 앱 프로세스가 곧 UIApplication 객체라고 보아도 무방합니다.</p>
+<p>UIApplication 객체의 역할은 매우 다양합니다. 예를 들어 푸시 알림과 같은 특수한 이벤트를 우리가 정의한 커스텀 객체인 델리게이트에게 알려주기도 합니다. 우리는 이 클래스를 특별한 일이 있거나 중대한 목적이 있는 경우가 아니라면 서브 클래싱 없이 그대로 사용합니다. 굳이 서브 클래싱할 필요도 없고, 하기도 어렵기 때문입니다.</p>
+<p>그런데 달리 생각해보면 UIApplication 객체를 서브 클래싱하지 않고 그대로 사용하는 것에는 한계가 있습니다. 우리의 의도와 목적에 맞게 특별히 처리해야 할 것도 있을 수 있기 때문이죠. 그래서 UIApplication 객체는 AppDelegate라는 대리인, 아니 대리 객체를 내세우고 커스텀 코드를 처리할 수 있도록 약간의 권한을 부여합니다. AppDelegate는 UIApplication으로부터 위임받은 일부 권한을 이용하여 커스텀 코드와 상호작용하는 역할을 담당하고, 이를 통해 우리가 필요한 코드를 구현할 수 있도록 도와줍니다. </p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/04/13/algorithm-%EA%B7%B8%EB%9E%98%ED%94%84/">
+                [Algorithm] 그래프
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-04-13</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/algorithm/">algorithm</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="그래프"><a href="#그래프" class="headerlink" title="그래프"></a>그래프</h1><h5 id="본-포스팅은-“프로그래밍-대회에서-배우는-알고리즘-문제해결-전략”을-바탕으로-합니다"><a href="#본-포스팅은-“프로그래밍-대회에서-배우는-알고리즘-문제해결-전략”을-바탕으로-합니다" class="headerlink" title="본 포스팅은 “프로그래밍 대회에서 배우는 알고리즘 문제해결 전략”을 바탕으로 합니다."></a>본 포스팅은 “프로그래밍 대회에서 배우는 알고리즘 문제해결 전략”을 바탕으로 합니다.</h5><p><br></p>
+<p>본 포스팅에서 다룰 주제인 그래프는 객체들의 상호 관계를 표현하기 위해 고안된 자료 구조입니다. 그래프는 어떤 상호 관계도 표현할 수 있으므로, 계층 관계만을 표현하는 트리에 비해 훨씬 다양한 현실 세계의 문제를 표현할 수 있습니다. 그래프는 현실 세계의 사물이나 추상적인 개념 간의 연결 관계를 표현합니다. 여러 도시들을 연결하는 도로망, 사람들 간의 지인 관계, 웹사이트 간의 링크 관계 등이 우리 주변에서 찾을 수 있는 연결 구조의 예라고 할 수 있지요. 트리에 있었던 부모 자식 관계에 관한 제약이 없기 때문에 그래프는 트리보다 훨씬 다양한 구조를 표현할 수 있고, 현실 세계의 수많은 문제들을 푸는 데 유용하게 사용됩니다.</p>
+<p><br></p>
+<h4 id="그래프의-정의"><a href="#그래프의-정의" class="headerlink" title="그래프의 정의"></a>그래프의 정의</h4><p>그래프 $G(V, E)$는 어떤 자료나 개념을 표현하는 정점(vertex)들의 집합 $V$와 이들을 연결하는 간선(edge)들의 집합 $E$로 구성된 자료 구조입니다. 그래프는 정점들과 간선들로 정의되며, 정점의 위치 정보나 간선의 순서 등은 그래프의 정의에 포함되지 않습니다. 따라서 다른 모양이지만 아래 세 그림은 모두 같은 그래프를 표현합니다.</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2020/04/09/beakjoon-1-7/">
                 [BaekJoon] A/B
             </a>
@@ -491,161 +588,6 @@
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/03/22/cm-review-1-1/">
-                [Computational Modeling] Review (1)
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-03-22</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/computational-modeling/">Computational Modeling</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="Computational-Modeling-Review"><a href="#Computational-Modeling-Review" class="headerlink" title="Computational Modeling Review"></a>Computational Modeling Review</h1><h5 id="본-포스팅은-“Computational-Models-of-Cognition-and-Behavior-2018-”와-“Bayesian-Cognitive-Modeling”을-정리한-내용입니다"><a href="#본-포스팅은-“Computational-Models-of-Cognition-and-Behavior-2018-”와-“Bayesian-Cognitive-Modeling”을-정리한-내용입니다" class="headerlink" title="본 포스팅은 “Computational Models of Cognition and Behavior(2018)”와 “Bayesian Cognitive Modeling”을 정리한 내용입니다."></a>본 포스팅은 “Computational Models of Cognition and Behavior(2018)”와 “Bayesian Cognitive Modeling”을 정리한 내용입니다.</h5><p><br></p>
-<h4 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1 Introduction"></a>1 Introduction</h4><h5 id="Models-and-Theories-in-Science"><a href="#Models-and-Theories-in-Science" class="headerlink" title="Models and Theories in Science"></a>Models and Theories in Science</h5><p>Cognitive scientists seek to understand how the mind works. That is, we want to describe and predict people’s behavior, and we ultimately wish to explain it, in the same way that physicists predict the motion of an apple that is dislodged from its tree (and can accuratetly describe its downward path) and explain its trajectory (by applealing to gravity). For example, if you forgot someone’s name when you are distracted seconds after being introduced to her, we would like to know what cognitive process is responsible for this failure. Was it lack of attention? Forgetting over time? Can we know ahead of time whether or not you will remember that person’s name?</p>
-<p><br></p>
-<p>The central thesis of this book is that to answer questions such as these, cognitive scientists must rely on quantitative mathematical models, just like physicists who research gravity. We suggest that to expand our knowledge of the human mind, consideration of the data and verbal theorizing are insufficient on their own.</p>
-<p><br></p>
-<p>This thesis is best illustrated by considering something that is simpler and more readily understood that the mind. Have a look at the data which represent the position of planets in the night sky over time. How might one descibe thie peculiar pattern of motion? How would you explain it? The strange loops in the otherwise consistently curvlinear paths describe the famous “retrograde motion” of the planets - that is, their propensity to suddenly reverse direction for sometime before resuming their initial path. What explains retrograde motion? It took more than a thousand years for a satisfactory answer to that question to become available, when Copernicus replaced the goecentric Ptolemaic system with a heliocentric model: Today, we know that retrograde motion arises from the fact that the planets travel at different speeds along their orbits; hence, as Earth “overtakes” Mars, for example, the red planet will appear to reverse direction as it falls behind the speeding Earth.</p>
-<p><br></p>
-<p>This example permits several conclusions that will be relevant throughout the reminder of this book. First, the pattern of data deifes description and explanation unless one has a model of the underlying process. It is only with the aid of a model that one can describe and explain planetary motion, even at a verbal level. Second, any model that explains the data is itself unobservable. That is, although the Copernican model is readily communicated and represented, it cannot be directly observed. Instead, the model is an abstract explanatory device that “exists” primaily in the minds of the people who use it to describe, predict, and explain the data. Third, there nealy always are several possible models that can explain a given data set. This point is worth exploring in a bit more detail. The answer to this question is quite fascinating and requires that we move toward a quantitative level of modeling.</p>
-<p><br><br></p>
-<h5 id="Memory-retention"><a href="#Memory-retention" class="headerlink" title="Memory retention"></a>Memory retention</h5><p>Finding a lawful relationship between memory retention and time is one of the oldest cognitive modeling question, going back to Ebbinghaus in the 1880s. The usual experiment involves giving people many items of information on a list, and then testing their ability to remember itmes from the list after different periods of time have elapsed. Various mathematical functions, usually with psychological interpretations, have been proposed as describing the relationship between time and the level of retention. </p>
-<p><br></p>
-<p>We consider a simplified version of the exponential decay model. The model assumes that the probability that an item will be remembered after a period of time $\mathit{t}$ has elapsed is $\theta_t = exp(-\alpha t) + \beta$, with the restriction $0 &lt; \theta_t &lt; 1$. The $\alpha$ parameter corresponds to the rate of decay of information. The $\beta$ parameter corresponds to a baseline level of remembering that is assumed to remain even after very long time periods. Our analyses using this model are based on fictitious data from a potential memory retention study, to help illustrate key modeling points.</p>
-<p><br></p>
-<p><img src="/image/cm1.png" alt="cm1"></p>
-<p><br></p>
-<p>These data are given in Table 10.1, and relate to 4 subjects tested on 18 items at 10 time intervals: 1, 2, 4, 7, 12, 21, 35, 59, 99, and 200. The number of items tested and the first 9 time intervals are those used by Rubin et al. (1999). Each datum in Table 10.1 counts the number of correct memory recalls for each subject at each time interval. Included in Table 10.1 are missing data, shown by “?” symbols, so subjects have missing data for the final time period of 200, which tests the ability of models to generalize to new measurements. For Subject 4, these are no data at all, which tests the ability of models to generalize to new subjects. </p>
-<p><br></p>
-<p><img src="/image/cm2.png" alt="cm2"></p>
-<p><br></p>
-<h5 id="No-individual-differences"><a href="#No-individual-differences" class="headerlink" title="No individual differences"></a>No individual differences</h5><p>The graphical model for our first attempt to account for the data is shown in Figure 10.1. The model assumes that every subject has the same retention curve, and so there is one true value for the $\alpha$ and $\beta$ parameters. The outer plate corresponds to the different time periods with values given by the observed $t_j$ variable. Together with the $\alpha$ and $\beta$ parameters, the time period defines the probability $\theta_j$ that the jth item will be remembered. The inner plate corresponds to the subjects. Each has the same probability of recall at any given time period, but their experimental data, given by the success counts $k_{ij}$, vary, and are bionomially distributed according to the success rate and number of trials.</p>
-<p><br></p>
-<p>The script Retention_1.txt implements the graphical model in WinBUGS. Note that the code calculates the success rate for each subject at each interval separately, and so in more elaborate than it needs to be:</p>
-<p><br></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Retention With No Individual Differences</span></span><br><span class="line">model&#123;</span><br><span class="line">  <span class="comment"># Observed and Predicted Data</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      k[i, j] ~ dbin(theta[i, j], n)</span><br><span class="line">      predk[i, j] ~ dbin(theta[i, j], n)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Retention Rate At Each Lag For Each Subject Decays Exponentially</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      theta[i, j] &lt;- min(<span class="number">1</span>, exp(-alpha*t[j]+beta)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Priors</span></span><br><span class="line">  alpha ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">  beta ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>The code applies the model to the data, and produces analysis of the posterior and posterior predictive distributions. The joint posterior distribution of $\alpha$ and $\beta$ is shown in the main panel of Figure 10.2, as a two-dimensional scatter plot.</p>
-<p><br></p>
-<p><img src="/image/cm3.png" alt="cm3"></p>
-<p><br></p>
-<p>Each of the points in the scatter-plot corresponds to a posterior sample selected at random from those available. The marginal distributions of both $\alpha$ and $\beta$ are shown below and to the right, and are based on all samples. The marginals show the distribution of each parameter, conditioned on the data, considered independently of the other parameter (i.e., averaged across the other parameter). It is clear from Figure 10.2 that the joint posterior carries more information than the two marginal distributions. If the joint posterior were independent, it would be just the product of the two marginal. But the joint posterior shows a mild relationship, with larger values of $\alpha$ generally corresponding to larger values of $\beta$.</p>
-<p><br></p>
-<p><img src="/image/cm4.png" alt="cm4"></p>
-<p><br></p>
-<p>This can be interpreted psychologically as meaning that it is uncertain whether the parameters are a relatively higher baseline coupled with a relatively higher decay rate, or a relatively lower baseline coupled with a relatively lower decay rate. Figure 10.3 shows the posterior predictive distribution over the number of successful retentions at each time interval. For each subject, at each interval, the squares show the posterior mass given to each possible number of items recalled. These correspond to the model’s predictions about observed behavior in the retention experiment, based on what the model has learned from the data. Also shown, by the black squres and connecting lines, are the actual observed data for each subject, where available. </p>
-<p><br></p>
-<p>The obvious feature of Figure 10.3 is that the current model does not meet a basic requirement of descriptive adequacy. For both Subjects 1 and 3 the model gives little posterior mass to the observed data at many time periods. It describes a steeper rate of decay than shown by the data of Subject 1, and a shallower rate of decay than shown by the data of Subject 3. After evaluating the model using the posterior predictive analysis, we can conclude that the modeling assumption of no individual differences is inappropriate. It is important to understand that this conclusion neuters the usefulness of the posterior distribution over parameters shown in Figure 10.2. The posterior distribution is conditioned on the assumption that the model is appropriate, and is not relevant when the model is fundamentally deficient.</p>
-<p><br><br></p>
-<h5 id="Full-individual-differences"><a href="#Full-individual-differences" class="headerlink" title="Full individual differences"></a>Full individual differences</h5><p>A revised graphical model that does accommodate individual differences is shown in Figure 10.4. The change from the previous model is that the ith subject now has their own $\alpha_i$ and $\beta_i$ parameters, and that the probability of retention for an item $\theta_{ij}$ now changes for both subjects and retention intervals.</p>
-<p><br></p>
-<p><img src="/image/cm5.png" alt="cm5"></p>
-<p><br></p>
-<p>The script Retention_2.txt implements the graphical model in WinBUGS:</p>
-<p><br></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Retention With Full Individual Differences</span></span><br><span class="line">model&#123;</span><br><span class="line">  <span class="comment"># Observed and Predicted Data</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      k[i, j] ~ dbin(theta[i,j], n)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Retention Rate At Each Lag For Each Subject Decays Exponentially</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      theta[i, j] &lt;- min(<span class="number">1</span>, exp(-alpha[i]*t[j]) + beta[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Priors For Each Subject</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    alpha[i] ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">    beta[i] ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>The code applies the model to the same data and again produces analysis of the posterior and posterior predictive distributions. </p>
-<p><br></p>
-<p><img src="/image/cm6.png" alt="cm6"></p>
-<p><br></p>
-<p>The joint posterior distributions for each subject are shown in the main panel of Figure 10.5. Each point in the scatter-plot corresponds to a posterior sample, with different markers representing different subjects. The first, second, third, and fourth subjects use squre, circular, triangular, and cross markers, respectively. The marginal distributions are shown below and to the right, and use different line styles to represent the subjects.</p>
-<p><br></p>
-<p><img src="/image/cm7.png" alt="cm7"></p>
-<p><br></p>
-<p>Figure 10.6 shows the same analysis of the posterior predictive distributions over the number of successful retentions at each time interval, for each subject. It is clear that allowing for individual differences lets the model achieve a basic level of descriptive adequacy for Subjects 1, 2, and 3. The posteriors in Figure 10.5 show that different values for the $\alpha$ decay parameter are used for each of these subjects, corresponding to our intuitions from the earlier analysis.</p>
-<p><br></p>
-<p>The weakness in the current model is evident in its predictions for Subject 4. Because each subject is assumed to have decay and baseline parameters that are different, the only information the model has about the new subject is the priors for the $\alpha$ and $\beta$ parameters. The relationships between parameters for subjects that are visually evident in Figure 10.5 are not formally captured by the model. This means, as shown in Figure 10.5, the posterior for Subject 4 are just the priors, and so the posterior predictive distribution for Subject 4, as shown in Figure 10.6, does not have any useful structure. In this way, the model fails a basic test of generalizability, since it does not make sensible predictions for the behavior of subjects other than those for whom data are available. Intuitively, one might want to predict that Subject 4 will be likely to have model parameters consistent with regularties in the inferred parameters for Subjects 1, 2, and 3.</p>
-<p><br><br></p>
-<h5 id="Structured-individual-differences"><a href="#Structured-individual-differences" class="headerlink" title="Structured individual differences"></a>Structured individual differences</h5><p>The relationship between the parameters of different subjects, visually evident in Figure 10.5, can be captured using a hierarchical model. A graphical model implementing this approach is shown in Figure 10.7. The key cahnge is that now the $\alpha_i$ and $\beta_i$ parameters for each subject are modeled as coming from Gaussian distributions. The over-arching Gaussian distribution models this group-level structure for each parameter. This group structure itself has parameters, in the form of means $\mu_{\alpha}$ for the decay and $\mu_{\beta}$ for the baseline, and precisions $\lambda_{\alpha}$ for the decay and $\lambda_{\beta}$ for the baseline. In this way, the individual differences between subjects are given structure.</p>
-<p><br></p>
-<p>Each $\alpha_i$ and $\beta_i$ parameter is independently sampled, so they can be different, but they are sampled from the same distribution, so they have a relationship to one another. This means that inferences made for one subject influence predictions made for another. This means that inferences made for one subject influence predictions made for another. Since the means and precisions of the gorup-level distributions are common to all subjects, what is learned about them from one subject affects what is known about another. In addition, because they are sampled from over-arching distributions, the $\alpha_i$, and $\beta_i$ parameters at the individual subject level no longer have priors explicitly specified, but inherit them from the priors on the means and precisions of the group-level Gaussian distributions. The script Retention_3.txt implements the graphical model in WinBUGS:</p>
-<p><br></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Retention With Structured Individual Differences</span></span><br><span class="line">model&#123;</span><br><span class="line">  <span class="comment"># Observed and Predicted Data</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      k[i, j] ~ dbin(theta[i, j], n)</span><br><span class="line">      predk[i, j] ~ dbin(theta[i, j], n)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Retention Rate At Each Lag For Each Subject Decays Exponentially</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      theta[i, j] &lt;- min(<span class="number">1</span>, exp(-alpha[i]*t[j]+beta[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Parameters For Each Subject Drawn From Gaussian Group Distributions</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    alpha[i] ~ dnorm(alphamu, alphalambda)I(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">    beta[i] ~ dnorm(betamu, betalambda)I(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Priors For Group Distributions</span></span><br><span class="line">  alphamu ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">  alphalambda ~ dgamma(<span class="number">.001</span>,<span class="number">.001</span>)I(<span class="number">.001</span>,)</span><br><span class="line">  alphasigma &lt;- <span class="number">1</span>/sqrt(alphalambda)</span><br><span class="line">  betalambda ~ dgamma(<span class="number">.001</span>,<span class="number">.001</span>)I(<span class="number">.001</span>,)</span><br><span class="line">  betasigma &lt;- <span class="number">1</span>/sqrt(betalambda)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>The code applies the model to the data, and again produces an analysis of the posterior and posterior predictive distributions. The joint amd marginal posterior distributions for this model are shown in Figure 10.8 using the same markers and lines as before. For Subjects 1, 2, and 3, these distributions are extremely similar to those found using the full individual differences model. The important difference is for Subject 4, who now sensible posterior distributions for both parameters. For the decay parameter $\alpha$ there is still considerable uncertainty, consistent with the range of values seen for the first three subjects, but for the baseline parameter $\beta$, Subject 4 now has a much more constrained posterior distribution.</p>
-<p><br></p>
-<p><img src="/image/cm8.png" alt="cm8"></p>
-<p><br></p>
-<p>The posterior predictive distributions for each subject under the hierarchical model are shown in Figure 10.9. The preditions remain useful for the first three subjects, and are now also appropriate for Subject 4. The structured prediction for Subject 4, from whom no data have yet been collected, comes directly from the nature of the hierarchical model. Based on the data from Subjects 1, 2, and 3, inferences are made about the means and precisions of the group distributions for the two parameters of the retention model. The new Subject 4 has values sampled from the Gaussians with these parameters, producing the sensible parameter distributions in Figure 10.8 that lead to the sensible predictive distributions in Figure 10.9.</p>
-<p><br></p>
-<p><img src="/image/cm9.png" alt="cm9"></p>
-<p><br></p>
-<p>Psychologically, hierarchical models are powerful because they are able to represent knowledge at different levels of abstraction in a cognitive process(Lee, 2011a). Just as the data have been assumed to be generated by the decay and baseline parameters combining in a memory process for individual subjects, the hierarchical model assumes that those parameters themselves are generated by more abstract latent parameters that describe group distributions across subjects. In other words, a hierarchical model lets a theory of memory retention be combined with a theory of individual differences, to provide a more complete account of behavioral data from multiple subjects.</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/03/21/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EC%8B%A4%EC%8A%B5%ED%8E%B8-1/">
-                [iOS] 앱 개발 실습편 (1)
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-03-21</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/ios/">iOS</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="edwith-부스트코스-iOS-프로그래밍"><a href="#edwith-부스트코스-iOS-프로그래밍" class="headerlink" title="[edwith | 부스트코스] iOS 프로그래밍"></a>[edwith | 부스트코스] iOS 프로그래밍</h1><h5 id="본-포스팅은-“-부스트코스-iOS-프로그래밍”을-정리한-내용입니다"><a href="#본-포스팅은-“-부스트코스-iOS-프로그래밍”을-정리한-내용입니다" class="headerlink" title="본 포스팅은 “[부스트코스] iOS 프로그래밍”을 정리한 내용입니다."></a>본 포스팅은 “[부스트코스] iOS 프로그래밍”을 정리한 내용입니다.</h5><p><br></p>
-<h2 id="1-음원-재생기-어플리케이션"><a href="#1-음원-재생기-어플리케이션" class="headerlink" title="1. 음원 재생기 어플리케이션"></a>1. 음원 재생기 어플리케이션</h2><p><br></p>
-<h4 id="애플리케이션-만들기"><a href="#애플리케이션-만들기" class="headerlink" title="애플리케이션 만들기"></a>애플리케이션 만들기</h4><p>1) 프로젝트에 이미지 추가하기</p>
-<p>먼저 에셋(asset)을 이용해 프로젝트에서 사용할 이미지를 추가하는 방법에 대해 알아보고 에셋이란 무엇인지 공부해보도록 합시다.</p>
-<p><br></p>
-<h5 id="에셋-카탈로그란"><a href="#에셋-카탈로그란" class="headerlink" title="에셋 카탈로그란?"></a>에셋 카탈로그란?</h5><p>Xcode에서 프로젝트를 처음 생성하면 Assets.xcassets이라는 폴더가 자동으로 생성되는데, 이 폴더에서 애플리케이션에 사용될 다양한 에셋을 관리하며, 이를 에셋 카탈로그라고 합니다. 에셋 카탈로그는 에셋과 다양한 디바이스의 속성에 대한 파일의 연결을(mapping) 통해서 애플리케이션 리소스에 쉽게 접근할 수 있도록 도와줍니다. (리소스는 애플리케이션이 실행 중일 때 사용하는 이미지와 음악 파일 등을 말합니다.) 여기서 말하는 속성은 디바이스의 특징, 사이즈 클래스, 주문형 리소스, 특정 타입의 정보를 포함하고 있습니다.  </p>
-<p><br></p>
-<h5 id="앱-시닝과-앱-슬라이싱이란"><a href="#앱-시닝과-앱-슬라이싱이란" class="headerlink" title="앱 시닝과 앱 슬라이싱이란?"></a>앱 시닝과 앱 슬라이싱이란?</h5><p>앱 시닝이란 애플리케이션이 디바이스에 설치될 때 앱 스토어와 운영체제가 그 디바이스의 특성에 맞게 설치하도록 하는 설치 최적화 기술을 의미합니다. 이를 통해 애플리케이션의 설치용량을 최소화하고 다운로드의 속도를 향상시킬 수 있습니다. 앱 시닝(app thinning)의 기술 구성요소는 슬라이싱(slicing), 비트코드(bitcode), 주문형 리소스(on-demand resource)가 있습니다.</p>
-<p><br></p>
-<p>슬라이싱(slicing)은 애플리케이션이 지원하는 다양한 디바이스에 대한 여러 조각의 애플리케이션 번들(app bundle)을 생성하고 디바이스에 알맞은 조각을 전달하는 기술입니다. 개발자가 애플리케이션의 전체 버전을 iTunes Connect에 업로드하게 되면, 앱 스토어에는 각 디바이스 특성에 다양한 버전의 조각들이 생성됩니다. 사용자가 애플리케이션을 설치할 때 전체 버전이 아닌 슬라이싱된 조각들 중 사용자의 디바이스의 가장 적합한 조각이 다운로드되어 설치됩니다. 에셋 카탈로그에 관리하는 이미지들은 자동으로 적용이 됩니다. iTunes Connect란 개발자가 앱 스토어에 판매할 애플리케이션을 제츨하고 관리할 수 있도록 도와주는 웹 기반 도구입니다.</p>
-<p><br></p>
-<p><img src="/image/ios15.png" alt="ios15"></p>
-<p><br><br></p>
-<p>2) 인터페이스 빌더로 화면 구성하기(Add user interface objects to the canvas)</p>
-<p>You can lay out much of your user interface with standard windows, views, and controls from the Object library. The objects in the library meet Apple’s human interface guidelines and have been tested to ensure that they function properly. In the library toolbar, select the Object library, then drag an object from the library to the canvas. In the canvas, Interface Builder highlights a valid destination in blue. Use the guidelines to position and aligh th object.</p>
-<p><br></p>
-<p><img src="/image/ios17.png" alt="ios17"></p>
-<p><br></p>
-<p>3) 인터페이스 빌더의 객체에서 발생한 액션과 코드 연결</p>
-<p>이번에는 인터페이스 빌더에서 생성된 객체에서 발생한 액셩늘 코드와 연결해볼거에요. 여기서는 IBAction으로 객체에서 발생하는 액션을 코드로 연결해 사용자 동작에 상호 작용할 수 있도록 할거에요.</p>
-<p><br></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// MARK: IBOutlets</span></span><br><span class="line">    <span class="meta">@IBOutlet</span> <span class="keyword">var</span> playPauseButton: <span class="type">UIButton!</span></span><br><span class="line">    <span class="meta">@IBOutlet</span> <span class="keyword">var</span> timeLabel: <span class="type">UILabel!</span></span><br><span class="line">    <span class="meta">@IBOutlet</span> <span class="keyword">var</span> progressSlider: <span class="type">UISlider!</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        <span class="comment">// Do any additional setup after loading the view.</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">didReceiveMemoryWarning</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.didReceiveMemoryWarning()</span><br><span class="line">        <span class="comment">// Dispose of any resources that can be recreated.</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// MARK: IBActions</span></span><br><span class="line">    <span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">touchUpPlayPauseButton</span><span class="params">(_sender: UIButton)</span></span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Button Taped!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">sliderValueChangedOne</span><span class="params">(_sender: UISlider)</span></span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Slider Value Changed"</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-
-        </div>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -688,19 +630,19 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2020/04/15/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EC%8B%A4%EC%8A%B5%ED%8E%B8-1/">[iOS] 앱 개발 실습편 (1)</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/04/13/algorithm-%EA%B7%B8%EB%9E%98%ED%94%84/">[Algorithm] 그래프</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2020/04/09/beakjoon-1-7/">[BaekJoon] A/B</a>
             </li>
             
             <li>
                 <a class="footer-post" href="/2020/04/04/SEM-%EC%B8%A1%EC%A0%95%EB%AA%A8%ED%98%95/">[SEM] 측정모형</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2020/04/04/beakjoon-1-6/">[BaekJoon] A-B</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2020/04/02/beakjoon-1-5/">[BaekJoon] A+B</a>
             </li>
             
         </ul>
@@ -722,11 +664,11 @@
         </li>
         
         <li>
-            <a class="footer-post" href="/categories/algorithm/">algorithm</a>
+            <a class="footer-post" href="/categories/algorithm/selection-sort/">selection sort</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/categories/algorithm/selection-sort/">selection sort</a>
+            <a class="footer-post" href="/categories/algorithm/graph/">graph</a>
         </li>
         
     </ul>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="[iOS] 앱 개발 실습편 (1)본 포스팅은 “야곰의 iOS 프로그래밍”와 “꼼꼼한 재은씨의 스위프트”를 바탕으로 합니다.
+웹 브라우저 프로젝트
+WKWebView를 통해 웹 페이지 보여주기
+뒤로 가기, 앞으로 가기, 새로고침
+마지막 페이지 저장: 다시 실행시 로드
+
+
+">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Sunny Cho">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="[iOS] 앱 개발 실습편 (1)"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="QuantPsy"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>[iOS] 앱 개발 실습편 (1) - QuantPsy</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2020/04/15/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EC%8B%A4%EC%8A%B5%ED%8E%B8-1/">
+                [iOS] 앱 개발 실습편 (1)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-04-15</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/ios/">iOS</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="iOS-앱-개발-실습편-1"><a href="#iOS-앱-개발-실습편-1" class="headerlink" title="[iOS] 앱 개발 실습편 (1)"></a>[iOS] 앱 개발 실습편 (1)</h1><h5 id="본-포스팅은-“야곰의-iOS-프로그래밍”와-“꼼꼼한-재은씨의-스위프트”를-바탕으로-합니다"><a href="#본-포스팅은-“야곰의-iOS-프로그래밍”와-“꼼꼼한-재은씨의-스위프트”를-바탕으로-합니다" class="headerlink" title="본 포스팅은 “야곰의 iOS 프로그래밍”와 “꼼꼼한 재은씨의 스위프트”를 바탕으로 합니다."></a>본 포스팅은 “야곰의 iOS 프로그래밍”와 “꼼꼼한 재은씨의 스위프트”를 바탕으로 합니다.</h5><p><br></p>
+<h4 id="웹-브라우저-프로젝트"><a href="#웹-브라우저-프로젝트" class="headerlink" title="웹 브라우저 프로젝트"></a>웹 브라우저 프로젝트</h4><ul>
+<li>WKWebView를 통해 웹 페이지 보여주기</li>
+<li>뒤로 가기, 앞으로 가기, 새로고침</li>
+<li>마지막 페이지 저장: 다시 실행시 로드</li>
+</ul>
+<p><br></p>
+<ul>
+<li>UI 구성하기</li>
+</ul>
+<p><br></p>
+<p><img src="/image/ios18.png" alt="ios18"></p>
+<p><br></p>
+<ul>
+<li>코드로 기능 구현하기 </li>
+</ul>
+<p><br></p>
+<h5 id="웹-뷰-Web-View"><a href="#웹-뷰-Web-View" class="headerlink" title="웹 뷰(Web View)"></a>웹 뷰(Web View)</h5><p>웹 뷰(Web View)는 HTML 페이지를 탐색하기 위해 사용하는 뷰 객체의 일종으로, 주어진 URL을 이용하여 읽어 들인 HTML 페이지를 앱 화면의 주어진 영역에 출력해주는 내장형 웹 브라우저입니다. 오브젝트 라이브러리에서 Web View라는 이름으로 제공되고 있죠. 이를 위해서 디바이스는 반드시 네트워크에 연결되어 있는 상태여야 합니다. 웹 뷰가 읽어들인 웹 페이지는 웹 뷰를 프레임으로 하여 앱 내부에 표시되는데, 이때 웹 페이지의 형태는 사파리나 크롬과 같은 모바일 브라우저에서 보여주는 것과 거의 동일합니다. 이와 같은 것을 인앱 브라우저(In-App Browser)라고 부릅니다. 웹 뷰를 이용하면 손쉽게 인앱 브라우저를 구현하여 웹 페이지를 불러들일 수 있습니다.</p>
+<p><br></p>
+<p>웹 뷰를 구현하는 클래스는 UIWebView입니다. 접두사가 UI로 시작하고 있으므로 UIKit 프레임워크에 정의되어 있음을 짐작할 수 있습니다. API 문서를 통해 간략하게 클래스의 내용을 살펴봅시다.</p>
+<p><br></p>
+<ul>
+<li>loadRequest(_:) 메소드</li>
+</ul>
+<p><br></p>
+<p>외부 HTML 파일을 읽어 들일 때 사용하는 메소드입니다. </p>
+<p><br></p>
+<p>[참고]</p>
+<p>iOS 앱에서는 main() 함수를 우리가 직접 작성하지 않는다.<br>대신 Xcode 프로젝트를 생성하면 main() 함수가 자동으로 만들어지는데,<br>여기에는 iOS 앱이 실행될 때 처리해야 할 내용이 작성되어 있기 때문에<br>main() 함수를 건드릴 필요가 없다.</p>
+<p>main() 함수가 하는 일은 앱 실행 시 UIApplicationMain() 함수를 호출하고, 그 결과로 UIApplication 객체를 반환합니다. 생성된 UIApplication 객체는 UIKit 프레임워크에 속해 있으므로 이후의 앱 제어권은 UIKit 프레임워크로 이관됩니다.</p>
+<p>UIApplicationMain() 함수는 그 중에서도 iOS 앱에 속하는 부분의 엔트리 포인트라고 할 수 있습니다. 이 함수가 생성하는 UIApplication은 앱의 본체라고 할 수 있는 객체로, 사실상 앱 그 자체를 의미합니다. 우리가 작성한 커스텀 코드나 객체들, 그리고 우리가 앱의 기능이라고 생각하는 모든 것들은 다 UIApplication에 포함되어 있는 하위 객체입니다. 모바일 디바이스에 설치된 앱을 실행하면 초기 구동 과정을 거쳐 앱 프로세스가 메모리에 등록되는데, 이때의 앱 프로세스가 곧 UIApplication 객체라고 보아도 무방합니다.</p>
+<p>UIApplication 객체의 역할은 매우 다양합니다. 예를 들어 푸시 알림과 같은 특수한 이벤트를 우리가 정의한 커스텀 객체인 델리게이트에게 알려주기도 합니다. 우리는 이 클래스를 특별한 일이 있거나 중대한 목적이 있는 경우가 아니라면 서브 클래싱 없이 그대로 사용합니다. 굳이 서브 클래싱할 필요도 없고, 하기도 어렵기 때문입니다.</p>
+<p>그런데 달리 생각해보면 UIApplication 객체를 서브 클래싱하지 않고 그대로 사용하는 것에는 한계가 있습니다. 우리의 의도와 목적에 맞게 특별히 처리해야 할 것도 있을 수 있기 때문이죠. 그래서 UIApplication 객체는 AppDelegate라는 대리인, 아니 대리 객체를 내세우고 커스텀 코드를 처리할 수 있도록 약간의 권한을 부여합니다. AppDelegate는 UIApplication으로부터 위임받은 일부 권한을 이용하여 커스텀 코드와 상호작용하는 역할을 담당하고, 이를 통해 우리가 필요한 코드를 구현할 수 있도록 도와줍니다. </p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/ios/">#iOS</a> <a href="/tags/swift/">#swift</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo" target="_blank" rel="noopener">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2020/04/15/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EC%8B%A4%EC%8A%B5%ED%8E%B8-1/">[iOS] 앱 개발 실습편 (1)</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/04/13/algorithm-%EA%B7%B8%EB%9E%98%ED%94%84/">[Algorithm] 그래프</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/04/09/beakjoon-1-7/">[BaekJoon] A/B</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/04/04/SEM-%EC%B8%A1%EC%A0%95%EB%AA%A8%ED%98%95/">[SEM] 측정모형</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/hci/">HCI</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/nlp/">NLP</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/algorithm/selection-sort/">selection sort</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/algorithm/graph/">graph</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/" target="_blank" rel="noopener">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+</body>
+
+</html>
