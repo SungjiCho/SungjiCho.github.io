@@ -147,6 +147,47 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2020/05/13/hackerrank-data-types/">
+                [HackerRank] Data Types
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-05-13</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="HackerRank-Data-Types"><a href="#HackerRank-Data-Types" class="headerlink" title="[HackerRank] Data Types"></a>[HackerRank] Data Types</h1><p><br></p>
+<h4 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h4><p><br></p>
+<p>Complete the code in the editor below.<br>The variables i, d and s are already declared and initialized for you. You must:</p>
+<ol>
+<li>Declare 3 variables: one of type int, one of type double, and one of type Str<br>ing.</li>
+<li>Read 3 lines of input from stdin (according to the sequence given in the input Format section below) and initialize your 3 variables.</li>
+<li>Use the + operator to perform the following operations:</li>
+</ol>
+<ul>
+<li>Print the sum of i plus your int variable on a new line.</li>
+<li>Print the sum of d plus your double variable to a scale of one decimal place o<br>n a new line.</li>
+<li>Concatenate s with the string you read as input and print the result on a new<br>line.</li>
+</ul>
+<p><br></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">4</span></span><br><span class="line"><span class="keyword">var</span> d = <span class="number">4.0</span></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"HackerRank "</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 스위프트에서 변수는 선언과 초기화를 분리하여 작성할 수 있다. 그러나 상수는 예외이다.</span></span><br><span class="line"><span class="comment">  스위프트에서 상수는 선언할 때에만 값을 입력할 수 있기 때문이다.</span></span><br><span class="line"><span class="comment">  단, 클래스나 구조체 객체 내에서 상수를 선언할 때는 예외적으로 선언과 초기화를 분리할 수 있다.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Declare second integer, double, and String variables.</span></span><br><span class="line"><span class="keyword">var</span> ii: <span class="type">Int?</span></span><br><span class="line"><span class="keyword">var</span> dd: <span class="type">Double?</span></span><br><span class="line"><span class="keyword">var</span> ss: <span class="type">String?</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Read and save an integer, double, and String to your variables.</span></span><br><span class="line"><span class="keyword">let</span> intInput = <span class="built_in">readLine</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> stringInt = intInput&#123;</span><br><span class="line">    ii = <span class="type">Int</span>(stringInt)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> doubleInput = <span class="built_in">readLine</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> stringDouble = doubleInput&#123;</span><br><span class="line">    dd = <span class="type">Double</span>(stringDouble)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> stringInput = <span class="built_in">readLine</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> string = stringInput&#123;</span><br><span class="line">    ss = string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Print the sum of both integer variables on a new line.</span></span><br><span class="line"><span class="built_in">print</span>(i + ii!)</span><br><span class="line"><span class="comment">// Print the sum of the double variables on a new line.</span></span><br><span class="line"><span class="built_in">print</span>(d + dd!)</span><br><span class="line"><span class="comment">// Concatenate and print the String variables on a new line</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\(s)\(ss!)"</span>)</span><br><span class="line"><span class="comment">// The 's' variable above should be printed first.</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2020/05/05/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-8/">
                 [iOS] 앱 개발 도전기 (8)
             </a>
@@ -619,43 +660,6 @@
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/03/31/beakjoon-1-2/">
-                [BaekJoon] We love kriii
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-03-31</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/baekjoon/">BAEKJOON</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h4 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h4><p>ACM-ICPC 인터넷 예선, Regional, 그리고 World Finals까지 이미 2회씩 진출해버린 kriii는 미련을 버리지 못하고 왠지 모르게 올 해에도 파주 World Finals 준비 캠프에 참여했다. 대회를 뜰 줄 모르는 지박령 kriii를 위해서 격려의 문구를 출력해주자.</p>
-<p><br></p>
-<h4 id="입력"><a href="#입력" class="headerlink" title="입력"></a>입력</h4><p>본 문제는 입력이 없다.</p>
-<p><br></p>
-<h4 id="출력"><a href="#출력" class="headerlink" title="출력"></a>출력</h4><p>두 줄에 걸쳐 “강한친구 대한육군”을 한 줄에 한 번씩 출력한다.</p>
-<p><br></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Welovekriii</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">			System.out.println(<span class="string">"강한친구 대한육군"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -698,6 +702,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2020/05/13/hackerrank-data-types/">[HackerRank] Data Types</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2020/05/05/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-8/">[iOS] 앱 개발 도전기 (8)</a>
             </li>
             
@@ -707,10 +715,6 @@
             
             <li>
                 <a class="footer-post" href="/2020/04/13/algorithm-%EA%B7%B8%EB%9E%98%ED%94%84/">[Algorithm] 그래프</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2020/04/09/beakjoon-1-7/">[BaekJoon] A/B</a>
             </li>
             
         </ul>
