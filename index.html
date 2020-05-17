@@ -147,6 +147,45 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2020/05/17/hackerrank-operator/">
+                [HackerRank] Operators
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-05-17</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/hackerrank/">HackerRank</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="HackerRank-Operators"><a href="#HackerRank-Operators" class="headerlink" title="[HackerRank] Operators"></a>[HackerRank] Operators</h1><p><br></p>
+<h4 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h4><p><br></p>
+<p>Given the meal price (base cost of a meal), tip percent (the percentage of the meal price being added as tax) for a meal, find and print the meal’s total cost.</p>
+<p><br></p>
+<h4 id="Input-Format"><a href="#Input-Format" class="headerlink" title="Input Format"></a>Input Format</h4><p>There are 3 lines of numeric input:<br>The first line has a double, mealCost (the cost of the meal before tax and tip).<br>The second line has an integer, tipPercent (the percentage of mealCost being added as tip).<br>The third line has an integer, taxPercent (the percentage of mealCost being added as tax).</p>
+<p><br></p>
+<h4 id="Output-Format"><a href="#Output-Format" class="headerlink" title="Output Format"></a>Output Format</h4><p>Print the total meal cost, where totalCost is the rounded integer result of the entire bill (mealCost with added tax and tip).</p>
+<p><br><br></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="comment">// Complete the solve function below.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solve</span><span class="params">(meal_cost: Double, tip_percent: Int, tax_percent: Int)</span></span> -&gt; <span class="type">Void</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> tip = meal_cost/<span class="number">100</span>*<span class="type">Double</span>(tip_percent)</span><br><span class="line">    <span class="keyword">let</span> tax = meal_cost/<span class="number">100</span>*<span class="type">Double</span>(tax_percent)</span><br><span class="line">    <span class="keyword">let</span> totalCost = meal_cost + tip + tax</span><br><span class="line">    <span class="built_in">print</span>(<span class="type">Int</span>(round(totalCost)))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">guard</span> <span class="keyword">let</span> meal_cost = <span class="type">Double</span>((<span class="built_in">readLine</span>()?.trimmingCharacters(<span class="keyword">in</span>: .whitespacesAndNewlines))!)</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">fatalError</span>(<span class="string">"Bad input"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">guard</span> <span class="keyword">let</span> tip_percent = <span class="type">Int</span>((<span class="built_in">readLine</span>()?.trimmingCharacters(<span class="keyword">in</span>: .whitespacesAndNewlines))!)</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">fatalError</span>(<span class="string">"Bad input"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">guard</span> <span class="keyword">let</span> tax_percent = <span class="type">Int</span>((<span class="built_in">readLine</span>()?.trimmingCharacters(<span class="keyword">in</span>: .whitespacesAndNewlines))!)</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">fatalError</span>(<span class="string">"Bad input"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">solve(meal_cost: meal_cost, tip_percent: tip_percent, tax_percent: tax_percent)</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2020/05/13/hackerrank-data-types/">
                 [HackerRank] Data Types
             </a>
@@ -625,41 +664,6 @@
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/03/31/beakjoon-1-1/">
-                [BaekJoon] Hello World
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-03-31</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/baekjoon/">BAEKJOON</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="컴파일-에러"><a href="#컴파일-에러" class="headerlink" title="컴파일 에러"></a>컴파일 에러</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="런타임-에러"><a href="#런타임-에러" class="headerlink" title="런타임 에러"></a>런타임 에러</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.print(<span class="string">"Hello World!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="맞았습니다"><a href="#맞았습니다" class="headerlink" title="맞았습니다!"></a>맞았습니다!</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -702,6 +706,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2020/05/17/hackerrank-operator/">[HackerRank] Operators</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2020/05/13/hackerrank-data-types/">[HackerRank] Data Types</a>
             </li>
             
@@ -711,10 +719,6 @@
             
             <li>
                 <a class="footer-post" href="/2020/04/15/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EC%8B%A4%EC%8A%B5%ED%8E%B8-1/">[iOS] 앱 개발 실습편 (1)</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2020/04/13/algorithm-%EA%B7%B8%EB%9E%98%ED%94%84/">[Algorithm] 그래프</a>
             </li>
             
         </ul>
@@ -736,11 +740,11 @@
         </li>
         
         <li>
-            <a class="footer-post" href="/categories/algorithm/selection-sort/">selection sort</a>
+            <a class="footer-post" href="/categories/vuejs/">vuejs</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/categories/vuejs/">vuejs</a>
+            <a class="footer-post" href="/categories/computational-modeling/">Computational Modeling</a>
         </li>
         
     </ul>
