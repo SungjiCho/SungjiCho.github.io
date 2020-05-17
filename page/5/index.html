@@ -147,6 +147,446 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2019/11/20/html5-css3/">
+                [HTML&CSS] 초보자를 위한 HTML&CSS 동작과 원리
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-20</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/html-css/">HTML&CSS</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="초보자를-위한-HTML-amp-CSS-동작과-원리"><a href="#초보자를-위한-HTML-amp-CSS-동작과-원리" class="headerlink" title="초보자를 위한 HTML&amp;CSS 동작과 원리"></a>초보자를 위한 HTML&amp;CSS 동작과 원리</h1><p>본 포스팅은 edwith 강의 중 &lt;초보자를 위한 HTML&amp;CSS 동작과 원리&gt;를 바탕으로 합니다.</p>
+<p><br></br></p>
+<ul>
+<li>CHAPTER 1: HTML을 통한 웹사이트 구조 설계</li>
+</ul>
+<ul>
+<li><ol>
+<li>HTML은 무엇이고 어떻게 만드나요?</li>
+</ol>
+</li>
+<li><ol>
+<li>HTML의 중요 태그</li>
+</ol>
+</li>
+<li><ol>
+<li>UI 레이아웃을 위한 HTML 태그</li>
+</ol>
+</li>
+<li><ol>
+<li>HTML 구조화 설계</li>
+</ol>
+</li>
+<li><ol>
+<li>ID와 Class</li>
+</ol>
+</li>
+<li><ol>
+<li>개발자도구(Elements tab)을 활용한 HTML CSS 디버깅</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>CHAPTER 2: CSS 기본개념과 랜더링원리</li>
+</ul>
+<ul>
+<li><ol>
+<li>CSS를 HTML에서 사용하는 방법</li>
+</ol>
+</li>
+<li><ol>
+<li>CSS에서의 상속 개념</li>
+</ol>
+</li>
+<li><ol>
+<li>캐스케이딩 - computed style이 결정되는 방식</li>
+</ol>
+</li>
+<li><ol>
+<li>Selector를 활용한 DOM 탐색</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>CHAPTER 3. CSS 기본스타일 적용방법</li>
+</ul>
+<ul>
+<li><ol>
+<li>COLOR, FONT와 같은 스타일 변경 방법</li>
+</ol>
+</li>
+<li><ol>
+<li>BOX Model을 이용한 엘리먼트 배치</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>CHAPTER 4. Layout 설정</li>
+</ul>
+<ul>
+<li><ol>
+<li>Position 속성을 이용한 Layout</li>
+</ol>
+</li>
+<li><ol>
+<li>Float 기반 Layout 1편</li>
+</ol>
+</li>
+<li><ol>
+<li>Float 기반 Layout 2편 - float에서 생기는 문제 해결</li>
+</ol>
+</li>
+<li><ol>
+<li>FLEX 기반 Layout</li>
+</ol>
+</li>
+<li><ol>
+<li>z-index 속성의 이해</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>CHAPTER 5. LESS로 CSS 프로그래밍하기</li>
+</ul>
+<ul>
+<li><ol>
+<li>CSS언어의 아쉬운 점</li>
+</ol>
+</li>
+<li><ol>
+<li>LESS Syntax</li>
+</ol>
+</li>
+<li><ol>
+<li>LESS Compile</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>CHAPTER 6. 필수 CSS3 속성으로 애니메이션 구현</li>
+</ul>
+<ul>
+<li><ol>
+<li>transition을 이용한 CSS 기본 애니메이션</li>
+</ol>
+</li>
+<li><ol>
+<li>transform 속성 활용</li>
+</ol>
+</li>
+</ul>
+<p><br></br></p>
+<p><hr><br><br></br></p>
+<p>웹과 HTML은 떼려야 뗄 수 없는 관계입니다. 우선 웹이 어떻게 동작하는지 알아보고 그 안에서 HTML의 역할이 무엇인지 살펴보겠습니다. 그렇다면 HTML이란 무엇일까요? 컴퓨터에서 사용하는 모든 파일에는 각각 고유의 형식이 있습니다. 예를 들어 엑셀 프로그램으로 문서를 작성했다면 확장자가 <em>.xlsx인 파일로 저장되죠. 웹의 경우도 마찬가지입니다.<br>웹 사이트에서 사용할 문서는 웹에 맞는 형식인 </em>.html(또는 *.htm) 확장자를 붙여 다른 문서와 구분하고 이 파일을 더블 클릭하면 웹 브라우저가 실행되면서 그 안의 내용이 표시됩니다.</p>
+<p>하지만 일반 문서와 웹 문서는 큰 차이가 있습니다. 엑셀 문서를 비롯한 일반 문서는 내용을 입력하는 프로그램과 나중에 그 내용을 확인하는 프로그램이 같지만 웹 문서는 문서를 작성하는 프로그램과 그 내용을 보는 프로그램이 서로 다릅니다. 웹 문서를 작성하는 프로그램을 ‘웹 편집기’라고 하고 웹 문서를 보는 프로그램을 ‘웹 브라우저’라고 합니다. </p>
+<p>그렇다면 다시 질문으로 돌아가 HTML이란 무엇일까요? HTML은 하이퍼텍스트 마크업 랭귀지의 줄임말로 말 그대로 해석하면 하이퍼텍스트를 마크업하는 언어입니다. <strong>‘하이퍼텍스트’</strong>란 웹 사이트에서 링크를 클릭해 다른 문서나 사이트로 즉시 이동할 수 있는 기능을 말하고 <strong>‘마크업’</strong>이란 태그(tag)를 사용해 문서에서 어느 부분이 제목이고 본문인지, 어느 부분이 사진이고 링크인지 표시하는 것을 말합니다. 즉, 웹에서 자유롭게 오갈 수 있는 웹 문서를 만드는 언어가 HTML이라고 정리할 수 있습니다.</p>
+<p><br></br></p>
+<h4 id="HTML-속성-중-class와-id란-무엇이며-어떻게-사용할까요"><a href="#HTML-속성-중-class와-id란-무엇이며-어떻게-사용할까요" class="headerlink" title="HTML 속성 중 class와 id란 무엇이며 어떻게 사용할까요?"></a>HTML 속성 중 class와 id란 무엇이며 어떻게 사용할까요?</h4><ul>
+<li>ID</li>
+</ul>
+<ul>
+<li>고유한 속성으로 한 HTML 문서에 하나만 사용 가능</li>
+<li>고유한 ID 값이 있으면 하나하나에 특별한 제어를 할 수 있으며 검색에도 용이</li>
+</ul>
+<ul>
+<li>Class</li>
+</ul>
+<ul>
+<li>하나의 HTML 문서안에 중복해서 사용 가능</li>
+<li>홈페이지 전체적인 스타일을 일관성 있게 지정하기 위해서는 Class의 사용이 필수적</li>
+</ul>
+<p><br></br></p>
+<h4 id="HTML로-뼈대를-만들었다면-이제-CSS를-어떻게-사용할-수-있을까"><a href="#HTML로-뼈대를-만들었다면-이제-CSS를-어떻게-사용할-수-있을까" class="headerlink" title="HTML로 뼈대를 만들었다면 이제 CSS를 어떻게 사용할 수 있을까?"></a>HTML로 뼈대를 만들었다면 이제 CSS를 어떻게 사용할 수 있을까?</h4><p>CSS는 글꼴, 글자색, 글자 크기 등의 페이지 스타일을 만드는 데 이용하는 스타일시트 언어로 CSS의 구성과 선언 방법 등 기본 사용법에 대해서 알아보도록 하자.</p>
+<p></p><p></p>
+
+<h5 id="CSS의-구성"><a href="#CSS의-구성" class="headerlink" title="CSS의 구성"></a>CSS의 구성</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">span &#123;</span><br><span class="line">  color : red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p></p>
+
+<ul>
+<li>span: selector</li>
+<li>color: property</li>
+<li>red: value</li>
+</ul>
+<p></p><p></p>
+
+<h5 id="style을-HTML페이지에-적용하는-3가지-방법"><a href="#style을-HTML페이지에-적용하는-3가지-방법" class="headerlink" title="style을 HTML페이지에 적용하는 3가지 방법"></a>style을 HTML페이지에 적용하는 3가지 방법</h5><p>inline &gt; internal &gt; external의 우선순위 순서로 적용</p>
+<p></p>
+
+<ol>
+<li>inline</li>
+</ol>
+<ul>
+<li>HTML태그 안에다가 적용</li>
+<li>다른 CSS 파일에 적용한 것 보다 가장 먼저 적용</li>
+</ul>
+<ol>
+<li>internal</li>
+</ol>
+<ul>
+<li>style 태그로 지정</li>
+<li>구조와 스타일이 섞이게 되므로 유지보수의 어려움</li>
+<li>별도의 CSS 파일을 관리하지 않아도 되며 서버에 CSS파일을 부르기 위해 별도의 브라우저가 요청을 보낼 필요가 없음</li>
+</ul>
+<ol>
+<li>external</li>
+</ol>
+<ul>
+<li>외부파일(.css)로 지정</li>
+</ul>
+<p></p><p></p>
+
+<h5 id="코드실습"><a href="#코드실습" class="headerlink" title="코드실습"></a>코드실습</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">     div &gt; p &#123;</span><br><span class="line"><span class="css">       <span class="selector-tag">font-size</span><span class="selector-pseudo">:20px</span>;</span></span><br><span class="line">     &#125; </span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css_basic.css"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"color:blue;"</span>&gt;</span> Hello <span class="tag">&lt;/<span class="name">p</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p></p>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div &gt; p &#123;</span><br><span class="line">  color: red;</span><br><span class="line">  border: 1px solid slategray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br>&lt;/br&gt;<br></br></p>
+<h5 id="CSS에서의-상속-개념"><a href="#CSS에서의-상속-개념" class="headerlink" title="CSS에서의 상속 개념"></a>CSS에서의 상속 개념</h5><p>CSS의 상속 개념은 상위에 설정된 스타일을 하위에서도 사용한다는 것입니다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">      body &gt; div &#123;</span><br><span class="line">        color : green;</span><br><span class="line">        border : 2px solid slategray;</span><br><span class="line">        padding : 30px;</span><br><span class="line">      &#125; </span><br><span class="line">      div ul li div p &#123;</span><br><span class="line">        font-size : 30px;</span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-id">#here</span>&#123;</span></span><br><span class="line">        font-size : 60px;</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span>&gt;</span>my text is upper!<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span>&gt;</span>my text is dummy<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>blah blah<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"here"</span>&gt;</span>blah blah<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><br></br></p>
+<p><img src="/image/edwith1.png" alt="edwith1"></p>
+<p><br>&lt;/br&gt;<br></br></p>
+<h5 id="캐스케이딩-computed-style이-결정되는-방식"><a href="#캐스케이딩-computed-style이-결정되는-방식" class="headerlink" title="캐스케이딩 - computed style이 결정되는 방식"></a>캐스케이딩 - computed style이 결정되는 방식</h5><p>CSS는 Cascading Style Sheets의 약자로, 그 의미를 살펴보면 하나의 태그에 여러 가지 방법으로 동일한 속성의 스타일을 적용하는 경우 우선순위에 따라서 적용될 스타일이 결정된다는 것이다. 따라서 한 요소에 대한 여러 가지 선언이 이루어지는 경우 충돌을 피할 수 있게끔 computed style이 결정되는 방식을 고려해야 한다.</p>
+<p></p>
+
+<ul>
+<li>배경</li>
+</ul>
+<ul>
+<li>CSS는 여러 가지 스타일 정보를 기반으로 최종적으로 ‘경쟁’에 의해서 적절한 스타일이 반영</li>
+<li>경쟁: 똑같은 속성을 CSS파일 혹은 inline으로 정의를 중복으로 한 경우, 다른 selector을 사용하였지만 결국 같은 노드를 가리키는 경우 어떤 스타일을 브라우저가 반영을 하는가?</li>
+</ul>
+<ul>
+<li>선언방식에 따른 차이</li>
+</ul>
+<ul>
+<li>inline &gt; internal &gt; external</li>
+<li>id &gt; class &gt; element</li>
+<li>동일한 노드를 가리킨다면 나중에 것, 더 구체적으로 노드를 표현한 것을 먼저 적용</li>
+</ul>
+<p><br>&lt;/br&gt;<br></br></p>
+<h5 id="Selector를-활용한-DOM-탐색"><a href="#Selector를-활용한-DOM-탐색" class="headerlink" title="Selector를 활용한 DOM 탐색"></a>Selector를 활용한 DOM 탐색</h5><p>특정 엘리먼트에 스타일을 적용하기 위해서는 해당 엘리먼트를 잘 찾아야 한다. 특정 엘리먼트뿐 아니라 복수개의 엘리먼트일 수 있다. 엘리먼트를 쉽고 빠르게 찾을 수 있는 selector 문법을 알아보자. CSS selector는 패턴 매칭을 시켜주는 방법으로 DOM과 같은 트리 구조의 데이터를 빠르게 찾아가는 방법이다.</p>
+<p></p>
+
+<ul>
+<li>CSS selector</li>
+</ul>
+<ul>
+<li>HTML의 요소를 tag, id, html 태그 속성 등을 통해 쉽게 찾아주는 방법</li>
+</ul>
+<ul>
+<li>Element에 Style 지정을 위한 3가지 기본 선택자</li>
+</ul>
+<ul>
+<li><ol>
+<li>tag로 지정하기<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">  span &#123;</span><br><span class="line">    color : red;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p></p>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>id로 지정하기<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-id">#spantag</span> &#123;</span></span><br><span class="line">    color : red;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"spantag"</span>&gt;</span> HELLO WORLD! <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<p></p>
+
+<ul>
+<li><ol>
+<li>class로 지정하기<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.spanClass</span>&#123;</span></span><br><span class="line">    color : red</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"spanClass"</span>&gt;</span> HELLO WORLD! <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<p></p><p></p>
+
+<ul>
+<li>CSS Selector의 다양한 활용</li>
+</ul>
+<ul>
+<li>id, class 요소 선택자와 함께 활용</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#myid &#123; color : red &#125;</span><br><span class="line">div.myclassname &#123; color : red &#125;</span><br></pre></td></tr></table></figure>
+<p></p>
+
+<ul>
+<li>그룹 선택</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">h1, span, div &#123; color : red &#125;</span><br><span class="line">h1, span, div#id &#123; color : red &#125;</span><br><span class="line">h1, span, div, classname &#123; color : red &#125;</span><br></pre></td></tr></table></figure>
+<p></p>
+
+<ul>
+<li>요소 선택 (공백) - 자손요소</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"jisu"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span> span tag <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span> span tag 2 <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p></p>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#jisu span &#123; color : red &#125;</span><br></pre></td></tr></table></figure>
+<p></p>
+
+<ul>
+<li>자식 선택 (&gt;)</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#jisu &gt; span &#123; color : red &#125;</span><br></pre></td></tr></table></figure>
+<p></p>
+
+<ul>
+<li>n번째 자식요소를 선택 (nth-child)</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"jisu"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>단락 선택<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>첫번째 단락입니다.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>두번째 단락입니다.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>세번째 단락입니다.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>네번째 단락입니다.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p></p>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#jisu &gt; p:nth-child(2) &#123; color : red &#125;</span><br></pre></td></tr></table></figure>
+<p><br>&lt;/br&gt;<br></br></p>
+<h5 id="BOX-Model을-이용한-엘리먼트-배치"><a href="#BOX-Model을-이용한-엘리먼트-배치" class="headerlink" title="BOX Model을 이용한 엘리먼트 배치"></a>BOX Model을 이용한 엘리먼트 배치</h5><p>CSS에서 element는 박스의 형태를 가지고 있는데, 이를 박스모델이라고 한다. 여기서는 박스모델의 속성과 다양한 축약표기법에 대해 알아보도록 하자.</p>
+<ul>
+<li>Box Model</li>
+</ul>
+<ul>
+<li>HTML의 element는 사각형 박스 형태를 가지며, 다음과 같은 속성을 가진다.</li>
+<li>margin: elements간의 간격</li>
+<li>border: 테두리 두께</li>
+<li>padding: 테두리와 글자 간의 간격</li>
+</ul>
+<ul>
+<li>margin의 특성</li>
+</ul>
+<ul>
+<li>인접한 두 개의 block element가 서로 다른 margin을 가지고 있다면?<br>큰 값을 가진 margin값이 공유되어 사용됨<br>10px + 20px = 20px</li>
+<li>인접한 두 개의 inline element의 margin은?<br>각각의 margin의 합으로 표현된다.<br>10px + 20px = 30px</li>
+</ul>
+<p></p>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">      div &#123;</span><br><span class="line">        width : 100px;</span><br><span class="line">        height : 100px;</span><br><span class="line">        border : 4px solid slategray;</span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span> &#123;</span></span><br><span class="line">        padding : 10px 10px 10px 10px;</span><br><span class="line">        margin : 30px;</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">      div element</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      other div element</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><br></br></p>
+<p><img src="/image/edwith2.png" alt="edwith2"></p>
+<p><br>&lt;/br&gt;<br></br></p>
+<h5 id="CSS-속성-중-Position을-이용한-Layout"><a href="#CSS-속성-중-Position을-이용한-Layout" class="headerlink" title="CSS 속성 중 Position을 이용한 Layout"></a>CSS 속성 중 Position을 이용한 Layout</h5><p>Position은 어떤 값을 할당할 수 있으며, 위치 값을 조정하는 데에 사용하는 속성이다. static과 relative, absolute, fixed의 네 가지 속성을 실습코드로 살펴보자. 참고로 absolute의 경우는 부모의 position 값이 static이 아닌 경우를 타고 올라가며 찾아 해당 엘리먼트를 기준점으로 삼는다.</p>
+<p></p>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span>&gt;<span class="selector-tag">div</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">border</span><span class="selector-pseudo">:1px</span> <span class="selector-tag">solid</span> <span class="selector-tag">gray</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">width</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">margin</span><span class="selector-pseudo">:10px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">position</span><span class="selector-pseudo">:static</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span>&gt;<span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(2)</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background-color</span><span class="selector-pseudo">:yellow</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">position</span><span class="selector-pseudo">:relative</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">top</span><span class="selector-pseudo">:10px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">left</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span>&gt;<span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(1)</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">position</span><span class="selector-pseudo">:absolute</span>;    </span></span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>first<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>second<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>third<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p></p><p></p>
+
+<h5 id="CSS-float-속성-기반-Layout"><a href="#CSS-float-속성-기반-Layout" class="headerlink" title="CSS float 속성 기반 Layout"></a>CSS float 속성 기반 Layout</h5><p></p>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.wrap</span>&gt;<span class="selector-tag">div</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">border</span><span class="selector-pseudo">:1px</span> <span class="selector-tag">solid</span> <span class="selector-tag">gray</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">width</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">margin</span><span class="selector-pseudo">:10px</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span>&gt;<span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(2)</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background-color</span><span class="selector-pseudo">:red</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">margin-left</span><span class="selector-pseudo">:200px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">float</span><span class="selector-pseudo">:left</span></span></span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>first<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>second<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>third<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p></p><p></p>
+
+<h5 id="float을-만들-때-생기는-문제점과-해결-방법"><a href="#float을-만들-때-생기는-문제점과-해결-방법" class="headerlink" title="float을 만들 때 생기는 문제점과 해결 방법"></a>float을 만들 때 생기는 문제점과 해결 방법</h5><ul>
+<li>float와 overflow의 관계</li>
+</ul>
+<ul>
+<li>하위 엘리먼트에 float을 주었을 경우, 상위 엘리먼트의 overflow에는 auto 혹은 hidden으로 부여해야 한다. </li>
+</ul>
+<p></p>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background-color</span><span class="selector-pseudo">:slategray</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">padding</span><span class="selector-pseudo">:0.5rem</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">width</span><span class="selector-pseudo">:300px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">box-sizing</span><span class="selector-pseudo">:border-box</span>;</span></span><br><span class="line"><span class="xml">        overflow:auto; <span class="comment">&lt;!--hidden--&gt;</span></span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.wrap</span>&gt;<span class="selector-tag">div</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">color</span><span class="selector-pseudo">:white</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background-color</span><span class="selector-pseudo">:black</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">width</span><span class="selector-pseudo">:50px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">height</span><span class="selector-pseudo">:50px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">margin</span><span class="selector-pseudo">:0.5rem</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">float</span><span class="selector-pseudo">:left</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line">      footer&#123;</span><br><span class="line"><span class="css">        <span class="selector-tag">width</span><span class="selector-pseudo">:300px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background-color</span><span class="selector-pseudo">:green</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">margin-top</span><span class="selector-pseudo">:0.5rem</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">clear</span><span class="selector-pseudo">:left</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>first<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>second<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>third<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">footer</span>&gt;</span><span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><br></br></p>
+<p><img src="/image/edwith3.png" alt="edwith3"></p>
+<p><br>&lt;/br&gt;<br></br></p>
+<h5 id="웹페이지를-만들-때-Layout을-쉽게-만들-수-있도록-도와주는-CSS-속성-FLEX"><a href="#웹페이지를-만들-때-Layout을-쉽게-만들-수-있도록-도와주는-CSS-속성-FLEX" class="headerlink" title="웹페이지를 만들 때 Layout을 쉽게 만들 수 있도록 도와주는 CSS 속성, FLEX"></a>웹페이지를 만들 때 Layout을 쉽게 만들 수 있도록 도와주는 CSS 속성, FLEX</h5><p></p>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background-color</span><span class="selector-pseudo">:slategray</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">height</span><span class="selector-pseudo">:500px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">display</span><span class="selector-pseudo">:flex</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">flex-direction</span><span class="selector-pseudo">:row</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">justify-content</span><span class="selector-pseudo">:flex-end</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span>&gt;<span class="selector-tag">div</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background-color</span><span class="selector-pseudo">:skyblue</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">color</span><span class="selector-pseudo">:white</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">padding</span><span class="selector-pseudo">:0.5rem</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">height</span><span class="selector-pseudo">:30px</span>;  </span></span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>login<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>home<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>about<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><br>&lt;/br&gt;<br></br></p>
+<h5 id="z-index-속성의-이해"><a href="#z-index-속성의-이해" class="headerlink" title="z-index 속성의 이해"></a>z-index 속성의 이해</h5><p>포지션 속성 값이 static이 아닌 element끼리는 겹칠 수 있다. 기본 순서는 나중에 선언된 것이 위로 나오게 되지만, 만약 이 순서를 바꾸고 싶다면 어떻게 해야 할까?</p>
+<p></p>
+
+<ul>
+<li>쌓임 맥락 (Stacking Context)</li>
+</ul>
+<ul>
+<li>자식 엘리먼트들의 z-index 속성 값은 오로지 부모안에서만 의미를 가짐</li>
+<li>쌓임 맥락은 부모 엘리먼트의 쌓임 맥락을 구성하는 하나의 단위</li>
+<li>부모가 가지고 있는 z-index 값이라는 기본 속성이 낮으면, 자식의 z-index 값이 높아도 부모의 쌓임 순서를 따름</li>
+</ul>
+<p></p>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">position</span><span class="selector-pseudo">:relative</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background</span><span class="selector-pseudo">:slategray</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">z-index</span><span class="selector-pseudo">:1</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span>&gt;<span class="selector-tag">div</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">width</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">margin</span><span class="selector-pseudo">:0.5rem</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">color</span>:<span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">position</span><span class="selector-pseudo">:absolute</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span>&gt;<span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(1)</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">top</span><span class="selector-pseudo">:10px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">left</span><span class="selector-pseudo">:10px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background-color</span><span class="selector-pseudo">:red</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">z-index</span><span class="selector-pseudo">:1</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span>&gt;<span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(2)</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">top</span><span class="selector-pseudo">:30px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">left</span><span class="selector-pseudo">:30px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background-color</span><span class="selector-pseudo">:green</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">z-index</span><span class="selector-pseudo">:99999</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span>&gt;<span class="selector-tag">div</span><span class="selector-pseudo">:nth-child(3)</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">top</span><span class="selector-pseudo">:50px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">left</span><span class="selector-pseudo">:50px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background-color</span><span class="selector-pseudo">:blue</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">z-index</span><span class="selector-pseudo">:-1</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.wrap2</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">width</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">position</span><span class="selector-pseudo">:absolute</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">top</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">left</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background-color</span>:<span class="selector-id">#dd1</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">z-index</span><span class="selector-pseudo">:2</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>first<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>second<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span>third<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap2"</span>&gt;</span></span><br><span class="line">      another...</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><br></br></p>
+<p><img src="/image/edwith4.png" alt="edwith4"></p>
+<p><br>&lt;/br&gt;<br></br></p>
+<h5 id="CSS언어의-아쉬운-점"><a href="#CSS언어의-아쉬운-점" class="headerlink" title="CSS언어의 아쉬운 점"></a>CSS언어의 아쉬운 점</h5><p>CSS 개발을 하다 보면, 중복적인 요소에 대한 변수 처리가 지원되지 아노는 부분이나, 중첩된 룰처리의 어려움과 같이 아쉬운 점을 느낄 수 있다. 실습을 통해 살펴보자.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">width</span><span class="selector-pseudo">:300px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">height</span><span class="selector-pseudo">:400px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">border</span><span class="selector-pseudo">:1px</span> <span class="selector-tag">solid</span> <span class="selector-tag">gray</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">padding</span><span class="selector-pseudo">:1rem</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.content</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">width</span><span class="selector-pseudo">:200px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">border</span><span class="selector-pseudo">:1px</span> <span class="selector-tag">solid</span> <span class="selector-tag">gray</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">margin</span><span class="selector-pseudo">:0px</span> <span class="selector-tag">auto</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.content</span> <span class="selector-tag">li</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">list-style</span><span class="selector-pseudo">:none</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.content</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">color</span>:<span class="selector-id">#5d1</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line">      footer li&#123;</span><br><span class="line"><span class="css">        <span class="selector-tag">color</span><span class="selector-pseudo">:red</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span> <span class="selector-tag">h3</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">text-align</span><span class="selector-pseudo">:center</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">color</span>:<span class="selector-id">#5d1</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">h3</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span> = <span class="string">"content"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>한국일보<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>조선일보<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>매일경제<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>스포츠조선<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>새로운뉴스<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>이전뉴스<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>인기뉴스<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p></p>
+
+<ul>
+<li>CSS 언어의 아쉬운 점</li>
+</ul>
+<ul>
+<li>variable</li>
+<li>operation</li>
+<li>mixin (이미 선언된 클래스를 재활용해서 사용하고 싶을 때)</li>
+<li>중첩된 룰처리</li>
+</ul>
+<p><br>&lt;/br&gt;<br></br></p>
+<h5 id="LESS-Syntax"><a href="#LESS-Syntax" class="headerlink" title="LESS Syntax"></a>LESS Syntax</h5><p></p>
+
+<p>LESS는 CSS에서 공식적으로 지원하지 않기 때문에, CSS로 변환 후 브라우저에 배포해야 한다. 배포 전, 개발 단계에서 LESS를 어떻게 사용하는지, 그 중 variable과 mixin에 대해 알아보자.</p>
+<p></p>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">@base_width: 300px;</span><br><span class="line">@base_height: 200px;</span><br><span class="line">@gray_border: 1px solid gray;</span><br><span class="line">@text-base-color: #5d1;</span><br><span class="line"></span><br><span class="line">.wrap&#123;</span><br><span class="line">  width: @base_width;</span><br><span class="line">  height: @base_height;</span><br><span class="line">  border: @gray_border;</span><br><span class="line">  padding: 1rem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.wrap h3&#123;</span><br><span class="line">  text-align: center;</span><br><span class="line">  color: @text-base-color;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.content&#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: @base_height/2;</span><br><span class="line">  border: @gray_border;</span><br><span class="line">  margin: auto</span><br><span class="line">  li&#123;</span><br><span class="line">    list-style: none;</span><br><span class="line">    a&#123;</span><br><span class="line">      color: @text-base-color;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">footer li&#123;</span><br><span class="line">  list-style: none;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">footer ul&#123;</span><br><span class="line">  .content;</span><br><span class="line">  margin-top: 12px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p></p>
+
+<h5 id="LESS-Compile"><a href="#LESS-Compile" class="headerlink" title="LESS Compile"></a>LESS Compile</h5><p></p>
+
+<ul>
+<li><p>test.css</p>
+<p></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">@base_width: 300px;</span><br><span class="line">@base_height: 200px;</span><br><span class="line">@gray_border: 1px solid gray;</span><br><span class="line">@text-base-color: #5d1;</span><br><span class="line"></span><br><span class="line">.wrap&#123;</span><br><span class="line">  width: @base_width;</span><br><span class="line">  height: @base_height;</span><br><span class="line">  border: @gray_border;</span><br><span class="line">  padding: 1rem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.wrap h3&#123;</span><br><span class="line">  text-align: center;</span><br><span class="line">  color: @text-base-color;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.content&#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: @base_height/2;</span><br><span class="line">  border: @gray_border;</span><br><span class="line">  margin: auto;</span><br><span class="line">  li&#123;</span><br><span class="line">    list-style: none;</span><br><span class="line">    a&#123;</span><br><span class="line">      color: @text-base-color;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">footer li&#123;</span><br><span class="line">  list-style: none;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">footer ul&#123;</span><br><span class="line">  .content;</span><br><span class="line">  margin-top: 12px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p></p>
+</li>
+<li><p>Command Line</p>
+</li>
+</ul>
+<p></p>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lessc test.less test.css</span><br></pre></td></tr></table></figure>
+<p></p>
+
+<ul>
+<li>test.css</li>
+</ul>
+<p></p>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">.wrap &#123;</span><br><span class="line">  width: 300px;</span><br><span class="line">  height: 200px;</span><br><span class="line">  border: 1px solid gray;</span><br><span class="line">  padding: 1rem;</span><br><span class="line">&#125;</span><br><span class="line">.wrap h3 &#123;</span><br><span class="line">  text-align: center;</span><br><span class="line">  color: #5d1;</span><br><span class="line">&#125;</span><br><span class="line">.content &#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  border: 1px solid gray;</span><br><span class="line">  margin: auto;</span><br><span class="line">&#125;</span><br><span class="line">.content li &#123;</span><br><span class="line">  list-style: none;</span><br><span class="line">&#125;</span><br><span class="line">.content li a &#123;</span><br><span class="line">  color: #5d1;</span><br><span class="line">&#125;</span><br><span class="line">footer li &#123;</span><br><span class="line">  list-style: none;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br><span class="line">footer ul &#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  border: 1px solid gray;</span><br><span class="line">  margin: auto;</span><br><span class="line">  margin-top: 12px;</span><br><span class="line">&#125;</span><br><span class="line">footer ul li &#123;</span><br><span class="line">  list-style: none;</span><br><span class="line">&#125;</span><br><span class="line">footer ul li a &#123;</span><br><span class="line">  color: #5d1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br>&lt;/br&gt;<br></br></p>
+<h5 id="transition을-이용한-CSS-기본-애니메이션"><a href="#transition을-이용한-CSS-기본-애니메이션" class="headerlink" title="transition을 이용한 CSS 기본 애니메이션"></a>transition을 이용한 CSS 기본 애니메이션</h5><p>Box element에 CSS 속성을 변경할 때 애니메이션 속도를 조절하고 싶은 경우, CSS transition을 사용한다.</p>
+<p></p>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">      <span class="selector-class">.box</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">width</span><span class="selector-pseudo">:100px</span>; <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background-color</span><span class="selector-pseudo">:slategray</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">color</span>:<span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">text-align</span><span class="selector-pseudo">:center</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">line-height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">transition</span><span class="selector-pseudo">:height</span> 2<span class="selector-tag">s</span>, <span class="selector-tag">width</span> 2<span class="selector-tag">s</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">      box</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"box.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p></p>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.querySelector(<span class="string">".box"</span>);</span><br><span class="line">box.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">evt</span>)</span>&#123;</span><br><span class="line">  evt.target.style.height = <span class="string">"200px"</span>;</span><br><span class="line">  evt.target.style.width = <span class="string">"200px"</span>;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><br>&lt;/br&gt;<br></br></p>
+<h5 id="transform을-이용해서-element를-변형시키는-방법"><a href="#transform을-이용해서-element를-변형시키는-방법" class="headerlink" title="transform을 이용해서 element를 변형시키는 방법"></a>transform을 이용해서 element를 변형시키는 방법</h5><p>transform은 좌표공간을 변형함으로써, 다른 엘리먼트에 영향을 미치지 않고 특정 엘리먼트의 위치를 바꿀 수 있다. translate값을 주는 경우 빠른 속도를 보여줄 수 잇으며, GPU 연산을 통해 빠르게 브라우저 렌더링을 처리할 수 있는 대표적인 속성이다.</p>
+<p></p>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">position</span><span class="selector-pseudo">:relatvie</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.box</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">width</span><span class="selector-pseudo">:100px</span>; <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background-color</span><span class="selector-pseudo">:slategray</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">color</span>:<span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">text-align</span><span class="selector-pseudo">:center</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">line-height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">position</span><span class="selector-pseudo">:absolute</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.box</span><span class="selector-pseudo">:nth-child(2)</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">left</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.box</span><span class="selector-pseudo">:nth-child(3)</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">left</span><span class="selector-pseudo">:200px</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box 3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"box.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p></p>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">      <span class="selector-class">.wrap</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">position</span><span class="selector-pseudo">:relatvie</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">transform</span><span class="selector-pseudo">:translate3d(10px</span>,0,0);</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.box</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">width</span><span class="selector-pseudo">:100px</span>; <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background-color</span><span class="selector-pseudo">:slategray</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">color</span>:<span class="selector-id">#fff</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">text-align</span><span class="selector-pseudo">:center</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">line-height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">position</span><span class="selector-pseudo">:absolute</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.box</span><span class="selector-pseudo">:nth-child(2)</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">transform</span><span class="selector-pseudo">:translate3d(100px</span>,0,0);</span></span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="selector-class">.box</span><span class="selector-pseudo">:nth-child(3)</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">transform</span><span class="selector-pseudo">:translate3d(200px</span>,0,0);</span></span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box 3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"box.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2019/11/18/Programmers-%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8-%EB%AA%A9%EB%A1%9D/">
                 [Programmers] 전화번호 목록
             </a>
@@ -245,6 +685,75 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2019/11/17/Algorithm-%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/">
+                [Algorithm] 선택정렬
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-17</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/algorithm/">algorithm</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="선택정렬-selection-sort"><a href="#선택정렬-selection-sort" class="headerlink" title="선택정렬(selection sort)"></a>선택정렬(selection sort)</h1><h6 id="본-포스팅은-lt-그림으로-정리한-알고리즘과-자료구조-gt-를-바탕으로-진행합니다"><a href="#본-포스팅은-lt-그림으로-정리한-알고리즘과-자료구조-gt-를-바탕으로-진행합니다" class="headerlink" title="본 포스팅은 &lt;그림으로 정리한 알고리즘과 자료구조&gt;를 바탕으로 진행합니다."></a>본 포스팅은 &lt;그림으로 정리한 알고리즘과 자료구조&gt;를 바탕으로 진행합니다.</h6><p><br></br></p>
+<h3 id="선택정렬-알고리즘-알아보기"><a href="#선택정렬-알고리즘-알아보기" class="headerlink" title="선택정렬 알고리즘 알아보기"></a>선택정렬 알고리즘 알아보기</h3><p>선택정렬(Selection Sort) 알고리즘은 가장 작은 데이터를 찾아 가장 앞 데이터와 교환하는 알고리즘으로, 사용방법은 다음과 같습니다.</p>
+<ul>
+<li>데이터 중에서 가장 작은 것을 찾아서 처음에 있는 것과 위치를 교환합니다.</li>
+<li>두 번째부터 마지막까지의 데이터 중에서 가장 작은 것을 찾아서 두 번째와 위치를 교환합니다.</li>
+<li>위의 과정을 계속 반복합니다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">SelectionSort</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(array)<span class="number">-1</span>):</span><br><span class="line">        min_idx = i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(array)):</span><br><span class="line">            <span class="keyword">if</span> array[min_idx] &gt; array[j]:</span><br><span class="line">                array[min_idx], array[j] = array[j], array[min_idx]</span><br><span class="line">    <span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/11/17/Programmers-2016%EB%85%84/">
+                [Programmers] 2016년
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-17</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/programmers/">programmers</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    day = [<span class="string">'THU'</span>, <span class="string">'FRI'</span>, <span class="string">'SAT'</span>, <span class="string">'SUN'</span>, <span class="string">'MON'</span>, <span class="string">'TUE'</span>, <span class="string">'WED'</span>]</span><br><span class="line">    month = [<span class="number">31</span>, <span class="number">29</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>]</span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">1</span>:</span><br><span class="line">        answer = day[b%<span class="number">7</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        total = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(a<span class="number">-1</span>):</span><br><span class="line">            total += month[i]</span><br><span class="line">        answer = day[(total+b)%<span class="number">7</span>]</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2019/11/17/Programmers-K%EB%B2%88%EC%A7%B8%EC%88%98/">
                 [Programmers] K번째수
             </a>
@@ -310,6 +819,37 @@
     
         <div class="content">
             <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(s)</span>:</span></span><br><span class="line">    line = list(s)</span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> len(s)%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span><span class="number">-1</span>] + line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/11/17/Programmers-%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C-%EA%B9%80%EC%84%9C%EB%B0%A9-%EC%B0%BE%EA%B8%B0/">
+                [Programmers] 서울에서 김서방 찾기
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-17</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/programmers/">programmers</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(seoul)</span>:</span></span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(seoul)):</span><br><span class="line">        <span class="keyword">if</span> seoul[i] == <span class="string">"Kim"</span>:</span><br><span class="line">            answer = <span class="string">"김서방은 "</span> + str(i) + <span class="string">"에 있다"</span></span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
 
         </div>
     
@@ -440,174 +980,6 @@
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/17/Programmers-%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C-%EA%B9%80%EC%84%9C%EB%B0%A9-%EC%B0%BE%EA%B8%B0/">
-                [Programmers] 서울에서 김서방 찾기
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-17</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/programmers/">programmers</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(seoul)</span>:</span></span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(seoul)):</span><br><span class="line">        <span class="keyword">if</span> seoul[i] == <span class="string">"Kim"</span>:</span><br><span class="line">            answer = <span class="string">"김서방은 "</span> + str(i) + <span class="string">"에 있다"</span></span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/17/Programmers-2016%EB%85%84/">
-                [Programmers] 2016년
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-17</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/programmers/">programmers</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    day = [<span class="string">'THU'</span>, <span class="string">'FRI'</span>, <span class="string">'SAT'</span>, <span class="string">'SUN'</span>, <span class="string">'MON'</span>, <span class="string">'TUE'</span>, <span class="string">'WED'</span>]</span><br><span class="line">    month = [<span class="number">31</span>, <span class="number">29</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>]</span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">1</span>:</span><br><span class="line">        answer = day[b%<span class="number">7</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        total = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(a<span class="number">-1</span>):</span><br><span class="line">            total += month[i]</span><br><span class="line">        answer = day[(total+b)%<span class="number">7</span>]</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/17/Algorithm-%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/">
-                [Algorithm] 선택정렬
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-17</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/algorithm/">algorithm</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="선택정렬-selection-sort"><a href="#선택정렬-selection-sort" class="headerlink" title="선택정렬(selection sort)"></a>선택정렬(selection sort)</h1><h6 id="본-포스팅은-lt-그림으로-정리한-알고리즘과-자료구조-gt-를-바탕으로-진행합니다"><a href="#본-포스팅은-lt-그림으로-정리한-알고리즘과-자료구조-gt-를-바탕으로-진행합니다" class="headerlink" title="본 포스팅은 &lt;그림으로 정리한 알고리즘과 자료구조&gt;를 바탕으로 진행합니다."></a>본 포스팅은 &lt;그림으로 정리한 알고리즘과 자료구조&gt;를 바탕으로 진행합니다.</h6><p><br></br></p>
-<h3 id="선택정렬-알고리즘-알아보기"><a href="#선택정렬-알고리즘-알아보기" class="headerlink" title="선택정렬 알고리즘 알아보기"></a>선택정렬 알고리즘 알아보기</h3><p>선택정렬(Selection Sort) 알고리즘은 가장 작은 데이터를 찾아 가장 앞 데이터와 교환하는 알고리즘으로, 사용방법은 다음과 같습니다.</p>
-<ul>
-<li>데이터 중에서 가장 작은 것을 찾아서 처음에 있는 것과 위치를 교환합니다.</li>
-<li>두 번째부터 마지막까지의 데이터 중에서 가장 작은 것을 찾아서 두 번째와 위치를 교환합니다.</li>
-<li>위의 과정을 계속 반복합니다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">SelectionSort</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(array)<span class="number">-1</span>):</span><br><span class="line">        min_idx = i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(array)):</span><br><span class="line">            <span class="keyword">if</span> array[min_idx] &gt; array[j]:</span><br><span class="line">                array[min_idx], array[j] = array[j], array[min_idx]</span><br><span class="line">    <span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/16/Python-%EB%B3%80%EC%88%981/">
-                [Python] 변수 (1)
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-16</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/python/">python</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="파이썬에서-변수의-정체는-1"><a href="#파이썬에서-변수의-정체는-1" class="headerlink" title="파이썬에서 변수의 정체는? (1)"></a>파이썬에서 <strong>변수</strong>의 정체는? (1)</h1><h6 id="본-포스팅은-lt-윤성우의-열혈-파이썬-중급편-gt-과-lt-처음-시작하는-파이썬-gt-을-바탕으로-진행합니다"><a href="#본-포스팅은-lt-윤성우의-열혈-파이썬-중급편-gt-과-lt-처음-시작하는-파이썬-gt-을-바탕으로-진행합니다" class="headerlink" title="본 포스팅은 &lt;윤성우의 열혈 파이썬 중급편&gt;과 &lt;처음 시작하는 파이썬&gt;을 바탕으로 진행합니다."></a>본 포스팅은 &lt;윤성우의 열혈 파이썬 중급편&gt;과 &lt;처음 시작하는 파이썬&gt;을 바탕으로 진행합니다.</h6><h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ul>
-<li>Story 01. 레퍼런스 카운트와 가비지 컬렉션<ul>
-<li>[가비지 컬렉션]</li>
-<li>[파이썬 인터프리터]</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>Story 02. 수정 가능한 객체와 수정 불가능한 객체<ul>
-<li>[immutable &amp; mutable]</li>
-</ul>
-</li>
-</ul>
-<p><br></br></p>
-<h3 id="Story-01-레퍼런스-카운트와-가비지-컬렉션"><a href="#Story-01-레퍼런스-카운트와-가비지-컬렉션" class="headerlink" title="Story 01. 레퍼런스 카운트와 가비지 컬렉션"></a>Story 01. 레퍼런스 카운트와 가비지 컬렉션</h3><h4 id="가비지-컬렉션"><a href="#가비지-컬렉션" class="headerlink" title="[가비지 컬렉션]"></a>[가비지 컬렉션]</h4><p>우리는 다음과 같은 상황에서 변수 s에 문자열이 저장되었다고 표현한다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'Garbage Collection'</span></span><br></pre></td></tr></table></figure>
-<p>그러나 사실은 문자열 객체에 s라는 이름이 붙은 상황이다.<br>즉 파이썬의 변수는 빈 상자가 아닌 뗴었다 붙였다 할 수 있는 ‘포스트잇’의 개념이다.<br>(포스트잇은 메모를 적어서 붙이고 또 쉽게 뗄 수 있는 스티커이다.)</p>
-<p><img src="/image/stickynote.png" alt="stickynote"></p>
-<p>보통은 ‘변수에 문자열을 저장했다’ 또는 ‘변수에 객체를 저장했다’라는 식의 표현이 사용되고 또 그것이 더 자연스럽다. 하지만 지금 설명하는 파이썬의 <strong>가비지 컬렉션</strong> 메커니즘을 이해하려면 변수를 ‘포스트잇’으로 이해해야 한다. 따라서 위의 코드에 대한 표현이 다음과 같음을 알고 있어야 한다.<br>(‘참조’의 영어 표현이 ‘레퍼런스’이다.)<br><br></br></p>
-<p><strong>_”변수 s가 문자열 ‘Garbage Collection’ ‘참조’한다.”_</strong><br><strong>_”변수 s가 문자열 ‘Garbage Collection’을 ‘레퍼런스’한다.”_</strong></p>
-<p><br></br><br>즉 여기서 말하는 ‘참조’는 이름이 쓰인 포스트잇을 가져다 붙인 것을 뜻한다.<br>그럼 다음 코드를 보자. 이는 리스트 객체를 생성하고 이를 r이라는 이름으로 참조하고 있는 상황이다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]  <span class="comment"># r이라는이름으로 리스트를 참조</span></span><br></pre></td></tr></table></figure>
-<p>그럼 이렇게 생성된 리스트 [1, 2, 3]은 언제 소멸될까?<br>소멸되지 않고 계속 메모리 공간을 차지한다면 이는 문제가 되기 때문에 분명 소멸되는 시기가 온다.<br>그리고 그 시기는 다음과 같다.<br><br></br></p>
-<p><strong>_”객체를 아무도 참조하지 않는 상황”_</strong></p>
-<p><br></br></p>
-<p>즉 다음 상황에서 리스트는 소멸된다. 정확히는 소멸 대상이 된다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">r = <span class="string">'simple'</span>  <span class="comment"># 변수 r이 참조 대상을 문자열로 바꿨다.</span></span><br></pre></td></tr></table></figure>
-<p>위와 같은 상황이 벌어지면 리스트 [1, 2, 3]은 아무도 참조하지 않기 때문에 더 이상 접근할 수 없게 된다.<br>따라서 메모리에 남겨 둬봐야 공간만 차지할 뿐이다. 그래서 소멸 대상이 된다.<br>단, 소멸 대상이 되었다고 해서 바로 소멸이 되는 것은 아니다.<br>일단 소멸 대상으로 등록만 해 두고 시스템에 시간적인 여유가 생길 때 소멸시키게 된다.<br>그리고 이러한 일련의 소멸 규칙 및 과정을 가리켜 ‘가비지 컬렉션(Garbage Collection)’이라 한다.<br>그럼 다음 코드를 리스트 [1, 2, 3]을 중심으로 관찰해보자.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">r1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]  <span class="comment"># 리스트 [1, 2, 3]의 레퍼런스 카운트는 1</span></span><br><span class="line">r2 = r1         <span class="comment"># 리스트의 레퍼런스 카운트는 2로 증가</span></span><br><span class="line">r1 = <span class="string">'simple'</span>   <span class="comment"># 리스트의 레퍼런스 카운트는 다시 1로 감소</span></span><br><span class="line">r2 = <span class="string">'happy'</span>    <span class="comment"># 리스트의 레퍼런스 카운트가 0이 됨, 따라서 가비지 컬렉션 대상</span></span><br></pre></td></tr></table></figure>
-<p>객체를 참조하는 변수의 수를 가리켜 ‘레퍼런스 카운트’라 한다.<br>즉 위 예제에서는 리스트 [1, 2, 3]의 레퍼런스 카운트가 1로 시작해서 2로 증가하고, 이어서 r1과 r2가 문자열을 참조하는 상황에 이르러 결국에는 0이 된다. 그리고 레퍼런스 카운트가 0이 되었다는 것은 소멸 대상으로 등록이 되어 조만간 소멸된다는 뜻이다.</p>
-<p>그렇다면 이러한 가비지 컬렉션은 누가 진행하는 것일까?<br>뭐 그냥 파이썬이 해준다고 말해버려도 될 일이지만 조금 더 자세히 알 필요가 있어서 이에 대한 설명을 이어서 하겠다.</p>
-<p><br>&lt;/br&gt;<br><br></br></p>
-<h4 id="파이썬-인터프리터"><a href="#파이썬-인터프리터" class="headerlink" title="[파이썬 인터프리터]"></a>[파이썬 인터프리터]</h4><p>우리가 파이썬 코드를(스크립트를) 작성하고 실행하면 이 코드는 먼저 ‘바이트 코드’라는 것으로 변환되어 어딘가에 저장된다. 그리고는 이 바이트 코드는 ‘파이썬 가상 머신(Python Virtual Machine)’ 위에서 실행이 된다.<br>비록 이러한 일련의 과정이 감춰져 있어서 우리 눈에 보이지는 않지만 말이다. 따라서 파이썬의 실행 구조는 다음과 같이 정리할 수 있다.</p>
-<p><br></br></p>
-<p><img src="/image/PVM.jpeg" alt="PVM"></p>
-<p><br></br></p>
-<p>즉 실제 파이썬 프로그램의 실행 주체는 파이썬 가상 머신, 줄여서 PVM이라고 할 수 있으며 PVM에 의해 가비지 컬렉션도 진행이 된다. 그리고 지금 설명한 파이썬 코드 변환기와 가상 머신, 그리고 기본적으로 포함되는 각종 라이브러리들을 묶어서 ‘파이썬 인터프리터’라 한다.</p>
-<p>파이썬 인터프리터는 그 종류가 다양한데 기본적으로 PVM의 구현 방식에 따라 나뉜다.<br>PVM이 C언어로 구현되어 있는 가장 일반적이고 널리 사용되는 인터프리터를 가리켜 CPython이라 부른다.<br>그리고 PVM이 자바로 구현되어 있어서 자바에 대한 접근성이 좋은 인터프리터를 가리켜 JPython이라 하며, 마이크로소프트사의 닷넷 기반으로 만들어지고 또 그 위에서 동작하는 인터프리터를 가리켜 IronPython이라 한다.<br>물론 중심이 되는 것은 CPython이다. 다만 다양한 종류의 인터프리터가 존재한다는 사실도 알아 두면 좋겠다.</p>
-
-        </div>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -650,6 +1022,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2020/05/17/hackerrank-intro-to-conditional-statements/">[HackerRank] Intro to Con</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2020/05/17/hackerrank-operator/">[HackerRank] Operators</a>
             </li>
             
@@ -659,10 +1035,6 @@
             
             <li>
                 <a class="footer-post" href="/2020/05/05/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-8/">[iOS] 앱 개발 도전기 (8)</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2020/04/15/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EC%8B%A4%EC%8A%B5%ED%8E%B8-1/">[iOS] 앱 개발 실습편 (1)</a>
             </li>
             
         </ul>
@@ -676,15 +1048,15 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/categories/hci/">HCI</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/nlp/">NLP</a>
+            <a class="footer-post" href="/categories/algorithm/selection-sort/">selection sort</a>
         </li>
         
         <li>
             <a class="footer-post" href="/categories/vuejs/">vuejs</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/algorithm/graph/">graph</a>
         </li>
         
         <li>

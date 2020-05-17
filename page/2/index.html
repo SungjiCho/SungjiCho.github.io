@@ -147,6 +147,55 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2020/04/01/hci-paper-survey/">
+                [HCI] CHI 2018 Paper Survey
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-04-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/hci/">HCI</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="Review-on-CHI-2018-Paper"><a href="#Review-on-CHI-2018-Paper" class="headerlink" title="Review on CHI 2018 Paper"></a>Review on CHI 2018 Paper</h1><p><br></p>
+<h4 id="Predicting-Human-Performance-in-Vertical-Menu-Selection-Using-Deep-Learning"><a href="#Predicting-Human-Performance-in-Vertical-Menu-Selection-Using-Deep-Learning" class="headerlink" title="Predicting Human Performance in Vertical Menu Selection Using Deep Learning"></a>Predicting Human Performance in Vertical Menu Selection Using Deep Learning</h4><p><br></p>
+<h5 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h5><p>Predicting human performance in interaction tasks allows designers or developers to understand the expected performance of a target interface without autually testing it with real users. In this work, we present a deep neural net to model and predict human performance in performing a sequence of UI tasks. In particular, we focus on a dominant class of tasks, i.e., target selection from a vertical list or menu. We experimented with our deep neural net using a public dataset collected from a desktop laboratory environment and a dataset collected from hundreds of touchscreen smartphone users via crowdsourcing. Our model significantly outperformed previous methods on these datasets. Importantly, our method, as a deep model, can easily incorporate additional UI attributes such as visual apperance and content semantics without changing model architectures. By understanding about how a deep learning model learns from human behaviors, our approach can be seen as a vehicle to discover new patterns about human behaviors to advance analytical modeling.</p>
+<p><br></p>
+<h5 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h5><p>Seeking models for predicting human performance in performing an interaction task has long been pursued in the field of human computer interaction. In addtion to the scientific value of understanding human behaviors, creating these models has practical values in user interface design and development. A predictive model allows a developer or designer to understand the expected performance of an interface without having to test it with real users, which can be expensive and effort consuming.</p>
+<p><br></p>
+<p>Several predictive models of human performance have been devised, including Fitts’ law and Hick’s law, which rooted in information theory and experimental psychology. However, these models capture a certain aspect of human performance in isolation, e.g., motor control or decision making. They are limited in modeling human performance in realistic interaction tasks where multiple factors interplay.</p>
+<p><br></p>
+<p>In this work, we take a departure from existing analytical approaches for performance modeling by using a data-driven approach based on the recent advance in deep learning. Deep learning has proven successful in many domains, such as computer vision and natural language processing. It relieves the need of careful feature engineering and of a great amount of domain knowledge in creating a predictive model. It can also capture patterns that only manifest in the data but are difficult to articulate in an analytical form.</p>
+<p><br></p>
+<p>In particular, we devise a predictive model for interaction performance based on a deep recurrent neural net architecture using Long-Short Term Memory(LSTM). The unique architecture of our LSTM-based model allows us to naturally capture a variety of factors that come into play in UI tasks, including not only what human users are perceiving and performing at the moment but also what they have learned from the past regarding an interaction task.</p>
+<p><br></p>
+<p><img src="/image/hci1.png" alt="hci1"></p>
+<p><br></p>
+<p>Figure 1. A high-level illustration of our approach for predicting human time performance. The model, mimicking a human user, not only sees the UI and task at the moment but also remembers what is has experienced previously, through its recurrent layer. The representation of the UI and task at each step is ahieved via another recurrent net.</p>
+<p><br></p>
+<p>To scope our work, we focus on a common task on desktop and smartphones, where users select a target item from a vertical menu or list, e.g., choosing a song to play, a person to contact, selecting an application in the start menu or simply activating a command in a drop-dowwn menu. Because users often need to perform these selection tasks repeatedly over the time, we investigate our approach in the context of a sequence of selection tasks.</p>
+<p><br></p>
+<p>We design a novel hierarchical deep architecture for menu performance modeling. In our architecture, a recurrent neural net is used to encode UI attributes and tasks at each target item selection. This allows us to represent a menu with a varied length and to easily incorporate any additional UI attributes such as visual appearance and semantics. We then use another recurrent net to capture learning effects, a major component in human performance. The entire model is learned end-to-end using stochastic gradient descent. The model outperforms existing analytical methods in various settings for predicting selection time. Importantly, it is easily extensible for accomodating new UI feature and human factors involved in an interaction task.   </p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2020/03/31/beakjoon-1-1/">
                 [BaekJoon] Hello World
             </a>
@@ -374,6 +423,49 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2020/03/19/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-7/">
+                [iOS] 앱 개발 도전기 (7)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-03-19</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/ios/">iOS</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="테이블-뷰를-이용한-데이터-목록-구현"><a href="#테이블-뷰를-이용한-데이터-목록-구현" class="headerlink" title="테이블 뷰를 이용한 데이터 목록 구현"></a>테이블 뷰를 이용한 데이터 목록 구현</h1><p>앱에서 제공하는 콘텐츠는 생각보다 방대한 경우가 많습니다. 그렇다고 매번 검색을 통해서 데이터를 찾도록 하는 것은 터치 이벤트에 의존하는 사용자에게 무척 불편한 일입니다. 방대한 콘텐츠를 앱을 통해 제공하고, 사용자가 효율적으로 콘텐츠에 접근할 수 있도록 하려면 콘텐츠의 성격에 따라 앱의 구조와 UI를 고려해야 합니다.</p>
+<p><br></p>
+<p>이때 사용되는 것이 테이블 뷰 컨트롤러입니다. 테이블 뷰 컨트롤러의 표면적 역할은 목록 형태의 콘텐츠를 화면에 표현해주는 것입니다. 하지만 그 역할을 자세히 들여다보면 계층 구조를 이루는 콘텐츠의 상위 카테고리를 정렬하여 표현함으로써 방대한 콘텐츠 속에서도 사용자가 원하는 항목에 쉽게 접근할 수 있게 해 주는 특성을 지니고 있습니다.</p>
+<p><br></p>
+<p>테이블 뷰 컨트롤러와 내비게이션 컨트롤러는 계층적 성격의 콘텐츠를 표현해주기 위해 상호 보완적인 역할을 합니다. 테이블 뷰 컨트롤러를 이용하여 수평적 관계의 카테고리나 콘텐츠를 병렬로 배열하고, 수직적 관계로 세분한 정보들을 내비게이션 컨트롤러를 통하여 직렬로 표현하여 전체적인 앱의 콘텐츠 표현 구조를 구성하죠. </p>
+<p><br></p>
+<p>일반적으로 알려진 정보 검색 알고리즘에 따르면, 가장 효율적인 정보 접근 방법은 콘텐츠를 성격에 따라 계층으로 구조화하는 것입니다. 계층으로 콘텐츠를 구조화하면 상위 카테고리 하나를 선택하는 과정만으로도 원하는 정보에 접근하는 것이 훨씬 단순해지기 때문입니다. 이때 가장 고려해야 할 부분은 더 적은 횟수의 선택 과정으로 원하는 정보를 찾을 수 있게 하는 것입니다. 이것이 바로 정보 검색 알고리즘의 핵심이자 앱을 만들 때 콘텐츠 구조를 설계하는 원칙입니다. 데이터베이스의 설계 원리에 선택도(Cardinality)라는 것이 있는데, 특정 카테고리를 선택하여 나온 결과값의 개수가 적을수록 ‘선택도가 높다’고 표현하며 콘텐츠 분류가 잘되었다고 할 수 있습니다.</p>
+<p><br></p>
+<p>테이블 뷰를 이용하여 화면을 구성할 때는 단순히 목록을 구성하는 데에 주력하는 것이 아니라, 이러한 데이터 접근 구조에 대해서도 고려해야 합니다. 그러면서 사용자가 어떻게 하면 보다 손쉽게 원하는 콘텐츠에 접근할 수 있을 것인가를 반영하여 화면 구조를 설계해야 합니다. </p>
+<p><br></p>
+<p>하나의 테이블 뷰 컨트롤러 화면을 구성하는 단위는 다음과 같습니다.</p>
+<p><br></p>
+<h5 id="테이블-뷰-컨트롤러-gt-하나의-테이블-뷰-gt-여러-개의-테이블-뷰-섹션-gt-여러-개의-테이블-뷰-셀-gt-테이블-뷰-셀마다-하나씩-콘텐츠-뷰"><a href="#테이블-뷰-컨트롤러-gt-하나의-테이블-뷰-gt-여러-개의-테이블-뷰-섹션-gt-여러-개의-테이블-뷰-셀-gt-테이블-뷰-셀마다-하나씩-콘텐츠-뷰" class="headerlink" title="테이블 뷰 컨트롤러 &gt; 하나의 테이블 뷰 &gt; 여러 개의 테이블 뷰 섹션 &gt; 여러 개의 테이블 뷰 셀 &gt; 테이블 뷰 셀마다 하나씩 콘텐츠 뷰"></a>테이블 뷰 컨트롤러 &gt; 하나의 테이블 뷰 &gt; 여러 개의 테이블 뷰 섹션 &gt; 여러 개의 테이블 뷰 셀 &gt; 테이블 뷰 셀마다 하나씩 콘텐츠 뷰</h5><p><br><br></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2020/03/19/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-6/">
                 [iOS] 앱 개발 도전기 (6)
             </a>
@@ -462,49 +554,6 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 텍스트 필드의 내용이 변경될 때 호출</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">textField</span><span class="params">(<span class="number">_</span> textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"텍스트 필드의 내용이 \(string)으로 변경됩니다."</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> <span class="type">Int</span>(string) == <span class="literal">nil</span>&#123;  <span class="comment">// 입력된 값이 숫자가 아니라면 true를 리턴</span></span><br><span class="line">        <span class="comment">// 현재 텍스트 필드에 입력된 길이와 더해질 문자열 길이의 합이 10을 넘는다면 반영하지 않음</span></span><br><span class="line">        <span class="keyword">if</span> (textField.text?.<span class="built_in">count</span>)! + string.<span class="built_in">count</span> &gt; <span class="number">10</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;  <span class="comment">// 입력된 값이 숫자라면 false를 리턴</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><br><br></p>
 <p>다음은 이미지 피커 컨트롤러(Image Picker Controller)를 통해 델리게이트 패턴을 활용해보도록 하겠습니다. 이미지 피커 컨트롤러 자체는 단순히 이미지를 선택해서 가져오는 기능입니다. 하지만 이미지를 불러올 소스를 어떤 것으로 설정하느냐에 따라 앨범이나 카메라 기능을 사용할 수 있으므로, 카메라를 이용하여 즉석에서 촬영한 사진을 사용하거나 앨범에 저장된 이미지를 불러올 때 대부분 이 컨트롤러를 사용하여 기능을 구현합니다.</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/03/19/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-7/">
-                [iOS] 앱 개발 도전기 (7)
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-03-19</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/ios/">iOS</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="테이블-뷰를-이용한-데이터-목록-구현"><a href="#테이블-뷰를-이용한-데이터-목록-구현" class="headerlink" title="테이블 뷰를 이용한 데이터 목록 구현"></a>테이블 뷰를 이용한 데이터 목록 구현</h1><p>앱에서 제공하는 콘텐츠는 생각보다 방대한 경우가 많습니다. 그렇다고 매번 검색을 통해서 데이터를 찾도록 하는 것은 터치 이벤트에 의존하는 사용자에게 무척 불편한 일입니다. 방대한 콘텐츠를 앱을 통해 제공하고, 사용자가 효율적으로 콘텐츠에 접근할 수 있도록 하려면 콘텐츠의 성격에 따라 앱의 구조와 UI를 고려해야 합니다.</p>
-<p><br></p>
-<p>이때 사용되는 것이 테이블 뷰 컨트롤러입니다. 테이블 뷰 컨트롤러의 표면적 역할은 목록 형태의 콘텐츠를 화면에 표현해주는 것입니다. 하지만 그 역할을 자세히 들여다보면 계층 구조를 이루는 콘텐츠의 상위 카테고리를 정렬하여 표현함으로써 방대한 콘텐츠 속에서도 사용자가 원하는 항목에 쉽게 접근할 수 있게 해 주는 특성을 지니고 있습니다.</p>
-<p><br></p>
-<p>테이블 뷰 컨트롤러와 내비게이션 컨트롤러는 계층적 성격의 콘텐츠를 표현해주기 위해 상호 보완적인 역할을 합니다. 테이블 뷰 컨트롤러를 이용하여 수평적 관계의 카테고리나 콘텐츠를 병렬로 배열하고, 수직적 관계로 세분한 정보들을 내비게이션 컨트롤러를 통하여 직렬로 표현하여 전체적인 앱의 콘텐츠 표현 구조를 구성하죠. </p>
-<p><br></p>
-<p>일반적으로 알려진 정보 검색 알고리즘에 따르면, 가장 효율적인 정보 접근 방법은 콘텐츠를 성격에 따라 계층으로 구조화하는 것입니다. 계층으로 콘텐츠를 구조화하면 상위 카테고리 하나를 선택하는 과정만으로도 원하는 정보에 접근하는 것이 훨씬 단순해지기 때문입니다. 이때 가장 고려해야 할 부분은 더 적은 횟수의 선택 과정으로 원하는 정보를 찾을 수 있게 하는 것입니다. 이것이 바로 정보 검색 알고리즘의 핵심이자 앱을 만들 때 콘텐츠 구조를 설계하는 원칙입니다. 데이터베이스의 설계 원리에 선택도(Cardinality)라는 것이 있는데, 특정 카테고리를 선택하여 나온 결과값의 개수가 적을수록 ‘선택도가 높다’고 표현하며 콘텐츠 분류가 잘되었다고 할 수 있습니다.</p>
-<p><br></p>
-<p>테이블 뷰를 이용하여 화면을 구성할 때는 단순히 목록을 구성하는 데에 주력하는 것이 아니라, 이러한 데이터 접근 구조에 대해서도 고려해야 합니다. 그러면서 사용자가 어떻게 하면 보다 손쉽게 원하는 콘텐츠에 접근할 수 있을 것인가를 반영하여 화면 구조를 설계해야 합니다. </p>
-<p><br></p>
-<p>하나의 테이블 뷰 컨트롤러 화면을 구성하는 단위는 다음과 같습니다.</p>
-<p><br></p>
-<h5 id="테이블-뷰-컨트롤러-gt-하나의-테이블-뷰-gt-여러-개의-테이블-뷰-섹션-gt-여러-개의-테이블-뷰-셀-gt-테이블-뷰-셀마다-하나씩-콘텐츠-뷰"><a href="#테이블-뷰-컨트롤러-gt-하나의-테이블-뷰-gt-여러-개의-테이블-뷰-섹션-gt-여러-개의-테이블-뷰-셀-gt-테이블-뷰-셀마다-하나씩-콘텐츠-뷰" class="headerlink" title="테이블 뷰 컨트롤러 &gt; 하나의 테이블 뷰 &gt; 여러 개의 테이블 뷰 섹션 &gt; 여러 개의 테이블 뷰 셀 &gt; 테이블 뷰 셀마다 하나씩 콘텐츠 뷰"></a>테이블 뷰 컨트롤러 &gt; 하나의 테이블 뷰 &gt; 여러 개의 테이블 뷰 섹션 &gt; 여러 개의 테이블 뷰 셀 &gt; 테이블 뷰 셀마다 하나씩 콘텐츠 뷰</h5><p><br><br></p>
 
         </div>
     
@@ -670,95 +719,6 @@
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/03/09/fnlp-%EC%B2%9C%EC%9E%A5%EB%B6%80%ED%84%B0-%EC%8B%9C%EC%9E%91%ED%95%98%EB%8A%94-%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC-1/">
-                [nlp] 천장부터 시작하는 자연어처리 (1)
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-03-09</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/natural-language-processing/">Natural Language Processing</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="트랜스포머-네트워크"><a href="#트랜스포머-네트워크" class="headerlink" title="트랜스포머 네트워크"></a>트랜스포머 네트워크</h1><p><br></p>
-<h5 id="본-포스팅은-“한국어-임베딩”-책을-바탕으로-합니다"><a href="#본-포스팅은-“한국어-임베딩”-책을-바탕으로-합니다" class="headerlink" title="본 포스팅은 “한국어 임베딩” 책을 바탕으로 합니다."></a>본 포스팅은 “한국어 임베딩” 책을 바탕으로 합니다.</h5><p><br><hr><br></p>
-<p>트랜스포머(Vaswani et al., 2017) 네트워크는 구글 연구 팀이 NIPS에 공개한 딥러닝 아키텍처이다. 뛰어난 성능으로 주목받았다. 이후 발표된 GPT, BERT 등 기법은 트랜스포머 블록을 기본 모델로 쓰고 있다. 이제부터 트랜스포머 모델 가운데 기본 블록의 산 과정과 그 작동 원리를 살펴보도록 한다. 하단 멀티헤드 어텐션과 상단 피드포워 네트워크를 설명한다.</p>
-<p><br></p>
-<h4 id="Scaled-Dot-Product-Attention"><a href="#Scaled-Dot-Product-Attention" class="headerlink" title="Scaled Dot-Product Attention"></a>Scaled Dot-Product Attention</h4><p>트랜스포머 블록의 주요 구성 요소 가운데 하나가 바로 Scaled Dot-Product Attention이다. 여기서 입력은 기본적으로 행렬 형태를 가지며 그 크기는 입력 문장의 단어 수 <em> 입력 임베딩의 차원 수다. 예컨대 “드디어, 금요일, 이다”라는 문장이 Scaled Dot-Product Attention 입력으로 들어가고 그 히든 차원 수가 768차원이라면 이 레이어의 력 행렬의 크기는 3 </em> 768이 된다.</p>
-<p><br></p>
-<p>트랜스포머의 Scaled Dot-Product Attention 메터니즘은 쿼리, 키, 값 세 가지 사이의 다이나믹스가 핵심이다. 입력 행렬과 쿼리, 키, 값에 해당하는 행렬을 각각 곱해 계한다. 이후 쿼리와 키가 얼마나 관련을 맺고 있는지를 나타내기 위해 입력 행렬과 쿼리 행렬을 곱한 결과와 입력 행렬과 키 행렬을 곱한 결과를 내적하여 키 벡터의 차원 수의 제곱근을 나누어준 뒤 소프트맥스를 취한다. 마지막으로 이 확률 값을 가중치 삼아 값에 해당하는 벡터들을 가중합한다.</p>
-<p><br></p>
-<p>Scaled Dot-Product Attention은 어떻게 단어들 사이의 의미적, 문법적 관계를 포착해낼 수 있는 걸까. 그 비결 중 일부는 기법 이름 속에 숨어 있다. 첫째는 dot-product, 둘째는 attention, 셋째는 scale이다. 선형대수학에서 dot-product는 내적을 달리 이르는 말이다. 내적은 벡터 간 유사도 측정 기법의 일종인 코사인 유사도와 깊은 관련 가진다. 두 벡터를 내적하고 이들 길이의 곱으로 나눠준 값이 바로 코사인 유사도다. 두 벡터가 모두 길이 1인 단위 벡터라면 두 벡터의 내적 자체가 코사인 유사도이며 그 값이 크면 클수록 코사인 유사도는 높아진다. 코사인 유사도는 두 벡터 사이의 각가 0도로 완전히 같을 경우 최대값 1, 180도로 완전히 반대인 경우 최소값 -1이 된다.</p>
-<p><br></p>
-<p>어떤 쿼리와 키가 특정 태스크 수행에 중요한 역할을 하고 있다면 트랜스포머 블록은 이들 사이의 내적 값을 키우는 방식으로 학습한다. 내적 값이 커지면 해당 쿼리와 키 벡터 공간상 가까이에 있을 가능성이 높아진다. 셀프 어텐션은 같은 문장 내 모든 어 쌍 사이의 의미적, 문법적 관계를 포착해낸다는 뜻이다. Scaled Dot-Production Attention은 소프트맥스 행렬과 값 행렬을 내적하는 것으로 마무리된다. 이는 소프트맥스 확률을 가중치 삼아 각 값 벡터들을 가중합하는 것과 같다. 따라서 Scaled Dot-Production Attention 결과 새롭게 만드어진 벡터는 해당 문장 내 단어 쌍 관계가 모두 축된 결과다.</p>
-<p><br></p>
-<p>셀프 어텐션은 기존 RNN, CNN 보다 장점이 많다. CNN의 경우 사용자가 정한 특정 윈도우 내의 로컬 문맥만 살핀다. 예컨대 문장 길이가 꽤 길고 맨 처음 단어와 마지막 단 사이의 연관성 파악이 태스크 수행에 중요한 데이터라면 CNN으로 이를 해결하기는 지 않다. 한편 RNN은 시퀀스 길이가 길어질수록 그래디언트 문제가 발생할 염려가 있다. 다시 말해 시퀀스가 길면 처음 입력받았던 단어는 RNN 모델이 잊어버릴 가능성이 높다는 이야기다. 하지만 트랜스포머와 같은 셀프 어텐션 기법은 문장 내 모든 단어쌍 사이의 관계를 늘 전체적으로 파악할 수 있다. 이 덕분에 트랜스포머는 컨볼루션 필나 RNN 셀 없이도 자연어 처리 태스크를 성공적으로 수행할 수 있었다.</p>
-<p><br></p>
-<p>또 다른 중요 요소는 scale이다. Scaled Dot-Product Attention에서는 쿼리와 키 행렬을 내적한 뒤 키 행렬 차원 수의 제곱근을 나눠줘 스케일을 하고 있다. Vaswani et al. (2017)에 따르면 이 경우에 쿼리-키 내적 행렬의 분산을 줄이게 돼 소프트맥스의 그래디언트가 지나치게 작아지는 것을 방지할 수 있다.</p>
-<p><br><br></p>
-<h4 id="멀티헤드-어텐션"><a href="#멀티헤드-어텐션" class="headerlink" title="멀티헤드 어텐션"></a>멀티헤드 어텐션</h4><p>트랜스포머 블록에서 멀티헤드 어텐션은 Scaled Dot-Product Attention을 여러 번 시하는 것을 가리킨다. 동일한 문장을 여러 명의 독자가 동시에 분석해 최선의 결과를 내려고 하는 것에 비유할 수 있겠다. 멀티헤드 어텐션의 계산 과정은 미리 만들어놓은 쿼리, 키, 값에 Scaled Dot-Production을 h번 수행한다. 이후 각 헤드의 결과 행렬을 이어 붙여 긴 행렬을 만들어 사용한다.</p>
-<p><br><br></p>
-<h4 id="Position-wise-Feedforward-Networks"><a href="#Position-wise-Feedforward-Networks" class="headerlink" title="Position-wise Feedforward Networks"></a>Position-wise Feedforward Networks</h4><p>멀티헤드 어텐션 레이어의 입력 행렬과 출력 행렬의 크기는 입력 단어 수 * 히든 벡터 차원 수로 동일하다. Position-wise Feedforward Networks 레이어에서는 멀티헤드 어텐션 레이어의 출력 행렬을 행 벡터 단위로, 다시 말해 단어 벡터 각각에 관해 수식을 적용한다. 멀티헤드 어텐션 레이어의 출력 행렬 가운데 하나의 단어 벡터에 관해 두 번의 선형변환을 수행하며 그 사이에 ReLU를 적용한다.</p>
-<p><br><br></p>
-<h4 id="트랜스포머의-학습-전략"><a href="#트랜스포머의-학습-전략" class="headerlink" title="트랜스포머의 학습 전략"></a>트랜스포머의 학습 전략</h4><p>트랜스포머의 학습 전략은 웜업(warm up)이다. 사용자가 정한 스텝 수에 이르기까지 습률을 올렸다가 스텝 수를 만족하면 조금씩 떨어뜨리는 방식이다. 대규모 데이터,  모델 학습에 적합하다. 이 전략은 BERT 등 이후 제안된 모델에도 널리 쓰이고 있다. 이밖에 레이어 정규화 등도 트랜스포머의 안정적인 학습에 기여하고 있는 것으로 보다.</p>
-<p><br><br></p>
-<h4 id="BERT"><a href="#BERT" class="headerlink" title="BERT"></a>BERT</h4><p>BERT(Bidirectional Encoder Representations from Transformer)는 구글에서 공개한 모델이다. 성능이 뛰어나 널리 쓰이고 있다. BERT의 성공 비결은 그 퍼포먼스가 검증된 트랜스포머 블록을 썼을뿐더러 모델의 속성이 양방향을 지향한다는 점에 있다. GPT는 단어 시퀀스를 왼쪽에서 오른쪽으로 한 방향으로만 모든 아키텍처이다. ELMo는 Bi-LSTM 레이어의 상단은 양방향이지만 중간 레이어 역시 한 방향인 모델이다. 반면 BERT의 경우 모든 레이어에서 양방향 성질을 잃지 않고 있다.</p>
-<p><br></p>
-<p>BERT와 GPT 모델은 모두 트랜스포머 블록을 사용하고 있다. 그렇다면 GPT는 왜 단어들을 양방향으로 보지 못하는 것일까? 그 이유는 GPT가 언어 모델이기 때문이다. GPT는 주어진 단어 시퀀스를 가지고 그다음 단어를 예측하는 과정에서 학습한다. 이 경우 현재 입력 단어 이후의 단어를 모델에게 알려주는 것은 반칙이다. 언어 모델은 주어진 시퀀스를 가지고 다음 단어를 맞춰야 하는데, 맞춰야할 정답을 미리 알려줄 수는 없기 때문이다. Devline et al. (2018)은 이 문제를 극복하기 위해 마스크 언어 모델(masked language model)을 제안했다. 주어진 시퀀스 다음 단어를 맞추는 것에서 벗어나, 일단 문장 전체를 모델에게 알려주고, 빈칸(MASK)에 해당하는 단어가 어떤 단어일지 예측하는 과정에서 학습을 해보자는 아이디어다. 마스크 언어 모델 태스크에서는 모델에 문장 전체를 다 주어도 반칙이 될 수 없다. BERT 모델은 빈칸을 채워야 하기 때문이다.</p>
-<p><br></p>
-<p>GPT는 Scaled Dot-Product Attention을 하는 과정에서 예측해야 할 단어를 보지 않기 위해 소프트맥스 스코어 행렬의 일부 값을 0으로 만든다. 예컨대 입력 문장이 꿈, 보다, 해몽이고 이번에 예측해야 할 단어가 보다라면 GPT는 이전 단어인 꿈만 참고할 수 있다. 해몽이라는 단어를 맞춰야 할 순서라면 GPT는 꿈, 보다만을 참고해야 한다. 반면 BERT는 빈칸만 맞추면 되기 때문에 그림처럼 문장 내 단어 쌍 사이의 관계를 모두 볼 수 있다.</p>
-<p><br></p>
-<p>Devlin et al. (2018)은 BERT 임베딩을 각종 다운스트림 태스크에 적용해 실험한 결과 BERT의 임베딩 품질이 GPT보다 좋음을 입증했다. 그만큼 모델이 양방향 전후 문맥을 모두 보게 하는 것이 중요하다는 이야기다. BERT가 양방향 모델이 될 수 있었던 배경은 모델이 순방향, 역방향 문맥을 모두 볼 수 있도록 하는 학습 태스크 덕분이다. BERT의 프리트레인 태스크에는 크게 마스크 언어 모델, 다음 문장인지 여부 맞추기 두 가지가 있다. 먼저 마스크 언어 모델 태스크 수행을 위한 학습 데이터는 다음과 같이 만든다.</p>
-<p><br></p>
-<ul>
-<li>학습 데이터 한 문장 토큰의 15%를 마스킹한다.</li>
-<li>마스킹 대상 토큰 가운데 80%는 실제 빈칸으로 만들고, 모델은 그 빈칸을 채운다.</li>
-<li>마스킹 대상 토큰 가운데 10%는 랜덤으로 다른 토큰으로 대체하고, 모델은 해당 위치의 정답 언어가 무엇일지 맞추도록 한다.</li>
-<li>마스킹 대상 토큰 가운데 10%는 토큰 그대로 두고, 모델은 해당 위치의 정답 단어가 무엇일지 맞추도록 한다.</li>
-</ul>
-<p><br></p>
-<p>이같이 학습 데이터를 만들게 되면 우리는 다음을 기대할 수 있다.</p>
-<ul>
-<li>빈칸을 채워야 하기 때문에 문장 내 어느 자리에 어떤 단어를 쓰는 게 자연스러운지 앞뒤 문맥을 읽어낼 수 있게 된다.</li>
-<li>주어진 문장을 비교해 보면서 문장이 의미/문법상 비문인지 아닌지 가려낼 수 있다.</li>
-<li>모델은 어떤 단어가 마스킹될지 전혀 모르기 때문에 문장 내 모든 단어 사이의 의미적, 문법적 관계를 세밀히 살피게 된다.</li>
-</ul>
-<p><br></p>
-<p>다음 문장인지 여부를 맞추기 위한 학습 데이터는 다음과 같이 만든다.</p>
-<ul>
-<li>모든 학습 데이터는 1건당 문장 두 개로 구성된다.</li>
-<li>이 가운데 절반은 동일한 문서에서 실제 이어지는 문장을 두 개 뽑고, 그 정답으로 참을 부여한다.</li>
-<li>나머지 절반은 서로 다른 문서에서 문장 하나씩 뽑고, 그 정답으로 거짓을 부여한다.</li>
-<li>max_num_tokens를 정의한다.</li>
-<li>이전에 뽑은 문장 두 개의 단어 총 수가 max_num_token을 넘지 못할 때까지 두 문장 중 단어 수가 많은 쪽을 50%의 확률로 무장 맨 앞 또는 맨 뒤 단어 하나씩 제거한다.</li>
-</ul>
-<p><br></p>
-<p>이같이 학습 데이터를 만들게 되면 우리는 다음을 기대할 수 있다.</p>
-<ul>
-<li>모델은 주어진 문장이 이어진 문장인지 아닌지 반복 학습한다. 따라서 문장 간 의미 관계를 이해할 수 있다.</li>
-<li>일부 문장 성분이 없어도 전체 의미를 이해하는 데 큰 무리가 없다. NSP 태스크가 너무 쉬워지는 것을 방지하기 위해 문장 맨 앞 또는 맨 뒤쪽 단어 일부를 삭제했기 때문이다.</li>
-<li>학습 데이터에 짧은 문장이 포함돼 있어도 성능이 크게 떨어지지 않는다.</li>
-</ul>
-
-        </div>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -801,6 +761,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2020/05/17/hackerrank-intro-to-conditional-statements/">[HackerRank] Intro to Con</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2020/05/17/hackerrank-operator/">[HackerRank] Operators</a>
             </li>
             
@@ -810,10 +774,6 @@
             
             <li>
                 <a class="footer-post" href="/2020/05/05/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-8/">[iOS] 앱 개발 도전기 (8)</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2020/04/15/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EC%8B%A4%EC%8A%B5%ED%8E%B8-1/">[iOS] 앱 개발 실습편 (1)</a>
             </li>
             
         </ul>
@@ -827,15 +787,15 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/categories/hci/">HCI</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/nlp/">NLP</a>
+            <a class="footer-post" href="/categories/algorithm/selection-sort/">selection sort</a>
         </li>
         
         <li>
             <a class="footer-post" href="/categories/vuejs/">vuejs</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/algorithm/graph/">graph</a>
         </li>
         
         <li>

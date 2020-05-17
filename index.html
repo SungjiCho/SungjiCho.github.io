@@ -147,6 +147,48 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2020/05/17/hackerrank-intro-to-conditional-statements/">
+                [HackerRank] Intro to Conditional Statements
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-05-17</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/hackerrank/">HackerRank</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="HackerRank-Intro-to-Contional-Statements"><a href="#HackerRank-Intro-to-Contional-Statements" class="headerlink" title="[HackerRank] Intro to Contional Statements"></a>[HackerRank] Intro to Contional Statements</h1><p><br></p>
+<h4 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h4><p>Given an integer, n, perform the following conditional actions:</p>
+<ul>
+<li>if n is odd, print Weird</li>
+<li>if n is even and in the inclusive range of 2 to 5, print Not Weird</li>
+<li>if n is even and in the inclusive range of 6 to 20, print Weird</li>
+<li>if n is even and greater than 20, print Not Weird</li>
+</ul>
+<p><br></p>
+<h4 id="Input-Format"><a href="#Input-Format" class="headerlink" title="Input Format"></a>Input Format</h4><p>A single line containing a positive integer, n</p>
+<p><br><br></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="keyword">guard</span> <span class="keyword">let</span> <span class="type">N</span> = <span class="type">Int</span>((<span class="built_in">readLine</span>()?.trimmingCharacters(<span class="keyword">in</span>: .whitespacesAndNewlines))!)</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">fatalError</span>(<span class="string">"Bad input"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="type">N</span>%<span class="number">2</span> != <span class="number">0</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Weird"</span>)</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="type">N</span> &gt;= <span class="number">2</span> &amp;&amp; <span class="type">N</span> &lt;= <span class="number">5</span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Not Weird"</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> <span class="type">N</span> &gt; <span class="number">5</span> &amp;&amp; <span class="type">N</span> &lt;= <span class="number">20</span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Weird"</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Not Weird"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2020/05/17/hackerrank-operator/">
                 [HackerRank] Operators
             </a>
@@ -615,55 +657,6 @@
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/04/01/hci-paper-survey/">
-                [HCI] CHI 2018 Paper Survey
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-04-01</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/hci/">HCI</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="Review-on-CHI-2018-Paper"><a href="#Review-on-CHI-2018-Paper" class="headerlink" title="Review on CHI 2018 Paper"></a>Review on CHI 2018 Paper</h1><p><br></p>
-<h4 id="Predicting-Human-Performance-in-Vertical-Menu-Selection-Using-Deep-Learning"><a href="#Predicting-Human-Performance-in-Vertical-Menu-Selection-Using-Deep-Learning" class="headerlink" title="Predicting Human Performance in Vertical Menu Selection Using Deep Learning"></a>Predicting Human Performance in Vertical Menu Selection Using Deep Learning</h4><p><br></p>
-<h5 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h5><p>Predicting human performance in interaction tasks allows designers or developers to understand the expected performance of a target interface without autually testing it with real users. In this work, we present a deep neural net to model and predict human performance in performing a sequence of UI tasks. In particular, we focus on a dominant class of tasks, i.e., target selection from a vertical list or menu. We experimented with our deep neural net using a public dataset collected from a desktop laboratory environment and a dataset collected from hundreds of touchscreen smartphone users via crowdsourcing. Our model significantly outperformed previous methods on these datasets. Importantly, our method, as a deep model, can easily incorporate additional UI attributes such as visual apperance and content semantics without changing model architectures. By understanding about how a deep learning model learns from human behaviors, our approach can be seen as a vehicle to discover new patterns about human behaviors to advance analytical modeling.</p>
-<p><br></p>
-<h5 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h5><p>Seeking models for predicting human performance in performing an interaction task has long been pursued in the field of human computer interaction. In addtion to the scientific value of understanding human behaviors, creating these models has practical values in user interface design and development. A predictive model allows a developer or designer to understand the expected performance of an interface without having to test it with real users, which can be expensive and effort consuming.</p>
-<p><br></p>
-<p>Several predictive models of human performance have been devised, including Fitts’ law and Hick’s law, which rooted in information theory and experimental psychology. However, these models capture a certain aspect of human performance in isolation, e.g., motor control or decision making. They are limited in modeling human performance in realistic interaction tasks where multiple factors interplay.</p>
-<p><br></p>
-<p>In this work, we take a departure from existing analytical approaches for performance modeling by using a data-driven approach based on the recent advance in deep learning. Deep learning has proven successful in many domains, such as computer vision and natural language processing. It relieves the need of careful feature engineering and of a great amount of domain knowledge in creating a predictive model. It can also capture patterns that only manifest in the data but are difficult to articulate in an analytical form.</p>
-<p><br></p>
-<p>In particular, we devise a predictive model for interaction performance based on a deep recurrent neural net architecture using Long-Short Term Memory(LSTM). The unique architecture of our LSTM-based model allows us to naturally capture a variety of factors that come into play in UI tasks, including not only what human users are perceiving and performing at the moment but also what they have learned from the past regarding an interaction task.</p>
-<p><br></p>
-<p><img src="/image/hci1.png" alt="hci1"></p>
-<p><br></p>
-<p>Figure 1. A high-level illustration of our approach for predicting human time performance. The model, mimicking a human user, not only sees the UI and task at the moment but also remembers what is has experienced previously, through its recurrent layer. The representation of the UI and task at each step is ahieved via another recurrent net.</p>
-<p><br></p>
-<p>To scope our work, we focus on a common task on desktop and smartphones, where users select a target item from a vertical menu or list, e.g., choosing a song to play, a person to contact, selecting an application in the start menu or simply activating a command in a drop-dowwn menu. Because users often need to perform these selection tasks repeatedly over the time, we investigate our approach in the context of a sequence of selection tasks.</p>
-<p><br></p>
-<p>We design a novel hierarchical deep architecture for menu performance modeling. In our architecture, a recurrent neural net is used to encode UI attributes and tasks at each target item selection. This allows us to represent a menu with a varied length and to easily incorporate any additional UI attributes such as visual appearance and semantics. We then use another recurrent net to capture learning effects, a major component in human performance. The entire model is learned end-to-end using stochastic gradient descent. The model outperforms existing analytical methods in various settings for predicting selection time. Importantly, it is easily extensible for accomodating new UI feature and human factors involved in an interaction task.   </p>
-
-        </div>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -706,6 +699,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2020/05/17/hackerrank-intro-to-conditional-statements/">[HackerRank] Intro to Con</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2020/05/17/hackerrank-operator/">[HackerRank] Operators</a>
             </li>
             
@@ -715,10 +712,6 @@
             
             <li>
                 <a class="footer-post" href="/2020/05/05/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-8/">[iOS] 앱 개발 도전기 (8)</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2020/04/15/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EC%8B%A4%EC%8A%B5%ED%8E%B8-1/">[iOS] 앱 개발 실습편 (1)</a>
             </li>
             
         </ul>
@@ -732,15 +725,15 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/categories/hci/">HCI</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/nlp/">NLP</a>
+            <a class="footer-post" href="/categories/algorithm/selection-sort/">selection sort</a>
         </li>
         
         <li>
             <a class="footer-post" href="/categories/vuejs/">vuejs</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/algorithm/graph/">graph</a>
         </li>
         
         <li>
