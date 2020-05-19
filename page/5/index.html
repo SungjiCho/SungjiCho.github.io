@@ -269,6 +269,100 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2019/11/21/Python-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%B3%B8%EC%A7%88/">
+                [Python] 클래스와 객체의 본질
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-21</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/python/">python</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="Story-특별편-클래스와-객체의-본질"><a href="#Story-특별편-클래스와-객체의-본질" class="headerlink" title="Story 특별편. 클래스와 객체의 본질"></a>Story 특별편. 클래스와 객체의 본질</h1><h4 id="객체-안에-변수가-만들어지는-시점"><a href="#객체-안에-변수가-만들어지는-시점" class="headerlink" title="[객체 안에 변수가 만들어지는 시점]"></a>[객체 안에 변수가 만들어지는 시점]</h4><p>소프트웨어 공학 관점에서의 클래스와 객체에 대한 설명을 먼저 살펴보자.</p>
+<p><br></br></p>
+<h5 id="클래스-객체를-만들기-위한-일종의-설계도"><a href="#클래스-객체를-만들기-위한-일종의-설계도" class="headerlink" title="클래스: 객체를 만들기 위한 일종의 설계도"></a>클래스: 객체를 만들기 위한 일종의 설계도</h5><h5 id="객체-클래스를-기반으로-만들어진-실제-사물"><a href="#객체-클래스를-기반으로-만들어진-실제-사물" class="headerlink" title="객체: 클래스를 기반으로 만들어진 실제 사물"></a>객체: 클래스를 기반으로 만들어진 실제 사물</h5><p><br></br></p>
+<p>즉 위의 정의는 언어에 따라 달라지는 내용이 아니다. 그런데 파이썬의 클래스와 객체에는 조금 독특한 부분이 있다.<br>그래서 지금부터 이에 대해서 설명하고자 한다. 일단 다음 클래스 정의를 보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Simple</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">seti</span><span class="params">(self, i)</span>:</span>    <span class="comment"># seti 메소드의 정의</span></span><br><span class="line">		self.i = i</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">geti</span><span class="params">(self)</span>:</span>       <span class="comment"># geti 메소드의 정의</span></span><br><span class="line">		<span class="keyword">return</span> self.i</span><br></pre></td></tr></table></figure>
+<p>클래스의 기본 정의는 다음과 같다.</p>
+<p><br></br></p>
+<h5 id="“클래스-내에-들어갈-변수와-데이터와-메소드를-기능을-결정하는-것”"><a href="#“클래스-내에-들어갈-변수와-데이터와-메소드를-기능을-결정하는-것”" class="headerlink" title="“클래스 내에 들어갈 변수와(데이터와) 메소드를(기능을) 결정하는 것”"></a>“클래스 내에 들어갈 변수와(데이터와) 메소드를(기능을) 결정하는 것”</h5><p><br></br></p>
+<p>그런데 위의 클래스에는 메소드의 정의만 존재한다. 즉 변수의 선언은 존재하지 않는다.<br>그러나 파이썬은 객체에 필요한 변수를 알아서 생성해준다. 그리고 객체 내에 변수가 생성되는 정확한 시점은 다음과 같다.</p>
+<p><br></br></p>
+<h5 id="“객체-내에서-해당-변수를-대상으로-대입-연산을-처음-진행하는-순간”"><a href="#“객체-내에서-해당-변수를-대상으로-대입-연산을-처음-진행하는-순간”" class="headerlink" title="“객체 내에서 해당 변수를 대상으로 대입 연산을 처음 진행하는 순간”"></a>“객체 내에서 해당 변수를 대상으로 대입 연산을 처음 진행하는 순간”</h5><p><br></br></p>
+<p>따라서 위의 클래스를 대상으로 다음과 같이 객체를 생성하고 메소드를 호출하면 문제가 없다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s1 = Simple()</span><br><span class="line">s1.seti(<span class="number">200</span>)          <span class="comment"># 이 메소드의 실행 과정에서 객체 내에 변수 i가 만들어진다.</span></span><br><span class="line">s1.geti()             <span class="comment"># 200</span></span><br></pre></td></tr></table></figure>
+<p>seti 메소드를 호출하면 그 안에서 다음 문장이 실행되면서 객체 내에 변수 i가 만들어지기 때문이다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">self.i = i   <span class="comment"># 처음 이 문장이 실행되면 객체 내에 변수 i가 만들어짐</span></span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<p>그러나 다음과 같이 geti 메소드를 먼저 호출해 버리면 이때는 오류가 발생한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s2 = Simple()</span><br><span class="line">s2.geti()  <span class="comment"># 아직 객체 내에 변수 i가 없는 상태이므로 오류 발생!</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">AttributeError: <span class="string">'Simple'</span> object has no attribute <span class="string">'i'</span></span><br><span class="line">The terminal process terminated <span class="keyword">with</span> exit code: <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>그러나 클래스를 정의할 때, 객체 생성 시 자동으로 호출되는 <strong>init</strong>메소드를 다음과 같이 정의하고 또 그 안에서 객체 내에 필요한 모든 변수를 초기화 해주기만 한다면 위에서 보인 오류 상황은 걱정하지 않아도 된다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Simpe2</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.i = <span class="number">0</span>   <span class="comment"># 변수 초기화, 이 순간에 변수 i가 만들어짐</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">seti</span><span class="params">(self, i)</span>:</span></span><br><span class="line">        self.i = i</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">geti</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.i</span><br><span class="line"></span><br><span class="line">s = Simpe2()</span><br><span class="line">print(s.geti())   <span class="comment"># 0</span></span><br><span class="line">s.seti(<span class="number">25</span>)</span><br><span class="line">print(s.geti())   <span class="comment"># 25</span></span><br></pre></td></tr></table></figure>
+<p><strong>init</strong>의 호출이 왼료되는 시점을 객체 생성이 완료되는 시점을 판단한다.<br>따라서 <strong>init</strong> 메소드를 잘 정의했다는 가정하에서 다음 규칙은 파이썬에서도 여전히 유효하다.</p>
+<p><br></br></p>
+<h5 id="“설계도에-해당하는-클래스를-바탕으로-만들어진-객체에는-변수와-메소드가-담겨-있다-”"><a href="#“설계도에-해당하는-클래스를-바탕으로-만들어진-객체에는-변수와-메소드가-담겨-있다-”" class="headerlink" title="“설계도에 해당하는 클래스를 바탕으로 만들어진 객체에는 변수와 메소드가 담겨 있다.”"></a>“설계도에 해당하는 클래스를 바탕으로 만들어진 객체에는 변수와 메소드가 담겨 있다.”</h5><p><br></br></p>
+<p>그리고 위의 규칙이 깨지지 않도록 <strong>init</strong> 메소드를 잘 정의하는 것이(모든 변수를 적절히 초기화하는 것이) 중요하다.</p>
+<p><br></br></p>
+<h4 id="객체에-변수와-메소드-붙였다-떼었다-해보기"><a href="#객체에-변수와-메소드-붙였다-떼었다-해보기" class="headerlink" title="[객체에 변수와 메소드 붙였다 떼었다 해보기]"></a>[객체에 변수와 메소드 붙였다 떼었다 해보기]</h4><p>당장 유용하게 사용될 특성은 아니지만, 알아 두면 파이썬에 대한 이해도가 깊어지는 다음 특성을 살펴보려고 한다.</p>
+<p><br></br></p>
+<h5 id="“파이썬의-객체에는-변수와-메소드를-붙이기도-하고-떼기도-할-수-있다-”"><a href="#“파이썬의-객체에는-변수와-메소드를-붙이기도-하고-떼기도-할-수-있다-”" class="headerlink" title="“파이썬의 객체에는 변수와 메소드를 붙이기도 하고 떼기도 할 수 있다.”"></a>“파이썬의 객체에는 변수와 메소드를 붙이기도 하고 떼기도 할 수 있다.”</h5><p><br></br></p>
+<p>프로그램을 만들 때 이런 특성을 직접적으로 사용하지는 않는다.<br>따라서 파이썬의 객체 특성을 조금 깊이 이해한다는 생각으로 재미를 느껴가며 이어지는 설명을 들어보자. 그럼 다음 예를 보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SoSimple</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">geti</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.i</span><br><span class="line"></span><br><span class="line">ss = SoSimple()</span><br><span class="line">ss.i = <span class="number">27</span>         <span class="comment"># 이 순간 변수 ss에 담긴 객체에 i라는 변수가 생긴다. </span></span><br><span class="line">print(ss.geti())  <span class="comment"># ss에 담긴 객체에 i가 생겼으므로 geti 메소드 호출 가능</span></span><br></pre></td></tr></table></figure>
+<p>위의 예에서는 객체 생성 이후에 다음과 같은 형태로 변수 i를 객체에 추가하였다. 이렇듯 변수 i를 추가했기 때문에 이어서 geti 메소드를 호출할 수 있었다.</p>
+<p>그리고 위의 코드에 이어서 다음 코드도 실행해보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ss.hello = <span class="keyword">lambda</span>: print(<span class="string">'hi~'</span>)  <span class="comment"># hello라는 메소드 추가</span></span><br><span class="line">ss.hello()</span><br></pre></td></tr></table></figure>
+<p>위의 예에서는 람다식을 기반으로 만든 함수를 hello라는 이름으로 객체에 추가하였다. 이렇듯 객체에는 함수도 추가할 수 있다. 그럼 위의 코드에 이어서 다음 코드도 실행해보자. 이는 앞서 추가했던 i와 hello를 객체에서 삭제하는 코드이다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> ss.i     <span class="comment"># ss에 담긴 객체에서 변수 i 삭제</span></span><br><span class="line"><span class="keyword">del</span> ss.hello <span class="comment"># ss에 담긴 객체에서 메소드 hello 삭제</span></span><br></pre></td></tr></table></figure>
+<p>이렇듯 i와 hello를 삭제하고 나면, 이 둘에 접근하는 코드 ss.geti()에서는 오류가 발생한다.<br>사실 다른 객체지향 언어에 경험이 있는 이들에게는 지금 설명한 이러한 유연함이 꽤 불편하게 다가올 수 있다. 그러나 이러한 유연함을 클래스와 객체를 지원하기 위한 파이썬의 독특한 특성으로 정리한다면 불편함은 덜할 것이다.</p>
+<p><br></br></p>
+<h4 id="클래스에-변수-추가하기"><a href="#클래스에-변수-추가하기" class="headerlink" title="[클래스에 변수 추가하기]"></a>[클래스에 변수 추가하기]</h4><p>본격적으로 클래스에 변수를 추가해 보기 전에 클래스 변수를 살펴보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>:</span></span><br><span class="line">    cv = <span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_iv</span><span class="params">(self, iv)</span>:</span></span><br><span class="line">        self.iv = iv</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_iv</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.iv</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    t = Test()</span><br><span class="line">    print(t.cv)</span><br><span class="line">    print(t.get_iv())</span><br><span class="line"></span><br><span class="line">main()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line">AttributeError: <span class="string">'Test'</span> object has no attribute <span class="string">'iv'</span></span><br></pre></td></tr></table></figure>
+<p>이처럼 클래스 변수와 객체 변수가 생성 시점이 다르다는 것을 확인해 볼 수 있다.<br>다시 돌아와 앞서 객체에 변수를 추가해 보았는데, 이와 유사하게 파이썬에서는 클래스에도 변수를 추가할 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Simple</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, i)</span>:</span></span><br><span class="line">        self.i = i</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">geti</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.i</span><br><span class="line"></span><br><span class="line">Simple.n = <span class="number">7</span>   <span class="comment"># Simple 클래스에 변수 n을 추가하고 7로 초기화</span></span><br><span class="line">print(Simple.n)</span><br></pre></td></tr></table></figure>
+<p>여기서 한가지 의문이 드는 것은, 클래스는 객체와 달리 설계도일 뿐인데 어떻게 변수를 추가할 수 있느냐는 것이다. 그런데 이렇듯 변수 추가가 가능한 이유는 다음에 있다.</p>
+<p><br></br></p>
+<h5 id="“파이썬의-클래스는-클래스이자-객체이다-”"><a href="#“파이썬의-클래스는-클래스이자-객체이다-”" class="headerlink" title="“파이썬의 클래스는 클래스이자 객체이다.”"></a>“파이썬의 클래스는 클래스이자 객체이다.”</h5><p><br></br></p>
+<p>이렇듯 프로그래머가 직접 정의하는 클래스들은 ‘type이라는 클래스’의 객체이다.<br>그래서 객체에 변수를 추가하듯이 클래스에도 변수를 추가할 수 있다. 그럼 위의 예제에 이어서 다음 예제를 실행해보자.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s1 = Simple(<span class="number">3</span>)</span><br><span class="line">s2 = Simple(<span class="number">5</span>)</span><br><span class="line">print(s1.n, s1.geti(), sep=<span class="string">', '</span>)</span><br><span class="line">print(s2.n, s2.geti(), sep=<span class="string">', '</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">7, 4411308880, &lt;class 'int'&gt;, 3, 4411308752, &lt;class 'int'&gt;</span><br><span class="line">7, 4411308880, &lt;class 'int'&gt;, 5, 4411308816, &lt;class 'int'&gt;</span><br></pre></td></tr></table></figure>
+<p>위의 예제에서는 정확히는 변수 n의 값을 얻기 위해 접근하였다.<br>이 경우 s1과 s2의 객체에서 n을 찾는다. 그러나 이 두 객체에는 n이 없다.<br>이때 파이썬은 해당 객체의 설계도에 해당하는 클래스를 찾아가서 n을 찾는다. 즉 두 경우 모두 Simple 클래스에서 n을 찾는다. 그래서 s1을 통해 n을 출력한 결과와 s2를 통해서 n을 출력한 결과가 동일하다.</p>
+<p><br></br></p>
+<h5 id="“클래스에-속하는-변수를-만들-수-있다-”"><a href="#“클래스에-속하는-변수를-만들-수-있다-”" class="headerlink" title="“클래스에 속하는 변수를 만들 수 있다.”"></a>“클래스에 속하는 변수를 만들 수 있다.”</h5><h5 id="“객체에-‘찾는-변수’가-없으면-해당-객체의-클래스로-찾아가서-그-변수를-찾는다-”"><a href="#“객체에-‘찾는-변수’가-없으면-해당-객체의-클래스로-찾아가서-그-변수를-찾는다-”" class="headerlink" title="“객체에 ‘찾는 변수’가 없으면 해당 객체의 클래스로 찾아가서 그 변수를 찾는다.”"></a>“객체에 ‘찾는 변수’가 없으면 해당 객체의 클래스로 찾아가서 그 변수를 찾는다.”</h5><p><br></br></p>
+<h4 id="파이썬에서는-클래스도-객체"><a href="#파이썬에서는-클래스도-객체" class="headerlink" title="[파이썬에서는 클래스도 객체]"></a>[파이썬에서는 클래스도 객체]</h4><p>파이썬은 클래스도 객체로 간주한다. 다음과 같이 우리에게 익숙한 방식으로 파이썬에서 클래스를 만들어보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">myClass</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>위의 코드는 단순히 myClass라는 이름의 객체가 메모리에 만들어진 것을 의미한다. 이 객체는 새 객체를 만들 수 있으므로 클래스로 간주된다. 이는 클래스 자체가 객체이기 때문에 파이썬에서는 클래스에 객체 연산을 적용할 수 있다는 것을 알 수 있다.따라서 다음과 같이 클래스를 변수에 할당하는 것과 같은 작업을 수행할 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">myClass_obj = myClass()</span><br><span class="line">print(myClass_obj)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;__main__.myClass object at <span class="number">0x7fa440193f40</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>다음과 같이 myClass 클래스를 매개변수로 메소드에 전달할 수도 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myClass_mth</span><span class="params">(object)</span>:</span></span><br><span class="line">    print(object)</span><br><span class="line"></span><br><span class="line">myClass_mth(myClass)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">myClass</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+<p>다른 연산도 일반적으로 객체에 적용할 수 있다.</p>
+<p><br></br></p>
+<h4 id="lt-메타클래스-gt"><a href="#lt-메타클래스-gt" class="headerlink" title="&lt;메타클래스&gt;"></a>&lt;메타클래스&gt;</h4><p>type은 우리가 지금까지 어떤 객체의 자료형을 확인할 때 호출해 왔던 함수의 이름이다. 그런데 이는 사실 클래스의 이름이다. (그러나 함수처럼 사용할 수 있으며, 이렇게 사용할 때 자료형의 종류를 알려주게 된다. 이러한 사실은 다음과 같이 간단히 알 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(type(myClass))</span><br><span class="line">print(type)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">type</span>'&gt;</span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">type</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+<p>type이 그저 함수일 뿐이라면 <function type at ~>의 형태로 출력이 이뤄진다. 그런데 클래스이기 때문에 위와 같이 출력이 이뤄졌다. 또한 파이썬에서 클래스의 타입은 type이라고 결론내릴 수 있다.</p>
+<p>type과 metaclass 간의 관계는 무엇일까? 기본 metaclass가 type인 경우 type은 metaclass이다. 기본 metaclass가 type인 경우 type은 metaclass이다. 즉, type이 type이라는 뜻이다. metaclass라는 용어는 단순히 클래스를 만드는데 사용되는 것을 의미한다. 즉, 메타클래스는 클래스의 클래스이며, 이 경우 클래스의 인스턴스가 클래스라는 것을 의미한다. 따라서 type의 인스턴스가 클래스이기 때문에 type은 metaclass로 간주된다. 예를 들어, 위의 코드에서 metaclass가 type으로 간주되는 myClass 클래스를 만드는데 사용되었다. 따라서 객체가 클래스의 인스턴스인 것처럼 클래스는 metaclass의 인스턴스이다.</p>
+<p><br></br></p>
+<h4 id="lt-메타클래스를-사용해-클래스-만들기-gt"><a href="#lt-메타클래스를-사용해-클래스-만들기-gt" class="headerlink" title="&lt;메타클래스를 사용해 클래스 만들기&gt;"></a>&lt;메타클래스를 사용해 클래스 만들기&gt;</h4><p>class문을 사용하는 대신 metaclass를 사용해 클래스를 만드는 방법을 살펴보도록 하자. 위에서 봤듯이 기본 metaclass는 type이다. 따라서 다음과 같은 코드를 사용해 새 클래스를 만들 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">newClass = type(<span class="string">'myClass'</span>, (), &#123;&#125;)</span><br><span class="line">test = newClass()</span><br><span class="line">print(type(test))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 실행결과</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">myClass</span>'&gt;</span></span><br></pre></td></tr></table></figure>
+<p>더 단순하게 만들고 싶다면 myClass라는 동일한 클래스 이름을 변수 이름에 할당하면 된다. 여기서는 클래스의 속성을 정의하는데 { } 딕셔너리를 사용했다.</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2019/11/20/html5-css3/">
                 [HTML&CSS] 초보자를 위한 HTML&CSS 동작과 원리
             </a>
@@ -807,37 +901,6 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2019/11/17/Programmers-2016%EB%85%84/">
-                [Programmers] 2016년
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-17</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/programmers/">programmers</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    day = [<span class="string">'THU'</span>, <span class="string">'FRI'</span>, <span class="string">'SAT'</span>, <span class="string">'SUN'</span>, <span class="string">'MON'</span>, <span class="string">'TUE'</span>, <span class="string">'WED'</span>]</span><br><span class="line">    month = [<span class="number">31</span>, <span class="number">29</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>]</span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">1</span>:</span><br><span class="line">        answer = day[b%<span class="number">7</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        total = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(a<span class="number">-1</span>):</span><br><span class="line">            total += month[i]</span><br><span class="line">        answer = day[(total+b)%<span class="number">7</span>]</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
             <a href="/2019/11/17/Algorithm-%EC%84%A0%ED%83%9D%EC%A0%95%EB%A0%AC/">
                 [Algorithm] 선택정렬
             </a>
@@ -876,8 +939,8 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2019/11/17/Programmers-%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C-%EA%B9%80%EC%84%9C%EB%B0%A9-%EC%B0%BE%EA%B8%B0/">
-                [Programmers] 서울에서 김서방 찾기
+            <a href="/2019/11/17/Programmers-2016%EB%85%84/">
+                [Programmers] 2016년
             </a>
         </h1>
         <div class="post-info">
@@ -895,38 +958,7 @@
 
     
         <div class="content">
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(seoul)</span>:</span></span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(seoul)):</span><br><span class="line">        <span class="keyword">if</span> seoul[i] == <span class="string">"Kim"</span>:</span><br><span class="line">            answer = <span class="string">"김서방은 "</span> + str(i) + <span class="string">"에 있다"</span></span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/11/17/Programmers-%EA%B0%80%EC%9A%B4%EB%8D%B0-%EA%B8%80%EC%9E%90-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/">
-                [Programmers] 가운데 글자 가져오기
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-17</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/programmers/">programmers</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(s)</span>:</span></span><br><span class="line">    line = list(s)</span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> len(s)%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span><span class="number">-1</span>] + line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    day = [<span class="string">'THU'</span>, <span class="string">'FRI'</span>, <span class="string">'SAT'</span>, <span class="string">'SUN'</span>, <span class="string">'MON'</span>, <span class="string">'TUE'</span>, <span class="string">'WED'</span>]</span><br><span class="line">    month = [<span class="number">31</span>, <span class="number">29</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>]</span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">1</span>:</span><br><span class="line">        answer = day[b%<span class="number">7</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        total = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(a<span class="number">-1</span>):</span><br><span class="line">            total += month[i]</span><br><span class="line">        answer = day[(total+b)%<span class="number">7</span>]</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
 
         </div>
     
@@ -983,8 +1015,8 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2019/11/17/Programmers-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98/">
-                [Programmers] 수박수박수박수박수박수?
+            <a href="/2019/11/17/Programmers-%EA%B0%80%EC%9A%B4%EB%8D%B0-%EA%B8%80%EC%9E%90-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/">
+                [Programmers] 가운데 글자 가져오기
             </a>
         </h1>
         <div class="post-info">
@@ -1002,7 +1034,38 @@
 
     
         <div class="content">
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(n)</span>:</span></span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> n%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        answer = <span class="string">'수박'</span>*(n//<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = <span class="string">'수박'</span>*(n//<span class="number">2</span>) + <span class="string">'수'</span></span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(s)</span>:</span></span><br><span class="line">    line = list(s)</span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> len(s)%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span><span class="number">-1</span>] + line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        answer = line[len(s)//<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/11/17/Programmers-%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C-%EA%B9%80%EC%84%9C%EB%B0%A9-%EC%B0%BE%EA%B8%B0/">
+                [Programmers] 서울에서 김서방 찾기
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-17</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/programmers/">programmers</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(seoul)</span>:</span></span><br><span class="line">    answer = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(seoul)):</span><br><span class="line">        <span class="keyword">if</span> seoul[i] == <span class="string">"Kim"</span>:</span><br><span class="line">            answer = <span class="string">"김서방은 "</span> + str(i) + <span class="string">"에 있다"</span></span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
 
         </div>
     
@@ -1051,6 +1114,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2020/05/20/hackerrank-loops/">[HackerRank] Loops</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2020/05/19/hackerrank-class-vs-instance/">[HackerRank] Class vs. In</a>
             </li>
             
@@ -1060,10 +1127,6 @@
             
             <li>
                 <a class="footer-post" href="/2020/05/17/hackerrank-operator/">[HackerRank] Operators</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2020/05/13/hackerrank-data-types/">[HackerRank] Data Types</a>
             </li>
             
         </ul>
@@ -1077,19 +1140,19 @@
     <ul>
         
         <li>
+            <a class="footer-post" href="/categories/hci/">HCI</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/nlp/">NLP</a>
+        </li>
+        
+        <li>
             <a class="footer-post" href="/categories/algorithm/selection-sort/">selection sort</a>
         </li>
         
         <li>
             <a class="footer-post" href="/categories/algorithm/graph/">graph</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/vuejs/">vuejs</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/computational-modeling/">Computational Modeling</a>
         </li>
         
     </ul>
