@@ -147,6 +147,52 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2020/05/19/hackerrank-class-vs-instance/">
+                [HackerRank] Class vs. Instance
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-05-19</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/hackerrank/">HackerRank</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="HackerRank-Class-vs-Instance"><a href="#HackerRank-Class-vs-Instance" class="headerlink" title="[HackerRank] Class vs. Instance"></a>[HackerRank] Class vs. Instance</h1><p><br></p>
+<h4 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h4><p><br></p>
+<p>Write a Person class with an instance variable, age and a constructor that takes an integer, initial Age, as a parameter. The constructor must assign initialAge to age after confirming the argument passed as initialAge is not negative; if a negative argument is passed as initialAge, the constructor should set age to 0 and print Age is not valid, setting age to 0. In addition, you must write the following instance methods:</p>
+<ol>
+<li>yearPasses() should increase the age instance variable by 1.</li>
+<li>amIOld() should perform the following conditional actions:</li>
+</ol>
+<ul>
+<li>If age &lt; 13, print You are young..</li>
+<li>If age &gt;= 13 and age &lt; 18, print You are a teenager..</li>
+<li>Otherwise, print You are old..</li>
+</ul>
+<p><br></p>
+<h4 id="Inout-Format"><a href="#Inout-Format" class="headerlink" title="Inout Format"></a>Inout Format</h4><p>The first line constrains an integer, T (the number of test cases), and the T subsequent lines each contain an integer denoting the age of a Person instance.</p>
+<p><br><br></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> age: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(initialAge: <span class="type">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> initialAge &lt; <span class="number">0</span>&#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"Age is not valid, setting age to 0."</span>)</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            age = initialAge</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">amIOld</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> age &lt; <span class="number">13</span>&#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"You are young."</span>)</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> age &gt;= <span class="number">13</span> &amp;&amp; age &lt; <span class="number">18</span>&#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"You are a teenager."</span>)</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"You are old."</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">yearPasses</span><span class="params">()</span></span>&#123;</span><br><span class="line">        age += <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> t = <span class="type">Int</span>(<span class="built_in">readLine</span>()!)!</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">0</span>..&lt;t&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> age = <span class="type">Int</span>(<span class="built_in">readLine</span>()!)!</span><br><span class="line">    <span class="keyword">let</span> p = <span class="type">Person</span>(initialAge: age)</span><br><span class="line">    </span><br><span class="line">    p.amIOld()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">1</span>...<span class="number">3</span>&#123;</span><br><span class="line">        p.yearPasses()</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    p.amIOld()</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">""</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2020/05/17/hackerrank-intro-to-conditional-statements/">
                 [HackerRank] Intro to Conditional Statements
             </a>
@@ -614,49 +660,6 @@
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/04/02/beakjoon-1-5/">
-                [BaekJoon] A+B
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-04-02</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/baekjoon/">BAEKJOON</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h4 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h4><p>두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.</p>
-<p><br></p>
-<h4 id="입력"><a href="#입력" class="headerlink" title="입력"></a>입력</h4><p>첫째 줄에 A와 B가 주어진다. (0 &lt; A, B &lt; 10)</p>
-<p><br></p>
-<h4 id="출력"><a href="#출력" class="headerlink" title="출력"></a>출력</h4><p>첫째 줄에 A+B를 출력한다.</p>
-<p><br></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> A = input.nextInt();</span><br><span class="line">		<span class="keyword">int</span> B = input.nextInt();</span><br><span class="line">		System.out.print(A+B);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>위의 코드는 제출하여 맞았습니다!를 받았지만 마음에 걸리는 부분은 입력과 출력 조건에 있다. 입력도 첫째 줄, 출력도 첫째 줄이어서 우선 고민하다가 편한대로 제출해봤는데 통과가 되었다. 필요없는 고민이었던건가 싶어 1등 코드를 찾아보니 다음과 같은 신선한 코드가 있었다.</p>
-<p><br></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AplusB</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> a = System.in.read();</span><br><span class="line">		System.in.read();</span><br><span class="line">		<span class="keyword">int</span> b = System.in.read();</span><br><span class="line">		System.in.read();</span><br><span class="line">		a=a-<span class="number">48</span>;</span><br><span class="line">		b=b-<span class="number">48</span>;</span><br><span class="line">		System.out.println(a+b);		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>결론절 쓸데없는 고민이었던 것으로 한다.</p>
-
-        </div>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -699,6 +702,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2020/05/19/hackerrank-class-vs-instance/">[HackerRank] Class vs. In</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2020/05/17/hackerrank-intro-to-conditional-statements/">[HackerRank] Intro to Con</a>
             </li>
             
@@ -708,10 +715,6 @@
             
             <li>
                 <a class="footer-post" href="/2020/05/13/hackerrank-data-types/">[HackerRank] Data Types</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2020/05/05/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-8/">[iOS] 앱 개발 도전기 (8)</a>
             </li>
             
         </ul>
@@ -729,11 +732,11 @@
         </li>
         
         <li>
-            <a class="footer-post" href="/categories/vuejs/">vuejs</a>
+            <a class="footer-post" href="/categories/algorithm/graph/">graph</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/categories/algorithm/graph/">graph</a>
+            <a class="footer-post" href="/categories/vuejs/">vuejs</a>
         </li>
         
         <li>
