@@ -10,9 +10,8 @@
 
     <!--Description-->
     
-        <meta name="description" content="[STT] Kaldi Gstreamer Server 사용 및 이슈 정리
-다음 링크들을 참조하여 작성하였습니다.
-[Ref 1] https://hcnoh.github.io/2019-02-28-kaldi-gstreamer-server[Ref 2] https://github.">
+        <meta name="description" content="[STT] Kaldi Gstreamer Server 사용 및 이슈 정리다음 링크들을 참조하여 작성하였습니다.
+[Ref 1] https://hcnoh.github.io/2019-02-28-kaldi-gstreamer-server[Ref 2] https://github.c">
     
 
     <!--Author-->
@@ -167,8 +166,7 @@
         
 
         <!-- Post Content -->
-        <h1 id="STT-Kaldi-Gstreamer-Server-사용-및-이슈-정리"><a href="#STT-Kaldi-Gstreamer-Server-사용-및-이슈-정리" class="headerlink" title="[STT] Kaldi Gstreamer Server 사용 및 이슈 정리"></a>[STT] Kaldi Gstreamer Server 사용 및 이슈 정리</h1><p><br></br></p>
-<p>다음 링크들을 참조하여 작성하였습니다.</p>
+        <h1 id="STT-Kaldi-Gstreamer-Server-사용-및-이슈-정리"><a href="#STT-Kaldi-Gstreamer-Server-사용-및-이슈-정리" class="headerlink" title="[STT] Kaldi Gstreamer Server 사용 및 이슈 정리"></a>[STT] Kaldi Gstreamer Server 사용 및 이슈 정리</h1><p>다음 링크들을 참조하여 작성하였습니다.</p>
 <p>[Ref 1] <a href="https://hcnoh.github.io/2019-02-28-kaldi-gstreamer-server" target="_blank" rel="noopener">https://hcnoh.github.io/2019-02-28-kaldi-gstreamer-server</a><br>[Ref 2] <a href="https://github.com/jcsilva/docker-kaldi-gstreamer-server" target="_blank" rel="noopener">https://github.com/jcsilva/docker-kaldi-gstreamer-server</a></p>
 <p><br></br></p>
 <h2 id="파이썬-패키지"><a href="#파이썬-패키지" class="headerlink" title="파이썬 패키지"></a>파이썬 패키지</h2><ul>
@@ -180,29 +178,30 @@
 <p>여기서 중요한 포인트는 파이썬 2에서 동작한다는 점, 그리고 토네이도의 경우 뒤에서 이슈를 정리하겠지만 버전을 맞추어 셋팅했다 하더라도 다른 버전 에러가 발생할 수 있다는 점 등이다. 그 외에는 Kaldi와 관련한 여러 패키지들이 필요한데 도커를 이용하여 개발 환경을 구축하였다. 추가적으로 도커 메모리 관련해서도 에러가 발생할 수 있다. 참고로 각 스텝 중에서도 Kaldi 모델을 다운받는데 시간이 꽤 오래걸릴 수 있다는 점까지 고려하여 진행하면 더욱 좋을 듯 하다.</p>
 <p><br></br> </p>
 <h2 id="도커-설치-확인-및-이미지-가져오기"><a href="#도커-설치-확인-및-이미지-가져오기" class="headerlink" title="도커 설치 확인 및 이미지 가져오기"></a>도커 설치 확인 및 이미지 가져오기</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 도커 설치 확인</span></span><br><span class="line">&gt;&gt;&gt; docker version</span><br><span class="line"></span><br><span class="line"><span class="comment"># 도커 이미지 가져오기</span></span><br><span class="line">&gt;&gt;&gt; docker pull jscilva/docker-kaldi-gstreamer-server</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 도커 이미지 확인</span><br><span class="line">&gt;&gt;&gt; docker images</span><br><span class="line">REPOSITORY               TAG    IMAGE ID    CREATED    SIZE</span><br><span class="line">jcsilva/docker-kaldi-gstreamer-server  latest  13d616ef11e1  2 years ago  1.11GB</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 도커 이미지 확인</span></span><br><span class="line">&gt;&gt;&gt; docker images</span><br><span class="line">REPOSITORY               TAG    IMAGE ID    CREATED    SIZE</span><br><span class="line">jcsilva/docker-kaldi-gstreamer-server  latest  13d616ef11e1  2 years ago  1.11GB</span><br></pre></td></tr></table></figure>
 <p><br></br></p>
 <p>도커를 설치하는 과정은 쉽게 찾아볼 수 있지만, kaldi 이미지를 가져온 후 해당 이미지가 잘 받아졌는지 확인한 후에는 추가적으로 도커에서 체크해봐야 할 사항이 있다. 도커 메모리를 되도록이면 미리 4GB 이상으로 설정해주면 후에 발암을 줄일 수 있다. 개인적으로는 docker run 리소스 설정으로 -m, —memory 옵션으로 설정도 해보았지만 잘 먹히지 않았다. 그래서 도커 설정으로 가서 preferences &gt; Resources &gt; Memory 설정에서 용량 자체를 늘려주었다. 4GB 보다는 넉넉하게 늘려 주는 것을 추천한다.</p>
-<p><br>&lt;/br&gt;<br></br></p>
+<p><br><br></p>
 <h2 id="도커-컨테이너-생성"><a href="#도커-컨테이너-생성" class="headerlink" title="도커 컨테이너 생성"></a>도커 컨테이너 생성</h2><p>먼저 도커 컨테이너를 생성하기 전에 디렉토리를 생성해 준다.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; mkdir ~/kaldi-practice</span><br><span class="line">&gt;&gt;&gt; mkdir ~/kaldi-practice/kaldi_models</span><br><span class="line">&gt;&gt;&gt; <span class="built_in">cd</span> ~/kaldi-practice/kdldi_models</span><br></pre></td></tr></table></figure>
 <p>이후 도커 컨테이너 생성을 위해 다음의 명령을 수행한다. 보통 자료를 찾아보면 호스트 포트로 8080이 많이 사용되지만, 필자의 경우 8080은 이미 사용 중이어서 -p 옵션을 통해 8888로 설정하였다. -v 옵션을 통해 호스트 디렉토리를 ~/kaldi-practice/kaldi_models, 컨테이너 디렉토리를 /opt/models로 설정하였다. 이후 컨테이너에 정상적으로 진입하였다면 아래와 같이 ls와 같은 명령을 수행하여 확인해보면 좋을 것 같다. 필자의 경우 이미 생성해 놓은 컨테이너를 다시 시작하여 진입한 상태이기 때문에 worker.log, master.log, tmp  등 존재하는 파일이 더 있는 상태일뿐 그 외에 다른 파일들이 존재한다면 정상적으로 생성된 것이다. 일단 Kaldi 모델을 다운받는 등 다른 작업이 더 필요하기 때문에 현재 생성된 컨테이너에서 나오도록 한다.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; docker run -it -p 8888:80 -v ~/kaldi-practice/kaldi_models:/opt/models jscilva/docker-kaldi-gstreamer-server:latest /bin/bash</span><br><span class="line"></span><br><span class="line">sh-4.3<span class="comment"># pwd</span></span><br><span class="line">/opt</span><br><span class="line">sh-4.3<span class="comment"># ls</span></span><br><span class="line">gst-kaldi-nnet2-online	kaldi-gstreamer-server	models	 stop.sh worker.log</span><br><span class="line">kaldi			master.log		start.sh tmp</span><br><span class="line">sh-4.3<span class="comment"># exit </span></span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-<p><br>&lt;/br&gt;<br></br></p>
+<p><br><br></p>
 <h2 id="Kaldi-모델-다운로드"><a href="#Kaldi-모델-다운로드" class="headerlink" title="Kaldi 모델 다운로드"></a>Kaldi 모델 다운로드</h2><p>모델을 다운로드받기 위한 명령은 아래와 같다.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="built_in">cd</span> ~/kaldi-practice/kaldi_models</span><br><span class="line">&gt;&gt;&gt; wget https://phon.ioc.ee/~tanela/tedlium_nnet_ms_sp_online.tgz</span><br><span class="line"><span class="comment"># 안전하지 않은 접근 에러 발생 시 다음 명령으로 수행</span></span><br><span class="line">&gt;&gt;&gt; wget https://phon.ioc.ee/~tanela/tedlium_nnet_ms_sp_online.tgz --no-check-certificate</span><br><span class="line"><span class="comment"># 설치가 진행된 후 압축 풀기</span></span><br><span class="line">&gt;&gt;&gt; tar -zxvf tedlium_nnet_ms_sp_online.tgz</span><br><span class="line"><span class="comment"># 모델을 실행시키기 위한 yaml 파일 받기</span></span><br><span class="line">&gt;&gt;&gt; wget https://raw.githubusercontent.com/alumae/kaldi-gstreamer-server/master/sample_english_nnet2.yaml -P ~/kaldi-practice/kaldi_models</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="built_in">cd</span> ~/kaldi-practice/kaldi_models</span><br><span class="line">&gt;&gt;&gt; wget https://phon.ioc.ee/~tanela/tedlium_nnet_ms_sp_online.tgz</span><br><span class="line"><span class="comment"># 안전하지 않은 접근 에러 발생 시 다음 명령으로 수행</span></span><br><span class="line">&gt;&gt;&gt; wget https://phon.ioc.ee/~tanela/tedlium_nnet_ms_sp_online.tgz --no-check-certificate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 설치가 진행된 후 압축 풀기</span></span><br><span class="line">&gt;&gt;&gt; tar -zxvf tedlium_nnet_ms_sp_online.tgz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모델을 실행시키기 위한 yaml 파일 받기</span></span><br><span class="line">&gt;&gt;&gt; wget https://raw.githubusercontent.com/alumae/kaldi-gstreamer-server/master/sample_english_nnet2.yaml -P ~/kaldi-practice/kaldi_models</span><br></pre></td></tr></table></figure>
 <p>위의 과정은 메뉴얼이나 여러 자료에서 쉽게 찾아볼 수 있다. 하지만 다른 곳에 복병이 숨어 있었으니 아래와 같이 콘텐츠 업데이트와 관련한 명령들이 후에 발암을 줄일 수 있는 중요한 키포인트였다. </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; find ~/kaldi-practice/kaldi_models/ -type f | xargs sed -i &apos;s:test:/opt:g&apos;</span><br><span class="line">&gt;&gt;&gt; sed -i &apos;s:full-post-processor:#full-post-processor:g&apos; ~/kaldi-practice/kaldi_models/sample_english_nnet2.yaml</span><br></pre></td></tr></table></figure>
 <p>필자의 경우 위의 명령들 실행 후 오류를 뱉어 생략한 후 그냥 진행한 후 나중에 내부 파일에서 하나하나 경로를 직접 수정해주었다. 만약 제대로 수정하지 않으면 오류가 발생하니 하나하나 변경해주어야 한다. 먼저 ~/kaldi-practice/kaldi_models/sample_english_nnet2.yaml에서 경로들이 /opt/models로 시작하는지, 다른 경로에 저장이 되어 있다면 해당 경로로 시작하는지 등 살펴보아야 한다. 또한 생성한 도커 컨테이너를 실행하여 /opt/models 폴더에서 .yaml 파일을 열어 알맞은 절대경로로 변경해주어야 한다. 참고로 생성한 도커 컨테이너를 실행하는 부분은 바로 아래 절에 소개할 예정이다. vim 명령이 통하지 않을 수 있으므로 apt-get install vim을 통해 설치해 준다. 이후 /opt/models/english/tedlium_nnet_ms_sp_online/conf 폴더에서도 절대경로로 설정되어 있는지 확인하여 수정한다. 이러한 과정을 바로 위의 코드 두 줄이 해결해 주는 듯 한데 먹히지 않는다면 하나하나 직접 수정해 주어야 후에 발암을 겪지 않을 수 있다.</p>
-<p><br>&lt;/br&gt;<br></br></p>
+<p><br><br></p>
 <h2 id="Master-서버와-Worker-서버를-같은-호스트-머신에-실행하는-방법"><a href="#Master-서버와-Worker-서버를-같은-호스트-머신에-실행하는-방법" class="headerlink" title="Master 서버와 Worker 서버를 같은 호스트 머신에 실행하는 방법"></a>Master 서버와 Worker 서버를 같은 호스트 머신에 실행하는 방법</h2><p>간단한 테스트를 위해서 Master 서버와 Worker 서버를 같은 호스트 머신에 실행하는 방법을 수행해 본다. 일단 위에서의 방식과 동일하게 도커 컨테이너를 실행한다.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; docker run -it -p 8888:80 -v ~/kaldi-practice/kaldi_models:/opt/models jcsilva/docker-kaldi-gstreamer-server:latest /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 이미 도커 컨테이너가 실행되고 있다면 다음의 명령을 통해 접근</span></span><br><span class="line">&gt;&gt;&gt; docker <span class="built_in">exec</span> -it [CONTAINER ID] /bin/sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 도커 컨테이너가 실행이 되었다면 컨테이너 내부에서 다음 명령을 통해 서비스 개시</span></span><br><span class="line">&gt;&gt;&gt; /opt/start.sh -y /opt/models/sample_english_nnet2.yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 서비스를 종료 시</span></span><br><span class="line">&gt;&gt;&gt; /opt/stop.sh</span><br></pre></td></tr></table></figure>
 <p>만약 바로 테스트를 진행할 예정이라면 서비스를 종료하는 명령을 수행하는 것이 아니라 서비스를 개시한 후 Ctrl+P를 누른 후 Ctrl+Q를 누르면 컨테이너가 실행되는 상태로 컨테이너 밖으로 빠져나올 수 있다. 물론 서비스가 제대로 실행되고 있는지 확인하기 위한 방법이 존재하지만 필자는 귀찮음으로 일단 바로 테스트를 해보았다. 알맞게 빠져나온 후에는 ~/kaldi-practice 디렉토리로 이동하여 테스트에 사용할 client 예제 및 음성 파일을 다운로드 한다.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; wget https://raw.githubusercontent.com/alumae/kaldi-gstreamer-server/master/kaldigstserver/client.py -P ~/kaldi-practice/tmp/</span><br><span class="line">&gt;&gt;&gt; wget https://raw.githubusercontent.com/jcsilva/docker-kaldi-gstreamer-server/master/audio/1272-128104-0000.wav -P ~/kaldi-practice/tmp/</span><br><span class="line">&gt;&gt;&gt; wget https://raw.githubusercontent.com/alumae/kaldi-gstreamer-server/master/<span class="built_in">test</span>/data/bill_gates-TED.mp3 -P ~/kaldi-practice/tmp/</span><br><span class="line">&gt;&gt;&gt; <span class="built_in">cd</span> tmp</span><br><span class="line">&gt;&gt;&gt; ls</span><br><span class="line">client.py  1272-128104-0000.wav  bill_gates-TED.mp3</span><br></pre></td></tr></table></figure>
-<p><br>&lt;/br&gt;<br></br></p>
+<p><br><br></p>
 <h2 id="간단한-테스트-진행"><a href="#간단한-테스트-진행" class="headerlink" title="간단한 테스트 진행"></a>간단한 테스트 진행</h2><p>이제 다운로드 받은 client.py 파일을 실행시켜본다.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; python ~/kaldi-practice/tmp/client.py -u ws://localhost:8888/client/ws/speech -r 32000 ~/kaldi-practice/tmp/1272-128104-0000.wav</span><br><span class="line"></span><br><span class="line">mr coulter is the apostle of the middle classes and we. Audio sent, now sending EOS</span><br><span class="line">mr coulter is the apostle of the middle classes and we<span class="string">'re glad to welcome his gospel.</span></span><br><span class="line"><span class="string">mr coulter is the apostle of the middle classes and we'</span>re glad to welcome his gospel.</span><br></pre></td></tr></table></figure>
-<p>위와 같이 정상적으로 출력이 되지 않고 처음에는 Audio sent, now sending EOS 하고 아웃풋은 나오지 않는 상태로 멈춰버렸다. 그래서 이슈(발암)를 해결해고자 여러 차례 구글링을 한 결과 먼저 도커 컨테이너로 다시 접근하여 worker.log를 살펴보는 것을 추천한다. 필자의 경우 도커 컨테이너 내부에서 pip install tornado==4.3을 실행하여 토네이도 버전을 바꾸어 해결하였다. <a href="https://github.com/jcsilva/docker-kaldi-gstreamer-server/issues/59" target="_blank" rel="noopener">Ref 3</a> 모든 스텝을 해결하기 까지 꽤 시간이 걸렸지만 이렇게 기억나는 이슈들을 하나하나 정리하니 속이 후련하다.</p>
+<p>위와 같이 정상적으로 출력이 되지 않고 처음에는 Audio sent, now sending EOS 하고 아웃풋은 나오지 않는 상태로 멈춰버렸다. 그래서 이슈(발암)를 해결해고자 여러 차례 구글링을 한 결과 먼저 도커 컨테이너로 다시 접근하여 worker.log를 살펴보는 것을 추천한다. 필자의 경우 도커 컨테이너 내부에서 pip install tornado==4.3을 실행하여 토네이도 버전을 바꾸어 해결하였다. </p>
+<p><a href="https://github.com/jcsilva/docker-kaldi-gstreamer-server/issues/59" target="_blank" rel="noopener">Ref 3</a></p>
 
     </div>
 
@@ -249,15 +248,15 @@
             </li>
             
             <li>
-                <a class="footer-post" href="/2020/08/09/algorithm-%EC%84%A0%ED%98%95%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">Algorithm-선형자료구조</a>
-            </li>
-            
-            <li>
                 <a class="footer-post" href="/2020/08/09/baekjoon-1-5/">[BaekJoon] 입출력과 사칙연산</a>
             </li>
             
             <li>
                 <a class="footer-post" href="/2020/07/06/hackerrank-2d-arrays/">[HackerRank] 2D Arrays</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/07/05/hackerrank-binary-numbers/">[HackerRank] Binary Nnumb</a>
             </li>
             
         </ul>
