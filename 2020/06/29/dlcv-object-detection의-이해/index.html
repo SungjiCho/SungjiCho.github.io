@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="[DeepLearning &amp;amp; ComputerVision] Object Detection 이해
+본 포스팅은 “딥러닝 컴퓨터 비전 완벽 가이드 (권철민)”를 정리한 내용입니다.
+Object Detection 이해
+Object Detection과 Segmentatio">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Sunny Cho">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="[DLCV] Object Detection 이해"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="QuantPsy"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>[DLCV] Object Detection 이해 - QuantPsy</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2020/06/29/dlcv-object-detection%EC%9D%98-%EC%9D%B4%ED%95%B4/">
+                [DLCV] Object Detection 이해
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-06-29</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/deep-learning/">Deep Learning</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="DeepLearning-amp-ComputerVision-Object-Detection-이해"><a href="#DeepLearning-amp-ComputerVision-Object-Detection-이해" class="headerlink" title="[DeepLearning &amp; ComputerVision] Object Detection 이해"></a>[DeepLearning &amp; ComputerVision] Object Detection 이해</h1><p><br></p>
+<h5 id="본-포스팅은-“딥러닝-컴퓨터-비전-완벽-가이드-권철민-”를-정리한-내용입니다"><a href="#본-포스팅은-“딥러닝-컴퓨터-비전-완벽-가이드-권철민-”를-정리한-내용입니다" class="headerlink" title="본 포스팅은 “딥러닝 컴퓨터 비전 완벽 가이드 (권철민)”를 정리한 내용입니다."></a>본 포스팅은 “딥러닝 컴퓨터 비전 완벽 가이드 (권철민)”를 정리한 내용입니다.</h5><p><br><br></p>
+<h2 id="Object-Detection-이해"><a href="#Object-Detection-이해" class="headerlink" title="Object Detection 이해"></a>Object Detection 이해</h2><p><br></p>
+<h4 id="Object-Detection과-Segmentation-개요"><a href="#Object-Detection과-Segmentation-개요" class="headerlink" title="Object Detection과 Segmentation 개요"></a>Object Detection과 Segmentation 개요</h4><p><br></p>
+<p><img src="/image/dlcv1.png" alt="dlcv1"></p>
+<p><br></p>
+<ul>
+<li>Localization: 단 하나의 Object 위치를 Bounding Box로 지정하여 찾음</li>
+<li>Object Detection: 여러 개의 Object들에 대한 위치를 Bounding Box로 지정하여 찾음</li>
+<li>Segmentation: Detection보다 더 발전된 형태로 Pixel 레벨 Detection 수행</li>
+</ul>
+<p><br></p>
+<ul>
+<li>Localization/Detection은 해당 Object의 위치를 Bounding Box로 찾고, Bounding Box내의 오브젝트를 판별합니다.</li>
+<li>Localization/Detection은 Bounding Box Regression(Box의 좌표값을 예측)과 Classification 두 개의 문제가 합쳐져 있습니다,</li>
+<li>Localization에 비해 Detection은 두 개 이상의 Object를 이미지의 임의 위치에서 찾아야 하므로 상대적으로 Localization 보다 여러가지 어려운 문제에 봉착하게 됩니다.</li>
+</ul>
+<p><br><br></p>
+<h4 id="Object-Detection-주요-구성-요소-및-왜-Object-Detection은-어려운가"><a href="#Object-Detection-주요-구성-요소-및-왜-Object-Detection은-어려운가" class="headerlink" title="Object Detection 주요 구성 요소 및 왜 Object Detection은 어려운가?"></a>Object Detection 주요 구성 요소 및 왜 Object Detection은 어려운가?</h4><p><br></p>
+<p><img src="/image/dlcv2.png" alt="dlcv2"></p>
+<p><br></p>
+<ul>
+<li>Classification + Regression을 동시에<br>이미지에서 여러 개의 물체를 분류함과 동시에 위치를 찾아야 함</li>
+<li>다양한 크기와 유형의 오브젝트가 섞여 있음<br>크기가 서로 다르고, 생김새가 다양한 오브젝트가 섞여 있는 이미지에서 이들을 Detect해야 함</li>
+<li>중요한 Detect 시간<br>Detect 시간이 중요한 실시간 영상 기반에서 Detect 해야 하는 요구사항 증대</li>
+<li>명확하지 않은 이미지<br>오브젝트 이미지가 명확하지 않은 경우가 많음<br>또한 전체 이미지에서 Detect할 오브젝트가 차지하는 비중이 높지 않음<br>(배경이 대부분을 차지하는 경우가 많음)</li>
+<li>데이터 세트의 부족<br>훈련 가능한 데이터 세트가 부족하며 annotation을 만들어야 하므로 훈련 데이터 세트를 생성하기가 상대적으로 어려움</li>
+</ul>
+<p><br><br></p>
+<h4 id="Object-Localization과-Detection-이해"><a href="#Object-Localization과-Detection-이해" class="headerlink" title="Object Localization과 Detection 이해"></a>Object Localization과 Detection 이해</h4><p><br></p>
+<p><img src="/image/dlcv3.png" alt="dlcv3"></p>
+<p><br></p>
+<p><img src="/image/dlcv4.png" alt="dlcv4"></p>
+<p><br></p>
+<p><img src="/image/dlcv5.png" alt="dlcv5"></p>
+<p><br></p>
+<p><img src="/image/dlcv6.png" alt="dlcv6"></p>
+<p><br></p>
+<p><img src="/image/dlcv7.png" alt="dlcv7"></p>
+<p><br><br></p>
+<h4 id="Region-Proposal-영역-추정-의-이해와-슬라이딩-윈도우와의-비교"><a href="#Region-Proposal-영역-추정-의-이해와-슬라이딩-윈도우와의-비교" class="headerlink" title="Region Proposal(영역 추정)의 이해와 슬라이딩 윈도우와의 비교"></a>Region Proposal(영역 추정)의 이해와 슬라이딩 윈도우와의 비교</h4><p><br></p>
+<p><img src="/image/dlcv8.png" alt="dlcv8"></p>
+<p><br></p>
+<p><img src="/image/dlcv9.png" alt="dlcv9"></p>
+<p><br></p>
+<p><img src="/image/dlcv10.png" alt="dlcv10"></p>
+<p><br></p>
+<p><img src="/image/dlcv11.png" alt="dlcv11"></p>
+<p><br></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/deep-learning/">#Deep Learning</a> <a href="/tags/computer-vision/">#Computer Vision</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo" target="_blank" rel="noopener">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2021/03/05/kaldi-gstreamer-server/">[STT] Kaldi Gstreamer Ser</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/08/09/algorithm-%EC%84%A0%ED%98%95%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">Algorithm-선형자료구조</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/08/09/baekjoon-1-5/">[BaekJoon] 입출력과 사칙연산</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/07/06/hackerrank-2d-arrays/">[HackerRank] 2D Arrays</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/hci/">HCI</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/nlp/">NLP</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/algorithm/selection-sort/">selection sort</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/algorithm/graph/">graph</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com" target="_blank" rel="noopener">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/" target="_blank" rel="noopener">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+</body>
+
+</html>

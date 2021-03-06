@@ -147,18 +147,18 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2020/04/09/beakjoon-1-7/">
-                [BaekJoon] A/B
+            <a href="/2020/05/27/programmers-%ED%94%84%EB%A6%B0%ED%84%B0/">
+                [Programmers] 프린터
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">2020-04-09</span>
+                <span class="date">2020-05-27</span>
             
             
             
                 <span class="category">
-                    <a href="/categories/baekjoon/">BAEKJOON</a>
+                    <a href="/categories/programmers/">Programmers</a>
                 </span>
             
         </div>
@@ -166,71 +166,17 @@
 
     
         <div class="content">
-            <h4 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h4><p>두 정수 A와 B를 입력받은 다음, A/B를 출력하는 프로그램을 작성하시오.</p>
+            <h1 id="Programmers-프린터"><a href="#Programmers-프린터" class="headerlink" title="[Programmers] 프린터"></a>[Programmers] 프린터</h1><p><br></p>
+<h4 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h4><p>일반적인 프린터는 인쇄 요청이 들어온 순서대로 인쇄합니다. 그렇기 때문에 중요한 &gt;문서가 나중에 인쇄될 수 있습니다. 이런 문제를 보완하기 위해 중요도가 높은 문서를<br> 먼저 인쇄하는 프린터를 개발했습니다. 이 새롭게 개발한 프린터는 아래와 같은 방식<br>으로 인쇄 작업을 수행합니다.</p>
 <p><br></p>
-<h4 id="입력"><a href="#입력" class="headerlink" title="입력"></a>입력</h4><p>첫째 줄에 A와 B가 주어진다. (0 &lt; A, B &lt; 10)</p>
+<ol>
+<li>인쇄 대기목록의 가장 앞에 있는 문서(J)를 대기목록에서 꺼냅니다.</li>
+<li>나머지 인쇄 대기목록에서 J보다 중요도가 높은 문서가 한 개라도 존재하면 J를 대<br>기목록의 가장 마지막에 넣습니다.</li>
+<li>그렇지 않으면 J를 인쇄합니다.</li>
+</ol>
 <p><br></p>
-<h4 id="출력"><a href="#출력" class="headerlink" title="출력"></a>출력</h4><p>첫째 줄에 A/B를 출력한다. 실제 정답과 출력값의 절대오차 또는 상대오차가 10의 -9승 이하이면 정답이다.</p>
-<p><br></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AdivideB</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException</span>&#123;		</span><br><span class="line">		<span class="keyword">int</span> a = System.in.read();</span><br><span class="line">		System.in.read();</span><br><span class="line">		<span class="keyword">int</span> b = System.in.read();</span><br><span class="line">		System.in.read();</span><br><span class="line">		a=a-<span class="number">48</span>;</span><br><span class="line">		b=b-<span class="number">48</span>;</span><br><span class="line">		System.out.printf(<span class="string">"%.9f"</span>, a/(<span class="keyword">double</span>)b);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/04/04/SEM-%EC%B8%A1%EC%A0%95%EB%AA%A8%ED%98%95/">
-                [SEM] 측정모형
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-04-04</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/structural-equation-modeling/">structural equation modeling</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="측정모형"><a href="#측정모형" class="headerlink" title="측정모형"></a>측정모형</h1><p>경로모형은 측정의 오차(measurement error)를 가정하지 않는 모형이다. 하지만 현실 속에서 연구자가 생각하는 잠재적 구인이 하나 또는 여러 개의 관찰변수에 의해 완벽하게 측정된다는 것은 거의 불가능하다. 매우 간단한 예를 이용해 완벽한 측정이란 가정이 만족되지 못했을 경우에 발생하는 문제점을 살펴보자. 아래 그림은 하나의 지표변수와 하나의 잠재변수가 있는 경우의 측정모형이다. 사실 몇 가지 제약이 없으면 판별이 가능한 모형은 아니지만 완벽한 측정이라는 주제를 다루기에 적절한 쉬운 모형이다.</p>
-<p><br></br></p>
-<p><img src="/image/perfect.jpeg" alt="perfect"></p>
-<p><br></br></p>
-<p>위 그림의 모형을 측정모형의 식으로 표현하면 아래와 같다.</p>
-<p><br></br></p>
-<script type="math/tex; mode=display">x = \mu + \lambda f + e</script><p><br></br></p>
-<p>위에서 $\mu$는 모형의 절편, $\lambda$는 요인계수 또는 요인부하, $\mathit{e}$는 측정오차다. 사실 좀 더 정확히 말하자면 측정오차와 공통요인들로 설명되지 않는 다른 요인(모형 안에 없는 요인)으로 이루어져 있다고 할 수 있다. 이렇게 보면, 위의 모형은 관찰변수인 종속변수 $\mathit{x}$와 잠재변수인 독립변수 $\mathit{f}$ 사이의 회귀모형으로 쉽게 표현된다. 그래서 회귀모형의 가정에 의해 $\mathit{e}$의 기대값(평균)은 0으로 가정하고($\mathit{E(e)=0}$), 거짓고립 가정에 의해 $\mathit{f}$와 $\mathit{e}$의 상관(공분산) 역시 0으로 가정한다. 물론 이 모형의 추정을 위하여 일반적인 회귀분석의 추정 방법(예: 최소제곱법)을 사용할 수는 없다. 이는 $\mathit{x}$의 값들이 관찰되는 데 반해 $\mathit{f}$의 값들은 관찰이 되지 않기 때문이다. $\mathit{f}$는 상상 속의 변수이기 때문에 사실 측정단위조차 존재하지 않는다. 위 식의 모형을 추정하기 위해서는 $\mathit{f}$에 측정단위를 부여해야 하는데, 기술적으로는 어떤 단위를 부여해도 추정이 가능하다. 보통 $\mathit{x}$가 가진 단위와의 관계를 생각하여 줄 수 있는데, 편의상 $\lambda = 1$로 주는 것이 가능하다. 이렇게 되면 $\mathit{f}$의 측정단위가 $\mathit{x}$의 측정단위와 같아지는데, 예를 들어 $\mathit{x}$의 측정단위가 센티미터라면 $\mathit{f}$의 단위도 센티미터가 된다. </p>
-<p>정리하면, 측정모형은 하나의 구인이 관찰변수에 의하여 완벽하게 측정될 수 없다는 합리적인 타당성에 기초하여, 잠재변수들과 하나 이상의 관찰된 지표변수 사이의 관계를 설정하고 연구자가 생각하고 있는 잠재적인 구인을 만들어 내는 모형이다. 측정모형은 모형 자체로 구인의 타당도 등을 확인하는 목적도 있으며, 구조방정식 모형의 전 단계로서도 그 중요성이 있다. </p>
-<p>측정모형은 요인분석이라는 이름으로 더 많이 알려져 있는데, 관찰변수와 잠재변수의 관계에 대한 가설이 없는 상태에서 그 관계를 탐색적으로 연구하는 방법을 탐색적 요인분석(exploratory factor analysis)이라고 한다. 그에 반해, 관찰변수와 잠재변수의 관계에 대한 가설이 이미 존재하는 상태에서 그 관계를 확인하고자 하는 방법은 확인적 요인분석(confirmatory factor analysis)이라고 한다. 아래에서 설명하겠지만 EFA는 사실 부정(indeterminate) 모형이기 때문에 일반적으로 구조방정식 모형은 CFA에 바탕을 두고 발전한 것이라 볼 수 있다. 그리고 최근 EFA를 이용한 구조방정식 모형(exploratory structural equation modeling, ESEM) 또한 관심을 받고 있기 때문에 EFA에 대하여 잘 알아 두는 것이 필요하다. </p>
-<p>여기서 염두에 두어야 할 점은 지금부터 이루어지는 탐색적 요인분석모형이나 확인적 요인분석모형에 대한 설명은 모두 관찰변수가 연속형 변수(continuous variable)임을 가정한다는 것이다. 이런 경우의 요인분석모형을 선형 요인분석(linear factor analysis) 모형이라고 한다. 관찰변수가 연속형이 아닌 경우(이분형 또는 다분형)는 나중에 따로 다루게 될 것이며, 이를 비선형 요인분석(nonlinear factor analysis) 또는 일반화 요인분석 또는 범주형 요인분석 모형이라고 한다. 마지막으로 측정모형의 주요한 응용 방법들인 측정불변성이나 MIMIC 모형 등 여러 추가적인 주제에 대해서 다음에 다루도록 하겠다.</p>
-<p><br></br></p>
-<h2 id="탐색적-요인분석-EFA"><a href="#탐색적-요인분석-EFA" class="headerlink" title="탐색적 요인분석(EFA)"></a>탐색적 요인분석(EFA)</h2><p>요인분석은 영국의 심리학자인 Spearman(1904)의 전설적인 논문인 “General intelligence”에서 두 요인 이론이라고 지칭한 자신의 지능 이론을 보여 주는 과정에서 개발되었다. 이번 섹션에서는 특히 탐색적 요인분석모형으로 알려진 제약이 없는 요인분석(unrestricted factor analysis) 모형에 대하여 여러 가지로 알아볼 것이다.</p>
-<h4 id="공통요인모형과-가정"><a href="#공통요인모형과-가정" class="headerlink" title="공통요인모형과 가정"></a>공통요인모형과 가정</h4><p>먼저 공통요인모형(common factor model)이라고도 불리는 요인분석모형이 있다. 여기서는 총 $\mathit{p}$개의 관찰변수와 $\mathit{m}$개의 요인이 있는 경우를 가정한다.</p>
-<p><br></br></p>
-<script type="math/tex; mode=display">x_1 = (\mu_1) + \lambda_{11}f_1 + \lambda_{12}f_2 + ... + \lambda_{1m}f_m + e_1</script><script type="math/tex; mode=display">x_2 = (\mu_2) + \lambda_{21}f_1 + \lambda_{22}f_2 + ... + \lambda_{2m}f_m + e_2</script><script type="math/tex; mode=display">\vdots</script><script type="math/tex; mode=display">x_p = (\mu_p) + \lambda_{p1}f_1 + \lambda_{p2}f_2 + ... + \lambda_{pm}f_m + e_p</script><p><br></br></p>
-<p>각 구성 요소에 대하여 간략하게 다시 한 번 설명한다. 위에서는 $\mathit{x}$는 관찰변수 또는 지표변수, $\mathit{f}$는 잠재변수 또는 요인, $\mu$는 각 식에서의 절편, $\lambda$는 관찰변수와 잠재변수 사이의 회귀계수로서 요인계수 또는 요인부하, $\mathit{e}$는 측정오차다. 일반적인 요인모형에서 지표변수와 잠재변수는 연속형이라고 가정한다. 연속형이 아닌 지표변수와 잠재변수에 대해서는 나중에 다루게 될 것이다. 위에서 요인들끼리의 상관이 0이라는 가정이 있기 때문에, 특히 $\lambda$는 상응하는 관찰변수와 요인 간의 상관이 된다.</p>
-<p>위의 식을 보면 모든 지표변수($\mathit{x_1}$ ~ $\mathit{x_p}$)가 많은 요인부하를 통하여 모든 요인($\mathit{f_1}$ ~ $\mathit{f_m}$)과 서로 관련이 되어 있음을 확인할 수 있는데, 이것이 전형적인 탐색적 요인분석 모형이다. 즉, EFA는 어떤 요인이 어떤 지표변수와 관련이 있는지에 대한 사전적인 가설이 없는 모형이다. 또한 위 식에서는 절편 $\mu$가 각각의 식에 포함되어 있는데, 이는 공분산 행렬에 평균 구조를 더하여 추정할 수 있는 부분이다. 다시 말해, 요인분석의 핵심적인 모수인 $\lambda$들을 추정하는 데 있어서 자료의 변수들로 이루어진 공분산 행렬만 있으면 된다. $\mu$를 모두 제거한 요인모형을 평균 조정 요인분석 모형(mean-corrected factor analysis)이라고 한다. 요인분석모형에서 $\lambda$와 더불어 핵심적으로 추정해야 하는 모수는 측정오차들의 분산 $\psi$이다.</p>
-<p><br></br></p>
-<h4 id="탐색적-요인분석의-예"><a href="#탐색적-요인분석의-예" class="headerlink" title="탐색적 요인분석의 예"></a>탐색적 요인분석의 예</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Mplus VERSION <span class="number">7</span></span><br><span class="line">MUTHEN &amp; MUTHEN</span><br><span class="line"></span><br><span class="line">INPUT INSTRUCTIONS</span><br><span class="line"></span><br><span class="line">  TITLE: An EFA model of Vocational Interests</span><br><span class="line"></span><br><span class="line">  DATA: FILE IS <span class="string">"C:\Users\내pc\Desktop\final2019\interest_mplus.csv"</span>;</span><br><span class="line"></span><br><span class="line">  VARIABLE: NAMES ARE GEN, EDUC, AGE, COG1-COG6 PER1-PER6 INT1-INT18;</span><br><span class="line">            USEVARIABLES ARE INT1-INT18;</span><br><span class="line"></span><br><span class="line">  ANALYSIS: TYPE = EFA <span class="number">1</span> <span class="number">5</span>; ROTATION = Geomin;</span><br><span class="line"></span><br><span class="line">  PLOT: TYPE = Plot2;</span><br></pre></td></tr></table></figure>
-<p><br></br></p>
-<p>ANALYSIS 커맨드의 TYPE = EFA1 5; 부분이 바로 탐색적 요인분석을 위한 직접적인 명령어이며, 이는 1요인 모형부터 5요인 모형까지의 결과를 모두 보이라는 뜻이다. Rotation = Geomin;은 사실 Mplus의 디폴트이기 때문에 적어주지 않아도 된다. Promax 등 다양한 종류의 회전방법을 제공하므로 적절하게 선택하면 되는데, 상대적으로 최신 방법인 Geomin을 사용하였다. 이처럼 Mplus의 경우에 디폴트 회전 방법으로서의 사각회전인 Geomin(Yates, 1987)을 사용하는데, Thurstone(1947)의 단순구조를 잘 달성하는 상대적으로 최신의 방법이다. 이 방법은 Thurstone의 단순구조 패널티 함수(complexity function)을 Yates(1987)가 수정하고 Geomin이라고 이름 붙인 패널티 함수를 최소화한다. PLOT 커맨드의 TYPE=Plot2;는 스크리 도표를 보기 위한 옵션이다. 모형을 추정한 다음 Mplus의 메뉴 중에 Plot-View plots를 선택하면 도표를 확인할 수 있다. </p>
+<p>예를 들어, 4개의 문서(A, B, C, D)가 순서대로 인쇄 대기목록에 있고 중요도가 2 1 3 2 라면 C D A B 순으로 인쇄하게 됩니다. 내가 인쇄를 요청한 문서가 몇 번째로 인쇄되는지 알고 싶습니다. 위의 예에서 C는 1번째로, A는 3번째로 인쇄됩니다. 현재 대기목록에 있는 문서의 중요도가 순서대로 담긴 배열 priorities와 내가 인쇄를 요청한 문서가 현재 대기목록의 어떤 위치에 있는지를 알려주는 location이 매개변수로 주어질 때, 내가 인쇄를 요청한 문서가 몇 번째로 인쇄되는지 return 하도록 solution 함수를 작성해주세요.</p>
 <p><br><br></p>
-<h4 id="요인개수의-결정-및-해석"><a href="#요인개수의-결정-및-해석" class="headerlink" title="요인개수의 결정 및 해석"></a>요인개수의 결정 및 해석</h4><p>탐색적 요인분석모형을 추정하게 되면 몇 개의 요인이 적절한가에 대한 결정을 해야 한다. 대부분의 경우, 연구자의 주 관심사는 자료 세트 <script type="math/tex">\mathit(R)</script>에 존재하는 분산, 공분산을 최대한으로 설명하는 최소한의 요인 개수가 몇 개인지를 결정하는 것이다. Kaiser(1960)는 <script type="math/tex">\mathit(R)</script> 행렬에서 고유값들을 모두 구해 1이 넘는 개수만큼 요인을 추출해야 한다고 하였으나, 과대추출(over factoring)이나 과소추출(under factoring) 등 여러 문제로 인하여 이 방법을 단독으로 사용하지는 않는다. Cattell(1966)은 스크리 도표(scree plot)을 사용하는 것을 제안하였는데, 수평축은 요인, 수직축은 고유값으로 하여 각 요인에 해당하는 고유값을 좌표에 찍은 다음 적절한 요인의 개수를 결정하는 방법이다. ML 방법을 이용하여 추정한 경우, <script type="math/tex">\chi^2</script> 적합도 검정을 실시하여 검정을 만족하는(<script type="math/tex">\mathit{H_0}</script> 기각에 실패하는) 가장 적은 개수의 요인을 가진 모형을 선택하는 것이다. 또한 1요인 모형, 2요인 모형, 3요인 모형 등은 서로 위계적으로 내재된 관계이기 때문에 ‘1요인 모형 vs. 2요인 모형’으로 <script type="math/tex">\chi^2</script> 차이 검정을 실시하여 더 나은 모형을 선택하기도 한다. 하지만 이 방법은 <script type="math/tex">\chi^2</script> 적합도 검정이 지니고 있는 제한점(예, 표본크기에 민감)을 그대로 가지고 있기 때문에 문제의 소지가 있을 수 있다. 또한 만약에 최대우도 추정의 변형된 방법들(예, 강건한 최대우도 추정)이나 가중 최소제곱 추정 방법들을 사용한 경우에는 일반적인 <script type="math/tex">\chi^2</script> 차이검정을 할 수 없으므로 유의해야 한다. 이때는 보정된 <script type="math/tex">\chi^2</script> 차이 검정을 사용해야 한다(Satorra &amp; Bentler, 1994, 2001; Yuan &amp; Bentler, 2000).</p>
-<p><br></p>
-<p>최근에 주목받고 있는 요인개수의 결정 방법은 RMSEA를 이용하는 것이다. Preacher, Zhang, Kim과 Mels(2013)는 1요인 모형부터 시작하여 요인의 개수를 늘려 가면서 모형을 추정할 때 RMSEA가 0.05 이하를 만족하는 가장 적은 개수의 요인을 가진 모형을 선택해야 한다고 하였다. 또는 RMSEA의 90% 신뢰구간의 하한(lower bound)이 0.05 이하를 만족하는 가장 적은 개수의 요인을 가진 모형을 선택해야 한다고 하였다. Preacher, Zhang, Kim과 Mels(2013)는 RMSEA의 하한을 RMSEA.LB라고 표기하였다. RMSEA를 확인하기 위해서는 ML 방법을 이용하여 모형을 추정해야 하고, <script type="math/tex">\mathit{n} > 200</script>이어야 한다. 앞 장에서 밝힌 대로 <script type="math/tex">\mathit{n} < 200</script>인 경우에 RMSEA는 정적으로 편향되는 경향이 있으며 사용하기에 적절하지 않다.</p>
-<p><br></p>
-<p>이 외에도 정보준거(information criterion)인 AIC나 BIC를 사용하여 적당한 요인의 개수를 결정할 수 있다. AIC는 특히 표본크기가 작을 때 잘 작동하는 것으로 알려져 있으나, 표본크기가 커짐에 따라 너무 많은 개수의 요인을 결정하는 경향이 있다(Bozdogan, 2000).  </p>
 
         </div>
     
@@ -242,18 +188,18 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2020/04/04/beakjoon-1-6/">
-                [BaekJoon] A-B
+            <a href="/2020/05/23/hackerrank-arrays/">
+                [HackerRank] Arrays
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">2020-04-04</span>
+                <span class="date">2020-05-23</span>
             
             
             
                 <span class="category">
-                    <a href="/categories/baekjoon/">BAEKJOON</a>
+                    <a href="/categories/hackerrank/">HackerRank</a>
                 </span>
             
         </div>
@@ -261,332 +207,12 @@
 
     
         <div class="content">
-            <h4 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h4><p>두 정수 A와 B를 입력받은 다음, A-B를 출력하는 프로그램을 작성하시오.</p>
+            <h1 id="HackerRank-Arrays"><a href="#HackerRank-Arrays" class="headerlink" title="[HackerRank] Arrays"></a>[HackerRank] Arrays</h1><p><br></p>
+<h4 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h4><p>Given an array, A of N integers, print A’s elements in reverse order as a single line of space-separated numbers.</p>
 <p><br></p>
-<h4 id="입력"><a href="#입력" class="headerlink" title="입력"></a>입력</h4><p>첫째 줄에 A와 B가 주어진다. (0&lt;A, B&lt;10)</p>
-<p><br></p>
-<h4 id="출력"><a href="#출력" class="headerlink" title="출력"></a>출력</h4><p>첫째 줄에 A-B를 출력한다.</p>
-<p><br></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AminusB</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> a = System.in.read();</span><br><span class="line">		System.in.read();</span><br><span class="line">		<span class="keyword">int</span> b = System.in.read();</span><br><span class="line">		System.in.read();</span><br><span class="line">		a=a-<span class="number">48</span>;</span><br><span class="line">		b=b-<span class="number">48</span>;</span><br><span class="line">		System.out.println(a-b);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/04/02/beakjoon-1-5/">
-                [BaekJoon] A+B
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-04-02</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/baekjoon/">BAEKJOON</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h4 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h4><p>두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.</p>
-<p><br></p>
-<h4 id="입력"><a href="#입력" class="headerlink" title="입력"></a>입력</h4><p>첫째 줄에 A와 B가 주어진다. (0 &lt; A, B &lt; 10)</p>
-<p><br></p>
-<h4 id="출력"><a href="#출력" class="headerlink" title="출력"></a>출력</h4><p>첫째 줄에 A+B를 출력한다.</p>
-<p><br></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> A = input.nextInt();</span><br><span class="line">		<span class="keyword">int</span> B = input.nextInt();</span><br><span class="line">		System.out.print(A+B);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>위의 코드는 제출하여 맞았습니다!를 받았지만 마음에 걸리는 부분은 입력과 출력 조건에 있다. 입력도 첫째 줄, 출력도 첫째 줄이어서 우선 고민하다가 편한대로 제출해봤는데 통과가 되었다. 필요없는 고민이었던건가 싶어 1등 코드를 찾아보니 다음과 같은 신선한 코드가 있었다.</p>
-<p><br></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AplusB</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> a = System.in.read();</span><br><span class="line">		System.in.read();</span><br><span class="line">		<span class="keyword">int</span> b = System.in.read();</span><br><span class="line">		System.in.read();</span><br><span class="line">		a=a-<span class="number">48</span>;</span><br><span class="line">		b=b-<span class="number">48</span>;</span><br><span class="line">		System.out.println(a+b);		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>결론절 쓸데없는 고민이었던 것으로 한다.</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/04/01/hci-paper-survey/">
-                [HCI] CHI 2018 Paper Survey
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-04-01</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/hci/">HCI</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="Review-on-CHI-2018-Paper"><a href="#Review-on-CHI-2018-Paper" class="headerlink" title="Review on CHI 2018 Paper"></a>Review on CHI 2018 Paper</h1><p><br></p>
-<h4 id="Predicting-Human-Performance-in-Vertical-Menu-Selection-Using-Deep-Learning"><a href="#Predicting-Human-Performance-in-Vertical-Menu-Selection-Using-Deep-Learning" class="headerlink" title="Predicting Human Performance in Vertical Menu Selection Using Deep Learning"></a>Predicting Human Performance in Vertical Menu Selection Using Deep Learning</h4><p><br></p>
-<h5 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h5><p>Predicting human performance in interaction tasks allows designers or developers to understand the expected performance of a target interface without autually testing it with real users. In this work, we present a deep neural net to model and predict human performance in performing a sequence of UI tasks. In particular, we focus on a dominant class of tasks, i.e., target selection from a vertical list or menu. We experimented with our deep neural net using a public dataset collected from a desktop laboratory environment and a dataset collected from hundreds of touchscreen smartphone users via crowdsourcing. Our model significantly outperformed previous methods on these datasets. Importantly, our method, as a deep model, can easily incorporate additional UI attributes such as visual apperance and content semantics without changing model architectures. By understanding about how a deep learning model learns from human behaviors, our approach can be seen as a vehicle to discover new patterns about human behaviors to advance analytical modeling.</p>
-<p><br></p>
-<h5 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h5><p>Seeking models for predicting human performance in performing an interaction task has long been pursued in the field of human computer interaction. In addtion to the scientific value of understanding human behaviors, creating these models has practical values in user interface design and development. A predictive model allows a developer or designer to understand the expected performance of an interface without having to test it with real users, which can be expensive and effort consuming.</p>
-<p><br></p>
-<p>Several predictive models of human performance have been devised, including Fitts’ law and Hick’s law, which rooted in information theory and experimental psychology. However, these models capture a certain aspect of human performance in isolation, e.g., motor control or decision making. They are limited in modeling human performance in realistic interaction tasks where multiple factors interplay.</p>
-<p><br></p>
-<p>In this work, we take a departure from existing analytical approaches for performance modeling by using a data-driven approach based on the recent advance in deep learning. Deep learning has proven successful in many domains, such as computer vision and natural language processing. It relieves the need of careful feature engineering and of a great amount of domain knowledge in creating a predictive model. It can also capture patterns that only manifest in the data but are difficult to articulate in an analytical form.</p>
-<p><br></p>
-<p>In particular, we devise a predictive model for interaction performance based on a deep recurrent neural net architecture using Long-Short Term Memory(LSTM). The unique architecture of our LSTM-based model allows us to naturally capture a variety of factors that come into play in UI tasks, including not only what human users are perceiving and performing at the moment but also what they have learned from the past regarding an interaction task.</p>
-<p><br></p>
-<p><img src="/image/hci1.png" alt="hci1"></p>
-<p><br></p>
-<p>Figure 1. A high-level illustration of our approach for predicting human time performance. The model, mimicking a human user, not only sees the UI and task at the moment but also remembers what is has experienced previously, through its recurrent layer. The representation of the UI and task at each step is ahieved via another recurrent net.</p>
-<p><br></p>
-<p>To scope our work, we focus on a common task on desktop and smartphones, where users select a target item from a vertical menu or list, e.g., choosing a song to play, a person to contact, selecting an application in the start menu or simply activating a command in a drop-dowwn menu. Because users often need to perform these selection tasks repeatedly over the time, we investigate our approach in the context of a sequence of selection tasks.</p>
-<p><br></p>
-<p>We design a novel hierarchical deep architecture for menu performance modeling. In our architecture, a recurrent neural net is used to encode UI attributes and tasks at each target item selection. This allows us to represent a menu with a varied length and to easily incorporate any additional UI attributes such as visual appearance and semantics. We then use another recurrent net to capture learning effects, a major component in human performance. The entire model is learned end-to-end using stochastic gradient descent. The model outperforms existing analytical methods in various settings for predicting selection time. Importantly, it is easily extensible for accomodating new UI feature and human factors involved in an interaction task.   </p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/03/31/beakjoon-1-1/">
-                [BaekJoon] Hello World
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-03-31</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/baekjoon/">BAEKJOON</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="컴파일-에러"><a href="#컴파일-에러" class="headerlink" title="컴파일 에러"></a>컴파일 에러</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="런타임-에러"><a href="#런타임-에러" class="headerlink" title="런타임 에러"></a>런타임 에러</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.print(<span class="string">"Hello World!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="맞았습니다"><a href="#맞았습니다" class="headerlink" title="맞았습니다!"></a>맞았습니다!</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/03/31/beakjoon-1-2/">
-                [BaekJoon] We love kriii
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-03-31</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/baekjoon/">BAEKJOON</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h4 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h4><p>ACM-ICPC 인터넷 예선, Regional, 그리고 World Finals까지 이미 2회씩 진출해버린 kriii는 미련을 버리지 못하고 왠지 모르게 올 해에도 파주 World Finals 준비 캠프에 참여했다. 대회를 뜰 줄 모르는 지박령 kriii를 위해서 격려의 문구를 출력해주자.</p>
-<p><br></p>
-<h4 id="입력"><a href="#입력" class="headerlink" title="입력"></a>입력</h4><p>본 문제는 입력이 없다.</p>
-<p><br></p>
-<h4 id="출력"><a href="#출력" class="headerlink" title="출력"></a>출력</h4><p>두 줄에 걸쳐 “강한친구 대한육군”을 한 줄에 한 번씩 출력한다.</p>
-<p><br></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Welovekriii</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">			System.out.println(<span class="string">"강한친구 대한육군"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/03/29/SEM-%EC%B8%A1%EC%A0%95%EB%AA%A8%ED%98%95%EC%9D%98-%ED%99%95%EC%9E%A5/">
-                [SEM] 측정모형의 확장
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-03-29</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/structural-equation-modeling/">structural equation modeling</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="측정모형의-확장"><a href="#측정모형의-확장" class="headerlink" title="측정모형의 확장"></a>측정모형의 확장</h1><h6 id="본-포스팅은-lt-구조방정식-모형의-기본과-확장-gt-을-바탕으로-진행합니다"><a href="#본-포스팅은-lt-구조방정식-모형의-기본과-확장-gt-을-바탕으로-진행합니다" class="headerlink" title="본 포스팅은 &lt;구조방정식 모형의 기본과 확장&gt;을 바탕으로 진행합니다."></a>본 포스팅은 &lt;구조방정식 모형의 기본과 확장&gt;을 바탕으로 진행합니다.</h6><p><br></br></p>
-<h3 id="다집단요인분석과-MIMIC-모형"><a href="#다집단요인분석과-MIMIC-모형" class="headerlink" title="다집단요인분석과 MIMIC 모형"></a>다집단요인분석과 MIMIC 모형</h3><p>다집단 요인분석(multiple-group factor analysis)은 여러 맥락에서 상당히 자주 사용되는 분석 방법인데, 이를 실행할 때 측정불변성(measurement invariance) 또는 측정동일성(measurement equivalence)을 확인하는 작업이 매우 중요하다. 측정불변성이란 여러 집단(성별, 인종, 문화집단 등)에 걸쳐 동일한 요인구조가 나타나고 있는지를 가리키는 용어다. 이는 모형에서 설정된 잠재변수와 지표변수 사이의 관계에 대하여 집단변수가 조절효과(moderation effect)를 가지고 있느냐로 표현할 수도 있다. 집단 간에 다른 구조가 나타나고 있다면 조절효과가 있다고 이야기한다. 통계에서 말하는 상호작용 효과(interaction effect)와도 통하는 개념이다. 측정불변성은 사실 여러 집단뿐만 아니라 여러 시점에 걸쳐서 같은 요인구조가 나타나는지를 확인하는 경우도 있다. 이런 경우 종단 측정불변성(longitudinal measurement invariance)이라고 한다. 여러 집단에 걸쳐 나타나든 또는 여러 시점에 걸쳐 나타나든 간에 측정불변성이 확보되지 못한 경우에는 측정된 자료의 해석이 제한받을 수 있기 때문에 유의하여야 한다. 다집단 요인분석에서 집단 간 잠재평균의 차이를 확인하고자 하는 것이 목적일 때 MIMIC) 모형의 사용이 유용할 수 있다. 다집단 요인분석을 자세하게 다룬 후에 다집단 요인분석의 대안으로서의 MIMIC 모형을 살펴본다.</p>
-<p><br></br></p>
-<h4 id="측정불변성-소개"><a href="#측정불변성-소개" class="headerlink" title="[측정불변성 소개]"></a>[측정불변성 소개]</h4><p>요인모형에서 측정불변성을 확인하는 세부적인 이유와 목적은 여러 가지가 있을 수 있다. 예를 들어, 집단 간에 잠재변수의 평균이 같은지를 비교하기 위하여, 또 여러 집단에 걸쳐 구인 타당도가 동일하게 확보되는지를 알아보기 위하여 측정불변성을 확인할 수도 있고, 여러 시점에 걸쳐 회귀 효과를 볼 때 각 시점에서의 요인구조가 같은지를 보기 위하여 측정불변성을 확인할 수도 있으며, 구조방정식 모형의 경로 동일성을 확인하기 위한 전 단계로 측정불변성을 확인할 수도 있다. 구조방정식 모형에서 집단 간 경로의 동일성을 확인하기 위해서는 측정모형 부분에서 측정불변성이 확보되어야 하는데, 이 확인 과정은 측정모형에서 할 수도 있고 구조방정식 모형에서 할 수도 있다. 이후에 더 자세한 설명이 예와 함께 주어질 것이다. 이런 여러 가지 목적으로 사용되는 다집단 요인분석을 통한 측정불변성의 확인은 특히 잠재변수(요인)과 지표변수 간의 관계라는 맥락에서 적절한 단어라고 할 수 있다. 간단히 말해서 만약 지표변수들과 잠재변수들 사이의 구조, 즉 관계가 여러 집단이나 시점에 걸쳐 다르지 않다면 측정불변성이 있다고 이야기한다. 예를 들어, 여러 관찰변수에 의해서 측정되는 우울 구인이 남녀 집단 중 어디에서 더 심한지를 확인하기를 원한다면 일단 남녀 집단에서 각각 측정되는 우울이란 구인이 동일한 의미를 지니고 있는지를 확인해야 하는 것이다. 이제 아래 식에 있는 지표변수와 잠재변수의 관계 모형, 즉 측정모형을 통해 측정불변성에 대하여 알아보도록 하자.</p>
-<p><br></br></p>
-<script type="math/tex; mode=display">x_1 = \mu_1 + \lambda_{11}{f_1} + \lambda_{12}{f_2} + ... + \lambda_{1m}{f_m} + e_1</script><script type="math/tex; mode=display">x_2 = \mu_2 + {\lambda}_{21}{f_1} + {\lambda}_{22}{f_2} + ... + {\lambda}_{2m}{f_m} + e_2</script><script type="math/tex; mode=display">\vdots</script><script type="math/tex; mode=display">x_p = \mu_p + {\lambda}_{p1}{f_1} + {\lambda}_{p2}{f_2} + ... + {\lambda}_{pm}{f_m} + e_p</script><p><br></br></p>
-<p>위의 식에서 $\mathit{x}$는 지표변수, $\mu$는 절편, $\lambda$는 요인부하, $\mathit{f}$는 요인(잠재변수), $\mathit{e}$는 측정오차다. 기본적으로 여러 집단 간의 측정불변성은 요인모형을 여러 단계에 걸쳐 이루어지는 모형 비교 검정을 통하여 확인하게 된다. 예를 들어, 집단 간에 요인의 종류는 동일한지, 그 요인들을 측정하는 지표변수들은 서로 동일한지, 집단 간에 요인모형의 요인부하($\lambda$)가 서로 동일한지, 절편은 동일한지, 측정오차의 분산은 동일한지 등을 검정하게 된다. 이러한 단계별 검정 과정에서 공분산 구조만 이용하느냐, 아니면 평균 구조까지 더하여 이용하느냐에 따라 과정은 조금 달라질 수 있다. 다시 말해, 측정동일성을 확인하는 데 있어서 $\mu_1$ ~ $\mu_p$를 사용하느냐 그렇지 않느냐를 결정해야 한다.</p>
-<p>다집단 요인분석의 여러 목적 중에서 잠재평균의 비교를 위한 다집단 요인분석의 예를 보인다. 실제 요인(요인의 실제 점수)과 추정된 요인점수는 사실 같지 않다. 다시 말해, 요인점수는 기본적으로 이차(secondary) 추정으로 이루어지는 것이기 때문에 진정한 요인의 점수로부터 편향되어 있다. 추정된 요인점수는 다만 진정한 $\mathit{f}$의 지표변수 같은 것이다. 여기서는 설명을 쉽게 하기 위해서 요인점수라는 단어를 사용하였다. 한 가지 더 추가적으로 밝히면, 이런 이유 때문에 요인점수를 추정하여 이후 집단 간 평균비교를 하는 방식보다 요인모형 안에서 직접적으로 잠재평균 비교를 하는 것이 더 뛰어난 방법이다. 여기서는 공분산 행렬과 평균 벡터를 모두 이용할 것이며, 네 단계의 측정불변성 단계를 또한 모두 보여 줄 것이다. 이제 가장 첫 단계인 형태동일성 모형부터 추정하여 검정한다. 다집단 요인분석을 설명하는 데 있어서 실제 추정의 과정이 매우 중요하기 때문에 Mplus를 이용한 예제를 제공한다. </p>
-<p><br></br></p>
-<h4 id="측정불변성의-단계적-확인"><a href="#측정불변성의-단계적-확인" class="headerlink" title="측정불변성의 단계적 확인"></a>측정불변성의 단계적 확인</h4><p>형태동일성, 측정단위동일성, 절편동일성, 분산공분산동일성 등의 단계별 확인을 통하여 잠재평균의 집단 차이검정을 실시하고자 한다. 또한 각 단계에서 동일성 또는 불변성 확인이 실패한 경우 고려할 수 있는 부분측정동일성에 대하여 토론한다.</p>
-<h6 id="형태동일성"><a href="#형태동일성" class="headerlink" title="형태동일성"></a>형태동일성</h6><p>동일유형불변성(equal form invariance) 또는 패턴불변성(pattern invariance)이라고도 불리는 형태동일성(configural invariance)은 집단 간에 같은 측정모형을 설정함으로써 측정불변성을 검정하는 가장 첫 번째 단계다. 이번 첫 단계에서 요인의 개수와 요인-지표변수 관계는 집단 간에 같아야 하고, 모수는 각각의 집단 내에서 다른 값으로 추정될 수 있다. 만약에 형태동일성 모형의 적합도에 문제가 있으면 측정불변성 검정의 다음 단계로 나아가지 못하며, 측정불변성 확보는 실패하게 된다. 즉, 형태동일성 모형은 측정불변성의 확인과 검정을 위한 기저모형이기 때문에 이 모형의 적합도가 좋지 않으면 다음 단계는 무의미하게 되고, 잠재평균의 비교나 구인 타당도의 확인이 원천적으로 가능하지 않게 된다. 이후에 자세히 다루겠지만, 측정단위동일성이나 절편동일성 등의 검정에 실패했을 때는 부분측정동일성(partial measurement invariance) 등을 통해 나름대로 피해 갈 수 있는 방법이 있다. 그러나 형태동일성에 문제가 생기면 아예 측정불변성 단계를 진행할 수 없게 되고, 이것은 연구자에게 있어서 큰 손실이다. 이제 Mplus를 이용하여 형태동일성 모형을 추정하도록 하자. 먼저 모형을 위한 input 부분이 아래에 있다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">TITLE: Multiple Group CFA</span><br><span class="line"></span><br><span class="line">DATA: FILE IS <span class="string">"interest_mplus.csv"</span>;</span><br><span class="line"></span><br><span class="line">VARIABLE: NAMES ARE GEN, EDUC, AGE, COG1-COG6 PER1-PER6 INT1-INT18;</span><br><span class="line">          USEVARIABLES ARE GEN, INT1-INT18;</span><br><span class="line">          GROUPING IS GEN (<span class="number">1</span>=male, <span class="number">2</span>=female);</span><br><span class="line"></span><br><span class="line">ANALYSIS: TYPE = General;</span><br><span class="line"></span><br><span class="line">MODEL: f1 BY INT1 INT2 INT12 INT18;</span><br><span class="line">       f2 BY INT3 INT6 INT8 INT9 INT10 INT13 INT15 INT16 INT17;</span><br><span class="line">       f3 BY INT4 INT5;</span><br><span class="line">       f4 BY INT7 INT11 INT14;</span><br><span class="line">       [INT1-INT18];</span><br><span class="line">       [f1-f4@<span class="number">0</span>];</span><br><span class="line">       INT1-INT18;</span><br><span class="line"></span><br><span class="line">MODEL female: </span><br><span class="line">       f1 BY INT1@<span class="number">1</span> INT2 INT12 INT18;</span><br><span class="line">       f2 BY INT3@<span class="number">1</span> INT6 INT8 INT9 INT10 INT13 INT15 INT16 INT17;</span><br><span class="line">       f3 BY INT4@<span class="number">1</span> INT5;</span><br><span class="line">       f4 BY INT7@<span class="number">1</span> INT11 INT14;</span><br><span class="line">       [INT1-INT18];</span><br><span class="line">       [f1-f4@<span class="number">0</span>];</span><br><span class="line">       INT1-INT18;</span><br></pre></td></tr></table></figure>
-<p>형태동일성 모형의 적합도가 문제인 경우에 대해 Meade와 Kroustalis(2006)의 견해는 실용적으로 매우 가치가 있기 때문에 다음과 같이 소개하고자 한다. 형태동일성 모형의 적합도가 좋지 않은 경우 두 가지 매우 다른 원인을 생각해 볼 수 있다. 첫째는 자료 등의 문제(예: 신뢰도가 낮은 많은 수의 지표변수를 사용하는 경우)로 인해 여러 집단에서 공통적으로 좋지 않은 모형의 적합도가 발생하는 경우이고, 둘째는 정말로 집단 간 요인의 구조가 달라서 좋지 않은 모형의 적합도가 발생하는 경우다. 예를 들어, $\mathit{f_1}$을 측정하는 지표변수의 세트가 집단1과 집단2 간에 서로 다른 것이다. Meade와 Kroustalis(2006)는 만약 모형의 적합도 문제가 첫 번째 이유로 발생한 경우 측정불변성의 검정 단계를 진행할 수 있다고 하였다. 실제 여러 학문 분야에서 종종 많은 연구자가 신뢰도나 타당도가 정밀하게 확인되지 않은 심리 척도를 사용한다. 이때 측정치는 이상적이지 못하게 되고, 모든 집단에서 공통적으로 약점을 드러내어 전체적인 형태동일성 모형의 적합도를 떨어뜨릴 수 있다. 이런 경우 모형의 적합도가 좋지 않음에도 불구하고 측정불변성을 보일 수 있다고 그들은 주장한다.</p>
-<p>Meade와 Kroustalis(2006)는 개별적인 문항들을 사용하여 요인모형을 추정한 결과 모형의 적합도가 좋지 않게 드러났을 때 그 이유를 확인하기 위하여 여러 집단에 걸쳐 따로 CFA 모형이나 EFA 모형을 추정하여 그 결과를 확인할 것을 제안하였다. 예를 들어, 집단 간에 따로 CFA 모형이나 EFA 모형을 추정하였는데 한 집단에서는 적합도가 매우 좋고 다른 집단에서는 매우 좋지 않다면 측정불변성 확인을 멈추고, 반면 둘이 서로 비슷하게 좋지 않다면 다음 단계로 가는 것을 고려해 보는 것이다. 또한 추가적으로 만약 EFA 모형의 추정 결과 요인구조가 집단 간에 매우 다르다면 측정불변성 확인 단계를 완전히 멈추고, 반면 만약에 비슷한 요인구조가 나타난다면 형태동일성 모형의 좋지 않은 모형 적합도에도 불구하고 측정불변성 확인 단계를 진행하게 되는 것이다.</p>
-<p>이쯤에서 잠재변수의 평균이라는 것을 잠깐 고민해 보자. 잠재변수란 보이지 않는 질적이고 추상적인 개념을 양적으로 형성한 것이다. 이때 양적으로 형성된 잠재변수의 절대값에 특정한 의미가 있는 것은 아님을 이해할 필요가 있다. 예를 들어, 오늘날 사람들이 지능을 측정하기 위해 사용하는 IQ의 평균 100을 중심으로 표준편차 15를 가지도록 설계된 것인데, 만약 IQ의 평균이 1,000이고 표준편차가 150을 가지도록 설계했다면 무슨 문제 될 것이 있을까? 만약 평균을 0으로 하고 표준편차를 1이 되도록 설계했다면 이는 또 무슨 다른 점이 있을까? 지능은 상대적인 것이고 IQ 또한 그 상대성을 반영하는 것이기 때문에 통계적으로나 수학적으로 아무런 차이가 없다. 100을 주심으로 변동성을 가지는 것이 IQ라면 다만 평균적인 지능을 가진 사람의 IQ는 100이 될 것이고, 0을 중심으로 변동성을 가지는 것이 IQ라면 평균적인 지능을 가진 사람의 IQ는 0이 될 뿐이다. 이와 같은 부분은 집단간에 잠재변수의 평균을 추정하는 기술적인 상황에서도 상당히 중요하다. 두 집단에서 각 두 개의 잠재평균을 추정하려고 하면 총 네 개의 추가적인 모수를 추정하는 것이 아니라, 한 집단의 잠재평균들을 모두 0으로 고정하고 다른 집단의 잠재평균이 0 대비 더 큰지 작은지만 추정하여 확인하면 된다. 예를 들어, 남자 집단의 잠재평슌 두 개를 0으로 고정하고 여자 집단의 잠재평균 두 개만 추정하면 된다. 또 한 가지 더, 형태동일성 모형에서 부분측정단위동일성 모형, 이어서 부분절편동일성 모형의 단계는 모형이 점점 단순해지는 과정이지만, 부분절편동일성 모형을 기반으로 잠재평균의 차이를 검정하는 모형은 더 복잡해진 모형이다. 이는 부분절편동일성 모형에서 잠재평균 비교 모형이 모수에 대한 제약을 함으로써 더 진행한 것이 아니고, 두 개의 잠재평균 모수를 더 추정하는 단계이기 때문이다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">TITLE: Multiple Group CFA <span class="keyword">with</span> strong invariance</span><br><span class="line"></span><br><span class="line">DATA: FILE IS <span class="string">"interest_mplus.csv"</span>;</span><br><span class="line"></span><br><span class="line">VARIABLE: NAMES ARE GEN, EDUC, AGE, COG1-COG6 PER1-PER6 INT1-INT18;</span><br><span class="line">          USEVARIABLES ARE GEN, INT1-INT18;</span><br><span class="line">          GROUPING IS GEN (<span class="number">1</span>=male, <span class="number">2</span>=female);</span><br><span class="line"></span><br><span class="line">ANALYSIS: TYPE = General;</span><br><span class="line"></span><br><span class="line">MODEL: f1 BY INT1 INT2 INT12 INT18;</span><br><span class="line">       f2 BY INT3 INT6 INT8 INT9 INT10 INT13 INT15 INT16 INT17;</span><br><span class="line">       f3 BY INT4 INT5;</span><br><span class="line">       f4 BY INT7 INT11 INT14;</span><br><span class="line">       [INT1-INT18];</span><br><span class="line">       [f1-f4@<span class="number">0</span>];</span><br><span class="line">       INT1-INT18;</span><br><span class="line"></span><br><span class="line">MODEL female:</span><br><span class="line">       [INT11, INT7, INT12]; </span><br><span class="line">       [f1-f4];</span><br><span class="line">       INT1-INT18;</span><br></pre></td></tr></table></figure>
-<p>위에서 MODEL female 커맨드를 보면 [f1-f4@0];가 [f1-f4];로 바뀐 것을 확인할 수 있다. 이에 반해 MODEL 커맨드의 [f1-f4@0];는 바뀌지 않았다. 즉, 전체 집단의 모든 잠재평균을 0으로 고정한 상태에서 여자 집단의 두 잠재평균만 자유롭게 추정되도록 설정한 것이다. 이렇게 함으로써 남자 집단의 두 잠재평균은 모두 0인 상태에서 여자 집단의 두 잠재평균 추정치가 상대적으로 어떤 값을 가지게 되느냐를 확인할 수 있다. 만약 여자 집단의 추정치가 양수가 된다면 이는 남자의 잠재평균보다 더 높다는 의미고, 만약 음수가 나온다면 남자의 잠재평균보다 더 낮다는 의미가 된다.</p>
-<p><br></br></p>
-<h4 id="MIMIC-모형을-이용한-집단-차이-검정"><a href="#MIMIC-모형을-이용한-집단-차이-검정" class="headerlink" title="MIMIC 모형을 이용한 집단 차이 검정"></a>MIMIC 모형을 이용한 집단 차이 검정</h4><p>MIMIC(multiple indicators multiple causes) 모형은 확인적 요인분석모형에 공변수(covariate)가 더해진 모형이다. MIMIC 모형은 잠재변수에 대한 연속형 또는 범주형(특히 이분형) 공변수의 효과를 확인하려고 하는 모형이다. 요인분석모형의 간단한 확장이기 때문에 긴 설명이 필요 없을 만큼 단순한 모형이다. 사실 요인분석모형에 요인을 설명하는 공변수를 더하게 되면 요인분석모형이라기보다는 구조방정식 모형에 더 가까워진다.</p>
-<p><br></br></p>
-<p><img src="/image/MIMIC.jpeg" alt="MIMIC"></p>
-<p><br></br></p>
-<p>위 그림에 두 개의 요인과 각 세 개의 지표변수 그리고 하나의 공변수(실제로는 여러 개도 상관없다)가 있는 MIMIC 모형의 경로도가 제공되어 있다. 경로도에 제공된 모형과 MIMIC 모형의 이름을 비교해 보면 multiple indicators는 요인 측정을 위한 여러 개의 지표변수를 가리키며, multiple causes는 요인을 설명하는 여러 개의 공변수를 가리킨다. 위의 경로도에서는 설명오차간 상관을 허락하였는데, 이는 설정할 수도 있고 그렇지 않을 수도 있다. MIMIC 모형은 한편으로는 요인의 구조를 확인하고, 또 한편으로는 공변수의 요인에 대한 영향력을 검정한다. 공변수의 요인에 대한 영향력은 구조모형 또는 회귀모형 부분이다. 즉, 연속형이든 이분형이든 공변수에서 요인들로 향하는 경로는 회귀분석 모형의 기울기 부분이다. 반드시 그렇지는 않지만 일반적으로 MIMIC 모형에서는 공변수가 집단변수인 경우가 흔하다. 이런 경우 공변수의 효과라는 것은 결국 집단 간에 잠재평균의 차이가 있느냐를 의미한다.    </p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2020/03/22/cm-review-1-1/">
-                [Computational Modeling] Review (1)
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-03-22</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/computational-modeling/">Computational Modeling</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="Computational-Modeling-Review"><a href="#Computational-Modeling-Review" class="headerlink" title="Computational Modeling Review"></a>Computational Modeling Review</h1><h5 id="본-포스팅은-“Computational-Models-of-Cognition-and-Behavior-2018-”와-“Bayesian-Cognitive-Modeling”을-정리한-내용입니다"><a href="#본-포스팅은-“Computational-Models-of-Cognition-and-Behavior-2018-”와-“Bayesian-Cognitive-Modeling”을-정리한-내용입니다" class="headerlink" title="본 포스팅은 “Computational Models of Cognition and Behavior(2018)”와 “Bayesian Cognitive Modeling”을 정리한 내용입니다."></a>본 포스팅은 “Computational Models of Cognition and Behavior(2018)”와 “Bayesian Cognitive Modeling”을 정리한 내용입니다.</h5><p><br></p>
-<h4 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1 Introduction"></a>1 Introduction</h4><h5 id="Models-and-Theories-in-Science"><a href="#Models-and-Theories-in-Science" class="headerlink" title="Models and Theories in Science"></a>Models and Theories in Science</h5><p>Cognitive scientists seek to understand how the mind works. That is, we want to describe and predict people’s behavior, and we ultimately wish to explain it, in the same way that physicists predict the motion of an apple that is dislodged from its tree (and can accuratetly describe its downward path) and explain its trajectory (by applealing to gravity). For example, if you forgot someone’s name when you are distracted seconds after being introduced to her, we would like to know what cognitive process is responsible for this failure. Was it lack of attention? Forgetting over time? Can we know ahead of time whether or not you will remember that person’s name?</p>
-<p><br></p>
-<p>The central thesis of this book is that to answer questions such as these, cognitive scientists must rely on quantitative mathematical models, just like physicists who research gravity. We suggest that to expand our knowledge of the human mind, consideration of the data and verbal theorizing are insufficient on their own.</p>
-<p><br></p>
-<p>This thesis is best illustrated by considering something that is simpler and more readily understood that the mind. Have a look at the data which represent the position of planets in the night sky over time. How might one descibe thie peculiar pattern of motion? How would you explain it? The strange loops in the otherwise consistently curvlinear paths describe the famous “retrograde motion” of the planets - that is, their propensity to suddenly reverse direction for sometime before resuming their initial path. What explains retrograde motion? It took more than a thousand years for a satisfactory answer to that question to become available, when Copernicus replaced the goecentric Ptolemaic system with a heliocentric model: Today, we know that retrograde motion arises from the fact that the planets travel at different speeds along their orbits; hence, as Earth “overtakes” Mars, for example, the red planet will appear to reverse direction as it falls behind the speeding Earth.</p>
-<p><br></p>
-<p>This example permits several conclusions that will be relevant throughout the reminder of this book. First, the pattern of data deifes description and explanation unless one has a model of the underlying process. It is only with the aid of a model that one can describe and explain planetary motion, even at a verbal level. Second, any model that explains the data is itself unobservable. That is, although the Copernican model is readily communicated and represented, it cannot be directly observed. Instead, the model is an abstract explanatory device that “exists” primaily in the minds of the people who use it to describe, predict, and explain the data. Third, there nealy always are several possible models that can explain a given data set. This point is worth exploring in a bit more detail. The answer to this question is quite fascinating and requires that we move toward a quantitative level of modeling.</p>
+<h4 id="Input-Format"><a href="#Input-Format" class="headerlink" title="Input Format"></a>Input Format</h4><p>The first line contains an integer, N (the size of our array).<br>The second line contains N space-separated integers describing array A’s elements.</p>
 <p><br><br></p>
-<h5 id="Memory-retention"><a href="#Memory-retention" class="headerlink" title="Memory retention"></a>Memory retention</h5><p>Finding a lawful relationship between memory retention and time is one of the oldest cognitive modeling question, going back to Ebbinghaus in the 1880s. The usual experiment involves giving people many items of information on a list, and then testing their ability to remember itmes from the list after different periods of time have elapsed. Various mathematical functions, usually with psychological interpretations, have been proposed as describing the relationship between time and the level of retention. </p>
-<p><br></p>
-<p>We consider a simplified version of the exponential decay model. The model assumes that the probability that an item will be remembered after a period of time $\mathit{t}$ has elapsed is $\theta_t = exp(-\alpha t) + \beta$, with the restriction $0 &lt; \theta_t &lt; 1$. The $\alpha$ parameter corresponds to the rate of decay of information. The $\beta$ parameter corresponds to a baseline level of remembering that is assumed to remain even after very long time periods. Our analyses using this model are based on fictitious data from a potential memory retention study, to help illustrate key modeling points.</p>
-<p><br></p>
-<p><img src="/image/cm1.png" alt="cm1"></p>
-<p><br></p>
-<p>These data are given in Table 10.1, and relate to 4 subjects tested on 18 items at 10 time intervals: 1, 2, 4, 7, 12, 21, 35, 59, 99, and 200. The number of items tested and the first 9 time intervals are those used by Rubin et al. (1999). Each datum in Table 10.1 counts the number of correct memory recalls for each subject at each time interval. Included in Table 10.1 are missing data, shown by “?” symbols, so subjects have missing data for the final time period of 200, which tests the ability of models to generalize to new measurements. For Subject 4, these are no data at all, which tests the ability of models to generalize to new subjects. </p>
-<p><br></p>
-<p><img src="/image/cm2.png" alt="cm2"></p>
-<p><br></p>
-<h5 id="No-individual-differences"><a href="#No-individual-differences" class="headerlink" title="No individual differences"></a>No individual differences</h5><p>The graphical model for our first attempt to account for the data is shown in Figure 10.1. The model assumes that every subject has the same retention curve, and so there is one true value for the $\alpha$ and $\beta$ parameters. The outer plate corresponds to the different time periods with values given by the observed $t_j$ variable. Together with the $\alpha$ and $\beta$ parameters, the time period defines the probability $\theta_j$ that the jth item will be remembered. The inner plate corresponds to the subjects. Each has the same probability of recall at any given time period, but their experimental data, given by the success counts $k_{ij}$, vary, and are bionomially distributed according to the success rate and number of trials.</p>
-<p><br></p>
-<p>The script Retention_1.txt implements the graphical model in WinBUGS. Note that the code calculates the success rate for each subject at each interval separately, and so in more elaborate than it needs to be:</p>
-<p><br></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Retention With No Individual Differences</span></span><br><span class="line">model&#123;</span><br><span class="line">  <span class="comment"># Observed and Predicted Data</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      k[i, j] ~ dbin(theta[i, j], n)</span><br><span class="line">      predk[i, j] ~ dbin(theta[i, j], n)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Retention Rate At Each Lag For Each Subject Decays Exponentially</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      theta[i, j] &lt;- min(<span class="number">1</span>, exp(-alpha*t[j]+beta)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Priors</span></span><br><span class="line">  alpha ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">  beta ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>The code applies the model to the data, and produces analysis of the posterior and posterior predictive distributions. The joint posterior distribution of $\alpha$ and $\beta$ is shown in the main panel of Figure 10.2, as a two-dimensional scatter plot.</p>
-<p><br></p>
-<p><img src="/image/cm3.png" alt="cm3"></p>
-<p><br></p>
-<p>Each of the points in the scatter-plot corresponds to a posterior sample selected at random from those available. The marginal distributions of both $\alpha$ and $\beta$ are shown below and to the right, and are based on all samples. The marginals show the distribution of each parameter, conditioned on the data, considered independently of the other parameter (i.e., averaged across the other parameter). It is clear from Figure 10.2 that the joint posterior carries more information than the two marginal distributions. If the joint posterior were independent, it would be just the product of the two marginal. But the joint posterior shows a mild relationship, with larger values of $\alpha$ generally corresponding to larger values of $\beta$.</p>
-<p><br></p>
-<p><img src="/image/cm4.png" alt="cm4"></p>
-<p><br></p>
-<p>This can be interpreted psychologically as meaning that it is uncertain whether the parameters are a relatively higher baseline coupled with a relatively higher decay rate, or a relatively lower baseline coupled with a relatively lower decay rate. Figure 10.3 shows the posterior predictive distribution over the number of successful retentions at each time interval. For each subject, at each interval, the squares show the posterior mass given to each possible number of items recalled. These correspond to the model’s predictions about observed behavior in the retention experiment, based on what the model has learned from the data. Also shown, by the black squres and connecting lines, are the actual observed data for each subject, where available. </p>
-<p><br></p>
-<p>The obvious feature of Figure 10.3 is that the current model does not meet a basic requirement of descriptive adequacy. For both Subjects 1 and 3 the model gives little posterior mass to the observed data at many time periods. It describes a steeper rate of decay than shown by the data of Subject 1, and a shallower rate of decay than shown by the data of Subject 3. After evaluating the model using the posterior predictive analysis, we can conclude that the modeling assumption of no individual differences is inappropriate. It is important to understand that this conclusion neuters the usefulness of the posterior distribution over parameters shown in Figure 10.2. The posterior distribution is conditioned on the assumption that the model is appropriate, and is not relevant when the model is fundamentally deficient.</p>
-<p><br><br></p>
-<h5 id="Full-individual-differences"><a href="#Full-individual-differences" class="headerlink" title="Full individual differences"></a>Full individual differences</h5><p>A revised graphical model that does accommodate individual differences is shown in Figure 10.4. The change from the previous model is that the ith subject now has their own $\alpha_i$ and $\beta_i$ parameters, and that the probability of retention for an item $\theta_{ij}$ now changes for both subjects and retention intervals.</p>
-<p><br></p>
-<p><img src="/image/cm5.png" alt="cm5"></p>
-<p><br></p>
-<p>The script Retention_2.txt implements the graphical model in WinBUGS:</p>
-<p><br></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Retention With Full Individual Differences</span></span><br><span class="line">model&#123;</span><br><span class="line">  <span class="comment"># Observed and Predicted Data</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      k[i, j] ~ dbin(theta[i,j], n)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Retention Rate At Each Lag For Each Subject Decays Exponentially</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      theta[i, j] &lt;- min(<span class="number">1</span>, exp(-alpha[i]*t[j]) + beta[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Priors For Each Subject</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    alpha[i] ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">    beta[i] ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>The code applies the model to the same data and again produces analysis of the posterior and posterior predictive distributions. </p>
-<p><br></p>
-<p><img src="/image/cm6.png" alt="cm6"></p>
-<p><br></p>
-<p>The joint posterior distributions for each subject are shown in the main panel of Figure 10.5. Each point in the scatter-plot corresponds to a posterior sample, with different markers representing different subjects. The first, second, third, and fourth subjects use squre, circular, triangular, and cross markers, respectively. The marginal distributions are shown below and to the right, and use different line styles to represent the subjects.</p>
-<p><br></p>
-<p><img src="/image/cm7.png" alt="cm7"></p>
-<p><br></p>
-<p>Figure 10.6 shows the same analysis of the posterior predictive distributions over the number of successful retentions at each time interval, for each subject. It is clear that allowing for individual differences lets the model achieve a basic level of descriptive adequacy for Subjects 1, 2, and 3. The posteriors in Figure 10.5 show that different values for the $\alpha$ decay parameter are used for each of these subjects, corresponding to our intuitions from the earlier analysis.</p>
-<p><br></p>
-<p>The weakness in the current model is evident in its predictions for Subject 4. Because each subject is assumed to have decay and baseline parameters that are different, the only information the model has about the new subject is the priors for the $\alpha$ and $\beta$ parameters. The relationships between parameters for subjects that are visually evident in Figure 10.5 are not formally captured by the model. This means, as shown in Figure 10.5, the posterior for Subject 4 are just the priors, and so the posterior predictive distribution for Subject 4, as shown in Figure 10.6, does not have any useful structure. In this way, the model fails a basic test of generalizability, since it does not make sensible predictions for the behavior of subjects other than those for whom data are available. Intuitively, one might want to predict that Subject 4 will be likely to have model parameters consistent with regularties in the inferred parameters for Subjects 1, 2, and 3.</p>
-<p><br><br></p>
-<h5 id="Structured-individual-differences"><a href="#Structured-individual-differences" class="headerlink" title="Structured individual differences"></a>Structured individual differences</h5><p>The relationship between the parameters of different subjects, visually evident in Figure 10.5, can be captured using a hierarchical model. A graphical model implementing this approach is shown in Figure 10.7. The key cahnge is that now the $\alpha_i$ and $\beta_i$ parameters for each subject are modeled as coming from Gaussian distributions. The over-arching Gaussian distribution models this group-level structure for each parameter. This group structure itself has parameters, in the form of means $\mu_{\alpha}$ for the decay and $\mu_{\beta}$ for the baseline, and precisions $\lambda_{\alpha}$ for the decay and $\lambda_{\beta}$ for the baseline. In this way, the individual differences between subjects are given structure.</p>
-<p><br></p>
-<p>Each $\alpha_i$ and $\beta_i$ parameter is independently sampled, so they can be different, but they are sampled from the same distribution, so they have a relationship to one another. This means that inferences made for one subject influence predictions made for another. This means that inferences made for one subject influence predictions made for another. Since the means and precisions of the gorup-level distributions are common to all subjects, what is learned about them from one subject affects what is known about another. In addition, because they are sampled from over-arching distributions, the $\alpha_i$, and $\beta_i$ parameters at the individual subject level no longer have priors explicitly specified, but inherit them from the priors on the means and precisions of the group-level Gaussian distributions. The script Retention_3.txt implements the graphical model in WinBUGS:</p>
-<p><br></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Retention With Structured Individual Differences</span></span><br><span class="line">model&#123;</span><br><span class="line">  <span class="comment"># Observed and Predicted Data</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      k[i, j] ~ dbin(theta[i, j], n)</span><br><span class="line">      predk[i, j] ~ dbin(theta[i, j], n)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Retention Rate At Each Lag For Each Subject Decays Exponentially</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:nt)&#123;</span><br><span class="line">      theta[i, j] &lt;- min(<span class="number">1</span>, exp(-alpha[i]*t[j]+beta[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Parameters For Each Subject Drawn From Gaussian Group Distributions</span></span><br><span class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:ns)&#123;</span><br><span class="line">    alpha[i] ~ dnorm(alphamu, alphalambda)I(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">    beta[i] ~ dnorm(betamu, betalambda)I(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment"># Priors For Group Distributions</span></span><br><span class="line">  alphamu ~ dbeta(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">  alphalambda ~ dgamma(<span class="number">.001</span>,<span class="number">.001</span>)I(<span class="number">.001</span>,)</span><br><span class="line">  alphasigma &lt;- <span class="number">1</span>/sqrt(alphalambda)</span><br><span class="line">  betalambda ~ dgamma(<span class="number">.001</span>,<span class="number">.001</span>)I(<span class="number">.001</span>,)</span><br><span class="line">  betasigma &lt;- <span class="number">1</span>/sqrt(betalambda)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>The code applies the model to the data, and again produces an analysis of the posterior and posterior predictive distributions. The joint amd marginal posterior distributions for this model are shown in Figure 10.8 using the same markers and lines as before. For Subjects 1, 2, and 3, these distributions are extremely similar to those found using the full individual differences model. The important difference is for Subject 4, who now sensible posterior distributions for both parameters. For the decay parameter $\alpha$ there is still considerable uncertainty, consistent with the range of values seen for the first three subjects, but for the baseline parameter $\beta$, Subject 4 now has a much more constrained posterior distribution.</p>
-<p><br></p>
-<p><img src="/image/cm8.png" alt="cm8"></p>
-<p><br></p>
-<p>The posterior predictive distributions for each subject under the hierarchical model are shown in Figure 10.9. The preditions remain useful for the first three subjects, and are now also appropriate for Subject 4. The structured prediction for Subject 4, from whom no data have yet been collected, comes directly from the nature of the hierarchical model. Based on the data from Subjects 1, 2, and 3, inferences are made about the means and precisions of the group distributions for the two parameters of the retention model. The new Subject 4 has values sampled from the Gaussians with these parameters, producing the sensible parameter distributions in Figure 10.8 that lead to the sensible predictive distributions in Figure 10.9.</p>
-<p><br></p>
-<p><img src="/image/cm9.png" alt="cm9"></p>
-<p><br></p>
-<p>Psychologically, hierarchical models are powerful because they are able to represent knowledge at different levels of abstraction in a cognitive process(Lee, 2011a). Just as the data have been assumed to be generated by the decay and baseline parameters combining in a memory process for individual subjects, the hierarchical model assumes that those parameters themselves are generated by more abstract latent parameters that describe group distributions across subjects. In other words, a hierarchical model lets a theory of memory retention be combined with a theory of individual differences, to provide a more complete account of behavioral data from multiple subjects.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">guard</span> <span class="keyword">let</span> n = <span class="type">Int</span>((<span class="built_in">readLine</span>()?.trimmingCharacters(<span class="keyword">in</span>: .whitespacesAndNewlines))!)</span><br><span class="line"><span class="keyword">else</span> &#123; <span class="built_in">fatalError</span>(<span class="string">"Bad input"</span>) &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">guard</span> <span class="keyword">let</span> arrTemp = <span class="built_in">readLine</span>() <span class="keyword">else</span> &#123; <span class="built_in">fatalError</span>(<span class="string">"Bad input"</span>) &#125;</span><br><span class="line"><span class="keyword">let</span> arr: [<span class="type">Int</span>] = arrTemp.<span class="built_in">split</span>(separator: <span class="string">" "</span>).<span class="built_in">map</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> arrItem = <span class="type">Int</span>($<span class="number">0</span>.trimmingCharacters(<span class="keyword">in</span>: .whitespacesAndNewlines)) &#123;</span><br><span class="line">        <span class="keyword">return</span> arrItem</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="built_in">fatalError</span>(<span class="string">"Bad input"</span>) &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">guard</span> arr.<span class="built_in">count</span> == n <span class="keyword">else</span> &#123; <span class="built_in">fatalError</span>(<span class="string">"Bad input"</span>) &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> len = arr.<span class="built_in">count</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...len&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(arr[len - i]) "</span>, terminator: <span class="string">""</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
     
@@ -598,13 +224,54 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2020/03/19/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-6/">
-                [iOS] 앱 개발 도전기 (6)
+            <a href="/2020/05/22/hackerrank-lets-review/">
+                [HackerRank] Lets Review
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">2020-03-19</span>
+                <span class="date">2020-05-22</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/hackerrank/">HackerRank</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="HackerRank-Let’s-Review"><a href="#HackerRank-Let’s-Review" class="headerlink" title="[HackerRank] Let’s Review"></a>[HackerRank] Let’s Review</h1><p><br></p>
+<h4 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h4><p>Given a string S, of length N that is indexed from 0 to N - 1, print its even-indexed and odd-indexed characters as 2 space-separated strings on a single line.</p>
+<p><br></p>
+<h4 id="Input-Format"><a href="#Input-Format" class="headerlink" title="Input Format"></a>Input Format</h4><p>The first line contains an integer, T (the number of test cases).<br>Each line i of the T subsequent lines contain a String, S.</p>
+<p><br><br></p>
+<h4 id="Time-Out-Error"><a href="#Time-Out-Error" class="headerlink" title="Time Out Error"></a>Time Out Error</h4><p><br></p>
+<p>첫 번째 시도는 해커랭크에서 제공하는 주석에 맞추어 코드를 넣었는데, 타임 아웃 에러가 발생했다.<br>그래서 두 번째 시도의 경우, 해커랭크 주석에 맞추지 않고 가장 먼저 떠올랐던 방식으로 코드를 짰더니 통과됐다.</p>
+<p><br></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"><span class="keyword">import</span> Darwin</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> numStrings = <span class="type">Int</span>(<span class="built_in">readLine</span>()!)!</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printEvenAndOdd</span><span class="params">(string: String)</span></span> &#123;</span><br><span class="line">    <span class="comment">// This prints inputString to stderr for debugging:</span></span><br><span class="line">    fputs(<span class="string">"string: "</span> + string + <span class="string">"\n"</span>, stderr)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Print the even-indexed characters</span></span><br><span class="line">    <span class="comment">// Write your code here</span></span><br><span class="line">    <span class="keyword">var</span> index = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> index &lt; string.<span class="built_in">count</span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(string[string.index(string.startIndex, offsetBy: index)], terminator: <span class="string">""</span>)</span><br><span class="line">        index += <span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Print a space</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">" "</span>, terminator: <span class="string">""</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Print the odd-indexed characters</span></span><br><span class="line">    <span class="comment">// Write your code here</span></span><br><span class="line">    index = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> index &lt; string.<span class="built_in">count</span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(string[string.index(string.startIndex, offsetBy: index)], terminator: <span class="string">""</span>)</span><br><span class="line">        index += <span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Print a newline</span></span><br><span class="line">    <span class="built_in">print</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">1</span>...numStrings &#123;</span><br><span class="line">    <span class="keyword">let</span> inputString = <span class="built_in">readLine</span>()!</span><br><span class="line">    printEvenAndOdd(string: inputString)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<h4 id="Pass"><a href="#Pass" class="headerlink" title="Pass"></a>Pass</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"><span class="keyword">import</span> Darwin</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> numStrings = <span class="type">Int</span>(<span class="built_in">readLine</span>()!)!</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printEvenAndOdd</span><span class="params">(string: String)</span></span> &#123;</span><br><span class="line">    <span class="comment">// This prints inputString to stderr for debugging:</span></span><br><span class="line">    fputs(<span class="string">"string: "</span> + string + <span class="string">"\n"</span>, stderr)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> evenString = <span class="string">""</span></span><br><span class="line">    <span class="keyword">var</span> oddString = <span class="string">""</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (index, value) <span class="keyword">in</span> string.enumerated()&#123;</span><br><span class="line">        <span class="keyword">if</span> index % <span class="number">2</span> == <span class="number">0</span>&#123;</span><br><span class="line">            evenString += <span class="type">String</span>(value)</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            oddString += <span class="type">String</span>(value)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(evenString) \(oddString)"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">1</span>...numStrings &#123;</span><br><span class="line">    <span class="keyword">let</span> inputString = <span class="built_in">readLine</span>()!</span><br><span class="line">    printEvenAndOdd(string: inputString)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/05/22/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-10/">
+                [iOS] 앱 개발 도전기 (10)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-05-22</span>
             
             
             
@@ -617,75 +284,274 @@
 
     
         <div class="content">
-            <h1 id="델리게이트-패턴"><a href="#델리게이트-패턴" class="headerlink" title="델리게이트 패턴"></a>델리게이트 패턴</h1><p>iOS 앱의 객체는 델리게이트 패턴(Delegate Pattern)이라고 불리는 일종의 위임 패턴을 많이 사용합니다. 이 패턴은 iOS 앱 코드의 전반적 구조를 이루는 아주 중요한 부분이므로, 이것을 충분히 이해해야만 iOS 기반의 앱을 원활하게 작성할 수 있습니다. 일반적인 단어로 널리 사용되는 패턴(Pattern)이란 반복해서 나타나는 사건이나 형태를 의미합니다. 보통 예측 가능한 방식으로 되풀이된다는 점에서 그 의미가 있죠. 객체지향 프로그래밍에서는 디자인 패턴(Design Pattern)이라는 합성 용어로 사용되는 경우가 대부분입니다. 여기서 디자인이란 프로그램 구성에 대한 디자인 즉, 구조적 설계를 의미합니다. 객체지향 프로그래밍에서는 객체 간의 관계가 중요한데, 설계에 관한 문제를 해결하기 위한 해법으로 객체들의 관계를 구조화한 사례가 일반화된 것이 디자인 패턴입니다.</p>
+            <h1 id="iOS-앱-개발-도전기-10"><a href="#iOS-앱-개발-도전기-10" class="headerlink" title="[iOS] 앱 개발 도전기 (10)"></a>[iOS] 앱 개발 도전기 (10)</h1><p><br></p>
+<h4 id="데이터-저장-1-프로퍼티-리스트"><a href="#데이터-저장-1-프로퍼티-리스트" class="headerlink" title="데이터 저장(1) - 프로퍼티 리스트"></a>데이터 저장(1) - 프로퍼티 리스트</h4><p><br></p>
+<p>프로퍼티 리스트는 애플의 주요 소프트웨어 프레임워크에 이용되는 객체 직렬화를 위한 XML 형식의 파일입니다. 객체 직렬화란 객체의 내용을 바이트 단위로 변환하여 파일에 기록하거나 네트워크를 통해 전달이 가능하도록 하는 것을 의미합니다. 대부분 .plist라는 확장자를 가지기 때문에 plist 파일이라고 부르기도 하며, 애플에서는 프로퍼티 리스트를 간단한 데이터 계층을 표현하기 위한 추상화라고 정의하고 있기도 합니다. 쉽게 말해 비교적 단순한 데이터를 XML 포맷에 맞추어 키-값 형태로 저장하는 것이라고 할 수 있습니다. </p>
 <p><br></p>
-<p>델리게이트 패턴은 쉽게 말해 객체지향 프로그래밍에서 하나의 객체가 모든 일을 처리하는 것이 아니라 처리해야 할 일 중 일부를 다른 객체에 넘기는 것을 말합니다. 이는 효율성 관점에서 아주 중요한 역할을 합니다. 기능을 위임할 수 있는 객체가 있다는 것은 그만큼 직접 구현해야 하는 부분이 적다는 뜻이기 때문에 큰 규모의 프로그램을 빠르게 작성할 수 있습니다. 모든 기능을 직접 처리해주려면 코딩양이 매우 늘어날 뿐더러 집중해야 할 부분에 집중하지 못하게 됩니다. 이 때문에 기능을 분담하여 나누는 델리게이트 패턴이 필요합니다.</p>
+<p>프로퍼티 리스트는 대부분 앱의 공동 데이터나 주요 설정 정보를 저장하는 데에 쓰입니다. 마지막으로 열었던 문서나 파일에 대한 정보, 또는 가장 많이 실행한 메뉴 정보 등을 기록하는 데에 사용되며, 환경 설정 데이터를 저장하는 용도로도 사용됩니다. 또한 시스템에서 번들이나 애플리케이션 소프트웨어 정보를 저장하는 데에 사용되기도 합니다. iOS 기반의 프로젝트에서는 항상 Info.plist 파일을 찾아볼 수 있는데, 이는 앱의 빌드와 실행에 필요한 환경 설정값을 저장하는 대표적인 시스템 프로퍼티 리스트 파일입니다.</p>
 <p><br></p>
-<p>사실 델리게이트 패턴은 iOS에서 가장 활발히 사용하고 있지만, 꼭 iOS 개발에 국한된 패턴은 아닙니다. 대부분 GUI 기반 프로그래밍에서 일반적으로 널리 사용되는 패턴이죠. GUI 기반 프로그래밍에서 델리게이트 패턴이 사용되는 가장 대표적인 예는 이벤트 리스너(Event Listener)입니다. 앞에서 아마도 버튼을 @IBAction 메소드로 연결하여 버튼 클릭 시 해당 메소드가 실행되도록 구성해보았을 겁니다.</p>
+<p>전술했듯이, 프로퍼티 리스트는 키-값 형식을 사용하여 데이터를 저장합니다. 표준 딕셔너리 데이터 구조로 각각의 키에 대응하여 데이터를 저장하므로 데이터의 저장 위치를 알기 위해서는 키가 필요합니다. 이때 중복된 키를 사용하면 기존의 데이터는 지워지고 새로운 데이터가 그 위를 덮어쓰게 되므로 주의해야 합니다. 물론 기존의 데이터를 덮어쓰려는 목적일 때에는 의도적으로 중복하기도 하죠. </p>
 <p><br></p>
-<p>그런데 구체적으로 어떤 과정을 거쳐 사용자가 아이폰 기기에서, 혹은 컴퓨터에서 마우스 클릭하는 동작이 이 애플리케이션에 전달되는지 생각해 본 적 있나요? 일반적인 데스크톱 프로그램에서 마우스 클릭이 특정 프로그램의 이벤트 처리 함수 onClick()으로 연결되어 원하는 내용이 실행되는 과정을 정리해보면 다음과 같습니다.</p>
+<p>프로퍼티 리스트에서 하나의 키에 저장할 수 있는 데이터는 하나이지만, 이를 배열이나 딕셔너리 타입으로 정의할 경우 실질적으로 하나 이상의 데이터를 저장할 수도 있습니다. 그러니 하나의 키에는 하나의 객체 또는 하나의 참조값만 저장할 수 있다는 말이 좀 더 정확한 표현일 듯 합니다. </p>
 <p><br></p>
-<ol>
-<li>마우스 버튼을 클릭합니다.</li>
-<li>마우스에서는 연결된 시리얼 케이블이나 블루투스 통신을 통해 0x000867(단순히 예시입니다. 실제로 이 값을 전송하지는 않습니다) 신호를 전송합니다.</li>
-<li>마우스로부터 전송된 신호는 RS232 통신 프로토콜을 이용하여 메인보드를 거쳐 운영체제의 메시지 센터로 전달됩니다.</li>
-<li>신호를 수신한 운영체제에서는 마우스 포인터의 화면상 좌표를 확인합니다.</li>
-<li>운영체제에서는 해당 좌표에서 활성화된 애플리케이션을 확인합니다.</li>
-<li>델리게이트를 이용하여 클릭 신호가 애플리케이션의 이벤트 처리 함수 onClick()에 대응하였음을 애플리케이션에 알립니다.</li>
-<li>애플리케이션이 onClick() 함수를 실행합니다.</li>
-</ol>
+<p>프로퍼티 리스트는 데이터의 타입을 추상화하여 저장합니다. 여기서 말하는 추상화란 우리가 고등학교 미술시간에 배웠던 이상하고 이해하기 어려운 몬드리안 류의 그림을 말하는 것이 아닙니다. 정확하고 구체적인 형태를 가리키는 구체화의 반대말로서, 일체의 개별적인 특성을 배제하고 공통성을 띠는 것을 말합니다. 개별적인 특성이 없기 때문에 여러 객체로 분화할 수 있는 가능성을 가진 일종의 줄기세포 같은 형태를 의미하죠.</p>
 <p><br></p>
-<p>우리는 1~7 까지를 직접 처리하지 않습니다. 그럼에도 사용자의 클릭 이벤트가 우리가 만든 앱에서 정상으로 전달되어 우리가 의도하는 메소드를 실행할 수 있는 것은, 클릭 이벤트를 인식하고 프로그램에 전달해주는 위임 객체가 있기 때문입니다. 이런 과정을 실제로 우리가 구현하고자 한다면 필요한 코딩양은 어마어마합니다. 하지만 실제로 많은 프로그래밍 과정에서 모든 이벤트에 대한 처리는 델리게이트 패턴에 의해 운영체제의 메시지 처리 객체로 위임되고, 운영체제가 관리하는 이 메시지 처리 객체가 이벤트를 감지하게 되면 델리게이트를 이용하여 애플리케이션에 해당 메소드를 알려줌으로써 우리가 원하는 코드가 실행됩니다. 그 중간 과정은 델리게이트 패턴 덕분에 우리가 직접 구현할 필요가 없는 것이죠.</p>
+<p>우리가 프로그래밍 코드에서 문자열을 다룰 때 사용하는 데이터 타입은 대부분 구체화된 타입입니다. 스위프트에서 제공하는 String, 파운데이션 프레임워크에서 제공하는 NSString, 코어 파운데이션 프레임워크에서 제공하는 CFString 타입은 모두 iOS 환경에서 문자열 데이터를 다루기 위해 만들어진 구체적 타입에 해당합니다.</p>
 <p><br></p>
-<p>iOS에서 사용되는 델리게이트 패턴도 이와 같은 개념입니다. 기능을 처리할 객체를 델리게이트로 설정하고, 특정 이벤트가 발생할 때 이를 델리게이트에 의해 위임된 본래의 객체로 전달해주는 역할을 합니다. 가령 웹 뷰(Web View)는 외부 브라우저 없이 웹 페이지를 앱 내에서 표시해주는 역할을 하는데, 이 과정에서 잡아내야 할 몇 가지 중요한 시점이 있습니다. 웹 페이지가 로딩되기 시작할 때라든가, 로딩이 완료되었을 때 또는 로딩이 실패하였을 때, 혹은 사용자가 다른 페이지로 이동하고자 할 때 등이 그에 해당하죠.</p>
+<p>이들 각 타입은 모두 자신만의 독특한 특성이나 속성을 지니고 있습니다. 가령 String 타입은 개별 문자열을 Character 타입으로 변환할 수 있도록 .character 속성을 가지고 있지만, NSString에는 이 같은 속성이 없을 뿐더러 개별 문자열이 Character 타입으로 이루어져 있지도 않습니다. NSString에서 문자열의 길이를 구할 때에는 .length 속성을 사용하면 되지만, String에서는 .character.count 속성을 사용해야 합니다. 이처럼 구체적인 타입들은 각각의 특성이 모두 다르죠.</p>
 <p><br></p>
-<p>이러한 이벤트를 캐치할 수 있도록 직접 구현하려면, 상당히 복잡한 과정을 거쳐야 합니다. 여러 줄에 걸친 복잡한 과정을 통해 구현한 다음에도 심지어는 이벤트를 정확히 캐치하지 못할 수도 있죠. 하지만 웹 뷰 자체에서 이러한 시점을 잡아낼 수 있는 기능이 이미 구현되어 있으므로 우리는 웹 뷰가 특정 시점을 알려줄 뷰 컨트롤러를 델리게이트로 위임하고 웹 뷰가 이벤트 발생 시 호출해주는 함수를 구현해주기만 하면 됩니다. </p>
+<p>하지만 이와 같은 각 타입의 문자열 데이터가 프로퍼티 리스트에 저장될 때에는 모두 ‘문자열’이라는 공통의 타입으로 추상화됩니다. 정확히는 <string> 타입이지만 스위프트의 String과는 이름만 같을 뿐, 의미적으로는 다른 타입입니다.</p>
 <p><br></p>
-<p>다만 iOS에서의 델리게이트 패턴은 위임 객체가 호출할 메소드를 우리가 직접 정의하는 방식은 아닙니다. 웹 뷰의 경우 웹 페이지를 처음 읽어 들이기 시작할 때 webViewDidStartLoad(_:) 메소드를 호출하고, 웹 페이지를 모두 읽어 들였을 때 webViewDidFinishLoad(_:) 메소드를 호출하도록 프로토콜을 통해 이미 약속되어 있죠. 따라서 우리는 웹 뷰와 관련된 프로토콜에 정의된 형식을 따라 이 메소드를 구현하면 됩니다. 위 내용을 한 마디로 정리하면 다음과 같습니다.</p>
+<p>프로퍼티 리스트에 저장된 문자열은 구체적인 객체가 아니기 때문에, 앞에서 언급한 속성들이 전혀 제공되지 않습니다. String 타입의 문자열을 저장했더라도 일단 저장된 값에서는 .character 속성을 사용할 수 없습니다. 이는 프로퍼티 리스트가 객체를 저장하는 과정에서 String, NSString, CFString 각각의 타입이 갖는 개별적이고 구체적인 특성은 모두 배제한 채 문자열이라는 공통된 특성만 추출하여 <string> 타입으로 바꾸었기 때문입니다.</p>
 <p><br></p>
-<h5 id="“웹-뷰-너에게-모든-것을-일임할게-뷰-컨트롤러인-나에게는-특정-이벤트가-발생했을-때-알려주기만-하면-돼-”"><a href="#“웹-뷰-너에게-모든-것을-일임할게-뷰-컨트롤러인-나에게는-특정-이벤트가-발생했을-때-알려주기만-하면-돼-”" class="headerlink" title="“웹 뷰 너에게 모든 것을 일임할게. 뷰 컨트롤러인 나에게는 특정 이벤트가 발생했을 때 알려주기만 하면 돼!”"></a>“웹 뷰 너에게 모든 것을 일임할게. 뷰 컨트롤러인 나에게는 특정 이벤트가 발생했을 때 알려주기만 하면 돼!”</h5><p><br></p>
-<p>특정 이벤트가 발생했을 때 알려주는 방법이 바로 미리 정의된 델리게이트 메소드를 사용하는 것입니다. 이를 위해 iOS에서 델리게이트 패턴을 사용하는 모든 객체는 델리게이트 메소드를 정의한 프로토콜을 가집니다. 이를 델리게이트 프로토콜이라고 하는데, 보통 객체의 이름 되에 Delegate를 붙여서 정의합니다. 우리가 델리게이트 메소드를 이용하려면 델리게이트 프로토콜을 구현하는 과정이 반드시 필요합니다. 더 자세하게 이해하고 익숙하게 사용할 수 있도록 구체적인 예를 통해 델리게이트 패턴을 익혀보겠습니다.</p>
+<p>하지만 덕분에 프로퍼티 리스트에 저장된 데이터는 연관된 어느 타입으로든 읽을 수 있습니다. String 타입의 값을 저장했더라도 이를 NSString 타입으로 읽어갈 수 있고, CFString으로 읽어갈 수도 있습니다. 물론 원래대로 String으로 읽어갈 수도 있습니다. </p>
 <p><br></p>
-<h4 id="텍스트-필드"><a href="#텍스트-필드" class="headerlink" title="텍스트 필드"></a>텍스트 필드</h4><p>텍스트 필드는 델리게이트 패턴을 사용하는 대표적인 객체 중의 하나입니다. 기본적인 기능은 델리게이트 패턴 없이도 사용할 수 있지만, 입력값을 제어하는 등의 고급 기능을 구현하고 싶을 때는 델리게이트 패턴을 적용해야 합니다. 트정 문자열의 입력 배제, 입력 가능한 문자열 길이 제한 등이 델리게이트 패턴을 통해 처리할 수 있는 대표적인 사례죠. 텍스트 필드에 델리게이트 패턴을 적용하려면 다음과 같은 두 가지 작업이 필요합니다.</p>
+<p>조금 뒤에 살펴보겠지만, 프로퍼티 리스트는 문자열뿐만 아니라 숫자나 배열, 딕셔너리 등에 대해서도 추상화된 데이터 타입을 제공합니다. 따라서 스위프트 아키텍쳐에서 제공하는 기본 데이터 타입들은 모두 추상화된 형태로 프로퍼티 리스트에 저장 가능합니다.</p>
 <p><br></p>
-<ol>
-<li>텍스트 필드에 대한 델리게이트 프로토콜을 구현한다.</li>
-<li>텍스트 필드의 델리게이트 속성을 뷰 컨트롤러에 연결한다.</li>
-</ol>
+<p>주의할 것은 프로퍼티 리스트가 데이터의 타입을 추상화하는 것이지, 결코 데이터 자체를 추상화하는 것이 아니라는 점입니다. 데이터 자체는 추상화될 수 없을 뿐더러, 추상화해서도 안됩니다. 추상화하는 순간 값의 유실이 발생하기 때문입니다. 데이터는 그대로 보존하되 타입만 추상화하는 것이 프로퍼티 리스트에서 데이터를 저장하는 메커니즘의 핵심이라고 할 수 있습니다.</p>
 <p><br></p>
-<p>첫 번째 작업은 프로토콜 구현에 관련된 것입니다. 델리게이트 패턴을 구현하려면 모든 객체는 그에 맞는 델리게이트 프로토콜을 구현해야 하는데, 이때 프로토콜의 이름은 항상 해당 객체의 클래스명 + Delegate로 이루어집니다. 텍스트 필드의 클래스명이 UITextField이므로 델리게이트 프로토콜은은 UITextFieldDelegate가 되는 식이죠.</p>
-<p><br></p>
-<p>델리게이트 프로토콜을 구현한다는 것은 클래스 이름 정의 뒤에 프로토콜 명을 덧붙이는 것만을 의미하지는 않습니다. 프로토콜에 정의된 메소드를 실질적으로 작성하는 것까지를 포함합니다. @optional 키워드가 붙은 메소드는 필요한 것만 선택적으로 구현해도 되지만, 이외의 메소드는 반드시 구현해 주어야 합니다.</p>
-<p><br></p>
-<p>델리게이트 프로토콜을 구현하고 나면 이어지는 작업은 해당 객체의 델리게이트 속성을 뷰 컨트롤러와 연결하는 것입니다. 이때 델리게이트 속성이란, 델리게이트 메소드가 구현되어 있는 객체를 의미합니다. 특정 이벤트가 발생했을 경우 텍스트 필드는 이를 알려주기 위해 델리게이트 메소드가 구현되어 있는 객체를 찾는데, 이를 위한 참조 포인터가 저장되는 곳이 delegate 속성입니다. 텍스트 필드의 delegate 속성에 저장된 인스턴스가 델리게이트 메소드를 구현한 것으로 인식하고, 필요한 메소드를 호출하는 거죠.</p>
-<p><br></p>
-<p>이후로는 텍스트 필드를 원래대로 사용하기만 하면 됩니다. 텍스트 필드에서 미리 지정된 시점이 되면 delegate 속성에 정의된 인스턴스를 찾아 델리게이트 메소드를 호출할 것이고, 델리게이트 메소드에 미리 정의해 둔 내용이 알아서 실행될 테니까요. 앞에서도 텍스트 필드에 대해 다루어 본 적이 있지만, 기왕 이야기가 나왔으니 이 컨트롤에 대해 조금 더 자세히 알아봅시다.</p>
-<p><br><hr><br></p>
-<h1 id="프로젝트-생성-및-실습"><a href="#프로젝트-생성-및-실습" class="headerlink" title="프로젝트 생성 및 실습"></a>프로젝트 생성 및 실습</h1><p>먼저 텍스트 필드의 속성을 설정해보겠습니다. 스위프트 코드로 제어해 봅시다.</p>
-<p><br></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@IBOutlet</span> <span class="keyword">var</span> tf: <span class="type">UITextField!</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        <span class="comment">// 텍스트 필드 속성 설정</span></span><br><span class="line">        <span class="keyword">self</span>.tf.placeholder = <span class="string">"값을 입력하세요"</span> <span class="comment">// 안내 메시지</span></span><br><span class="line">        <span class="keyword">self</span>.tf.keyboardType = <span class="type">UIKeyboardType</span>.alphabet <span class="comment">// 키보드 타입 영문자 패드로</span></span><br><span class="line">        <span class="keyword">self</span>.tf.keyboardAppearance = <span class="type">UIKeyboardAppearance</span>.dark <span class="comment">// 키보드 스타일 어둡게</span></span><br><span class="line">        <span class="keyword">self</span>.tf.returnKeyType = <span class="type">UIReturnKeyType</span>.<span class="built_in">join</span> <span class="comment">// 리턴키 타입은 "Join"</span></span><br><span class="line">        <span class="keyword">self</span>.tf.enablesReturnKeyAutomatically = <span class="literal">true</span> <span class="comment">// 리턴키 자동 활성화 "On"</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         스타일 설정</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="comment">// 테두리 스타일 - 직선</span></span><br><span class="line">        <span class="keyword">self</span>.tf.borderStyle = <span class="type">UITextField</span>.<span class="type">BorderStyle</span>.line</span><br><span class="line">        <span class="comment">// 배경 색상</span></span><br><span class="line">        <span class="keyword">self</span>.tf.backgroundColor = <span class="type">UIColor</span>(white: <span class="number">0.87</span>, alpha: <span class="number">1.0</span>)</span><br><span class="line">        <span class="comment">// 수직 방향으로 텍스트가 가운데 정렬되도록</span></span><br><span class="line">        <span class="keyword">self</span>.tf.contentVerticalAlignment = .center</span><br><span class="line">        <span class="comment">// 수평 방향으로 텍스트가 가운데 정렬되도록</span></span><br><span class="line">        <span class="keyword">self</span>.tf.contentHorizontalAlignment = .center</span><br><span class="line">        <span class="comment">// 테두리 색상을 회색으로</span></span><br><span class="line">        <span class="keyword">self</span>.tf.layer.borderColor = <span class="type">UIColor</span>.darkGray.cgColor</span><br><span class="line">        <span class="comment">// 테두리 두께 설정 (단위: pt)</span></span><br><span class="line">        <span class="keyword">self</span>.tf.layer.borderWidth = <span class="number">2.0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p><img src="/image/ios14.png" alt="ios14"></p>
-<p><br></p>
-<p>텍스트 필드에 대해 학습한 내용을 바탕으로 드디어 델리게이트 패턴을 적용해 보겠습니다. 델리게이트 패턴을 적용할 때 갖장 먼저 할 일은 델리게이트 프로토콜에 대한 구현을 선언하는 것입니다. ViewController 클래스에 UITextFieldDelegate 프로토콜 구현을 선언합 후, viewDidLoad() 메소드 맨 아래에 텍스트 필드의 delegate 속성에 self를 대입하는 구문을 추가합니다.</p>
-<p><br></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span>, <span class="title">UITextFieldDelegate</span></span>&#123;</span><br><span class="line">    ...(중략)...</span><br><span class="line">    <span class="comment">// 델리게이트 지정</span></span><br><span class="line">    <span class="keyword">self</span>.tf.delegate = <span class="keyword">self</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>텍스트 필드의 delegate는 텍스트 필드에 특정 이벤트가 발생했을 때 알려줄 대상 객체를 가리키는 속성입니다. 이 속성에 대입된 self는 현재의 뷰 컨트롤러 인스턴스를 의미하죠. 다시 말해, 텍스트 필드에서 미리 정해진 특정 이벤트가 발생하면 현재의 뷰 컨트롤러에게 알려달라는 요청입니다. 이를 가리켜 “뷰 컨트롤러가 텍스트 필드의 델리게이트 객체로 지정되었다”라고 표현합니다. 텍스트 필드가 자신의 델리게이트 객체에게 특정 이벤트가 발생했음을 알려줄 때에는 델리게이트 메소드를 이용합니다. 이벤트마다 호출하기로 약속된 메소드가 정해져 있는데, 이를 현재 지정된 델리게이트 객체에서 찾아 호출하는 겁니다. 이를 위해서는 먼저 델리게이트 객체에 지정된 메소드가 구현되어 있는지 확인합니다. 만약 구현되어 있다면 필요한 인자값을 담아 메소드를 호출해 주고, 구현되어 있지 않다면 ‘안 알려줘도 되나보다’라고 판단하고 그대로 종료하는 방식으로 이루어지는 것이 델리게이트 패턴입니다.</p>
-<p><br></p>
-<p>ViewController 클래스에 다음과 같이 textFieldShouldBeginEditing(_:) 메소드를 추가합니다. 자동 완성 지원이 되므로, 이를 이용하면 편리합니다. 이후에도 계속해서 델리게이트 메소드를 차례로 추가합니다.</p>
-<p><br></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 텍스트 필드의 편집이 시작된 후 호출</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">textFieldDidBeginEditing</span><span class="params">(<span class="number">_</span> textField: UITextField)</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"텍스트 필드의 편집이 시작되었습니다."</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 텍스트 필드의 내용이 삭제될 때 호출</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">textFieldShouldClear</span><span class="params">(<span class="number">_</span> textField: UITextField)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"텍스트 필드의 내용이 삭제됩니다."</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span> <span class="comment">// false를 리턴하면 삭제되지 않는다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 텍스트 필드의 내용이 변경될 때 호출</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">textField</span><span class="params">(<span class="number">_</span> textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"텍스트 필드의 내용이 \(string)으로 변경됩니다."</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span> <span class="comment">// false를 리턴하면 내용이 변경되지 않는다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 텍스트 필드의 리턴키가 눌러졌을 때 호출</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">textFieldShouldReturn</span><span class="params">(<span class="number">_</span> textField: UITextField)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    textField.resignFirstResponder()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"텍스트 필드의 리턴키가 눌러졌습니다."</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 텍스트 필드 편집이 종료될 때 호출</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">textFieldShouldEndEditing</span><span class="params">(<span class="number">_</span> textField: UITextField)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"텍스트 필드의 편집이 종료됩니다."</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>  <span class="comment">// false를 리턴하면 편집이 종료되지 않는다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 텍스트 필드의 편집이 종료되었을 때 호출</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">textFieldDidEndEditing</span><span class="params">(<span class="number">_</span> textField: UITextField)</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"텍스트 필드의 편집이 종료되었습니다."</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>각각의 델리게이트 메소드는 실행 시점에 맞추어 호출됩니다. 앱을 실행한 다음, 텍스트 필드에 값을 입력해보면 어떤 메소드가 어떻게 호출되는지 알 수 있습니다.</p>
-<p><br></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">텍스트 필드의 편집이 시작되었습니다.</span><br><span class="line">텍스트 필드의 내용이 e으로 변경됩니다.</span><br><span class="line">텍스트 필드의 내용이 으로 변경됩니다.</span><br><span class="line">텍스트 필드의 내용이 e으로 변경됩니다.</span><br><span class="line">텍스트 필드의 내용이 d으로 변경됩니다.</span><br><span class="line">텍스트 필드의 내용이 i으로 변경됩니다.</span><br><span class="line">텍스트 필드의 내용이 t으로 변경됩니다.</span><br><span class="line">텍스트 필드의 편집이 종료됩니다.</span><br><span class="line">텍스트 필드의 편집이 종료되었습니다.</span><br><span class="line">텍스트 필드의 리턴키가 눌러졌습니다.</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p>한 가지 기능을 덧붙여 봅시다. 텍스트 필드에 숫자를 입력할 수 있도록 차단하는 코드를 추가해 봅시다. 그리고 텍스트 필드에는 최대로 입력 가능한 문자열 길이가 있는 경우가 많습니다. 이것 역시 이 메소드를 이용하면 쉽게 구현할 수 있습니다.</p>
-<p><br></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 텍스트 필드의 내용이 변경될 때 호출</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">textField</span><span class="params">(<span class="number">_</span> textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"텍스트 필드의 내용이 \(string)으로 변경됩니다."</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> <span class="type">Int</span>(string) == <span class="literal">nil</span>&#123;  <span class="comment">// 입력된 값이 숫자가 아니라면 true를 리턴</span></span><br><span class="line">        <span class="comment">// 현재 텍스트 필드에 입력된 길이와 더해질 문자열 길이의 합이 10을 넘는다면 반영하지 않음</span></span><br><span class="line">        <span class="keyword">if</span> (textField.text?.<span class="built_in">count</span>)! + string.<span class="built_in">count</span> &gt; <span class="number">10</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;  <span class="comment">// 입력된 값이 숫자라면 false를 리턴</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/05/20/hackerrank-loops/">
+                [HackerRank] Loops
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-05-20</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/hackerrank/">HackerRank</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="HackerRank-Loops"><a href="#HackerRank-Loops" class="headerlink" title="[HackerRank] Loops"></a>[HackerRank] Loops</h1><p><br></p>
+<h4 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h4><p>Given an integer, n, print its first 10 multiples. Each multiple n <em> i (where 1 &lt;= i &lt;= 10) should be printed on a new line in the form: n </em> i = result.</p>
 <p><br><br></p>
-<p>다음은 이미지 피커 컨트롤러(Image Picker Controller)를 통해 델리게이트 패턴을 활용해보도록 하겠습니다. 이미지 피커 컨트롤러 자체는 단순히 이미지를 선택해서 가져오는 기능입니다. 하지만 이미지를 불러올 소스를 어떤 것으로 설정하느냐에 따라 앨범이나 카메라 기능을 사용할 수 있으므로, 카메라를 이용하여 즉석에서 촬영한 사진을 사용하거나 앨범에 저장된 이미지를 불러올 때 대부분 이 컨트롤러를 사용하여 기능을 구현합니다.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="keyword">guard</span> <span class="keyword">let</span> n = <span class="type">Int</span>((<span class="built_in">readLine</span>()?.trimmingCharacters(<span class="keyword">in</span>: .whitespacesAndNewlines))!)</span><br><span class="line">    <span class="keyword">else</span>&#123; <span class="built_in">fatalError</span>(<span class="string">"Bad input"</span>)&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..&lt;<span class="number">11</span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(n) x \(i) = \(n*i)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/05/20/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-9/">
+                [iOS] 앱 개발 도전기 (9)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-05-20</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/ios/">iOS</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="iOS-앱-개발-도전기-9"><a href="#iOS-앱-개발-도전기-9" class="headerlink" title="[iOS] 앱 개발 도전기 (9)"></a>[iOS] 앱 개발 도전기 (9)</h1><p><br><br></p>
+<h3 id="구조체와-클래스-객체지향-스위프트"><a href="#구조체와-클래스-객체지향-스위프트" class="headerlink" title="구조체와 클래스 : 객체지향 스위프트"></a>구조체와 클래스 : 객체지향 스위프트</h3><p><br></p>
+<h5 id="본-포스팅은-“꼼꼼한-재은씨의-스위프트”를-정리한-것입니다"><a href="#본-포스팅은-“꼼꼼한-재은씨의-스위프트”를-정리한-것입니다" class="headerlink" title="본 포스팅은 “꼼꼼한 재은씨의 스위프트”를 정리한 것입니다."></a>본 포스팅은 “꼼꼼한 재은씨의 스위프트”를 정리한 것입니다.</h5><p><br><br></p>
+<p>스위프트가 함수를 가장 중요한 ‘갑’으로 대우하고 있긴 하지만, 이는 언어 차원에서 그렇게 대우한다는 것일 뿐 iOS를 개발할 때의 역할을 보면 단연코 구조체와 클래스가 핵심 객체입니다. 앞서 배웠던 정수형, 실수형, 문자열, 배열, 딕셔너리 등 기본 자료형은 구조체를 사용하여 정의되었습니다. 그리고 앞으로 배울 코코아 터치 프레임워크는 90% 이상이 모두 클래스로 이루어져 있고요. 어떤가요, 이들 객체의 역할과 중요도를 짐작할 수 있겠죠?</p>
+<p><br></p>
+<p>개념적으로 구조체와 클래스는 하나의 큰 코드 블록입니다. 이 안에 변수나 상수를 넣어 값을 저장할 수도 있고, 함수를 넣어서 기능을 정의할 수도 있습니다. 값을 저장할 수는 없지만 특정 기능을 실행할 수 있는 함수와, 값을 저장할 수 있지만 혼자서 특정 기능을 실행할 수 없는 변수 상수의 특성을 모두 모아놓았다고 이해하면 편리합니다. 이런 특성 때문에 클래스와 구조체는 다른 종류의 객체에 의존하지 않고도 자체적으로 값을 저장하거나 함수적인 기능을 구현할 수 있습니다.</p>
+<p><br></p>
+<p>독자적인 프로세스 수행 능력 덕분에 매우 강력한 사용성을 지니는 이들 객체는 스위프트가 언어적으로 유연성을 가질 수 있게 해주는 근간을 이룹니다. 여기서 말하는 유연성이란 코드를 떼어서 다른 곳으로 옮기거나 새로운 코드를 추가하기가 쉽다는 뜻으로, 의존성의 반대 개념입니다.</p>
+<p><br></p>
+<p>구조체와 클래스 내에서 정의된 변수와 상수, 그리고 함수는 부르는 명칭이 일반의 그것과는 다릅니다. 똑같은 변수와 상수라도 구조체와 클래스 내부에서 정의되면 프로퍼티라는 이름을 가집니다. 속성 변수 또는 상수라고 불리기도 하죠. 함수도 마찬가지입니다. 구조체와 클래스 내부에서 정의된 함수는 메소드라고 불립니다. 이는 변수와 상수, 함수가 구조체나 클래스 안에 들어가면서 특별한 성격을 갖기 때문입니다.</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/05/19/hackerrank-class-vs-instance/">
+                [HackerRank] Class vs. Instance
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-05-19</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/hackerrank/">HackerRank</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="HackerRank-Class-vs-Instance"><a href="#HackerRank-Class-vs-Instance" class="headerlink" title="[HackerRank] Class vs. Instance"></a>[HackerRank] Class vs. Instance</h1><p><br></p>
+<h4 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h4><p><br></p>
+<p>Write a Person class with an instance variable, age and a constructor that takes an integer, initial Age, as a parameter. The constructor must assign initialAge to age after confirming the argument passed as initialAge is not negative; if a negative argument is passed as initialAge, the constructor should set age to 0 and print Age is not valid, setting age to 0. In addition, you must write the following instance methods:</p>
+<ol>
+<li>yearPasses() should increase the age instance variable by 1.</li>
+<li>amIOld() should perform the following conditional actions:</li>
+</ol>
+<ul>
+<li>If age &lt; 13, print You are young..</li>
+<li>If age &gt;= 13 and age &lt; 18, print You are a teenager..</li>
+<li>Otherwise, print You are old..</li>
+</ul>
+<p><br></p>
+<h4 id="Inout-Format"><a href="#Inout-Format" class="headerlink" title="Inout Format"></a>Inout Format</h4><p>The first line constrains an integer, T (the number of test cases), and the T subsequent lines each contain an integer denoting the age of a Person instance.</p>
+<p><br><br></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> age: <span class="type">Int</span> = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(initialAge: <span class="type">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> initialAge &lt; <span class="number">0</span>&#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"Age is not valid, setting age to 0."</span>)</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            age = initialAge</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">amIOld</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> age &lt; <span class="number">13</span>&#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"You are young."</span>)</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> age &gt;= <span class="number">13</span> &amp;&amp; age &lt; <span class="number">18</span>&#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"You are a teenager."</span>)</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"You are old."</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">yearPasses</span><span class="params">()</span></span>&#123;</span><br><span class="line">        age += <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> t = <span class="type">Int</span>(<span class="built_in">readLine</span>()!)!</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">0</span>..&lt;t&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> age = <span class="type">Int</span>(<span class="built_in">readLine</span>()!)!</span><br><span class="line">    <span class="keyword">let</span> p = <span class="type">Person</span>(initialAge: age)</span><br><span class="line">    </span><br><span class="line">    p.amIOld()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">1</span>...<span class="number">3</span>&#123;</span><br><span class="line">        p.yearPasses()</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    p.amIOld()</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">""</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/05/17/hackerrank-intro-to-conditional-statements/">
+                [HackerRank] Intro to Conditional Statements
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-05-17</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/hackerrank/">HackerRank</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="HackerRank-Intro-to-Contional-Statements"><a href="#HackerRank-Intro-to-Contional-Statements" class="headerlink" title="[HackerRank] Intro to Contional Statements"></a>[HackerRank] Intro to Contional Statements</h1><p><br></p>
+<h4 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h4><p>Given an integer, n, perform the following conditional actions:</p>
+<ul>
+<li>if n is odd, print Weird</li>
+<li>if n is even and in the inclusive range of 2 to 5, print Not Weird</li>
+<li>if n is even and in the inclusive range of 6 to 20, print Weird</li>
+<li>if n is even and greater than 20, print Not Weird</li>
+</ul>
+<p><br></p>
+<h4 id="Input-Format"><a href="#Input-Format" class="headerlink" title="Input Format"></a>Input Format</h4><p>A single line containing a positive integer, n</p>
+<p><br><br></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="keyword">guard</span> <span class="keyword">let</span> <span class="type">N</span> = <span class="type">Int</span>((<span class="built_in">readLine</span>()?.trimmingCharacters(<span class="keyword">in</span>: .whitespacesAndNewlines))!)</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">fatalError</span>(<span class="string">"Bad input"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="type">N</span>%<span class="number">2</span> != <span class="number">0</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Weird"</span>)</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="type">N</span> &gt;= <span class="number">2</span> &amp;&amp; <span class="type">N</span> &lt;= <span class="number">5</span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Not Weird"</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> <span class="type">N</span> &gt; <span class="number">5</span> &amp;&amp; <span class="type">N</span> &lt;= <span class="number">20</span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Weird"</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Not Weird"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/05/17/hackerrank-operator/">
+                [HackerRank] Operators
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-05-17</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/hackerrank/">HackerRank</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="HackerRank-Operators"><a href="#HackerRank-Operators" class="headerlink" title="[HackerRank] Operators"></a>[HackerRank] Operators</h1><p><br></p>
+<h4 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h4><p><br></p>
+<p>Given the meal price (base cost of a meal), tip percent (the percentage of the meal price being added as tax) for a meal, find and print the meal’s total cost.</p>
+<p><br></p>
+<h4 id="Input-Format"><a href="#Input-Format" class="headerlink" title="Input Format"></a>Input Format</h4><p>There are 3 lines of numeric input:<br>The first line has a double, mealCost (the cost of the meal before tax and tip).<br>The second line has an integer, tipPercent (the percentage of mealCost being added as tip).<br>The third line has an integer, taxPercent (the percentage of mealCost being added as tax).</p>
+<p><br></p>
+<h4 id="Output-Format"><a href="#Output-Format" class="headerlink" title="Output Format"></a>Output Format</h4><p>Print the total meal cost, where totalCost is the rounded integer result of the entire bill (mealCost with added tax and tip).</p>
+<p><br><br></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="comment">// Complete the solve function below.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">solve</span><span class="params">(meal_cost: Double, tip_percent: Int, tax_percent: Int)</span></span> -&gt; <span class="type">Void</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> tip = meal_cost/<span class="number">100</span>*<span class="type">Double</span>(tip_percent)</span><br><span class="line">    <span class="keyword">let</span> tax = meal_cost/<span class="number">100</span>*<span class="type">Double</span>(tax_percent)</span><br><span class="line">    <span class="keyword">let</span> totalCost = meal_cost + tip + tax</span><br><span class="line">    <span class="built_in">print</span>(<span class="type">Int</span>(round(totalCost)))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">guard</span> <span class="keyword">let</span> meal_cost = <span class="type">Double</span>((<span class="built_in">readLine</span>()?.trimmingCharacters(<span class="keyword">in</span>: .whitespacesAndNewlines))!)</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">fatalError</span>(<span class="string">"Bad input"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">guard</span> <span class="keyword">let</span> tip_percent = <span class="type">Int</span>((<span class="built_in">readLine</span>()?.trimmingCharacters(<span class="keyword">in</span>: .whitespacesAndNewlines))!)</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">fatalError</span>(<span class="string">"Bad input"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">guard</span> <span class="keyword">let</span> tax_percent = <span class="type">Int</span>((<span class="built_in">readLine</span>()?.trimmingCharacters(<span class="keyword">in</span>: .whitespacesAndNewlines))!)</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">fatalError</span>(<span class="string">"Bad input"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">solve(meal_cost: meal_cost, tip_percent: tip_percent, tax_percent: tax_percent)</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/05/13/hackerrank-data-types/">
+                [HackerRank] Data Types
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-05-13</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="HackerRank-Data-Types"><a href="#HackerRank-Data-Types" class="headerlink" title="[HackerRank] Data Types"></a>[HackerRank] Data Types</h1><p><br></p>
+<h4 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h4><p><br></p>
+<p>Complete the code in the editor below.<br>The variables i, d and s are already declared and initialized for you. You must:</p>
+<ol>
+<li>Declare 3 variables: one of type int, one of type double, and one of type String.</li>
+<li>Read 3 lines of input from stdin (according to the sequence given in the input Format section below) and initialize your 3 variables.</li>
+<li>Use the + operator to perform the following operations:</li>
+</ol>
+<ul>
+<li>Print the sum of i plus your int variable on a new line.</li>
+<li>Print the sum of d plus your double variable to a scale of one decimal place on a new line.</li>
+<li>Concatenate s with the string you read as input and print the result on a new line.</li>
+</ul>
+<p><br></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">4</span></span><br><span class="line"><span class="keyword">var</span> d = <span class="number">4.0</span></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"HackerRank "</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 스위프트에서 변수는 선언과 초기화를 분리하여 작성할 수 있다. 그러나 상수는 예외이다.</span></span><br><span class="line"><span class="comment">  스위프트에서 상수는 선언할 때에만 값을 입력할 수 있기 때문이다.</span></span><br><span class="line"><span class="comment">  단, 클래스나 구조체 객체 내에서 상수를 선언할 때는 예외적으로 선언과 초기화를 분리할 수 있다.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Declare second integer, double, and String variables.</span></span><br><span class="line"><span class="keyword">var</span> ii: <span class="type">Int?</span></span><br><span class="line"><span class="keyword">var</span> dd: <span class="type">Double?</span></span><br><span class="line"><span class="keyword">var</span> ss: <span class="type">String?</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Read and save an integer, double, and String to your variables.</span></span><br><span class="line"><span class="keyword">let</span> intInput = <span class="built_in">readLine</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> stringInt = intInput&#123;</span><br><span class="line">    ii = <span class="type">Int</span>(stringInt)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> doubleInput = <span class="built_in">readLine</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> stringDouble = doubleInput&#123;</span><br><span class="line">    dd = <span class="type">Double</span>(stringDouble)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> stringInput = <span class="built_in">readLine</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> string = stringInput&#123;</span><br><span class="line">    ss = string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Print the sum of both integer variables on a new line.</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> optInt = ii&#123;</span><br><span class="line">    <span class="built_in">print</span>(i + optInt)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// print(i + ii!)</span></span><br><span class="line"><span class="comment">// Print the sum of the double variables on a new line.</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> optDouble = dd&#123;</span><br><span class="line">    <span class="built_in">print</span>(d + optDouble)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// print(d + dd!)</span></span><br><span class="line"><span class="comment">// Concatenate and print the String variables on a new line</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> optString = ss&#123;</span><br><span class="line">    <span class="built_in">print</span>(s + optString)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// print("\(s)\(ss!)")</span></span><br><span class="line"><span class="comment">// The 's' variable above should be printed first.</span></span><br></pre></td></tr></table></figure>
 
         </div>
     
@@ -734,19 +600,19 @@
         <ul>
             
             <li>
-                <a class="footer-post" href="/2020/05/22/hackerrank-lets-review/">[HackerRank] Lets Review</a>
+                <a class="footer-post" href="/2021/03/05/kaldi-gstreamer-server/">[STT] Kaldi Gstreamer Ser</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2020/05/20/hackerrank-loops/">[HackerRank] Loops</a>
+                <a class="footer-post" href="/2020/08/09/algorithm-%EC%84%A0%ED%98%95%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">Algorithm-선형자료구조</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2020/05/20/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-9/">[iOS] 앱 개발 도전기 (9)</a>
+                <a class="footer-post" href="/2020/08/09/baekjoon-1-5/">[BaekJoon] 입출력과 사칙연산</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2020/05/19/hackerrank-class-vs-instance/">[HackerRank] Class vs. In</a>
+                <a class="footer-post" href="/2020/07/06/hackerrank-2d-arrays/">[HackerRank] 2D Arrays</a>
             </li>
             
         </ul>

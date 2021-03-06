@@ -176,7 +176,7 @@ TaskGiven a string S, of length N that is indexed from 0 to N - 1, print its eve
 <h4 id="Input-Format"><a href="#Input-Format" class="headerlink" title="Input Format"></a>Input Format</h4><p>The first line contains an integer, T (the number of test cases).<br>Each line i of the T subsequent lines contain a String, S.</p>
 <p><br><br></p>
 <h4 id="Time-Out-Error"><a href="#Time-Out-Error" class="headerlink" title="Time Out Error"></a>Time Out Error</h4><p><br></p>
-<p>첫 번째 시도는 해커랭크에서 제공하는 주석에 맞추어 코드를 넣었는데, 그 타임 아웃 에러가 발생했다. 그래서 두 번째 시도의 경우, 해커랭크 주석에 맞추지 않고 가장 먼저 떠올랐던 방식으로 코드를 짰더니 통과됐다.</p>
+<p>첫 번째 시도는 해커랭크에서 제공하는 주석에 맞추어 코드를 넣었는데, 타임 아웃 에러가 발생했다.<br>그래서 두 번째 시도의 경우, 해커랭크 주석에 맞추지 않고 가장 먼저 떠올랐던 방식으로 코드를 짰더니 통과됐다.</p>
 <p><br></p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"><span class="keyword">import</span> Darwin</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> numStrings = <span class="type">Int</span>(<span class="built_in">readLine</span>()!)!</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printEvenAndOdd</span><span class="params">(string: String)</span></span> &#123;</span><br><span class="line">    <span class="comment">// This prints inputString to stderr for debugging:</span></span><br><span class="line">    fputs(<span class="string">"string: "</span> + string + <span class="string">"\n"</span>, stderr)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Print the even-indexed characters</span></span><br><span class="line">    <span class="comment">// Write your code here</span></span><br><span class="line">    <span class="keyword">var</span> index = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> index &lt; string.<span class="built_in">count</span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(string[string.index(string.startIndex, offsetBy: index)], terminator: <span class="string">""</span>)</span><br><span class="line">        index += <span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Print a space</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">" "</span>, terminator: <span class="string">""</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Print the odd-indexed characters</span></span><br><span class="line">    <span class="comment">// Write your code here</span></span><br><span class="line">    index = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> index &lt; string.<span class="built_in">count</span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(string[string.index(string.startIndex, offsetBy: index)], terminator: <span class="string">""</span>)</span><br><span class="line">        index += <span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Print a newline</span></span><br><span class="line">    <span class="built_in">print</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">1</span>...numStrings &#123;</span><br><span class="line">    <span class="keyword">let</span> inputString = <span class="built_in">readLine</span>()!</span><br><span class="line">    printEvenAndOdd(string: inputString)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><br><br></p>
@@ -189,7 +189,7 @@ TaskGiven a string S, of length N that is indexed from 0 to N - 1, print its eve
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/hackerrank/">#HackerRank</a> <a href="/tags/swift/">#swift</a>
+            <a href="/tags/swift/">#swift</a> <a href="/tags/hackerrank/">#HackerRank</a>
         </div>
     
 
@@ -223,19 +223,19 @@ TaskGiven a string S, of length N that is indexed from 0 to N - 1, print its eve
         <ul>
             
             <li>
-                <a class="footer-post" href="/2020/05/22/hackerrank-lets-review/">[HackerRank] Lets Review</a>
+                <a class="footer-post" href="/2021/03/05/kaldi-gstreamer-server/">[STT] Kaldi Gstreamer Ser</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2020/05/20/hackerrank-loops/">[HackerRank] Loops</a>
+                <a class="footer-post" href="/2020/08/09/algorithm-%EC%84%A0%ED%98%95%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">Algorithm-선형자료구조</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2020/05/20/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-9/">[iOS] 앱 개발 도전기 (9)</a>
+                <a class="footer-post" href="/2020/08/09/baekjoon-1-5/">[BaekJoon] 입출력과 사칙연산</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2020/05/19/hackerrank-class-vs-instance/">[HackerRank] Class vs. In</a>
+                <a class="footer-post" href="/2020/07/06/hackerrank-2d-arrays/">[HackerRank] 2D Arrays</a>
             </li>
             
         </ul>
