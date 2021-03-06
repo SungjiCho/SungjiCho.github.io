@@ -249,49 +249,6 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2020/03/19/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-7/">
-                [iOS] 앱 개발 도전기 (7)
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2020-03-19</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/ios/">iOS</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h1 id="테이블-뷰를-이용한-데이터-목록-구현"><a href="#테이블-뷰를-이용한-데이터-목록-구현" class="headerlink" title="테이블 뷰를 이용한 데이터 목록 구현"></a>테이블 뷰를 이용한 데이터 목록 구현</h1><p>앱에서 제공하는 콘텐츠는 생각보다 방대한 경우가 많습니다. 그렇다고 매번 검색을 통해서 데이터를 찾도록 하는 것은 터치 이벤트에 의존하는 사용자에게 무척 불편한 일입니다. 방대한 콘텐츠를 앱을 통해 제공하고, 사용자가 효율적으로 콘텐츠에 접근할 수 있도록 하려면 콘텐츠의 성격에 따라 앱의 구조와 UI를 고려해야 합니다.</p>
-<p><br></p>
-<p>이때 사용되는 것이 테이블 뷰 컨트롤러입니다. 테이블 뷰 컨트롤러의 표면적 역할은 목록 형태의 콘텐츠를 화면에 표현해주는 것입니다. 하지만 그 역할을 자세히 들여다보면 계층 구조를 이루는 콘텐츠의 상위 카테고리를 정렬하여 표현함으로써 방대한 콘텐츠 속에서도 사용자가 원하는 항목에 쉽게 접근할 수 있게 해 주는 특성을 지니고 있습니다.</p>
-<p><br></p>
-<p>테이블 뷰 컨트롤러와 내비게이션 컨트롤러는 계층적 성격의 콘텐츠를 표현해주기 위해 상호 보완적인 역할을 합니다. 테이블 뷰 컨트롤러를 이용하여 수평적 관계의 카테고리나 콘텐츠를 병렬로 배열하고, 수직적 관계로 세분한 정보들을 내비게이션 컨트롤러를 통하여 직렬로 표현하여 전체적인 앱의 콘텐츠 표현 구조를 구성하죠. </p>
-<p><br></p>
-<p>일반적으로 알려진 정보 검색 알고리즘에 따르면, 가장 효율적인 정보 접근 방법은 콘텐츠를 성격에 따라 계층으로 구조화하는 것입니다. 계층으로 콘텐츠를 구조화하면 상위 카테고리 하나를 선택하는 과정만으로도 원하는 정보에 접근하는 것이 훨씬 단순해지기 때문입니다. 이때 가장 고려해야 할 부분은 더 적은 횟수의 선택 과정으로 원하는 정보를 찾을 수 있게 하는 것입니다. 이것이 바로 정보 검색 알고리즘의 핵심이자 앱을 만들 때 콘텐츠 구조를 설계하는 원칙입니다. 데이터베이스의 설계 원리에 선택도(Cardinality)라는 것이 있는데, 특정 카테고리를 선택하여 나온 결과값의 개수가 적을수록 ‘선택도가 높다’고 표현하며 콘텐츠 분류가 잘되었다고 할 수 있습니다.</p>
-<p><br></p>
-<p>테이블 뷰를 이용하여 화면을 구성할 때는 단순히 목록을 구성하는 데에 주력하는 것이 아니라, 이러한 데이터 접근 구조에 대해서도 고려해야 합니다. 그러면서 사용자가 어떻게 하면 보다 손쉽게 원하는 콘텐츠에 접근할 수 있을 것인가를 반영하여 화면 구조를 설계해야 합니다. </p>
-<p><br></p>
-<p>하나의 테이블 뷰 컨트롤러 화면을 구성하는 단위는 다음과 같습니다.</p>
-<p><br></p>
-<h5 id="테이블-뷰-컨트롤러-gt-하나의-테이블-뷰-gt-여러-개의-테이블-뷰-섹션-gt-여러-개의-테이블-뷰-셀-gt-테이블-뷰-셀마다-하나씩-콘텐츠-뷰"><a href="#테이블-뷰-컨트롤러-gt-하나의-테이블-뷰-gt-여러-개의-테이블-뷰-섹션-gt-여러-개의-테이블-뷰-셀-gt-테이블-뷰-셀마다-하나씩-콘텐츠-뷰" class="headerlink" title="테이블 뷰 컨트롤러 &gt; 하나의 테이블 뷰 &gt; 여러 개의 테이블 뷰 섹션 &gt; 여러 개의 테이블 뷰 셀 &gt; 테이블 뷰 셀마다 하나씩 콘텐츠 뷰"></a>테이블 뷰 컨트롤러 &gt; 하나의 테이블 뷰 &gt; 여러 개의 테이블 뷰 섹션 &gt; 여러 개의 테이블 뷰 셀 &gt; 테이블 뷰 셀마다 하나씩 콘텐츠 뷰</h5><p><br><br></p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
             <a href="/2020/03/19/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-6/">
                 [iOS] 앱 개발 도전기 (6)
             </a>
@@ -380,6 +337,49 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 텍스트 필드의 내용이 변경될 때 호출</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">textField</span><span class="params">(<span class="number">_</span> textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"텍스트 필드의 내용이 \(string)으로 변경됩니다."</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> <span class="type">Int</span>(string) == <span class="literal">nil</span>&#123;  <span class="comment">// 입력된 값이 숫자가 아니라면 true를 리턴</span></span><br><span class="line">        <span class="comment">// 현재 텍스트 필드에 입력된 길이와 더해질 문자열 길이의 합이 10을 넘는다면 반영하지 않음</span></span><br><span class="line">        <span class="keyword">if</span> (textField.text?.<span class="built_in">count</span>)! + string.<span class="built_in">count</span> &gt; <span class="number">10</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;  <span class="comment">// 입력된 값이 숫자라면 false를 리턴</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><br><br></p>
 <p>다음은 이미지 피커 컨트롤러(Image Picker Controller)를 통해 델리게이트 패턴을 활용해보도록 하겠습니다. 이미지 피커 컨트롤러 자체는 단순히 이미지를 선택해서 가져오는 기능입니다. 하지만 이미지를 불러올 소스를 어떤 것으로 설정하느냐에 따라 앨범이나 카메라 기능을 사용할 수 있으므로, 카메라를 이용하여 즉석에서 촬영한 사진을 사용하거나 앨범에 저장된 이미지를 불러올 때 대부분 이 컨트롤러를 사용하여 기능을 구현합니다.</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/03/19/ios-%EC%95%B1-%EA%B0%9C%EB%B0%9C-%EB%8F%84%EC%A0%84%EA%B8%B0-7/">
+                [iOS] 앱 개발 도전기 (7)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-03-19</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/ios/">iOS</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="테이블-뷰를-이용한-데이터-목록-구현"><a href="#테이블-뷰를-이용한-데이터-목록-구현" class="headerlink" title="테이블 뷰를 이용한 데이터 목록 구현"></a>테이블 뷰를 이용한 데이터 목록 구현</h1><p>앱에서 제공하는 콘텐츠는 생각보다 방대한 경우가 많습니다. 그렇다고 매번 검색을 통해서 데이터를 찾도록 하는 것은 터치 이벤트에 의존하는 사용자에게 무척 불편한 일입니다. 방대한 콘텐츠를 앱을 통해 제공하고, 사용자가 효율적으로 콘텐츠에 접근할 수 있도록 하려면 콘텐츠의 성격에 따라 앱의 구조와 UI를 고려해야 합니다.</p>
+<p><br></p>
+<p>이때 사용되는 것이 테이블 뷰 컨트롤러입니다. 테이블 뷰 컨트롤러의 표면적 역할은 목록 형태의 콘텐츠를 화면에 표현해주는 것입니다. 하지만 그 역할을 자세히 들여다보면 계층 구조를 이루는 콘텐츠의 상위 카테고리를 정렬하여 표현함으로써 방대한 콘텐츠 속에서도 사용자가 원하는 항목에 쉽게 접근할 수 있게 해 주는 특성을 지니고 있습니다.</p>
+<p><br></p>
+<p>테이블 뷰 컨트롤러와 내비게이션 컨트롤러는 계층적 성격의 콘텐츠를 표현해주기 위해 상호 보완적인 역할을 합니다. 테이블 뷰 컨트롤러를 이용하여 수평적 관계의 카테고리나 콘텐츠를 병렬로 배열하고, 수직적 관계로 세분한 정보들을 내비게이션 컨트롤러를 통하여 직렬로 표현하여 전체적인 앱의 콘텐츠 표현 구조를 구성하죠. </p>
+<p><br></p>
+<p>일반적으로 알려진 정보 검색 알고리즘에 따르면, 가장 효율적인 정보 접근 방법은 콘텐츠를 성격에 따라 계층으로 구조화하는 것입니다. 계층으로 콘텐츠를 구조화하면 상위 카테고리 하나를 선택하는 과정만으로도 원하는 정보에 접근하는 것이 훨씬 단순해지기 때문입니다. 이때 가장 고려해야 할 부분은 더 적은 횟수의 선택 과정으로 원하는 정보를 찾을 수 있게 하는 것입니다. 이것이 바로 정보 검색 알고리즘의 핵심이자 앱을 만들 때 콘텐츠 구조를 설계하는 원칙입니다. 데이터베이스의 설계 원리에 선택도(Cardinality)라는 것이 있는데, 특정 카테고리를 선택하여 나온 결과값의 개수가 적을수록 ‘선택도가 높다’고 표현하며 콘텐츠 분류가 잘되었다고 할 수 있습니다.</p>
+<p><br></p>
+<p>테이블 뷰를 이용하여 화면을 구성할 때는 단순히 목록을 구성하는 데에 주력하는 것이 아니라, 이러한 데이터 접근 구조에 대해서도 고려해야 합니다. 그러면서 사용자가 어떻게 하면 보다 손쉽게 원하는 콘텐츠에 접근할 수 있을 것인가를 반영하여 화면 구조를 설계해야 합니다. </p>
+<p><br></p>
+<p>하나의 테이블 뷰 컨트롤러 화면을 구성하는 단위는 다음과 같습니다.</p>
+<p><br></p>
+<h5 id="테이블-뷰-컨트롤러-gt-하나의-테이블-뷰-gt-여러-개의-테이블-뷰-섹션-gt-여러-개의-테이블-뷰-셀-gt-테이블-뷰-셀마다-하나씩-콘텐츠-뷰"><a href="#테이블-뷰-컨트롤러-gt-하나의-테이블-뷰-gt-여러-개의-테이블-뷰-섹션-gt-여러-개의-테이블-뷰-셀-gt-테이블-뷰-셀마다-하나씩-콘텐츠-뷰" class="headerlink" title="테이블 뷰 컨트롤러 &gt; 하나의 테이블 뷰 &gt; 여러 개의 테이블 뷰 섹션 &gt; 여러 개의 테이블 뷰 셀 &gt; 테이블 뷰 셀마다 하나씩 콘텐츠 뷰"></a>테이블 뷰 컨트롤러 &gt; 하나의 테이블 뷰 &gt; 여러 개의 테이블 뷰 섹션 &gt; 여러 개의 테이블 뷰 셀 &gt; 테이블 뷰 셀마다 하나씩 콘텐츠 뷰</h5><p><br><br></p>
 
         </div>
     
